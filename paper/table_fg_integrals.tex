@@ -1,0 +1,31 @@
+\begin{table}[t]
+  \centering
+  \caption{Representative $f(x)^{g(x)}$-type integrals that are CAS-blind (SymPy fails to
+  integrate the derivative) but trivially solvable by ESI, since $\int F'(x)\,dx = F(x)+C$
+  by construction. Each $F'(x)$ was tested with \texttt{sympy.integrate} (30\,s timeout).}
+  \label{tab:fg_integrals}
+  \small
+  \begin{tabular}{clcc}
+    \toprule
+    \# & $F(x)$ & $k$ & SymPy \\
+    \midrule
+    1 & $\left|\log x\right|^{1/x}$ & 5 & \texttt{timeout} \\
+    2 & $\left|\log x\right|^{x^{2}}$ & 5 & \texttt{timeout} \\
+    3 & $\left|\log x\right|^{-1/x}$ & 6 & \texttt{timeout} \\
+    4 & $\left|\log x\right|^{-\log x}$ & 6 & \texttt{timeout} \\
+    5 & $\left|\log x\right|^{1/\log x}$ & 6 & \texttt{timeout} \\
+    6 & $\left|\log x\right|^{e^{1/x}}$ & 6 & \texttt{timeout} \\
+    7 & $\left|\log x\right|^{e^{\sqrt{x}}}$ & 6 & \texttt{timeout} \\
+    8 & $\left|\log x\right|^{x^{x}}$ & 6 & \texttt{timeout} \\
+    9 & $\left|\log\!\left|\log x\right|\right|^{x}$ & 5 & \texttt{failed} \\
+    10 & $\left|\log\!\left|\log x\right|\right|^{-x}$ & 6 & \texttt{failed} \\
+    11 & $\left|\log\!\left|\log x\right|\right|^{1/x}$ & 6 & \texttt{timeout} \\
+    12 & $\left|\log\!\left|\log x\right|\right|^{\log x}$ & 6 & \texttt{failed} \\
+    13 & $\left|\log\!\left|\log\!\left|\log x\right|\right|\right|^{x}$ & 6 & \texttt{failed} \\
+    14 & $\left|x + \log x\right|^{x}$ & 6 & \texttt{timeout} \\
+    15 & $\left|x - e^{x}\right|^{x}$ & 6 & \texttt{failed} \\
+    16 & $\left|x - \log x\right|^{x}$ & 6 & \texttt{timeout} \\
+    17 & $\left|x^{2} - x\right|^{x}$ & 6 & \texttt{failed} \\
+    \bottomrule
+  \end{tabular}
+\end{table}

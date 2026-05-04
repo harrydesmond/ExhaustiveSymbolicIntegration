@@ -1,0 +1,191 @@
+{
+  "n_functions": 320609,
+  "n_unique_hashes": 225705,
+  "n_suspect_groups": 49665,
+  "n_suspect_pairs_total": 223021,
+  "n_pairs_tested": 10000,
+  "n_confirmed_same": 9971,
+  "n_false_positive": 29,
+  "n_inconclusive": 0,
+  "empirical_fp_rate": 0.0029,
+  "verify_seed": 12345,
+  "verify_n_points": 100,
+  "method": "lambdify_float64",
+  "expr_timeout_s": 30,
+  "false_positives": [
+    {
+      "expr_a": "exp(1/log(x))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3309249740183784e-10
+    },
+    {
+      "expr_a": "exp(-1/log(1/x))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3397358370462337e-10
+    },
+    {
+      "expr_a": "exp(2/log(x**2))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.342578497614493e-10
+    },
+    {
+      "expr_a": "x**(log(x)**(-2))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3308260644648553e-10
+    },
+    {
+      "expr_a": "sqrt(exp(1/log(sqrt(x))))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3619054243729447e-10
+    },
+    {
+      "expr_a": "sqrt(exp(2/log(x)))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3309249740183784e-10
+    },
+    {
+      "expr_a": "exp(x/log(x**x))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3277994321270425e-10
+    },
+    {
+      "expr_a": "x**(log(1/x)**(-2))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3484359213741427e-10
+    },
+    {
+      "expr_a": "1/sqrt(exp(2/log(1/x)))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3397358370462337e-10
+    },
+    {
+      "expr_a": "1/sqrt(exp(1/log(1/sqrt(x))))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3579253039391675e-10
+    },
+    {
+      "expr_a": "1/sqrt(exp(-1/log(sqrt(x))))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3619054243729447e-10
+    },
+    {
+      "expr_a": "1/sqrt(exp(-2/log(x)))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3309249740183784e-10
+    },
+    {
+      "expr_a": "Abs(sqrt(exp(1/log(sqrt(x)))))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3619054243729447e-10
+    },
+    {
+      "expr_a": "Abs(sqrt(exp(1/log(x))))**2",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3309249740183784e-10
+    },
+    {
+      "expr_a": "Abs(sqrt(exp(2/log(x))))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3309249740183784e-10
+    },
+    {
+      "expr_a": "exp(-2/log(x**(-2)))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3272297130987483e-10
+    },
+    {
+      "expr_a": "exp(1/(-log(x) + log(x**2)))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3545149025336842e-10
+    },
+    {
+      "expr_a": "exp(4/log(x**4))",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3286520324784133e-10
+    },
+    {
+      "expr_a": "exp(log(x)/log(1/x)**2)",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3485467000740888e-10
+    },
+    {
+      "expr_a": "re(exp(2/log(x))**(1/4)*cos(atan2(0, exp(1/log(x)))/2))**2",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3309249740183784e-10
+    },
+    {
+      "expr_a": "exp(1/(x*log(x)))**x",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.330778587879164e-10
+    },
+    {
+      "expr_a": "exp(1/log(x**x))**x",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3279240581644818e-10
+    },
+    {
+      "expr_a": "exp(x/log(x))**(1/x)",
+      "expr_b": "x**(1/log(x**log(x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3309882761326334e-10
+    },
+    {
+      "expr_a": "x**(1/log(x**log(x)))",
+      "expr_b": "x**(log(exp(1/log(x)))**2)",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3308260644648553e-10
+    },
+    {
+      "expr_a": "x**(1/log(x**log(x)))",
+      "expr_b": "re(x**(log(x)**(-2)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3308260644648553e-10
+    },
+    {
+      "expr_a": "x**(1/log(x**log(x)))",
+      "expr_b": "sqrt(exp(-1/log(1/sqrt(x))))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3579253039391675e-10
+    },
+    {
+      "expr_a": "x**(1/log(x**log(x)))",
+      "expr_b": "sqrt(exp(-2/log(1/x)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3397358370462337e-10
+    },
+    {
+      "expr_a": "x**(1/log(x**log(x)))",
+      "expr_b": "sqrt(exp(4/log(x**2)))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.342578497614493e-10
+    },
+    {
+      "expr_a": "x**(1/log(x**log(x)))",
+      "expr_b": "sqrt(x**(2/log(x)**2))",
+      "hash": "63847998518d9172787c82d2a7c7d312",
+      "max_rel_diff": 1.3308260644648553e-10
+    }
+  ]
+}

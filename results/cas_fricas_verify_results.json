@@ -1,0 +1,322 @@
+{
+  "total": 17,
+  "tested": 17,
+  "solved": 2,
+  "still_failing": 15,
+  "timeout_setting": 600,
+  "results": [
+    {
+      "index": 12,
+      "our_expr": "exp(x)*sqrt(Abs(log(x**2)))",
+      "our_k": 7,
+      "diff_approach": {
+        "primitive_fricas": "exp(x)*sqrt((log(x^2)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n            +-------+\n          x |     2\n   (1)  %e \\|log(x )\n(2) -> \n            x     2      x\n        x %e log(x ) + %e\n   (2)  ------------------\n              +-------+\n              |     2\n            x\\|log(x )\n(3) ->  \n   >> Error detected within library code:\n   i",
+        "elapsed": 1.1
+      },
+      "direct_approach": {
+        "integrand_fricas": "exp(x)*sqrt((log(x^2))) + exp(x)/(x*sqrt((log(x^2))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (constant residues)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 20,
+      "our_expr": "exp(-x)*sqrt(Abs(log(x**2)))",
+      "our_k": 7,
+      "diff_approach": {
+        "primitive_fricas": "exp(-x)*sqrt((log(x^2)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n              +-------+\n          - x |     2\n   (1)  %e   \\|log(x )\n(2) -> \n              - x     2      - x\n        - x %e   log(x ) + %e\n   (2)  ------------------------\n                 +-------+\n                 |     2\n               x\\|log(x )\n(3) ->  \n   >> Error det",
+        "elapsed": 1.3
+      },
+      "direct_approach": {
+        "integrand_fricas": "-exp(-x)*sqrt((log(x^2))) + exp(-x)/(x*sqrt((log(x^2))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (constant residues)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.2
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 22,
+      "our_expr": "exp(x/2)*sqrt(Abs(log(x**2)))",
+      "our_k": 7,
+      "diff_approach": {
+        "primitive_fricas": "exp(x/2)*sqrt((log(x^2)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n          x\n          - +-------+\n          2 |     2\n   (1)  %e \\|log(x )\n(2) -> \n            x              x\n            -              -\n            2     2        2\n        x %e log(x ) + 2 %e\n   (2)  --------------------\n                +-------+\n                |     ",
+        "elapsed": 1.2
+      },
+      "direct_approach": {
+        "integrand_fricas": "exp(x/2)*sqrt((log(x^2)))/2 + exp(x/2)/(x*sqrt((log(x^2))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (constant residues)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.2
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 27,
+      "our_expr": "exp(-x/2)*sqrt(Abs(log(x**2)))",
+      "our_k": 7,
+      "diff_approach": {
+        "primitive_fricas": "exp(-x/2)*sqrt((log(x^2)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n            x\n          - - +-------+\n            2 |     2\n   (1)  %e   \\|log(x )\n(2) -> \n                x                x\n              - -              - -\n                2     2          2\n        - x %e   log(x ) + 2 %e\n   (2)  --------------------------\n            ",
+        "elapsed": 1.1
+      },
+      "direct_approach": {
+        "integrand_fricas": "-exp(-x/2)*sqrt((log(x^2)))/2 + exp(-x/2)/(x*sqrt((log(x^2))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (constant residues)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 32,
+      "our_expr": "sqrt(Abs(x + Abs(log(x))**a0))",
+      "our_k": 7,
+      "diff_approach": {
+        "primitive_fricas": "sqrt((x + (log(x))^a0))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n         +------------+\n         |      a0\n   (1)  \\|log(x)   + x\n(2) -> \n                 a0 - 1\n        a0 log(x)       + x\n   (2)  -------------------\n             +------------+\n             |      a0\n         2 x\\|log(x)   + x\n(3) ->  \n   >> Error detected within librar",
+        "elapsed": 1.1
+      },
+      "direct_approach": {
+        "integrand_fricas": "(a0*0^2^2/(x*log(x)) + (x + ((log(x)/1)^a0))*(a0*((log(x)/1)^a0)^2/(x*log(x)) + 1))/((2*x + 2*(log(x)/1)^a0)*sqrt((x + (log(x))^a0)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (has polynomial part)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 33,
+      "our_expr": "sqrt(Abs(x - Abs(log(x))**a0))",
+      "our_k": 7,
+      "diff_approach": {
+        "primitive_fricas": "sqrt((x - (log(x))^a0))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n         +--------------+\n         |        a0\n   (1)  \\|- log(x)   + x\n(2) -> \n                   a0 - 1\n        - a0 log(x)       + x\n   (2)  ---------------------\n             +--------------+\n             |        a0\n         2 x\\|- log(x)   + x\n(3) ->  \n   >> Error dete",
+        "elapsed": 1.2
+      },
+      "direct_approach": {
+        "integrand_fricas": "(a0*0^2^2/(x*log(x)) + (x - ((log(x)/1)^a0))*(-a0*((log(x)/1)^a0)^2/(x*log(x)) + 1))/((2*x - 2*(log(x)/1)^a0)*sqrt((x - (log(x))^a0)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (has polynomial part)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 66,
+      "our_expr": "sqrt(exp(log(Abs(Abs(Abs(log(x))))/2)**2 - 3*arg(Abs(log(x)))**2))",
+      "our_k": 7,
+      "diff_approach": {
+        "primitive_fricas": "sqrt(exp(log((((log(x))))/2)^2 - 3*arg((log(x)))^2))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->    There are no library operations named arg \n      Use HyperDoc Browse or issue\n                                )what op arg\n      to learn if there is any operation containing \" arg \" in its \n      name.\n \n   Cannot find a definition or applicable library operation named ar",
+        "elapsed": 1.0
+      },
+      "direct_approach": {
+        "integrand_fricas": "exp(-log(((log(x)))/2)^2 + 2*0^2)*exp(log(((log(x)))/2)^2 - 2*0^2)*sqrt(exp(log((((log(x))))/2)^2 - 3*0^2))*log(((log(x)))/2)^2/(x*(log(x)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (has polynomial part)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 81,
+      "our_expr": "exp(x/4)*sqrt(Abs(log(x**2)))",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "exp(x/4)*sqrt((log(x^2)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n          x\n          - +-------+\n          4 |     2\n   (1)  %e \\|log(x )\n(2) -> \n            x              x\n            -              -\n            4     2        4\n        x %e log(x ) + 4 %e\n   (2)  --------------------\n                +-------+\n                |     ",
+        "elapsed": 1.2
+      },
+      "direct_approach": {
+        "integrand_fricas": "exp(x/4)*sqrt((log(x^2)))/4 + exp(x/4)/(x*sqrt((log(x^2))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (constant residues)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 86,
+      "our_expr": "exp(x/4)*Abs(log(x**2))**(1/4)",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "exp(x/4)*(log(x^2))^(1/4)",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n          x\n          -  +-------+\n          4 4|     2\n   (1)  %e  \\|log(x )\n(2) -> \n            x              x\n            -              -\n            4     2        4\n        x %e log(x ) + 2 %e\n   (2)  --------------------\n                +-------+3\n               4| ",
+        "elapsed": 1.1
+      },
+      "direct_approach": {
+        "integrand_fricas": "exp(x/4)*(log(x^2))^(1/4)/4 + exp(x/4)/(2*x*(log(x^2))^(3/4))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (constant residues)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.2
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 100,
+      "our_expr": "exp(x**2/2)*sqrt(Abs(log(x**2)))",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "exp(x^2/2)*sqrt((log(x^2)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n           2\n          x\n          -- +-------+\n           2 |     2\n   (1)  %e  \\|log(x )\n(2) -> \n             2             2\n            x             x\n            --            --\n         2   2     2       2\n        x %e  log(x ) + %e\n   (2)  --------------------\n     ",
+        "elapsed": 1.2
+      },
+      "direct_approach": {
+        "integrand_fricas": "x*exp(x^2/2)*sqrt((log(x^2))) + exp(x^2/2)/(x*sqrt((log(x^2))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (constant residues)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 118,
+      "our_expr": "sqrt(Abs(log(Abs(a0 + x)**(2*x))))",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "sqrt((log((a0 + x)^(2*x))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n         +----------------+\n         |            2 x\n   (1)  \\|log((x + a0)   )\n(2) -> \n                           2 x             2 x - 1\n        log(x + a0)(x + a0)    + x (x + a0)\n   (2)  ------------------------------------------\n                          +-------------",
+        "elapsed": 1.2
+      },
+      "direct_approach": {
+        "integrand_fricas": "(2*x^2/(a0 + x) + 2*log(((a0 + x)/1)))/(2*sqrt((log((a0 + x)^(2*x)))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (constant residues)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 124,
+      "our_expr": "sqrt(Abs(x + Abs(log(x))**log(x)))",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "sqrt((x + (log(x))^log(x)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n         +----------------+\n         |      log(x)\n   (1)  \\|log(x)       + x\n(2) -> \n                         log(x)               log(x) - 1\n        log(log(x))log(x)       + log(x)log(x)           + x\n   (2)  ----------------------------------------------------\n          ",
+        "elapsed": 1.1
+      },
+      "direct_approach": {
+        "integrand_fricas": "((x + ((log(x)/1)^log(x)))*((log((log(x)/1))/x + 1^2/x)*((log(x)/1)^log(x)) + 1) + (log((log(x)/1))/x + 1^2/x)*0^2)/((2*x + 2*(log(x)/1)^log(x))*sqrt((x + (log(x))^log(x))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (has polynomial part)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.2
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 125,
+      "our_expr": "sqrt(Abs(x - Abs(log(x))**log(x)))",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "sqrt((x - (log(x))^log(x)))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n         +------------------+\n         |        log(x)\n   (1)  \\|- log(x)       + x\n(2) -> \n                           log(x)               log(x) - 1\n        - log(log(x))log(x)       - log(x)log(x)           + x\n   (2)  -----------------------------------------------------",
+        "elapsed": 1.1
+      },
+      "direct_approach": {
+        "integrand_fricas": "((x - ((log(x)/1)^log(x)))*((-log((log(x)/1))/x - 1^2/x)*((log(x)/1)^log(x)) + 1) + (log((log(x)/1))/x + 1^2/x)*0^2)/((2*x - 2*(log(x)/1)^log(x))*sqrt((x - (log(x))^log(x))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (has polynomial part)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.1
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 157,
+      "our_expr": "sqrt(x)*sqrt(Abs(sqrt(exp(1/log(x)))))",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "sqrt(x)*sqrt((sqrt(exp(1/log(x)))))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n             +-----------+\n             | +--------+\n             | |     1\n             | |  ------\n         +-+ | |  log(x)\n   (1)  \\|x \\|\\|%e\n(2) -> \n                                    1\n                                 ------\n                         2       log(x)\n    ",
+        "elapsed": 1.2
+      },
+      "direct_approach": {
+        "integrand_fricas": "sqrt(x)*(-sqrt(exp(2/log(x)))*sin(atan((0)/(exp(1/log(x))))/2)^2/(2*x*log(x)^2) - sqrt(exp(2/log(x)))*cos(atan((0)/(exp(1/log(x))))/2)^2/(2*x*log(x)^2))/(2*sqrt(exp(1/log(x)))*sqrt((sqrt(exp(1/log(x)))))) + sqrt((sqrt(exp(1/log(x)))))/(2*sqrt(x))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (has polynomial part)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.2
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 158,
+      "our_expr": "sqrt(Abs(sqrt(exp(1/log(x)))))/sqrt(x)",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "sqrt((sqrt(exp(1/log(x)))))/sqrt(x)",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n         +-----------+\n         | +--------+\n         | |     1\n         | |  ------\n         | |  log(x)\n        \\|\\|%e\n   (1)  --------------\n              +-+\n             \\|x\n(2) -> \n                                      1\n                                   ------\n      ",
+        "elapsed": 1.2
+      },
+      "direct_approach": {
+        "integrand_fricas": "(-sqrt(exp(2/log(x)))*sin(atan((0)/(exp(1/log(x))))/2)^2/(2*x*log(x)^2) - sqrt(exp(2/log(x)))*cos(atan((0)/(exp(1/log(x))))/2)^2/(2*x*log(x)^2))/(2*sqrt(x)*sqrt(exp(1/log(x)))*sqrt((sqrt(exp(1/log(x)))))) - sqrt((sqrt(exp(1/log(x)))))/(2*x^(3/2))",
+        "solved": false,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) ->  \n   >> Error detected within library code:\n   integrate: implementation incomplete (has polynomial part)\n\n(1) -> \n   (1)  result\n(2) -> ",
+        "elapsed": 1.2
+      },
+      "solved": false,
+      "method": null
+    },
+    {
+      "index": 185,
+      "our_expr": "sqrt(exp(cos(atan2(0, Abs(log(x) + log(1/Abs(a0))))/2)**3/sqrt(Abs(log(x) + log(1/Abs(a0))))))",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "sqrt(exp(cos(atan((0)/((log(x) + log(1/(a0)))))/2)^3/sqrt((log(x) + log(1/(a0))))))",
+        "solved": true,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n         +---------------------+\n         |           1\n         |  -------------------\n         |   +----------------+\n         |   |              1\n         |   |log(x) + log(--)\n         |  \\|             a0\n   (1)  \\|%e\n(2) -> \n   (2)\n                                    ",
+        "elapsed": 1.2
+      },
+      "direct_approach": null,
+      "solved": true,
+      "method": "differentiation"
+    },
+    {
+      "index": 186,
+      "our_expr": "sqrt(exp(cos(atan2(0, x*Abs(log(x)))/2)**2*cos(atan2(0, Abs(log(x**x)))/2)/sqrt(Abs(log(x**x)))))",
+      "our_k": 8,
+      "diff_approach": {
+        "primitive_fricas": "sqrt(exp(cos(atan((0)/(x*(log(x))))/2)^2*cos(atan((0)/((log(x^x))))/2)/sqrt((log(x^x)))))",
+        "solved": true,
+        "output": "Checking for foreign routines\nFRICAS=\"/usr/local/lib/fricas/target/x86_64-linux-gnu\"\nspad-lib=\"/usr/local/lib/fricas/target/x86_64-linux-gnu/lib/libspad.so\"\nforeign routines found\nopenServer result -2\n                       FriCAS Computer Algebra System \n             Version: FriCAS 1.3.12 built with sbcl 2.2.9.debian\n                   Timestamp: Fri Feb  6 17:07:20 UTC 2026\n-----------------------------------------------------------------------------\n   Issue )copyright to view copyright notices.\n   Issue )summary for a summary of useful system commands.\n   Issue )quit to leave FriCAS and return to shell.\n-----------------------------------------------------------------------------\n \n(1) -> (1) -> (1) -> (1) -> \n         +------------+\n         |       1\n         |  ----------\n         |   +-------+\n         |   |     x\n         |  \\|log(x )\n   (1)  \\|%e\n(2) -> \n                                       1\n                                  ----------\n                                   +",
+        "elapsed": 1.1
+      },
+      "direct_approach": null,
+      "solved": true,
+      "method": "differentiation"
+    }
+  ]
+}

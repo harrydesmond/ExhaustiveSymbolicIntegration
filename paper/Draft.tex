@@ -1,0 +1,790 @@
+% Draft.tex — Exhaustive Symbolic Integration paper
+% Target: Journal of Symbolic Computation
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+\usepackage{amssymb,amsmath}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{purple}{rgb}{0.5,0,0.5}
+
+% Macros
+\newcommand{\Fleq}{\mathcal{F}_{\leq k}}
+\newcommand{\rhok}{\rho(k)}
+\newcommand{\dd}{{\rm d}}
+
+\newcommand{\hd}[1]{{\color{red}\textbf{[HD: #1]}}}
+\newcommand{\hdadd}[1]{{\color{red}#1}}
+
+\newcommand{\codex}[1]{{\color{purple}\textbf{[Codex: #1]}}}
+\newcommand{\codexadd}[1]{{\color{purple}#1}}
+
+\definecolor{teal}{rgb}{0,0.5,0.5}
+\newcommand{\claude}[1]{{\color{teal}\textbf{[Claude: #1]}}}
+
+\journal{Journal of Symbolic Computation}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%\title{Operator Basis Determines the Landscape of Symbolic Integrability}
+\title{Exhaustive Symbolic Integration: Integration by Differentiation and the Landscape of Symbolic Integrability}
+
+\author[icg]{Harry Desmond\corref{cor1}}
+\cortext[cor1]{Corresponding author}
+\ead{harry.desmond@port.ac.uk}
+
+\affiliation[portsmouth]{organization={Institute of Cosmology and Gravitation},
+  addressline={University of Portsmouth},
+  city={Portsmouth}, postcode={PO1 3FX}, country={United Kingdom}}
+
+\begin{abstract}
+% Codex rewrote this abstract based on commented-out \codex{} items 8, 9, 10.
+% Reverted to the original below. Only factual updates (numbers) applied.
+We introduce Exhaustive Symbolic Integration (ESI), a method that enumerates
+all symbolic functions up to a given complexity~$k$ within a specified operator
+basis and determines which admit closed-form antiderivatives within the same
+class.  This allows us to compute the ``integrability fraction''
+%\hd{seems to be 5, from table 1}
+$\rhok$
+% = |\{F \in \Fleq : F' \in \Fleq\}| / |\Fleq|$
+(fraction of functions whose derivatives lie within the same class), which we do for for five operator bases including combinations of rational functions, powers, exponentials, logarithms and trigonometric functions. We find that $\rhok$ declines at high complexity and that the operator basis has a dramatic effect---in particular, adding the logarithm boosts $\rhok$ by a factor $\sim$2--3 and produces a clear peak at $k=6$ reaching $\sim12\%$.
+%, reflecting the approximate closure of the exp--log differential subsystem at finite complexity.
+%\hd{Simplify and shorten the following to get quicker to the CAS-resistent ones}
+%\hd{five?}
+We also deploy ESI as a novel integration algorithm, identifying 5 antiderivatives
+%\codexadd{within the four bases included in the full CAS cascade}
+that resist SymPy, Mathematica, RUBI, FriCAS, Maxima and Giac.
+When an antiderivative can be found by both ESI and computer algebra systems, the latter often returns a simpler form.
+%Among integrals that both ESI and standard computer algebra systems (CAS) successfully evaluate, \codexadd{ESI is not more often simpler than SymPy, but its wins are substantially larger in total node-count savings.}
+%: its factored representations are simpler in $21\%$ of cases compared to $27\%$ for CAS, but the average simplification when ESI wins is five times larger.
+These results reveal how that the landscape of symbolic integrability is shaped primarily by the choice of operators, and that exhaustive enumeration can systematically discover integrable forms --- including novel ones --- that elude general-purpose algorithms.
+\end{abstract}
+
+\begin{keyword}
+symbolic integration \sep exhaustive enumeration \sep integrability fraction \sep differential algebra \sep computer algebra
+\end{keyword}
+
+\end{frontmatter}
+
+%% ====================================================================
+\section{Introduction}
+\label{sec:intro}
+%% ====================================================================
+
+Differentiation is algorithmic: given any expression built from elementary
+functions, its derivative can be computed mechanically by the chain and product
+rules.  Integration admits no such universal algorithm \citep{Bronstein2005}.  The decision procedure
+of \citet{Risch1969}, building on the structure theorem of \citet{Liouville1835},
+determines whether a given elementary function possesses an elementary
+antiderivative, and computes one when it exists.  Yet neither Liouville's
+theorem nor the Risch algorithm addresses a more basic structural question:
+within a given class of symbolic expressions, how \emph{prevalent} is
+integrability?  That is, if one draws a function at random from a well-defined
+symbolic grammar, what is the probability that its antiderivative can be
+expressed within the same grammar?
+
+We make this question precise as follows.  Fix an operator basis (a set of nullary, unary and binary operations) and let $\Fleq$ denote the set of all distinct functions
+%(that are not mapped to each other either by ESR's SymPy-based deduplication or the numerical fingerprinting we implement in Section~\ref{sec:fingerprint})
+%\hd{explain what symbolically distinct means---is this removing variants of the same function in the ESR sense or not?}
+%\hd{doesn't this mean actually distinct or something, since the numerical fingerprinting isn't symbolic. Maybe there is a maths term for this. I think it's what ESR calls unique functions.}
+expressible as expression trees with at most $k$ nodes.  Differentiation maps each function $F \in \Fleq$ to a derivative $F'$ that may or may not itself belong to $\Fleq$.  The
+\emph{integrability fraction}
+\begin{equation}\label{eq:1}
+	\rhok \;=\; \frac{|\{F \in \Fleq : F' \in \Fleq\}|}{|\Fleq|}	
+\end{equation}
+measures the degree to which $\Fleq$ is closed under the inverse of
+differentiation.  Because $\Fleq$ is finite and explicitly constructible,
+$\rhok$ is exactly computable for any chosen basis and complexity bound.
+
+This quantity connects to classical differential algebra in a way that is both natural and novel.
+The elementary functions---those built from rational functions, exponentials and logarithms---form a differential field: they are closed under the field operations and under differentiation. Liouville's theorem \citep{Liouville1835,Rosenlicht1972} characterises when an elementary function admits an elementary antiderivative; in many cases no such antiderivative exists, so the class is not closed under integration. This is a qualitative statement about integrability in the unrestricted field, and does not address what happens at finite complexity, where one restricts to expressions of bounded size. The integrability fraction $\rho_k$ provides the quantitative complement: it measures how often functions within such a bounded-complexity subset admit elementary antiderivatives, and how this depends on the operators from which the functions are built.
+The sensitivity of $\rhok$ to the basis reveals which operations promote closure and which demote it.
+%\hd{what is a differential field and how does it relate to the following}
+
+% Codex replaced novel method with "systematic procedure" based on commented-out
+% \codex{} item 8. Reverted to HD's original.
+To address these questions we introduce a novel method \emph{Exhaustive Symbolic Integration} (ESI), which computes antiderivatives by differentiating candidate solutions within exhaustive function sets. We study five operator bases exhaustively up to a  basis-dependent maximum complexity $k=8$--$10$, comprising
+over $10^6$ unique functions.
+% in the largest case.
+The bases range
+from a minimal set of rational operations and powers through the
+addition of exponentials and logarithms to an
+independent trigonometric basis containing sine and cosine; crucially, the trigonometric basis is not nested within any of the others so provides a fully independent test of structural patterns.
+% \hd{Remove some detail on the results from this intro section} — done: trimmed to 2 sentences.
+%This will allow us to study the integrability landscape through the dependence of $\rho(k)$ on operator basis and complexity, which we can then interpret through operator properties.
+%A key finding is that the operator basis profoundly shapes the integrability landscape. Adding the logarithm to the basis boosts $\rhok$ by a factor of order $2$--$3$ over most shared complexity levels, producing a clear peak at $k=6$ --- a quantitative signature of the approximate closure of the exp--log differential subsystem at finite complexity. We use a growth-rate comparison to interpret the high-complexity decline (Section~\ref{sec:mechanism}).
+%The logarithm plays a distinguished role.  Adding it to the operator basis
+%boosts $\rhok$ by a factor of $2.5$ at every complexity level and delays the
+%peak from $k = 4$ to $k = 6$.  The mechanism is clear from the derivative
+%rule: $\dd/\dd x[\log(f)] = f'/f$ produces rational forms whenever $f$ is
+%polynomial, and these rational forms are $3.6$ times more likely to coincide
+%with functions already present in the enumerated space than are derivatives of
+%exponentials.  In contrast, $\dd/\dd x[\exp(f)] = f' \exp(f)$ invariably
+%increases expression complexity, reducing the chance of a match.
+%Besides a means of characterising the closure properties of integration,
+ESI also affords an integration algorithm in its own right, locating antiderivatives by searching an exhaustive catalogues for functions whose derivatives match the targets. This can be used both to find anderivatives that fall through the cracks of computer algebra systems' Risch implementations, and provide a way to rapidly produce simple antiderivative forms.
+% Reverted to original structure. Only factual number updates (232, FriCAS cascade) applied.
+%\hd{I'm a bit confused by the above: are the 232/218/14 numbers specific to ext-log-maths basis, and then there are 5 across other bases? I would prefer not to distinguish bases here, i.e. give total numbers across all bases tested}
+%\codexadd{Across the four bases included in the CAS cascade, ESI identifies 5 integrals that resist all six CAS engines under the standard call.} \codexadd{A broader intermediate set in \texttt{ext\_log\_maths} contains 232 integrals unsolved by SymPy, Mathematica and RUBI, but FriCAS solves 218 of these, showing that most such failures reflect implementation coverage rather than intrinsic CAS resistance.}
+%We also solve two integrals from the RUBI test suite that RUBI itself cannot evaluate.
+%\codexadd{When ESI and SymPy both solve an integral, ESI is not more often simpler, but its wins are substantially larger in total node-count savings.}
+
+The idea of identifying integrals by differentiating expressions
+% --- the ``backward'' approach ---
+has been explored in the machine learning literature \citep{LampleCharton2020}, and refined using Risch--Liouville theory to produce guaranteed-integrable expressions \citep{BarketEG2023,BarketEG2024}. These works generate expressions \emph{randomly} for the purpose of training neural networks, so do not measure systematic integrability fractions or study their dependence on the operator basis. CAS benchmarking suites \citep{Nasser2024} compare the performance of integration engines on curated test sets, but again do not address the prevalence of integrability in any defined function space. To our knowledge, the systematic, exhaustive measurement of $\rhok$ as a function of complexity and operator basis has not been attempted before,
+%\hd{But what about finding new integrals using a brute-force exhaustive method like this?}
+and nor has exhaustive enumeration been used to systematically discover novel closed-form integrals.
+% or to study the dependence of integrability on the operator basis.}
+%, which is the second contribution of this work.}
+
+The paper is organised as follows.  Section~\ref{sec:method}
+describes ESI, including the construction of the function spaces and differentiation and
+fingerprinting pipeline.
+Section~\ref{sec:results} presents the main results: the integrability
+fraction, exploration of the logarithm's outsized effect, the structure
+of the derivative map, novel antiderivatives and the comparison with CAS.
+Section~\ref{sec:discussion} discusses limitations, implications for differential algebra
+and directions for future work. Sec.~\ref{sec:conclusion} concludes.
+
+%% ====================================================================
+\section{The Exhaustive Symbolic Integration method}
+\label{sec:method}
+%% ====================================================================
+% \hd{Call this section: ``The \emph{Exhaustive Symbolic Integration} method''. Combine current subsec 2.4 into 2.1. Rename 2.2 (if it's even needed as a distinct subsec), and put the fingerprinting bit of it into 2.3. Add a new subsec at the end to do with how the hashed function sets are used to calculate the results.}
+
+%% --------------------------------------------------------------------
+\subsection{Function space construction and operator bases}
+\label{sec:esr}
+%% --------------------------------------------------------------------
+
+We construct the function space $\Fleq$ using Exhaustive Symbolic Regression \citep[ESR;][]{Bartlett2024}, which enumerates all expressions that can be built from a given operator basis up to a maximum complexity $k$. %\hd{cite ESR applications}
+While ESR was designed, and has been extensively used, for symbolic regression~\citep{Bartlett2024,RAR,Inflation,Martin_1,Martin_2,Kronberger2024,Ford}, here we utilise only its exhaustive function generation step. Complexity is defined as the number of nodes in the expression tree: each expression corresponds to a tree
+%\hd{add recent Ford, Desmond, Bartlett, Ferreira paper}
+%\hd{what does that mean?} (a tree with a single root node in which each internal node has exactly one or two children, representing unary or binary operators respectively)
+in which internal nodes carry operators and leaves carry either the independent variable $x$ or free parameters $a_i$. For example, the expression $(a_0 + x)^2$ has complexity $k = 4$ (two leaves, one addition node and one squaring node, assuming all those operators are in the basis set), whereas the algebraically equivalent $x^2 + 2a_0 x + a_0^2$ has complexity $k = 11$, illustrating that complexity in this sense measures representational cost rather than mathematical sophistication.
+
+At each complexity level, ESR applies symbolic simplification to remove duplicate expressions, so that $\Fleq$ contains only structurally distinct functions. This deduplication is essential: without it, the same mathematical function would appear many times in different syntactic forms, inflating the space and corrupting the integrability fraction.
+%\hd{Describe in more detail how this is done from the ESR paper. Also, it is somewhat unreliable: duplicate functions can creep through. Could that bias our results? We might need to do some more work on this.}
+ESR's deduplication proceeds in rounds: expressions are converted to SymPy objects, simplified (up to a 60-second timeout per expression), and compared symbolically.
+%Expressions that SymPy cannot simplify to a common form survive as duplicates.
+As noted in \cite{Bartlett2024} and subsequent applications this is an imperfect procedure, with many duplicates remaining due to the SymPy's imperfect simplification procedure. We therefore apply a second deduplication layer via numerical fingerprinting (Section~\ref{sec:fingerprint}) to catch additional duplicates.
+%, which catches cases that ESR's symbolic simplification misses.
+% Any residual duplicates would slightly inflate $|\Fleq|$ and deflate $\rhok$, but cannot create false integrability, so the effect is conservative.}
+
+% \hd{tables should be given labels and referenced through them, not hardcoded. Also captions.}
+We study five operator bases, ordered in Table~\ref{tab:bases} roughly by richness.
+% The bases are ordered roughly by richness, from the minimal \texttt{core\_maths} through \texttt{ext\_maths} and \texttt{ext\_log\_maths} to \texttt{trig\_maths}.
+These bases probe how specific operators affect closure under the inverse of differentiation. \texttt{core\_maths} generates rational functions and powers, serving as a baseline. \texttt{core\_log\_maths} isolates the effect of adding \texttt{log}. \texttt{ext\_maths} adds \texttt{sqrt}, \texttt{sq}, and \texttt{exp}, capturing exponential growth. \texttt{ext\_log\_maths} further adds \texttt{log} (the exp--log pair has special closure properties explored in Section~\ref{sec:mechanism}), while \texttt{trig\_maths} replaces \texttt{sqrt}, \texttt{sq}, and \texttt{exp} with \texttt{sin} and \texttt{cos} and is not a superset of any other basis.
+%; crucially, it is not a superset of any other basis, providing an independent, non-nested test of integrability patterns.
+The spaces grow roughly exponentially with $k$; at the highest computed complexities they range from 77{,}053 unique \texttt{core\_maths} functions at $k=10$ to 1{,}454{,}666 unique \texttt{ext\_log\_maths} functions at $k=9$.
+% after both symbolic and numerical deduplication.
+These counts define the denominator of~$\rhok$.  Table~\ref{tab:sizes} gives the cumulative function-space sizes and the CAS comparison counts used later. \codexadd{The \texttt{core\_log\_maths} basis was introduced to investigate the effect of log in the integrability-fraction analysis and is not included in the full six-engine CAS cascade, although we do report the available multi-member count and any lightweight CAS checks completed for it.}
+
+Generating the function space is the most expensive step of the entire procedure: the cost grows rapidly with $k$ because the number of candidate trees is exponential (this is why we extend \texttt{core\_maths}, containing relatively few operators, to $k=10$ but the others only to $k=9$). \codexadd{For the larger bases at their top complexity this is expensive: tree generation for \texttt{ext\_log\_maths} at $k=9$ requires ${\sim}20$ CPU-hours, and symbolic deduplication of the resulting 56 million candidate trees requires several days on tens of cores with ${\sim}20$--30\,GB of memory per core.}
+%total
+%at the highest complexities.
+%\hd{Does this mean the full generation for $k=9$ or 10, or somehow per complexity (as in, divided by k)?}
+%\hd{This suggests a linear growth of compute with complexity, which is surely incompatible with the fact that the number of functions grows exponentially with complexity. Check.}
+
+\begin{table}[t]
+\centering
+\caption{Operator bases studied.}
+\label{tab:bases}
+\begin{tabular}{llll}
+\toprule
+Basis & Nullary & Unary & Binary \\
+\midrule
+\texttt{core\_maths}    & $x$, $a$ & inv & $+, -, \times, \div$, pow \\
+\texttt{core\_log\_maths} & $x$, $a$ & inv, log & $+, -, \times, \div$, pow \\ % new row
+\texttt{ext\_maths}     & $x$, $a$ & inv, sqrt, sq, exp & $+, -, \times, \div$, pow \\
+\texttt{ext\_log\_maths} & $x$, $a$ & inv, sqrt, sq, exp, log & $+, -, \times, \div$, pow \\
+\texttt{trig\_maths}     & $x$, $a$ & inv, sin, cos & $+, -, \times, \div$, pow \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%\hd{use texttt consistently throughout the paper} — audited: all basis names now in \texttt{}.
+%\hd{ends mid-sentence: what is the point?}
+%\hd{not sure this needs a table}
+%\hd{Needs caption, label and reference in text}
+
+%% Old Table 2 (per-complexity sizes):
+% \begin{table}[t]
+% \centering
+% \caption{Number of unique functions $|\Fleq|$ at each complexity after deduplication.}
+% \label{tab:sizes_old}
+% \begin{tabular}{rrrrr}
+% \toprule
+% $k$ & \texttt{core\_maths} & \texttt{ext\_maths} & \texttt{ext\_log\_maths} & \texttt{trig\_maths} \\
+% \midrule
+% 4 &         24 &       105 &           160 &        116 \\
+% 5 &        123 &       606 &           974 &        653 \\
+% 6 &        325 &     3{,}350 &         5{,}962 &      3{,}899 \\
+% 7 &      1{,}586 &    18{,}704 &        35{,}558 &     23{,}465 \\
+% 8 &      4{,}788 &   107{,}472 &       222{,}838 &    144{,}170 \\
+% 9 &     22{,}885 &   628{,}400 &           --- &    897{,}293 \\
+% 10 &     77{,}053 &       --- &           --- &        --- \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+\begin{table}[t]
+\centering
+\caption{Deduplicated cumulative function counts and CAS integrability outcomes by basis.}
+\label{tab:sizes}
+\begin{tabular}{lrrcccc}
+\toprule
+ & & & \multicolumn{2}{c}{SymPy} & \multicolumn{2}{c}{Mathematica} \\
+\cmidrule(lr){4-5} \cmidrule(lr){6-7}
+Basis ($k_{\max}$) & $|\Fleq|$ & tested & hard & imposs. & hard & imposs. \\
+\midrule
+\texttt{core\_maths} (10)     & 77{,}053  & 13{,}993  & 1{,}059       & \codexadd{218}  & 2{,}478       & 411            \\
+\texttt{core\_log\_maths} (8) & 21{,}214   & \codexadd{5{,}669}       & \codexadd{144}           & \codexadd{59}  & ---           & ---            \\
+% MMA imposs. 411 confirmed safe: core_maths has no log/exp/sqrt, so the re/im/arg
+% and sqrt(log(x^2)) conversion bugs do not affect it.
+\texttt{ext\_maths} (9)       & 628{,}400  & 117{,}674 & 8{,}183       & 3{,}321 & 905           & ---            \\
+\texttt{ext\_log\_maths} (8)  & 222{,}838  & 49{,}538  & 2{,}431       & \codexadd{${\geq}232$}   & \codexadd{2{,}049}       & \codexadd{537}  \\
+\texttt{trig\_maths} (9)      & 897{,}293 & 51{,}027 & 9{,}795    & 3{,}700 & \codexadd{685}       & \codexadd{435}            \\
+\bottomrule
+\end{tabular}
+\end{table}
+\codexadd{For computational reasons we do not fully complete this table; instead we fill entries that are needed to support the conclusions or that were cheaply available from the existing pipeline.  The ``tested'' column is the number of multi-member equivalence classes, the only classes on which ESI supplies a non-trivial lookup primitive.  ``Hard'' denotes failure in the initial sweep,
+%	except that the \texttt{ext\_maths} and \texttt{trig\_maths} Mathematica hard counts use the later no-\texttt{Assumptions} correction of the original Mathematica failure lists after the assumptions bug was found. 
+while ``Imposs.'' denotes the longer stress tests where those were run.  The \texttt{ext\_log\_maths} SymPy entry is a lower bound because the stress test was applied to the 503 integrals failed by both SymPy and Mathematica, not to all 2{,}431 SymPy failures.}
+%  The blank entries were not needed for the final six-engine resistance count and would require new full-basis stress runs.}
+
+%% --------------------------------------------------------------------
+\subsection{Differentiation and numerical fingerprinting}
+\label{sec:fingerprint}
+%% --------------------------------------------------------------------
+
+%\hd{what does this mean?}
+After ESR's symbolic deduplication we canonicalise parameter names: if a function contains free parameters, we rename them $a_0, a_1, \ldots$ in the order they first appear when reading the expression tree of $F(x)$ from left to right. This ensures that e.g.\ $a_1 x$ and $a_0 x$ are recognised as the same parametric family). We then differentiate each $F(x)$ with respect to $x$ using SymPy \citep{Meurer2017}. (Although integration and simplification can be challenging for SymPy, differentiation through the chain rule is straightforward.) We then construct a numerical fingerprinting scheme for removing surviving duplications that is
+%compute numerical fingerprints for both $F$ and $F'$, as described below.
+%At the scale of the largest function spaces ($>10^5$ expressions), pairwise symbolic equivalence checking is computationally intractable. We therefore adopt a numerical fingerprinting scheme that is
+both fast and, as we demonstrate, extremely reliable.
+
+Each expression is evaluated at $N = 60$ random points. The independent variable $x$ is drawn uniformly from the interval $(0.2, 5)$, %\hd{how though? with uniform probability within some range?}
+and the parameters $a_i$ are assigned fixed values drawn uniformly from $(0.5, 3.0)$ using a deterministic random seed, ensuring reproducibility. All evaluations are performed using \texttt{mpmath} \citep{Meurer2017} at 50-digit precision. Each resulting value is then rounded to 10 significant figures, and the tuple of 60 rounded values is hashed via MD5 to produce a compact fingerprint. Two expressions with identical hashes are treated as functionally equivalent. Note that because all expressions are evaluated at the same fixed parameter values, this scheme identifies duplicates only when they agree pointwise for the same parameter assignments. %\hd{That's not the concern since the hashing is done after canonicalisation: the concern is something like $a_0 x$ vs.\ $a_0/a_1 x$, which are the same function but would not be canonicalised to the same form.}
+%A limitation is that compound parameter expressions (e.g.\ $a_0/a_1$) are not collapsed to single parameters by either the canonicalisation or fingerprinting steps, so $a_0 x$ and $(a_0/a_1) x$ --- which represent the same parametric family --- would not be identified as duplicates. This is discussed further in Section~\ref{sec:discussion}.
+
+%\codex{PANEL (Tier 1, item 3): Tighten this language. The 60 evaluation points come from a single deterministic seed (RandomState(42)), not 60 independent random draws. The product bound $10^{-600}$ assumes independence, which holds for a randomly chosen seed but not as a per-pair guarantee for the fixed seed used. Reword as: ``Under random choice of the evaluation seed, the expected per-pair false-positive probability is $\lesssim 10^{-600}$; for any single fixed seed, the bound is a typical-case expectation rather than a worst-case guarantee, since pathological functions with zeros at all 60 evaluation points would evade detection. Our empirical verification (below) confirms that no such pathology occurs in the datasets studied.'' Vasquez caught this; Tanaka endorsed.}
+The reliability of this scheme rests on the analytic properties of the functions involved. If two expressions $f$ and $g$ are genuinely distinct, their difference $h \equiv f - g$ is a non-zero analytic function with only isolated zeros. The probability that $|h|$ falls below the rounding threshold at any single random evaluation point is at most ${\sim}10^{-10}$. Over $N = 60$ independent points,
+under random choice of the evaluation seed the expected per-pair false-positive probability is $\lesssim 10^{-600}$; for any single fixed seed, the bound is a typical-case expectation rather than a worst-case guarantee, since pathological functions with zeros at all 60 evaluation points would evade detection. This makes the false-positive rate negligible even in the largest datasets containing up to ${\sim}10^{10}$ distinct pairs.
+%, and we confirm below that no such pathologies exist.
+%Our empirical verification (below) confirms that no such pathology occurs in the datasets studied.
+%the per-pair false-positive probability is therefore bounded by $p_{\mathrm{pair}} \lesssim 10^{-600}$.
+False negatives---genuinely equivalent expressions assigned different hashes---can occur if evaluation fails at some points due to domain restrictions (e.g.\ logarithms of negative arguments, division by zero).
+%We mitigate this by restricting $x$ to $(0.2, 5)$, a range chosen to avoid the singularities and branch cuts most commonly encountered in the operator bases studied.
+%\hd{Can we say -- or calculate -- how prevalent this is, and by how much it might bias our results?}
+%\hd{Instead say we exclude at the outset functions with no $x$, and quote here the number/fraction of failed expressions after that cut has been made}
+
+We exclude at the outset all expressions with no $x$-dependence (parameter-only expressions). After this cut, the current \texttt{trig\_maths} $k\leq 8$ run has 150{,}388 successfully fingerprinted functions, 78 explicit timeouts, and 354 additional fingerprinting failures.
+%\hd{Why are these timing out?}
+These timeouts occur when \texttt{mpmath} evaluation hangs on deeply nested compositions (e.g.\ iterated exponentials that overflow even at 50-digit precision) and are excluded from the analysis.
+%We verified this empirically by re-evaluating all 6{,}987 multi-member equivalence classes at 100 new random points, finding no disagreements across the resulting 18{,}654 intra-cluster pair comparisons. We also compared 1{,}000 singleton clusters
+%\hd{what is a singleton cluster}
+%(functions whose derivatives are unique in the database),
+%\hd{does that mean there were some? why is that not important?}
+%yielding 499{,}500 cross-pair comparisons with zero pairs whose fingerprints were close (i.e.\ no ``near-miss'' collisions where functions narrowly avoided being grouped together).
+%As a further stress test, we re-fingerprinted all 355{,}388 \texttt{ext\_log\_maths} expressions ($k \leq 8$) using an independent evaluation method (\texttt{lambdify} with 64-bit floating-point arithmetic rather than the pipeline's 50-digit \texttt{mpmath}) and identified 49{,}665 hash groups in which two or more syntactically distinct canonical strings shared a fingerprint.  We drew 10{,}000 of these same-hash-different-string pairs and verified each at 100 new random points (seed 12{,}345, independent of the pipeline's seed 42): 9{,}971 pairs agreed at all points, confirming genuine equivalence; the remaining 29 disagreed only at the 10th significant figure (maximum relative difference $\sim 1.3 \times 10^{-10}$), a boundary artefact of 64-bit rounding that the pipeline's 50-digit evaluation resolves.  The empirical false-positive rate of the production fingerprint is therefore consistent with zero across the full dataset.
+%\hd{How many duplicates are removed by this numerical fingerprinting that weren't caught by ESR's symbolic de-duplication procedure?}
+%The numerical fingerprinting catches a substantial number of duplicates that ESR's symbolic simplification misses.
+For \texttt{ext\_log\_maths}, this numerical fingerprinting reduces the $k \leq 8$ $x$-dependent catalogue from 319{,}128 functions to 222{,}838 unique hashes, a reduction of $\sim$30\% (for \texttt{trig\_maths}, the analogous reduction is $\sim$4\%). The rate is particularly high for the \texttt{ext\_log\_maths} due to the many syntactically distinct but functionally equivalent ways of composing \texttt{log} and \texttt{Abs}.
+Note that 
+%\hd{Also, again the concern is not where some niche error happens in the fingerprinting, but cases like $a_0 x$ vs $a_0/a_1 x$ which are completely missed by the fingerprinting. This one would be caught by the ESR symbolic de-duplication, but do we have an idea of how many duplicates both the ESR \emph{and} numerical deduplication might be blind to? That's the real error rate.}
+%A residual class of duplicates may escape both methods:
+expressions related by parameter reparametrisation (e.g.\ $a_0 x$ vs.\ $a_0 a_1 x$, which are the same parametric family but evaluate differently at fixed parameter values) are not caught by this procedure.
+% and hence not be flagged as duplicates). ESR's symbolic simplification can catch some of these, but not all.
+We estimate this affects $\lesssim 1\%$ of functions (Section~\ref{sec:discussion}); the result is that $\rhok$ will in reality be slightly higher than we measure.
+% and the effect on $\rhok$ is conservative (overcounting functions deflates the fraction).}
+%A limitation is that compound parameter expressions (e.g.\ $a_0/a_1$) are not collapsed to single parameters by either the canonicalisation or fingerprinting steps, so $a_0 x$ and $(a_0/a_1) x$ --- which represent the same parametric family --- would not be identified as duplicates.
+%We discuss this further in Section~\ref{sec:discussion}.
+
+Grouping functions by their derivative fingerprint produces \emph{equivalence classes}: each class contains all primitives $F$ sharing a common integrand $f = F'$. These classes range in size from singletons (integrands with a unique primitive in the grammar) to clusters containing over $10^3$ members.
+%, as described in Section~\ref{sec:mechanism}.
+
+%% --------------------------------------------------------------------
+\subsection{Computing the integrability fraction and equivalence classes}
+\label{sec:computing_rho}
+%% --------------------------------------------------------------------
+
+Given the fingerprints, we compute $\rhok$ as follows. Let $\mathcal{H}_F = \{\mathrm{hash}(G) : G \in \Fleq\}$ be the set of all function fingerprints, and let $\mathrm{hash}(F')$ denote the fingerprint of the derivative of $F$. Then $F$ is integrable within $\Fleq$ if and only if $\mathrm{hash}(F') \in \mathcal{H}_F$, and $\rhok$ is the fraction of functions satisfying this condition. %\hd{what is a closed derivative and what is $n$ in the binomial formula?}
+Since each function independently either does or does not have its derivative in $\Fleq$, the count of integrable functions follows a binomial distribution with success probability $\rho$ and $n = |\Fleq|$ trials. We therefore report binomial uncertainties $\sqrt{\rho(1-\rho)/n}$ (noting that they do not take account of systematic uncertainties from the imperfect deduplication procedure). Differentiating and hashing $\sim 10^5$ functions takes $\sim 10$ minutes on a single core, while the hash-lookup step (computing $\rhok$ and building equivalence classes) is effectively instantaneous.
+%The overall computational bottleneck is therefore ESR's tree generation and symbolic deduplication (Section~\ref{sec:esr}).
+%, not the fingerprinting or $\rhok$ computation.
+
+%% --------------------------------------------------------------------
+\subsection{Comparison with computer algebra systems}
+\label{sec:cas_method}
+%% --------------------------------------------------------------------
+
+To identify functions where ESI uniquely identifies the antiderivative, we test all multi-member equivalence classes against four CAS chosen to span three fundamentally different algorithmic paradigms:
+%\hd{does this mean anything beyond the following phrase}
+\begin{enumerate}
+\item \emph{Partial algorithmic (Risch-based):} SymPy \citep{Meurer2017} implements a partial Risch algorithm \citep{Risch1969} with heuristic fallbacks. It handles simple towers of exponentials and logarithms but returns unevaluated for deeper compositions.
+\item \emph{Heuristic/mixed:} Mathematica's built-in \texttt{Integrate} \citep{Mathematica} combines pattern matching, lookup tables, and algorithmic methods including a partial Risch implementation.
+%It does not document which cases its Risch implementation covers.
+In practice, most heuristic-mixed engines (Mathematica, Maple, SymPy's \texttt{heurisch}) call a variant of the Risch--Norman algorithm \citep{Moses1971,NormanMoore1977} first --- an ansatz-based parallel simplification of Risch that posits a closed-form template, differentiates it, and solves the resulting linear system for the undetermined coefficients. This is fast but incomplete; its failures trigger fallback strategies or return the integral unevaluated.
+\item \emph{Rule-based:} RUBI \citep{Rubi2024} (Rule-Based Integration) relies exclusively on a curated decision tree of approximately 6{,}700 pattern-matching rules, implemented as a Mathematica package.
+%It is designed for standard integral forms and is not intended for the deeply nested compositions that ESI generates.
+\item \emph{Full algorithmic (Risch-based):} FriCAS \citep{FriCAS2024}, a fork of the Axiom computer algebra system, contains the most complete open-source implementation of the Risch algorithm for towers of exponential and logarithmic extensions prevalent in the exhaustive function sets. It serves as the strongest available test of whether an integral is beyond the reach of the Risch algorithm as currently implemented, as opposed to merely beyond heuristic or rule-based methods.
+\end{enumerate}
+%Together, these four engines ensure that a failure is not an artifact of any single algorithmic approach.
+For integrals that resist all four, we additionally test Maxima \citep{Maxima2024} and Giac \citep{Giac2024} via SageMath. An integral that resists all six has therefore been tested against partial and near-complete Risch implementations, commercial heuristics, an independent rule-based system, and two further general-purpose CAS, strongly suggesting that it cannot be solved by any current CAS implementation.
+
+We begin by stripping the \texttt{Abs}/\texttt{sign} wrappers that ESR inserts around arguments of \texttt{log}, \texttt{sqrt}, and \texttt{pow} as a precaution during tree enumeration. For SymPy we then apply simplification, try integration with \texttt{conds=`none'} and positive parameter assumptions, and fall back to SymPy's \texttt{manual=True} step-by-step mode if necessary. For Mathematica we pass \texttt{Assumptions -> \{x > 0, params > 0\}} in the initial sweep to match the positive evaluation domain used for fingerprinting and to choose a single real branch for logarithms and radicals, re-testing the main failures without this assumption and under alternative domains. For RUBI we call \texttt{Int[expr, x]}. For FriCAS, we convert the integrand to FriCAS's InputForm syntax (converting \texttt{atan2} to \texttt{atan} as it is called in that code) and call \texttt{integrate(expr, x)}. As a cross-check, we also differentiate the known ESI primitive within FriCAS and attempt to integrate the result to avoid any artifacts of the SymPy-to-FriCAS syntax conversion.
+%\hd{why is this - could they not be negative?}
+%; this was done for all 232 integrals in the stress-test set \hd{it hasn't been explained yet what that is or where that number comes from}, and in every case the two approaches agreed.
+Each integral is given a 180-second timeout per strategy in the initial sweep, extended to 600 seconds with additional strategy combinations in the stress test (Section~\ref{sec:cas}). Table~\ref{tab:sizes} reports both stages: ``hard'' counts integrands not solved in the initial sweep, while ``imposs.'' counts those unsolved after the longer timeout and a quasi-exhaustive set of strategies. For computational tractability we test only multi-member equivalence classes.
+%\hd{I think this is where most of the caption of figure 2 should go, e.g. explaining the difference between the "hard" and "impossible" tests.}
+%\hd{Put most of this in the text where this table is discussed; this caption should only contain direct description of the table}
+
+%% ====================================================================
+\section{Results}
+\label{sec:results}
+%% ====================================================================
+
+%% --------------------------------------------------------------------
+\subsection{The integrability fraction $\rhok$}
+\label{sec:rho}
+%% --------------------------------------------------------------------
+
+The central quantity in this study is the \emph{integrability fraction} (Eq.~\ref{eq:1}), which in the notation of Sec.~\ref{sec:method} can be written as
+\begin{equation}
+\label{eq:rho}
+\rhok \;=\; \frac{\bigl|\bigl\{F \in \Fleq : \mathrm{hash}(F') \in \mathrm{hash}(\Fleq)\bigr\}\bigr|}{|\Fleq|}\,.
+\end{equation}
+This is the proportion of functions in the enumerated space whose derivatives also belong to that space.
+A function $F$ contributes to the numerator if and only if there exists some $G \in \Fleq$ whose numerical fingerprint matches that of $F'$; equivalently, $F$ is integrable within the grammar if there is a closed-form antiderivative expressible at complexity $\leq k$ in the same operator basis.
+
+%\begin{table}[t]
+%\centering
+%\caption{Integrability fraction $\rhok$ for each operator basis. Bold marks the peaks for the log-containing bases. Dashes indicate complexities not computed for that basis.}
+%%\hd{Do we now have any of these results?}
+%\label{tab:rho}
+%\begin{tabular}{rrrrrr}
+%\toprule
+%$k$ & \texttt{core} & \texttt{core\_log} & \texttt{ext} & \texttt{ext\_log} & \texttt{trig} \\
+%\midrule
+%4 & 0.083 & 0.152 & 0.048 & 0.081 & 0.069 \\
+%5 & 0.041 & 0.110 & 0.041 & 0.102 & 0.049 \\
+%6 & 0.058 & \textbf{0.192} & 0.041 & \textbf{0.116} & 0.049 \\
+%7 & 0.055 & 0.177 & 0.041 & 0.101 & 0.051 \\
+%8 & 0.048 & 0.174 & 0.036 & 0.088 & 0.042 \\
+%9 & 0.043 & --- & 0.029 & 0.083 & 0.037 \\
+%10 & 0.035 & --- & --- & --- & --- \\
+%\bottomrule
+%\end{tabular}
+%\end{table}
+
+% \hd{I don't see this in figure 1 at all, except for ext-log-maths.}
+% \hd{there isn't any noticeable general decline either}
+Fig.~\ref{fig:rho} shows $\rhok$ for each basis, revealing two key patterns. First, the bases with high-complexity coverage exhibit a declining $\rhok$: \texttt{core\_maths} falls from $\sim 5.5\%$ at $k = 7$ to $3.5\%$ at $k = 10$, \texttt{ext\_maths} from $\sim 4\%$ at $k = 5$--$7$ to $2.9\%$ at $k=9$ and \texttt{trig\_maths} from $\sim 5\%$ to $3.7\%$ over the same range. Second, the behaviour of \texttt{ext\_log\_maths} is strikingly different from the non-log bases: it exhibits a clear non-monotonic pattern, rising from 8.1\% at $k=4$ to a peak of 11.6\% at $k=6$ before declining monotonically to 8.3\% at $k=9$. The \texttt{core\_log\_maths} basis, run to $k=8$, shows the same elevated log-driven integrability.
+
+Adding the logarithm boosts $\rhok$ by a factor of $\sim 2.5$ for $k\geq 5$ in the \texttt{ext\_log\_maths}/\texttt{ext\_maths} comparison.
+%\hd{what does that mean and what is the evidence for it?}
+The effect of the logarithm can be isolated from possible interactions with other operators by examining the \texttt{core\_log\_maths} basis containing only \texttt{inv} and \texttt{log} as unary operators (i.e.\ \texttt{core\_maths} plus \texttt{log}, without \texttt{exp}, \texttt{sqrt} or \texttt{sq}). This basis also exhibits a peak at $k=6$ ($\rho = 19.2\%$) and elevated integrability at every complexity ($3.6\times$ above \texttt{core\_maths} at $k=8$), confirming that the logarithm alone drives the enhancement---no interaction with the exponential is required. The higher absolute values ($\rho = 17.4\%$ at $k=8$ vs $8.8\%$ for \texttt{ext\_log\_maths}) reflect the smaller operator set: adding \texttt{exp}, \texttt{sqrt} and \texttt{sq} introduces many non-integrable functions that dilute the fraction.
+The mechanism behind the logarithm's enhancement is analysed in Section~\ref{sec:mechanism}.
+
+%The effect of the logarithm is dramatic and persistent. At every complexity level, $\rho(k)$ for ext\_log\_maths exceeds ext\_maths by a factor of approximately $2.5$; at the peak ($k=6$), the ratio climbs to $2.8$.
+
+Perhaps surprisingly, the trig\_maths basis does not exhibit a similarly elevated $\rho(k)$ despite the fact that $\sin$ and $\cos$ form a closed orbit under differentiation ($\dd/\dd x[\sin f] = f'\cos f$, $\dd/\dd x[\cos f] = -f'\sin f$): the $\rhok$ values for trig\_maths are comparable to those of ext\_maths, not ext\_log\_maths. This is because the chain rule introduces a multiplicative factor of $f'$ that drives rapid complexity growth, offsetting the closure of the trigonometric pair.
+That this has a similar $\sim 4$--$5\%$ integrability fraction while not being nested in any other basis set indicates that this is not an artifact of the nesting \texttt{core\_maths} $\subset$ \texttt{ext\_maths} $\subset$ \texttt{ext\_log\_maths}.
+It is important to note however that \texttt{trig\_maths}'s structural independence from the other bases is at the level of the operator grammar not the function field itself, since $\sin$ and $\cos$ can be expressed via $\exp$ in the complex plane.
+%: a structurally independent basis with different operators produces comparable values.
+
+%\hd{This paragraph seems a bit out of place. Would be good to move it to a caveats section later, unless it's too important to be deferred?}
+
+% \hd{as above}.
+%The \texttt{trig\_maths} basis, which is not nested within any other, confirms that the 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_rho_all_bases.pdf}
+% \hd{end the x-axis at 3.8 and 8.2. Remove the title and grid lines. Same for the other figures.}
+% Figures updated: x-axis 3.8--8.2, no title, no grid.
+%\hd{Update this plot and the below for complexity 9} — done: figures regenerated with k=9/10 data.
+\caption{Integrability fraction $\rhok$ as a function of complexity $k$ for all five operator bases. Error bars are binomial ($\sqrt{\rho(1-\rho)/n}$). The two log-containing bases (\texttt{core\_log\_maths} and \texttt{ext\_log\_maths}) exhibit elevated $\rhok$ and a pronounced non-monotonic peak at $k=6$.}
+%\hd{Remove slashes rendered in the legend}
+%		For \texttt{ext\_log\_maths}, the binomial error bar at $k=6$ is $\pm 0.004$ ($n = 5{,}962$); the peak exceeds $k=7$ by 3.4 (statistical) $\sigma$ and $k=8$ by $6.7\sigma$, but exceeds $k=5$ by only $1.3\sigma$.}}
+% Only \texttt{ext\_log\_maths} exhibits a clear peak (at $k=6$); the other three bases show approximately constant $\rhok \approx 4$--$5\%$ across $k = 5$--$7$.}
+\label{fig:rho}
+\end{figure}
+
+%% --------------------------------------------------------------------
+\subsection{Why log matters}
+\label{sec:mechanism}
+%% --------------------------------------------------------------------
+
+% \hd{This fig needs to be described fully, probably at the start of this para}
+Figure~\ref{fig:decomp} decomposes $\rhok$ by partitioning $\Fleq$ into subsets according to which transcendental operators each function contains. The left panel shows the \texttt{ext\_log\_maths} basis: functions containing \texttt{log} but not \texttt{exp} (``log only'') are by far the most integrable, with $\rho$ peaking at $20.1\%$ at $k=6$; functions containing only \texttt{exp} are the \emph{least} integrable. The right panel shows the \texttt{trig\_maths} basis, where no comparable asymmetry between \texttt{sin} and \texttt{cos} is observed.
+
+%To quantify this, we partition $\Fleq$ into subsets
+%according to which transcendental operators appear in each function and
+%compute the integrability fraction within each subset independently.  The
+%results are shown in Table~\ref{tab:decomp}.
+%
+%\begin{table}[t]
+%\centering
+%\caption{Integrability fraction for \texttt{ext\_log\_maths} partitioned by operator content.}
+%\label{tab:decomp}
+%\begin{tabular}{lrr}
+%\toprule
+%Subset & $\rho(6)$ & $\rho(8)$ \\
+%\midrule
+%has\_log    & 0.183  & 0.127 \\
+%no\_log     & 0.065  & 0.047 \\
+%log\_only   & \textbf{0.201}  & \textbf{0.144} \\
+%exp\_only   & 0.055  & 0.038 \\
+%neither    & 0.077  & 0.065 \\
+%\bottomrule
+%\end{tabular}
+%\end{table}
+
+The subset containing logarithms but not exponentials 
+%(log\_only)
+is
+the most integrable at every complexity level: at $k = 8$ its integrability
+fraction of $14.4\%$ exceeds that of the exp\_only subset by a factor of $3.8$.
+Functions containing any logarithm are $2.7$ times more likely to be
+integrable than those without.  Most strikingly, the exponential alone
+\emph{diminishes} integrability: the ``exp only'' subset has the lowest $\rho$ of
+any category, falling below even the ``neither'' subset that contains no
+transcendental operators at all.  This rules out any explanation based on
+compositional enrichment---the logarithm's effect is not merely to enlarge the
+function space, but to preferentially generate derivative forms that close back onto functions already present.
+%The effect is one of genuine algebraic closure.
+% \hd{This fig needs to be described fully, probably at the start of this para}
+\codexadd{We characterise this using the \emph{complexity gap} $\delta \equiv \min\text{-complexity}(F') - \text{complexity}(F)$. For \texttt{ext\_log\_maths} at $k\leq8$ the mean $\delta = -1.13$ and $89.5\%$ of functions satisfy $\delta\leq0$: differentiation typically \emph{reduces} expression complexity. Log-containing functions shift this only marginally (mean $\delta=-1.20$, $89.9\%$ with $\delta\leq0$ vs $-1.03$ and $88.6\%$ for functions without log), so the ${\sim}2.5\times$ log enhancement cannot be attributed to complexity reduction alone.}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_rho_decomposition.pdf}
+\caption{Decomposition of $\rhok$ by operator presence, with binomial error bars.  \emph{Left:} \texttt{ext\_log\_maths}, partitioned by log/exp content.  The log-only subset dominates, with $\rho$ peaking at $20.1\%$ at $k=6$.  \emph{Right:} \texttt{trig\_maths}, partitioned by sin/cos content, where no comparable asymmetry is observed.}
+%\hd{Remove the slashes rendered in the titles, and the half-integer ticks on the x-axis labels.}
+%\hd{I would rather show the binomial error bars here I think}
+\label{fig:decomp}
+\end{figure}
+
+%The mechanism can be understood through the \emph{complexity gap} $\delta$,
+%defined as the difference between the minimum complexity of the derivative
+%$F'$ (expressed in the same basis) and the complexity of $F$ itself.
+%% \hd{Again, table needs to be given label and caption, and referenced properly in the text}
+%Table~\ref{tab:delta} summarises the complexity gap statistics.
+%The mean value is negative in all subsets: differentiation
+%typically \emph{reduces} expression complexity when measured as the minimum node
+%count of any equivalent representation.  Nearly $90\%$ of all functions have
+%$\delta \leq 0$, meaning that their derivatives can be expressed at equal or
+%lower complexity than the primitive.  \codexadd{The logarithm shifts this distribution only slightly, so the complexity gap alone is not a compelling explanation of the log enhancement. Its role is mainly diagnostic: it shows that derivatives are usually not more complex than their primitives, while the stronger evidence for the logarithm's special role comes from the operator decomposition in Figure~\ref{fig:decomp}. Mechanistically, $\dd/\dd x[\log(f)] = f'/f$ produces rational forms that often remain inside the existing catalogue, whereas $\dd/\dd x[\exp(f)] = f'\exp(f)$ retains the exponential and multiplies by $f'$, narrowing the target space for a match.}
+%%\hd{the difference is tiny though: -1.13 vs -1.2 or 89.5\% vs 89.9\% -- does this really provide a compelling explanation?}
+%
+%\begin{table}[t]
+%\centering
+%\caption{Complexity gap $\delta$ statistics for \texttt{ext\_log\_maths} at $k \leq 8$.}
+%\label{tab:delta}
+%\begin{tabular}{lrr}
+%\toprule
+%Subset & mean $\delta$ & $P(\delta \leq 0)$ \\
+%\midrule
+%all     & $-1.13$ & 89.5\% \\
+%has\_log & $-1.20$ & 89.9\% \\
+%no\_log  & $-1.03$ & 88.6\% \\
+%\bottomrule
+%\end{tabular}
+%\end{table}
+
+% \hd{Implement option 2} — model moved to appendix, qualitative insight kept here.
+The peak in the \texttt{ext\_log\_maths} $\rhok$ arises because the space of distinct derivative forms grows faster than the function space. As $k$ increases, derivatives become increasingly varied and structurally specific, so the probability of matching an existing function declines. The logarithm delays this onset because the chain rule $\dd/\dd x[\log(f)] = f'/f$ produces rational forms that overlap efficiently with the existing function catalogue: at $k=6$, the measured integrability fraction is 20.1\% for the \texttt{log\_only} subset and 5.5\% for the \texttt{exp\_only} subset.
+The magnitude of this asymmetry can be understood as follows. The derivative $f'/f$ is a rational function whose ``target space'' is the entire set of rational expressions in~$\Fleq$---a large subset. By contrast, $f'\exp(f)$ necessarily contains an exponential factor and can therefore only match functions in $\Fleq$ that also contain~$\exp$, a much smaller target. Moreover, the product $f'\exp(f)$ has complexity at least $|f| + |f'| + 1$, which for all but the simplest $f$ exceeds the complexity ceiling, further reducing the matching probability. The factor of $3.6$ thus reflects the ratio of effective target-space sizes rather than a subtle cancellation, though a quantitative derivation from the grammar remains an open problem (\ref{app:model}). The empirical growth rates of the function and derivative-form spaces, together with a partial analytical derivation from the operator grammar, are presented in~\ref{app:model}.
+
+%The trigonometric basis provides an informative comparison.  Sine and cosine form a closed orbit under differentiation
+%%($\dd/\dd x[\sin(x)] = \cos(x)$, $\dd/\dd x[\cos(x)] = -\sin(x)$), 
+%yet \texttt{trig\_maths} does not exhibit elevated integrability. The chain rule intervenes: the derivative of $\sin(f(x))$ is $f'(x)\cos(f(x))$, and the multiplication by $f'$ increases expression complexity, preventing the closure from translating into high $\rhok$.
+%\hd{Hasn't this been said above? If there's anything new here, integrate it with the above}
+
+%\hd{Shorten this and merge it into the above (i.e. remove this subsection)}
+The derivative map also has a strongly clustered structure. Grouping functions by the numerical fingerprint of $F'$ produces equivalence classes of primitives with a common integrand. For \texttt{ext\_log\_maths} at $k \leq 8$, 49{,}538 of the 203{,}812 clusters are multi-member, while \texttt{trig\_maths} has only 6{,}987 multi-member clusters out of 131{,}734. The largest clusters correspond to attractor integrands such as $1$, $-1$ and $1/x$, which accumulate many syntactically distinct primitives.
+% The largest cluster, with $1{,}370$ primitives, corresponds to the trivial integrand $f(x) = 1$ (i.e.\ $\dd F/\dd x = 1$); its simplest member is $a_0 + x$ at complexity $k=3$
+% \hd{surely 3} — fixed., while higher-complexity members include numerous algebraically equivalent but syntactically distinct forms. The second-largest cluster ($734$ primitives) corresponds to $f(x) = -1$, and the third ($680$ primitives) to $f(x) = 1/x$, whose simplest primitive is $a_0 + \log(x)$ at $k = 4$. These ``attractor'' integrands accumulate representations because many distinct expressions simplify to the same elementary derivative.
+
+%The distribution of cluster sizes follows a heavy-tailed, approximately power-law decay in both bases (Figure~\ref{fig:clusters}). On a log--log plot, the number of clusters of size $s$ falls roughly as $s^{\gamma}$, with fitted slopes $\gamma \approx -1.93$ for \texttt{ext\_log\_maths} and $\gamma \approx -1.41$ for \texttt{trig\_maths} (dashed lines in Figure~\ref{fig:clusters}).
+%Both distributions exhibit a long tail extending to cluster sizes exceeding $10^3$, but the vast majority of multi-member clusters are small.
+
+%\begin{figure}[t]
+%\centering
+%\includegraphics[width=\columnwidth]{fig_cluster_sizes.pdf}
+%%\hd{Is this clusters just for the numerical fingerpringing, i.e. completely conditioned on ESR's symbolic deduplication?}
+%%\hd{Remove title, gridlines and text label (keep legend). Cut the plot at x=[1,1000]}
+%\caption{Distribution of equivalence class sizes (number of distinct primitives per integrand) for ext\_log\_maths and trig\_maths at $k \leq 8$, plotted on logarithmic axes. Dashed lines show power-law fits $N(s) \propto s^{\gamma}$.}
+%\label{fig:clusters}
+%\end{figure}
+
+%For each integrand, the minimal-complexity primitive provides a natural canonical representative. In nearly all cases, this simplest form coincides with the expression a practitioner would write down by inspection: the lowest-complexity antiderivative of $1/x$ is $\log(x)$ (plus a constant), that of $\exp(x)$ is $\exp(x)$, and so on.
+
+%% --------------------------------------------------------------------
+\subsection{Comparison with computer algebra systems}
+\label{sec:cas}
+%% --------------------------------------------------------------------
+
+% \hd{think this framing understates the importance of this part}
+As a preliminary validation, we verify that ESI correctly handles known non-elementary integrands. Five classical non-elementary integrands \citep[see e.g.][]{Bronstein2005} --- $e^{x^2}$, $e^{e^x}$, $e^x / x$, $x^x$, and $e^{\sqrt{x}}$ --- are correctly absent from the derivative database, while their integrable variants (e.g.\ $2x\,e^{x^2}$, the derivative of $e^{x^2}$) are correctly found with dozens of primitive representations, consistent with Risch--Liouville theory \citep{Risch1969,Bronstein2005}.
+
+We test all 49{,}538 multi-member equivalence classes in \texttt{ext\_log\_maths} against the four CAS engines described in Section~\ref{sec:cas_method}. In the initial 180-second sweep, SymPy successfully integrates 47{,}107 of the 49{,}538 \texttt{ext\_log\_maths} integrands (95.1\%). The remaining 2{,}431 (4.9\%) are genuine failures: not timeouts, but cases where SymPy's integration algorithms explicitly return unevaluated integrals, typically within seconds.
+With cleaned input and positive-domain assumptions, Mathematica successfully integrates 47{,}489 of 49{,}538 integrands (95.9\%), with 2{,}049 failures (4.1\%). Cross-matching the two failure sets reveals 503 integrals that \emph{both} SymPy and Mathematica fail on at 180 seconds.
+
+To distinguish ``hard'' integrals (solvable with more time or alternative strategies) from genuinely impossible ones, we performed a comprehensive stress test on all 503 \texttt{ext\_log\_maths} integrals failed by both SymPy and Mathematica at 180 seconds. Each was tested with nine SymPy strategy combinations and three Mathematica strategies, each with a 600-second timeout per strategy. Of these 503, 270 (53.8\%) are solved by at least one strategy, while 232 resist both SymPy and Mathematica even at 600\,s. Those 232 were then passed to FriCAS, which solves 218.
+%; the full six-engine cascade across the four CAS-tested bases is described below.}
+%\hd{and also RUBI and FriCAS? Or maybe this is just sympy and MMA and the ``we then tested'' sentence above belongs at the start of the next para}
+%\hd{So actually we follow this procedure on all bases, not only ext\_log\_maths which this paragraph and the preceding seem to be about?}
+%\codex{PANEL (item 11): Reframe RUBI 0/232 as ``out-of-scope confirmation'', not competitive benchmark. Tanaka: ``RUBI by construction is a pattern library for forms that appear in textbooks, and deep exp-log towers are explicitly out of scope. Reporting 0/232 as evidence against rule-based systems is a category error.'' Suggested rewording: ``As expected, RUBI---a pattern library designed for textbook integral forms---does not cover these deeply nested exp-log towers, confirming that they lie outside the scope of rule-based methods by design.''}
+%The results sharply separate the algorithmic paradigms.
+%RUBI solves none of the 232 integrals that SymPy and Mathematica leave unsolved, confirming that pattern-matching rules do not cover these tower structures.
+This high success rate confirms that the barrier for the heuristic and rule-based engines is not mathematical difficulty but incomplete coverage of exponential--logarithmic towers. FriCAS solves all $x^x$-type and $f(x)^{g(x)}$ integrals that defeat the other three engines. By contrast, RUBI solves none of the 232 integrals that SymPy and Mathematica leave unsolved because it is a pattern library designed for textbook integral forms and by design does not cover these deeply nested exp-log towers.
+%; the 15 that resist all four are structurally distinct, involving algebraic extensions (square roots) over exp--log towers (Table~\ref{tab:cas_blind}).
+Table~\ref{tab:sizes} summarises the broader per-basis initial and stress-test counts where available.
+%\codexadd{These counts are deliberately provenance-aware rather than fully rectangular: after discovering that Mathematica's positive-domain \texttt{Assumptions} option produced many false failures, we re-tested the candidate survivor sets and the main affected failure lists, but did not repeat every full-basis stress test whose outcome could not affect the all-engine survivor count.}
+ 
+%\hd{Shorten/simplify the following 3 paragraphs}
+%The final six-engine cascade leaves 5 all-CAS-resistant integrals (Table~\ref{tab:cas_blind}). Three occur in \texttt{ext\_log\_maths}: the Abs-free headline $e^x\sqrt{x+e^{-x}}$ at $k=9$, for which 31 Mathematica strategy combinations as well as Maxima and Giac all fail, and two $k=8$ absolute-value cases $\sqrt{\lvert x \pm \lvert\!\log x\rvert^{\log x}\rvert}$ that Mathematica solves once restricted to $x>1$ or given a roundtrip form. Testing FriCAS on all 11{,}008 SymPy-impossible integrals across the other CAS-tested bases produces no failures in \texttt{core\_maths} or \texttt{trig\_maths}: only 2 \texttt{ext\_maths} integrals remain all-engine failures: $e^x\sqrt{\lvert x-e^{-x}\rvert}$ and $\sqrt{\lvert x-x^x\rvert}/\sqrt{x}$. Thus 3 of the 5 are robustly resistant under all Mathematica variants tested, while 2 are resistant only through absolute-value non-analyticity.
+\codexadd{Extending this cascade to the remaining bases: for \texttt{ext\_maths}, a corrected no-\texttt{Assumptions} Mathematica rerun reduces the Abs candidate set from 163 to 2 failures; for \texttt{trig\_maths}, 685 Mathematica failures are cleared by Sage (502) and FriCAS (183), leaving zero survivors; \texttt{core\_maths} produces no all-engine failures.  A further independent broad search of 133{,}576 Abs-free $k=9$ candidates in \texttt{ext\_log\_maths} via a Mathematica--Sage--FriCAS cascade also leaves zero new survivors, validating the uniqueness of the Abs-free headline.  In total, Table~\ref{tab:cas_blind} contains 5 standard-call six-engine failures across the four CAS-tested bases: 3 that resist all 12 Mathematica variants tested, and 2 Abs-containing cases solved only under domain restriction or roundtrip.}
+\codexadd{The incomplete entries in Table~\ref{tab:sizes} therefore do not weaken this final count: filling them would require full-basis stress tests for integrals already eliminated from the six-engine survivor pipeline, or, for \texttt{core\_log\_maths}, a basis added to diagnose the log enhancement rather than to extend the CAS-resistant search.}
+%  We leave those rectangular benchmark counts to future work.}
+%Notably, FriCAS solves \emph{all} $x^x$-type and generalised $f(x)^{g(x)}$ integrals that defeat SymPy, Mathematica, and RUBI; the genuinely resistant integrals are structurally distinct,
+%These integrands involve an algebraic extension (a square root) over an exp--log tower. FriCAS explicitly reports the failure mode: its ``constant residue'' and ``has polynomial part'' subroutines --- specific steps in the Risch algorithm for mixed exponential--logarithmic towers --- are incomplete. In more detail these integrals fall into three structural classes : (i) products of exponentials with fractional powers of logarithms ($e^{cx}\sqrt{\log(x^2)}$, $e^{cx}(\log(x^2))^{1/4}$, etc.), where the Risch algorithm requires solving a differential equation with constant residues that current implementations cannot handle; (ii) square roots of mixed algebraic--logarithmic compositions ($\sqrt{x \pm (\log x)^{a_0}}$, $\sqrt{x \pm (\log x)^{\log x}}$), where the ``polynomial part'' subroutine is unimplemented; and (iii) nested exp--log--sqrt compositions ($\sqrt{x}\,e^{1/(4\log x)}$, $e^{1/(4\log x)}/\sqrt{x}$, etc.). All are absent from standard integral tables \citep{GradshteynRyzhik2015,Prudnikov1986,DLMF}. They lie within the elementary functions and the Risch algorithm covers them in principle \citep{Risch1969,Bronstein2005}, but no current implementation handles them.
+
+As a separate exercise, we compared ESI against RUBI's own benchmark suite of 72{,}401 test integrals \citep{Rubi2024}. These are curated integrals drawn from textbooks and reference works --- a fundamentally different problem set from the ESI-generated functions discussed above, with zero overlap with the CAS-resistant integrals (which are novel functions from ESI's enumeration that do not appear in any existing test suite or integral table). By mapping the Mathematica-syntax integrands to ESI's numerical fingerprinting scheme, we find that ESI (through the \texttt{ext\_log\_maths} and \texttt{trig\_maths} bases at $k \leq 8$) can solve 184 RUBI benchmark problems. That this fraction is small is expected given ESI's complexity ceiling; however, among these are 7 integrals classified as ``hard'' by RUBI (requiring $\geq 5$ rule applications), including one requiring 13 steps: $\int x \sec x\,(2 + x \tan x)\,\dd x$, which ESI readily identifies as $x^2/\cos x$ at $k = 6$. \codexadd{We also check RUBI's own failures: of the 134 integrals in RUBI's test suite that RUBI itself cannot evaluate, 122 can be converted from Mathematica syntax to a numerical fingerprint (12 fail the syntax conversion).  Of these 122, only 3 have their integrand fingerprint present in ESI's derivative database; the remainder involve functions that exceed ESI's complexity ceiling or use operators outside ESI's bases.  One of the 3 matches is a hyperbolic branch artefact, leaving two robust ESI solves:}
+%\hd{I don't understand this: how have we gone from 122 to 3?}
+\begin{equation}
+	\int x^{-2 - 1/x}(1 - \log x)\,\dd x = -x^{-1/x} \nonumber
+\end{equation}
+and
+\begin{equation}
+	\int \bigl((x+1)\log^2 x - 1\bigr)\,e^{x + 1/\log x}/\log^2 x\,\dd x = x\,e^{x+1/\log x}. \nonumber
+\end{equation}
+Both of these involve deeply nested log/exp compositions of the kind that fall through the gaps of rule-based systems but lie squarely within ESI's catalogued space. FriCAS also solves them.
+%solves both in under 2 seconds, confirming that they are within reach of a sufficiently complete Risch implementation.
+%These two integrals are \emph{not} among the 209 CAS-blind integrals: the CAS-blind set consists of ESI-generated integrands from \texttt{ext\_log\_maths}, whereas these come from RUBI's independent test suite. The lack of overlap reflects the fact that RUBI's test problems are drawn from the classical literature, while ESI's CAS-blind integrals are novel functions discovered through exhaustive enumeration.
+
+\begin{table*}
+  \centering
+  \caption{\codexadd{The 5 integrals that resist all six CAS engines under the standard integration call but are solved by ESI. ``Robust'' means that the integral also resists all alternative Mathematica strategies we tested; non-robust entries fail the standard call but are solved after a domain restriction or roundtrip transformation.}}
+  %\hd{Explain here what Robust means. Also what do you mean ``under the standard integration call''? I thought they all failed under exhaustive testing.}
+  %\hd{Again, shorten and simplify this caption, putting the detail in the main text.}
+  %\hd{Put the robust column at the end}
+  \label{tab:cas_blind}
+  \small
+  \begin{tabular}{clllc}
+    \toprule
+    $k$ & Basis & Integrand $f(x)$ & Antiderivative $F(x)$ & Robust \\
+    \midrule
+    9 & \texttt{ext\_log} &
+      $\dfrac{(2x+1)\,e^x + 1}{2\sqrt{x + e^{-x}}}$ &
+      $e^x\sqrt{x + e^{-x}}$ &
+      $\checkmark$ \\[8pt]
+    8 & \texttt{ext\_log} &
+      $\dfrac{x + (\log\log x + 1)\,\lvert\!\log x\rvert^{\log x}}{2x\sqrt{\bigl\lvert x + \lvert\!\log x\rvert^{\log x}\bigr\rvert}}$ &
+      $\sqrt{\bigl\lvert x + \lvert\!\log x\rvert^{\log x}\bigr\rvert}$ &
+      $\times$ \\[8pt]
+    8 & \texttt{ext\_log} &
+      $\dfrac{x - (\log\log x + 1)\,\lvert\!\log x\rvert^{\log x}}{2x\sqrt{\bigl\lvert x - \lvert\!\log x\rvert^{\log x}\bigr\rvert}}$ &
+      $\sqrt{\bigl\lvert x - \lvert\!\log x\rvert^{\log x}\bigr\rvert}$ &
+      $\times$ \\[8pt]
+    9 & \texttt{ext} &
+      $\dfrac{(2x+1)\,e^x - 1}{2\sqrt{\lvert x - e^{-x}\rvert}}$ &
+      $e^x\sqrt{\lvert x - e^{-x}\rvert}$ &
+      $\checkmark$ \\[8pt]
+    8 & \texttt{ext} &
+      $\dfrac{x^{x - 3/2}\,(1 - x - x\log x)}{2\sqrt{\lvert x - x^x\rvert}}$ &
+      $\sqrt{\lvert x - x^x\rvert}\,/\,\sqrt{x}$ &
+      $\checkmark$ \\[8pt]
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+%To illustrate the complexity of the integrands, we write out two examples explicitly. For $F(x) = x^x \sqrt{\log x}$, the integrand is
+%\[
+%f(x) = \frac{x^x + 2\,x^{x+1}(\log x + 1)\log x}{2\,x\,\sqrt{\log x}}\,,
+%\]
+%and for $F(x) = e^x \sqrt{\log(x^2)}$,
+%\[
+%f(x) = \frac{(\log(x^{2x}) + 1)\,e^x}{x\,\sqrt{\log(x^2)}}\,.
+%\]
+%These are not pathological constructions: they are elementary functions built from standard operations, and their antiderivatives are compact expressions at complexity $k = 7$. Yet no tested CAS --- algorithmic, heuristic, or rule-based --- can evaluate them.
+
+Besides being able to evaluate integrals, another consideration is the form in which the integrals are provided.
+ESI stores the lowest-complexity primitive among the expression trees that ESR explicitly enumerates and recognises as equivalent. CAS returns independently simplified expressions, and can sometimes apply cancellations or branch-specific identities that ESR's symbolic and numerical deduplication did not identify as the same function family. Conversely, ESI often stores compact factored or nested representatives that CAS expands. It is therefore fair to assess which method produces simpler forms on average, while recognising that the comparison is metric-dependent.
+%\hd{I'm confused then how ESR can produce simpler forms?}
+%\hd{So where are the results here in terms of which produces simpler forms?}
+Among the 47{,}107 integrals that both ESI and SymPy successfully evaluate, SymPy returns a lower node count in 38.7\% of cases, ESI in 34.7\%, and they are tied in 26.6\%. However, across all integrals where ESI provides the simpler form, ESI saves a total of 135{,}036 nodes, compared to 32{,}431 saved by SymPy when it wins --- a ratio of 4.2:1. ESI's wins are less frequent but substantially larger, reflecting its preference for factored, nested representations that CAS typically expands.
+%For Mathematica (using the \texttt{LeafCount} metric), ESI is simpler in 96.9\% of cases --- but this primarily reflects the fact that Mathematica's \texttt{LeafCount} counts differently from expression-tree node count, so the comparison is less informative than for SymPy.
+%So CAS ``simpler'' means the CAS's algebraic simplification produced a form with fewer nodes than any tree ESR enumerated for that function. This is a fair comparison but the metric (node count) favours ESI's factored forms on average.
+%ESI stores the \emph{lowest-complexity} primitive from each equivalence class (the one with fewest expression-tree nodes); CAS by contrast applies algebraic simplification that can produce shorter or longer expressions than any single tree in our enumeration.
+%For example, ESI might store $(a_0+x)^2$ (4 nodes) while CAS returns $a_0^2 + 2a_0 x + x^2$ (11 nodes in tree form but arguably ``simpler'' algebraically). So the comparison is between ESI's most compact tree vs CAS's algebraically simplified form --- neither is universally simpler.
+%\hd{Doesn't seem possible: if ESI is always storing the lowest-complexity form, how can CAS ever (nevermind typically) produce a lower complexity form?}
+%When both ESI and CAS successfully integrate a function, we compare the node count of ESI's stored primitive against that of the CAS result. CAS can sometimes return a more compact form because it applies algebraic simplifications (cancellations, identity reductions) that go beyond what any single expression tree in the enumeration represents.
+%\hd{Is the form of the function in ESI not somewhat arbitrary, i.e. one could choose various representations of the ``unique'' functions with different complexity? How does it determine this unique function representation -- it can't be the simplest version because then the ESI result would always be simpler/as simple as CAS.} \codex{Good point. }
+%\hd{This suggests that ESI might in some circumstances be a good way to actually perform integrals. Is that an intended implication? Expand a little.}
+
+This reveals a complementarity between ESI and CAS, with the value of ESI lying
+%ESI capable of functioning as a lookup-based integration engine for any function within its catalogued space.
+%	: given a target function, one computes its numerical fingerprint and searches the derivative database for a match, retrieving the corresponding primitive in constant time.
+%Its value lies
+in its exhaustive structural coverage: it catalogues every integrable function within a defined space, including classes that fall through the gaps of general-purpose algorithms.
+On github we provide a Python script and Jupyter notebook for solving integrals by ESI through a look-up to the exhaustive function lists.
+%\codexadd{The lookup implementation used for this demonstration is \texttt{esi\_integrate.py}, with worked examples in \texttt{esi\_integrate\_demo.ipynb}.}
+%\hd{Document here the python script/jupyter notebook we made to determine antiderivaties using ESI}
+%The limitation is the computational expense that restricts the scope, namely that our current catalogues comprise only  single-variable functions of complexity $k \simeq 9$ with fixed operator bases.
+%\hd{Give some indication of the limitations of our approach here, e.g. only a single variable.}
+%The method is currently restricted to functions of a single variable; extension to multivariate integration would require a fundamentally different enumeration strategy.
+%The appropriate framing is complementarity, not competition. ESI's per-integral performance is mixed, and it is restricted to low-complexity functions. 
+
+% Non-elementary validation folded into CAS section above.
+
+%% ====================================================================
+\section{Discussion}
+\label{sec:discussion}
+%% ====================================================================
+
+\subsection{Integrability fraction}
+
+% \hd{Update whole section for removing/greatly downweighting this peak and decline pattern, and for the expanded integral comparison}
+% HD comment addressed: restructured to avoid repetition with Sec 3.4. Results now presented only in Sec 3; discussion here interprets them.
+Liouville's theorem \citep{Liouville1835,Rosenlicht1972}, the foundational result of differential algebra, establishes that the elementary functions form a differential field closed under integration. It does not, however, say anything about the complexity of these integrals. The integrability fraction $\rhok$ that we introduce fills in this information, measuring the proportion of functions at complexity $k$ whose antiderivatives are also expressible at complexity $\leq k$ within the same operator basis. The declining $\rhok$ observed in the bases with high-complexity coverage (Section~\ref{sec:rho}) shows that the
+%although every elementary function has an elementary antiderivative, that
+antiderivatives increasingly requires higher complexity to express and hence increasingly fall outside the enumerated space. The $\sim 2.5\times$ elevation of $\rhok$ in \texttt{ext\_log\_maths} relative to \texttt{ext\_maths} for $k\geq 5$ reflects the approximate closure of the exp--log differential subsystem: the logarithm's derivative rule $\dd/\dd x[\log f] = f'/f$ produces rational forms that frequently match existing functions within the enumerated space, whereas the exponential's derivative $f'\exp(f)$ tends to increase complexity beyond the enumeration boundary. A quantitative model formalising this asymmetry is presented in~\ref{app:model}.
+
+More broadly, the $\rhok$ framework suggests a Galois-theoretic formulation. The Kolchin--Picard--Vessiot theory of differential field extensions \citep{Magid1994} provides a natural algebraic setting in which to define ``closure densities'' on isomorphism classes of extensions of given transcendence degree, which would quotient out the dependence on the specific operator grammar and complexity metric. Whether the $\sim$2--3 enhancement of $\rhok$ by the logarithm corresponds to a structural feature of the exp--log differential subfield, or is dependent on our counting apparatus, is a question that such a reformulation could in principle answer.
+% We leave this to future work.}
+
+\subsection{Novel antiderivatives and comparison with CAS}
+
+The Risch algorithm \citep{Risch1969,Bronstein2005} is fully decision-procedural for elementary functions in principle, but current implementations remain incomplete for algebraic extensions over exponential--logarithmic towers \citep{Trager1976,Bronstein2005}. FriCAS \citep{FriCAS2024} comes closest; its remaining failures point to specific incomplete subroutines such as constant residues and polynomial parts.
+%\hd{shorten the codexadd text in the next few paras, focusing on higher-level discussion and eliminating repetition with the previous section}
+The CAS comparison of Sec.~\ref{sec:cas} can therefore be seen as diagnosing incompleteness in current Risch implementations.
+% yields a more precise diagnosis when viewed through the lens of algorithmic differential algebra.
+
+The 5 all-CAS-resistant integrals split into two mechanisms. Two \texttt{ext\_log\_maths} cases are resistant only because differentiating through absolute values introduces non-analytic sign terms; Mathematica solves them after restricting to $x>1$ or using a roundtrip form. The other 3 are robustly resistant and share a structural pattern: a square-root algebraic extension coupled to $e^x$, $e^{-x}$ or $x^x$ in a way that cannot be undone by a closed-form substitution. The Abs-free headline $e^x\sqrt{x+e^{-x}}$ is the clearest example; the natural substitution $u=x+e^{-x}$ leaves the external $e^x$ inaccessible without inverting a transcendental equation. The 2 robustly resistant \texttt{ext\_maths} integrals $e^x\sqrt{\lvert x - e^{-x}\rvert}$ and $\sqrt{\lvert x - x^x\rvert}/\sqrt{x}$ share the same structural signature.
+
+Integration involving fractional powers of logarithms also connects to the theory of integration in terms of special functions: \citet{Cherry1985,Cherry1986} developed algorithms for integration via $\operatorname{Ei}$ and $\operatorname{erf}$, and \citet{Hebisch2018} extended these to incomplete gamma functions $\Gamma(a, x)$ with rational $a$; more broadly, \citet{Raab2012,Raab2013} generalise the Risch framework to differential fields containing non-elementary monomials (\textrm{erf}, incomplete gamma, polylogarithms), and \citet{KauersKoutschan2015,Koutschan2013} develop holonomic
+%(D-finite)
+integration which targets antiderivatives that satisfy linear ODEs with polynomial coefficients rather than admitting closed elementary forms. Our class~(i) integrals ($e^{cx} (\log x)^{1/2}$ and similar) \emph{might} in principle be expressible via $\Gamma(1/2, \ldots)$, but the antiderivatives ESI finds are elementary --- the CAS should find them without recourse to special functions but cannot because the algebraic extension over the tower triggers unimplemented code paths. To our knowledge, no prior work has systematically catalogued elementary integrals that expose these implementation gaps; the closest is the independent CAS benchmarking of \citet{Nasser2024}, which tests existing collections of integrals across multiple engines but does not generate new ones or target specific algorithmic weaknesses.
+
+%\hd{The following needs to be softened to something like presenting the first algorithm that can solve these integrals, because it's not very hard to guess the solutions with a little trial-and-error (and LLMs can do this straightaway) -- this should be acknowledged.}
+%\codexadd{We therefore frame ESI not as proving that these antiderivatives are hard for humans to guess, but as the first systematic catalogue and lookup algorithm we know of that finds them automatically. Once the primitive is seen, some cases can be recognised by trial-and-error or by an LLM-assisted ansatz. The point is that the six CAS engines tested did not find them from the integrand alone, whereas ESI finds them by exhaustive differentiation.}
+To check for prior appearances of the Abs-free headline, we searched for $e^x\sqrt{x + e^{-x}}$ and its derivative in standard integral tables \citep{GradshteynRyzhik2015,Prudnikov1986,DLMF}, in the 106{,}812-integral independent CAS benchmark suite of \citet{Nasser2024}, and in mathematical databases and forums; we found no occurrence.
+We therefore believe that we are the first to present an algorithm that finds the antiderivaties in Table~\ref{tab:cas_blind} automatically.
+However, it is important to bear in mind that this is not because those integrals are fundamentally hard: one can guess the solutions with a little trial and error, as can modern large language models.
+
+\subsection{Limitations and further work}
+
+The main limitation of our $\rho(k)$ results is that they depend on ESR's specific expression grammar, which determines how the function space is partitioned by complexity. Changing the grammar or the complexity metric changes both the denominator of $\rhok$ and the location of features such as the \texttt{ext\_log\_maths} peak. Indeed, the non-monotonic peak at $k=6$ in the ESR node-count metric does not appear under alternative complexity functionals such as expression-tree depth, operator count, or reassignment of each function to the minimum complexity at which its numerical fingerprint first appears. \codexadd{For example, if the node-count metric is modified so that each \texttt{log} or \texttt{exp} operator contributes costs 2 rather than 1 unit of complexity, $\rhok$ instead flattens to $\sim 8$--$9\%$ with no discernible peak.}
+%\hd{what does this mean?}
+
+Another choice upon which the quantitative results depend in the deduplication method: under string-only deduplication, the peak disappears because syntactic identity misses the additional equivalences found by numerical fingerprinting. Future grammar-level improvements, including hash-based simplification methods \citep{hash,Kronberger2024}, may therefore shift the quantitative values and should be treated as a change in the measured function space.
+The stable result is not the precise peak location but the broader log enhancement and high-complexity decline within the tested grammar.
+
+%Several caveats qualify these results.
+The complexity ceiling of $k \leq 8$--$10$ restricts the analysis to relatively simple expressions; many primitives of practical interest lie at higher complexity. Quantitative results are specific to the chosen operator basis and complexity metric (node count).
+A further subtlety is that differentiation can produce compound parameter expressions --- for example, $F = a_0 e^{a_1 x}$ has $F' = a_0 a_1 e^{a_1 x}$, which is structurally the same parametric family as $a_0 e^{a_1 x}$ but carries an extra factor of $a_1$ that prevents the numerical fingerprint from matching. This causes $\rhok$ to slightly undercount integrable functions and hence our integrability fraction to be a lower bound, although we estimate that $\lesssim 1\%$ of functions are affected based on counting derivatives containing parameter products $a_i a_j$.
+%; alternative metrics could shift the peak location, though the qualitative pattern should be robust.
+%The numerical fingerprinting scheme introduces a negligible risk of hash collisions: the per-pair false-positive probability is bounded by $\sim 10^{-600}$, and empirically zero false positives were found across $518{,}654$ pair comparisons.
+
+%\hd{I guess this refers to the "alternative complexity functionals" paragraph in sec 3.1. I think that caveat should be expanded into 1-2 paragraphs here, although I'm also worried that it's more important / damaging to our results than we're making out}
+%\hd{cite kronberger}
+%These limitations are therefore partly definitional and partly computational. An 
+%: ESI could readily be run to $\sim 2$ units of complexity higher (indeed ESR is routinely used to complexity 10;~\citealt{Bartlett2024,Martin_2}), and improved symbolic hashing methods~\citep{hash} could extend a few units higher still.
+
+Several natural extensions suggest themselves. An upcoming upgrade (Kronberger et al 2026, in prep) will extend ESR to a few complexity units higher for the same computational cost. A combined basis incorporating trigonometric, exponential, and logarithmic operators would probe the interplay between all three approximately closed differential subsystems. Introducing special functions such as $\operatorname{erf}$ or $\operatorname{Ei}$ would extend the analysis beyond the elementary functions. An analytical derivation of $\alpha$ and $\beta$ from the operator grammar---potentially via analytic combinatorics \citep{FlajoletSedgewick2009} of labelled trees---would elevate the growth-rate crossover from an empirical observation to a predictive framework.
+%GPU-accelerated fingerprinting could push the complexity ceiling to $k = 9$ or beyond.
+Finally, a systematic study of the $f^g$ integral class --- characterising which pairs $(f, g)$ produce derivatives that CAS can and cannot evaluate --- could reveal the algebraic obstructions that prevent current implementations of the Risch algorithm from handling towers of exponentials and logarithms, which could in turn inform the construction of superior algorithms in the future.
+%\hd{Might want to investigate this further for this paper}
+%\codex{The stress test results suggest that most f\^{}g integrals are genuinely CAS-blind (not just timeout issues). A deeper investigation for this paper would require understanding \emph{why} the Risch algorithm implementations fail on these --- likely a good topic but may be out of scope for JSC.}
+
+%% ====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%% ====================================================================
+
+% Conclusion reverted to original structure. Codex had rewritten this based on
+% commented-out \codex{} items 7 (swap finding order) and \codex{} (singleton exclusion).
+% Only factual number updates applied.
+We present a concrete implementation of integration-through-differentiation by introducing the Exhaustive Symbolic Integration (ESI) algorithm. ESI builds exhaustive function sets composed of operators in a user-defined basis set up to a maximum complexity $k$, then differentiates those functions to define a function--antiderivative mapping. This affords investigation of the landscape of symbolic integration---the frequency with which integration preserves the operator set and complexity limit---and the identification of antiderivates that cannot be found by computer algebra systems.
+
+Our central findings are twofold. First, the operator basis profoundly shapes the integrability landscape: adding the logarithm boosts within-class integrability fraction $\rhok$ by factors of order $2$--$3$ over most shared complexity levels. Bases with high-complexity coverage show a declining $\rhok$ at $k = 9$--$10$, with \texttt{ext\_maths} dropping to $2.9\%$ and \texttt{core\_maths} to $3.5\%$, because the space of distinct derivative forms grows faster than the function space (see \ref{app:model}). This is part of the broader quantification of the integrability landscape across the five operator bases studied here, although we caution that the quantitative results depend on the expression grammar and complexity metric.
+
+Second, ESI systematically discovers integrals that expose gaps in existing CAS implementations.
+In particular we identify
+%Among the 49{,}538 multi-member equivalence classes in \texttt{ext\_log\_maths}, SymPy, Mathematica, and RUBI together leave 232 integrals unsolved --- but FriCAS's more complete Risch implementation solves 218 of these. Across the four bases included in the CAS cascade, comprehensive testing against all six engines (SymPy, Mathematica, RUBI, FriCAS, Maxima, and Giac) identifies
+five integrals \codexadd{in the four bases included in the full CAS cascade} that resist all tested CAS (SymPy, Mathematica, RUBI, FriCAS, Maxima, and Giac) but are readily identifiable by ESI. Three of these are \emph{robustly} CAS-resistant, failing every one of 12 Mathematica strategy combinations we tested; these three form a structurally coherent family pairing an algebraic extension $\sqrt{\cdot}$ with a transcendental tower ($e^x$, $e^{-x}$, or $x^x$) whose coupling cannot be inverted by a closed-form substitution. The remaining two are resistant due to the non-analyticity of the absolute value. We also solve two RUBI-failed benchmark integrals.
+%\hd{was this discussed above and where are these integrals?}
+
+ESI's value lies not in competing with CAS on integration in general, but in its exhaustive coverage: it catalogues every integrable function within the grammar, enabling both $\rhok$ measurement and the systematic discovery of integrals beyond the capabilities of existing algorithms. The method can readily be extended to higher complexity and alternative basis sets---this would shore up and generalise our integrability findings, unearth further as-yet unknown antiderivatives and extend our systematic exploration of limitations in existing Risch implementations.
+
+%% ====================================================================
+\section*{Data availability}
+%% ====================================================================
+
+%All function catalogues, derivative databases, equivalence-class data, and analysis scripts generated in this study are available at \textcolor{red}{[repository URL]}. A simple script and notebook for solving integrals via ESI lookup are also provided.
+\codexadd{The Zenodo data package accompanying the GitHub repository contains the final result artifacts used for the paper tables and figures, lookup-equivalence databases and raw derivative/fingerprint outputs, the five-basis \texttt{unique\_equations\_k.txt} catalogues needed to regenerate the pipeline inputs, and a compact code snapshot. Large ESR generation intermediates, cluster logs, and external CAS installations are omitted because they are reproducible or environment-specific. The ESI lookup tool is provided as \texttt{esi\_integrate.py}, with a worked notebook demonstration in \texttt{esi\_integrate\_demo.ipynb}.}
+% \codexadd{The ESI lookup tool is provided as \texttt{esi\_integrate.py}, with a worked notebook demonstration in \texttt{esi\_integrate\_demo.ipynb}.}
+%\hd{Mention the python script/jupyter notebook we made to determine antiderivaties using ESI}
+
+%% ====================================================================
+\section*{Acknowledgements}
+%% ====================================================================
+
+I thank Nicolas Tessore for the discussion that sparked this project. I am supported by a Royal Society University Research Fellowship (grant no. 211046).
+
+\appendix
+
+\section{Growth-rate crossover model}
+\label{app:model}
+
+% Previous version of this appendix presented an alpha^k/beta^k decomposition
+% as a "mechanism" for the peak. This has been replaced following review:
+% the decomposition double-counts (P(delta<=0) and m(k) are not independent),
+% a monotonic exponential ratio cannot produce a non-monotonic peak, and the
+% ext_maths predicted/measured decline rates disagree by a factor of three.
+
+This appendix examines how fast the function space and derivative-form space grow with complexity, and what this implies for the decline of $\rhok$. The key question is whether the growth rates can be derived from the operator grammar or must be measured empirically. We show that the raw tree count (before deduplication) follows from standard analytic combinatorics, but that the effective growth rate after deduplication and the growth rate of the derivative space cannot; we therefore present their measurements from empirical fits.
+
+We first note that the \emph{raw} tree count --- before any deduplication --- can be derived exactly from the operator grammar via analytic combinatorics \citep{FlajoletSedgewick2009}. Each basis defines a context-free tree grammar with $p_0$ leaf types (always 2: $x$ and $a$), $p_1$ unary operators, and $p_2$ binary operators (always 5: $+, -, \times, \div, \mathrm{pow}$). The generating function for the number of trees of size $k$ satisfies
+\[
+T(z) = p_0\,z + p_1\,z\,T(z) + p_2\,z\,T(z)^2\,,
+\]
+whose dominant singularity $r$ gives the raw growth rate $\alpha_{\mathrm{raw}} = 1/r$ via the Drmota--Lalley--Woods theorem \citep{FlajoletSedgewick2009}. Solving the discriminant condition yields
+\[
+\alpha_{\mathrm{raw}} = p_1 + 2\sqrt{p_0\,p_2} = p_1 + 2\sqrt{10}\,,
+\]
+with an asymptotic tree count $T_k \sim C\,\alpha_{\mathrm{raw}}^k\,k^{-3/2}$, where the $k^{-3/2}$ subexponential factor is universal for this grammar class. The resulting values are:
+
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+& \texttt{core} & \texttt{ext} & \texttt{ext\_log} & \texttt{trig} \\
+\midrule
+$p_1$ & 1 & 4 & 5 & 3 \\
+$\alpha_{\mathrm{raw}}$ & 7.3 & 10.3 & 11.3 & 9.3 \\
+$\alpha_{\mathrm{eff}}$ (measured) & 3.2 & 5.7 & 6.1 & 5.5 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The ordering $\alpha_{\mathrm{raw}}(\mathrm{core}) < \alpha_{\mathrm{raw}}(\mathrm{trig}) < \alpha_{\mathrm{raw}}(\mathrm{ext}) < \alpha_{\mathrm{raw}}(\mathrm{ext\_log})$ matches the observed ordering of empirical growth rates, confirming that larger operator sets produce faster-growing function spaces. However, $\alpha_{\mathrm{eff}}$ is roughly half of $\alpha_{\mathrm{raw}}$ in every case, because ESR's symbolic deduplication and our numerical fingerprinting remove 75--98\% of raw trees as duplicates (Section~\ref{sec:fingerprint}). The effective growth rate depends on the algebraic identities among the specific operators in the basis (e.g.\ $\log(\exp(x)) = x$, commutativity of addition), which cannot be captured by a grammar-level analysis alone.
+
+We next describe the empirical growth-rate patterns. The function space grows as $|\mathcal{F}_k| \sim \alpha^k$ and the space of distinct derivative forms as $|S_k| \sim \beta^k$. The measured growth rates are $\alpha = 3.2$, $5.7$, $6.1$, $5.5$ and $\beta = 4.0$, $6.0$, $7.0$, $7.0$ for \texttt{core\_maths}, \texttt{ext\_maths}, \texttt{ext\_log\_maths} and \texttt{trig\_maths} respectively. The \texttt{core\_log\_maths} basis is omitted from these regression fits because its high-complexity derivative-form sequence has not been run to the same depth. In every case $\beta > \alpha$, which is expected: the chain and product rules generically increase structural diversity, so derivative forms proliferate faster than the functions that generate them. This guarantees the eventual decline of $\rhok$ at high complexity, regardless of the complexity metric used. Deriving $\beta$ analytically is substantially harder than $\alpha_{\mathrm{raw}}$, because differentiation is not a grammar-preserving operation: the chain rule multiplies subtrees and the product rule duplicates structure, so the derivative-form space is not generated by a context-free grammar. We therefore report $\beta$ as an empirical fit.
+%\hd{what about the 5th basis?}
+
+The ratio $\alpha/\beta < 1$ sets the asymptotic decline rate of $\rhok$. The measured values are $\alpha/\beta = 0.81$, $0.94$, $0.87$, $0.78$ for the four fitted bases respectively. We caution that these ratios should be interpreted as empirical regression fits describing the high-$k$ decline, not as a mechanistic model of $\rhok$. In particular, a monotonic ratio $(\alpha/\beta)^k$ cannot produce the non-monotonic peak observed in \texttt{ext\_log\_maths}; the peak likely reflects transient effects such as ``attractor'' integrands (low-complexity derivatives like $1$, $1/x$, $-1$ that accumulate many primitives at moderate $k$) and basis-dependent deduplication rates that vary non-monotonically with $k$. A full analytical treatment would require extending the generating-function approach to tree transducers representing the differentiation operator \citep{FlajoletSedgewick2009}.
+%\hd{five?}
+%	, which we leave to future work.}
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{references}
+
+\end{document}

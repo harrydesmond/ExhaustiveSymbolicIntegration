@@ -1,0 +1,4057 @@
+{
+  "total_mma_failed": 551,
+  "sage_solved": [
+    {
+      "idx": 7963,
+      "F_str": "a0*exp(-1/log(log(sqrt(x))**2))",
+      "f_str": "timeout",
+      "mma_output": "(a0*Integrate[1/(E^(1/(2*(-Log[2] + Log[Log[x]])))*x*Log[x]*(-Log[2] + Log[Log[x]])^2), x])/2",
+      "engine": "maxima",
+      "result": "a0*e^(-1/log(1/4*log(x)^2))"
+    },
+    {
+      "idx": 7964,
+      "F_str": "a0*exp(1/log(log(sqrt(x))**2))",
+      "f_str": "timeout",
+      "mma_output": "-1/2*(a0*Integrate[E^(1/(2*(-Log[2] + Log[Log[x]])))/(x*Log[x]*(-Log[2] + Log[Log[x]])^2), x])",
+      "engine": "maxima",
+      "result": "a0*e^(1/log(1/4*log(x)^2))"
+    },
+    {
+      "idx": 7965,
+      "F_str": "a0 + exp(1/log(log(sqrt(x))**2))",
+      "f_str": "timeout",
+      "mma_output": "-1/2*Integrate[E^(1/(2*(-Log[2] + Log[Log[x]])))/(x*Log[x]*(-Log[2] + Log[Log[x]])^2), x]",
+      "engine": "maxima",
+      "result": "e^(1/log(1/4*log(x)^2))"
+    },
+    {
+      "idx": 7966,
+      "F_str": "a0 - exp(1/log(log(sqrt(x))**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(1/(2*(-Log[2] + Log[Log[x]])))/(x*Log[x]*(-Log[2] + Log[Log[x]])^2), x]/2",
+      "engine": "maxima",
+      "result": "-e^(1/log(1/4*log(x)^2))"
+    },
+    {
+      "idx": 8046,
+      "F_str": "a0*exp(1/sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^(1/Sqrt[x^(-1) + x])*(-1/2 + 1/(2*x^2)))/(x^(-1) + x)^(3/2), x]",
+      "engine": "maxima",
+      "result": "a0*e^(1/sqrt(x + 1/x))"
+    },
+    {
+      "idx": 8049,
+      "F_str": "a0 + exp(1/sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x^(-1) + x])*(-1/2 + 1/(2*x^2)))/(x^(-1) + x)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(x + 1/x))"
+    },
+    {
+      "idx": 8052,
+      "F_str": "a0 - exp(1/sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x^(-1) + x])*(1/2 - 1/(2*x^2)))/(x^(-1) + x)^(3/2), x]",
+      "engine": "maxima",
+      "result": "-e^(1/sqrt(x + 1/x))"
+    },
+    {
+      "idx": 11204,
+      "F_str": "a0*exp(-pow(x,(a1*sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-(a0*Integrate[(x^(a1*Sqrt[x])*(a1/Sqrt[x] + (a1*Log[x])/(2*Sqrt[x])))/E^x^(a1*Sqrt[x]), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-x^(a1*sqrt(x)))"
+    },
+    {
+      "idx": 11205,
+      "F_str": "a0*exp(-pow(x,(a1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-(a0*Integrate[(x^(a1/Sqrt[x])*(a1/x^(3/2) - (a1*Log[x])/(2*x^(3/2))))/E^x^(a1/Sqrt[x]), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-x^(a1/sqrt(x)))"
+    },
+    {
+      "idx": 11289,
+      "F_str": "a0*exp(-pow(x,(sqrt(2)*sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-(a0*Integrate[(x^(Sqrt[2]*Sqrt[x])*(Sqrt[2]/Sqrt[x] + Log[x]/(Sqrt[2]*Sqrt[x])))/E^x^(Sqrt[2]*Sqrt[x]), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-x^(sqrt(2)*sqrt(x)))"
+    },
+    {
+      "idx": 11293,
+      "F_str": "a0*exp(-pow(x,(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-(a0*Integrate[(x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^x^Sqrt[x], x])",
+      "engine": "maxima",
+      "result": "a0*e^(-x^sqrt(x))"
+    },
+    {
+      "idx": 11296,
+      "F_str": "a0 + exp(-pow(x,(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^x^Sqrt[x], x]",
+      "engine": "maxima",
+      "result": "e^(-x^sqrt(x))"
+    },
+    {
+      "idx": 11299,
+      "F_str": "a0 - exp(-pow(x,(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^x^Sqrt[x], x]",
+      "engine": "maxima",
+      "result": "-e^(-x^sqrt(x))"
+    },
+    {
+      "idx": 11302,
+      "F_str": "a0*exp(-pow(x,(sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "-1/2*(a0*Integrate[(x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^(x^Sqrt[x]/2), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-1/2*x^sqrt(x))"
+    },
+    {
+      "idx": 11303,
+      "F_str": "a0*exp(-pow(x,(sqrt(x)/2)))",
+      "f_str": "timeout",
+      "mma_output": "-(a0*Integrate[(x^(Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x])))/E^x^(Sqrt[x]/2), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 11305,
+      "F_str": "a0*exp(pow(x,(sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "(a0*Integrate[E^(x^Sqrt[x]/2)*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])), x])/2",
+      "engine": "maxima",
+      "result": "a0*e^(1/2*x^sqrt(x))"
+    },
+    {
+      "idx": 11307,
+      "F_str": "(a0 + exp(-pow(x,(sqrt(x)))))**2",
+      "f_str": "timeout",
+      "mma_output": "-2*Integrate[((a0 + E^(-x^Sqrt[x]))*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^x^Sqrt[x], x]",
+      "engine": "maxima",
+      "result": "(2*a0*e^(x^sqrt(x)) + 1)*e^(-2*x^sqrt(x))"
+    },
+    {
+      "idx": 11311,
+      "F_str": "(a0 - exp(-pow(x,(sqrt(x)))))**2",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[((a0 - E^(-x^Sqrt[x]))*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^x^Sqrt[x], x]",
+      "engine": "maxima",
+      "result": "-(2*a0*e^(x^sqrt(x)) - 1)*e^(-2*x^sqrt(x))"
+    },
+    {
+      "idx": 11315,
+      "F_str": "a0 + exp(-pow(x,(sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "-1/2*Integrate[(x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^(x^Sqrt[x]/2), x]",
+      "engine": "maxima",
+      "result": "e^(-1/2*x^sqrt(x))"
+    },
+    {
+      "idx": 11316,
+      "F_str": "a0 + exp(-pow(x,(sqrt(x)/2)))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^(Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x])))/E^x^(Sqrt[x]/2), x]",
+      "engine": "maxima",
+      "result": "e^(-x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 11318,
+      "F_str": "a0 + exp(pow(x,(sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/2)*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*x^sqrt(x))"
+    },
+    {
+      "idx": 11320,
+      "F_str": "a0 - exp(-pow(x,(sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^(x^Sqrt[x]/2), x]/2",
+      "engine": "maxima",
+      "result": "-e^(-1/2*x^sqrt(x))"
+    },
+    {
+      "idx": 11321,
+      "F_str": "a0 - exp(-pow(x,(sqrt(x)/2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(x^(Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x])))/E^x^(Sqrt[x]/2), x]",
+      "engine": "maxima",
+      "result": "-e^(-x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 11323,
+      "F_str": "a0 - exp(pow(x,(sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "-1/2*Integrate[E^(x^Sqrt[x]/2)*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "-e^(1/2*x^sqrt(x))"
+    },
+    {
+      "idx": 11325,
+      "F_str": "a0*exp(-pow(x,(sqrt(x)/2))/2)",
+      "f_str": "timeout",
+      "mma_output": "-1/2*(a0*Integrate[(x^(Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x])))/E^(x^(Sqrt[x]/2)/2), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-1/2*x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 11326,
+      "F_str": "a0*exp(pow(x,(sqrt(x)/2))/2)",
+      "f_str": "timeout",
+      "mma_output": "(a0*Integrate[E^(x^(Sqrt[x]/2)/2)*x^(Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x])), x])/2",
+      "engine": "maxima",
+      "result": "a0*e^(1/2*x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 11327,
+      "F_str": "(a0 + exp(pow(x,(sqrt(x)))/2))**2",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/2)*(a0 + E^(x^Sqrt[x]/2))*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "2*a0*e^(1/2*x^sqrt(x)) + e^(x^sqrt(x))"
+    },
+    {
+      "idx": 11658,
+      "F_str": "a0*exp(-sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "-(a0*Integrate[(1/2 - 1/(2*x^2))/(E^Sqrt[x^(-1) + x]*Sqrt[x^(-1) + x]), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-sqrt(x + 1/x))"
+    },
+    {
+      "idx": 11663,
+      "F_str": "a0*exp(sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^Sqrt[x^(-1) + x]*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]",
+      "engine": "maxima",
+      "result": "a0*e^(sqrt(x + 1/x))"
+    },
+    {
+      "idx": 11668,
+      "F_str": "a0 + exp(-sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1/2 + 1/(2*x^2))/(E^Sqrt[x^(-1) + x]*Sqrt[x^(-1) + x]), x]",
+      "engine": "maxima",
+      "result": "e^(-sqrt(x + 1/x))"
+    },
+    {
+      "idx": 11673,
+      "F_str": "a0 + exp(sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-1) + x]*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + 1/x))"
+    },
+    {
+      "idx": 11678,
+      "F_str": "a0 - exp(-sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(1/2 - 1/(2*x^2))/(E^Sqrt[x^(-1) + x]*Sqrt[x^(-1) + x]), x]",
+      "engine": "maxima",
+      "result": "-e^(-sqrt(x + 1/x))"
+    },
+    {
+      "idx": 11683,
+      "F_str": "a0 - exp(sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-1) + x]*(-1/2 + 1/(2*x^2)))/Sqrt[x^(-1) + x], x]",
+      "engine": "maxima",
+      "result": "-e^(sqrt(x + 1/x))"
+    },
+    {
+      "idx": 11710,
+      "F_str": "a0*exp(-sqrt(x + 1/x)/2)",
+      "f_str": "timeout",
+      "mma_output": "-1/2*(a0*Integrate[(1/2 - 1/(2*x^2))/(E^(Sqrt[x^(-1) + x]/2)*Sqrt[x^(-1) + x]), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-1/2*sqrt(x + 1/x))"
+    },
+    {
+      "idx": 11780,
+      "F_str": "a0*exp(-sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "-(a0*Integrate[(-1/2*1/x^2 + x)/(E^Sqrt[x^(-1) + x^2]*Sqrt[x^(-1) + x^2]), x])",
+      "engine": "maxima",
+      "result": "a0*e^(-sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 11783,
+      "F_str": "a0*exp(sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^Sqrt[x^(-1) + x^2]*(-1/2*1/x^2 + x))/Sqrt[x^(-1) + x^2], x]",
+      "engine": "maxima",
+      "result": "a0*e^(sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 11792,
+      "F_str": "a0 + exp(sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-1) + x^2]*(-1/2*1/x^2 + x))/Sqrt[x^(-1) + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 11795,
+      "F_str": "a0 - exp(sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-1) + x^2]*(1/(2*x^2) - x))/Sqrt[x^(-1) + x^2], x]",
+      "engine": "maxima",
+      "result": "-e^(sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 11999,
+      "F_str": "a0*exp(sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^Sqrt[x + x^2]*(1/2 + x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "a0*e^(sqrt(x^2 + x))"
+    },
+    {
+      "idx": 13048,
+      "F_str": "a0 - exp(sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-2) + x]*(-1/2 + x^(-3)))/Sqrt[x^(-2) + x], x]",
+      "engine": "maxima",
+      "result": "-e^(sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 20027,
+      "F_str": "exp(-1/(2*pow(x,(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "-1/2*Integrate[(-2/Sqrt[x] - Log[x]/Sqrt[x])/(E^(1/(2*x^(2*Sqrt[x])))*x^(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(-1/2/x^(2*sqrt(x)))"
+    },
+    {
+      "idx": 20028,
+      "F_str": "exp(1/(2*pow(x,(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2*x^(2*Sqrt[x])))*(-2/Sqrt[x] - Log[x]/Sqrt[x]))/x^(2*Sqrt[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2/x^(2*sqrt(x)))"
+    },
+    {
+      "idx": 20029,
+      "F_str": "exp(1/(2*pow(x,(2/sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2*x^(2/Sqrt[x])))*(-2/x^(3/2) + Log[x]/x^(3/2)))/x^(2/Sqrt[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2/x^(2/sqrt(x)))"
+    },
+    {
+      "idx": 20033,
+      "F_str": "exp(1/(2*pow(x,(4*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2*x^(4*Sqrt[x])))*(-4/Sqrt[x] - (2*Log[x])/Sqrt[x]))/x^(4*Sqrt[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2/x^(4*sqrt(x)))"
+    },
+    {
+      "idx": 20048,
+      "F_str": "exp(1/(2*pow(x,(sqrt(2)*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2*x^(Sqrt[2]*Sqrt[x])))*(-(Sqrt[2]/Sqrt[x]) - Log[x]/(Sqrt[2]*Sqrt[x])))/x^(Sqrt[2]*Sqrt[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2/x^(sqrt(2)*sqrt(x)))"
+    },
+    {
+      "idx": 20049,
+      "F_str": "exp(1/(2*pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2*x^Sqrt[x]))*(-(1/Sqrt[x]) - Log[x]/(2*Sqrt[x])))/x^Sqrt[x], x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2/x^sqrt(x))"
+    },
+    {
+      "idx": 20050,
+      "F_str": "exp(-1/(2*pow(x,(sqrt(x)/2))))",
+      "f_str": "timeout",
+      "mma_output": "-1/2*Integrate[(-1/2*1/Sqrt[x] - Log[x]/(4*Sqrt[x]))/(E^(1/(2*x^(Sqrt[x]/2)))*x^(Sqrt[x]/2)), x]",
+      "engine": "maxima",
+      "result": "e^(-1/2/x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 20051,
+      "F_str": "exp(1/(2*pow(x,(sqrt(x)/2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2*x^(Sqrt[x]/2)))*(-1/2*1/Sqrt[x] - Log[x]/(4*Sqrt[x])))/x^(Sqrt[x]/2), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2/x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 20052,
+      "F_str": "exp(1/(2*pow(x,(sqrt(x)/4))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2*x^(Sqrt[x]/4)))*(-1/4*1/Sqrt[x] - Log[x]/(8*Sqrt[x])))/x^(Sqrt[x]/4), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2/x^(1/4*sqrt(x)))"
+    },
+    {
+      "idx": 20235,
+      "F_str": "exp(1/(2*sqrt(x)*pow(x,x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-1/2 - x)/2)*(-1/4*x^(-3/2 - x) + (x^(-1/2 - x)*(-1 - Log[x]))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2/(sqrt(x)*x^x))"
+    },
+    {
+      "idx": 20238,
+      "F_str": "exp(1/(2*sqrt(x)*pow(x,(x/2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-1/2 - x/2)/2)*(-1/4*x^(-3/2 - x/2) + (x^(-1/2 - x/2)*(-1/2 - Log[x]/2))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2/(sqrt(x)*x^(1/2*x)))"
+    },
+    {
+      "idx": 20542,
+      "F_str": "exp(1/(8*pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(8*x^Sqrt[x]))*(-(1/Sqrt[x]) - Log[x]/(2*Sqrt[x])))/x^Sqrt[x], x]/8",
+      "engine": "maxima",
+      "result": "e^(1/8/x^sqrt(x))"
+    },
+    {
+      "idx": 20731,
+      "F_str": "exp(-1/(a0 - pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/(E^(a0 - x^Sqrt[x])^(-1)*(a0 - x^Sqrt[x])^2), x]",
+      "engine": "maxima",
+      "result": "e^(-1/(a0 - x^sqrt(x)))"
+    },
+    {
+      "idx": 20732,
+      "F_str": "exp(1/(a0 + pow(x,(-sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(E^(a0 + x^(-Sqrt[x]))^(-1)*(-(1/Sqrt[x]) - Log[x]/(2*Sqrt[x])))/(x^Sqrt[x]*(a0 + x^(-Sqrt[x]))^2), x]",
+      "engine": "maxima",
+      "result": "e^(x^sqrt(x)/(a0*x^sqrt(x) + 1))"
+    },
+    {
+      "idx": 21176,
+      "F_str": "exp(1/log(2/sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Log[2] - Log[x]/2)^(-1)/(x*(Log[2] - Log[x]/2)^2), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/log(2/sqrt(x)))"
+    },
+    {
+      "idx": 21676,
+      "F_str": "exp(-1/pow((2*x),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(-(1/Sqrt[x]) - (Log[2] + Log[x])/(2*Sqrt[x]))/(2^Sqrt[x]*E^(1/(2^Sqrt[x]*x^Sqrt[x]))*x^Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-e^(-sqrt(x)*log(2) - sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 21680,
+      "F_str": "exp(-1/pow(x,(1/(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(-1/2*1/x^(3/2) + Log[x]/(4*x^(3/2)))/(E^x^(-1/2*1/Sqrt[x])*x^(1/(2*Sqrt[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(-1/x^(1/2/sqrt(x)))"
+    },
+    {
+      "idx": 21785,
+      "F_str": "exp(1/sqrt(2*x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x^(-1) + 2*x])*(-1 + 1/(2*x^2)))/(x^(-1) + 2*x)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(2*x + 1/x))"
+    },
+    {
+      "idx": 21787,
+      "F_str": "exp(1/sqrt(4*x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x + 4*x^2])*(-1/2 - 4*x))/(x + 4*x^2)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(4*x^2 + x))"
+    },
+    {
+      "idx": 21983,
+      "F_str": "exp(1/sqrt(x + 1/(2*x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[1/(2*x) + x])*(-1/2 + 1/(4*x^2)))/(1/(2*x) + x)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(x + 1/2/x))"
+    },
+    {
+      "idx": 22034,
+      "F_str": "exp(1/(sqrt(x) - 1/pow(x,x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(Sqrt[x] - x^(-x))^(-1)*(-1/2*1/Sqrt[x] + (-1 - Log[x])/x^x))/(Sqrt[x] - x^(-x))^2, x]",
+      "engine": "maxima",
+      "result": "e^(x^x/(sqrt(x)*x^x - 1))"
+    },
+    {
+      "idx": 22056,
+      "F_str": "exp(1/sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x^(-1) + x])*(-1/2 + 1/(2*x^2)))/(x^(-1) + x)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(x + 1/x))"
+    },
+    {
+      "idx": 22134,
+      "F_str": "exp(1/sqrt(x**3 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x + x^3])*(-1/2 - (3*x^2)/2))/(x + x^3)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(x^3 + x))"
+    },
+    {
+      "idx": 22139,
+      "F_str": "exp(1/sqrt(x**4 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x^(-1) + x^4])*(1/(2*x^2) - 2*x^3))/(x^(-1) + x^4)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(x^4 + 1/x))"
+    },
+    {
+      "idx": 22141,
+      "F_str": "exp(-1/sqrt(x**4 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(1/2 + 2*x^3)/(E^(1/Sqrt[x + x^4])*(x + x^4)^(3/2)), x]",
+      "engine": "maxima",
+      "result": "e^(-1/sqrt(x^4 + x))"
+    },
+    {
+      "idx": 22142,
+      "F_str": "exp(1/sqrt(x**4 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x + x^4])*(-1/2 - 2*x^3))/(x + x^4)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(x^4 + x))"
+    },
+    {
+      "idx": 22147,
+      "F_str": "exp(1/sqrt(x**4 + x**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x^2 + x^4])*(-x - 2*x^3))/(x^2 + x^4)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(x^4 + x^2))"
+    },
+    {
+      "idx": 22149,
+      "F_str": "exp(1/sqrt(x**8 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x + x^8])*(-1/2 - 4*x^7))/(x + x^8)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/sqrt(x^8 + x))"
+    },
+    {
+      "idx": 22644,
+      "F_str": "exp(1/(sqrt(x)*log(2*x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(1/(Sqrt[x]*(Log[2] + Log[x])))*(-(1/(x^(3/2)*(Log[2] + Log[x])^2)) - 1/(2*x^(3/2)*(Log[2] + Log[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(1/(sqrt(x)*log(2*x)))"
+    },
+    {
+      "idx": 22921,
+      "F_str": "exp(1/(sqrt(x)*sqrt(x + 1/x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(1/(Sqrt[x]*Sqrt[x^(-1) + x]))*((-1/2 + 1/(2*x^2))/(Sqrt[x]*(x^(-1) + x)^(3/2)) - 1/(2*x^(3/2)*Sqrt[x^(-1) + x])), x]",
+      "engine": "maxima",
+      "result": "e^(1/(sqrt(x + 1/x)*sqrt(x)))"
+    },
+    {
+      "idx": 22922,
+      "F_str": "exp(1/(sqrt(x)*sqrt(x**2 + x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(1/(Sqrt[x]*Sqrt[x + x^2]))*((-1/2 - x)/(Sqrt[x]*(x + x^2)^(3/2)) - 1/(2*x^(3/2)*Sqrt[x + x^2])), x]",
+      "engine": "maxima",
+      "result": "e^(1/(sqrt(x^2 + x)*sqrt(x)))"
+    },
+    {
+      "idx": 23299,
+      "F_str": "exp(1/(-x**2 + pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(-x^2 + x^Sqrt[x])^(-1)*(2*x - x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x]))))/(-x^2 + x^Sqrt[x])^2, x]",
+      "engine": "maxima",
+      "result": "e^(-1/(x^2 - x^sqrt(x)))"
+    },
+    {
+      "idx": 23300,
+      "F_str": "exp(1/(x**2 + pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x^2 + x^Sqrt[x])^(-1)*(-2*x - x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x]))))/(x^2 + x^Sqrt[x])^2, x]",
+      "engine": "maxima",
+      "result": "e^(1/(x^2 + x^sqrt(x)))"
+    },
+    {
+      "idx": 23301,
+      "F_str": "exp(1/(x**2 - pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x^2 - x^Sqrt[x])^(-1)*(-2*x + x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x]))))/(x^2 - x^Sqrt[x])^2, x]",
+      "engine": "maxima",
+      "result": "e^(1/(x^2 - x^sqrt(x)))"
+    },
+    {
+      "idx": 23848,
+      "F_str": "exp(1/(-x + pow(x,(1/sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(-x + x^(1/Sqrt[x]))^(-1)*(1 - x^(1/Sqrt[x])*(x^(-3/2) - Log[x]/(2*x^(3/2)))))/(-x + x^(1/Sqrt[x]))^2, x]",
+      "engine": "maxima",
+      "result": "e^(1/(x^1/sqrt(x) - x))"
+    },
+    {
+      "idx": 23849,
+      "F_str": "exp(1/(x + pow(x,(1/sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x + x^(1/Sqrt[x]))^(-1)*(-1 - x^(1/Sqrt[x])*(x^(-3/2) - Log[x]/(2*x^(3/2)))))/(x + x^(1/Sqrt[x]))^2, x]",
+      "engine": "maxima",
+      "result": "e^(1/(x + x^1/sqrt(x)))"
+    },
+    {
+      "idx": 23850,
+      "F_str": "exp(1/(x - pow(x,(1/sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x - x^(1/Sqrt[x]))^(-1)*(-1 + x^(1/Sqrt[x])*(x^(-3/2) - Log[x]/(2*x^(3/2)))))/(x - x^(1/Sqrt[x]))^2, x]",
+      "engine": "maxima",
+      "result": "e^(-1/(x^1/sqrt(x) - x))"
+    },
+    {
+      "idx": 23851,
+      "F_str": "exp(1/(x*pow(x,(1/sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^x^(-1 - 1/Sqrt[x])*(-x^(-2 - 1/Sqrt[x]) + x^(-1 - 1/Sqrt[x])*(-x^(-3/2) + Log[x]/(2*x^(3/2)))), x]",
+      "engine": "maxima",
+      "result": "e^(1/(x*x^1/sqrt(x)))"
+    },
+    {
+      "idx": 23853,
+      "F_str": "exp(1/(-x + pow(x,(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(-x + x^(2*Sqrt[x]))^(-1)*(1 - x^(2*Sqrt[x])*(2/Sqrt[x] + Log[x]/Sqrt[x])))/(-x + x^(2*Sqrt[x]))^2, x]",
+      "engine": "maxima",
+      "result": "e^(1/(x^(2*sqrt(x)) - x))"
+    },
+    {
+      "idx": 23854,
+      "F_str": "exp(1/(x + pow(x,(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x + x^(2*Sqrt[x]))^(-1)*(-1 - x^(2*Sqrt[x])*(2/Sqrt[x] + Log[x]/Sqrt[x])))/(x + x^(2*Sqrt[x]))^2, x]",
+      "engine": "maxima",
+      "result": "e^(1/(x + x^(2*sqrt(x))))"
+    },
+    {
+      "idx": 23855,
+      "F_str": "exp(1/(x - pow(x,(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x - x^(2*Sqrt[x]))^(-1)*(-1 + x^(2*Sqrt[x])*(2/Sqrt[x] + Log[x]/Sqrt[x])))/(x - x^(2*Sqrt[x]))^2, x]",
+      "engine": "maxima",
+      "result": "e^(-1/(x^(2*sqrt(x)) - x))"
+    },
+    {
+      "idx": 23856,
+      "F_str": "exp(1/(x*pow(x,(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^x^(-1 - 2*Sqrt[x])*(-x^(-2 - 2*Sqrt[x]) + x^(-1 - 2*Sqrt[x])*(-2/Sqrt[x] - Log[x]/Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(1/(x*x^(2*sqrt(x))))"
+    },
+    {
+      "idx": 23871,
+      "F_str": "exp(-1/(-x + pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1 + x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/(E^(-x + x^Sqrt[x])^(-1)*(-x + x^Sqrt[x])^2), x]",
+      "engine": "maxima",
+      "result": "e^(-1/(x^sqrt(x) - x))"
+    },
+    {
+      "idx": 23872,
+      "F_str": "exp(-1/(x + pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(1 + x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/(E^(x + x^Sqrt[x])^(-1)*(x + x^Sqrt[x])^2), x]",
+      "engine": "maxima",
+      "result": "e^(-1/(x + x^sqrt(x)))"
+    },
+    {
+      "idx": 23873,
+      "F_str": "exp(-1/(x - pow(x,(sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(1 - x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/(E^(x - x^Sqrt[x])^(-1)*(x - x^Sqrt[x])^2), x]",
+      "engine": "maxima",
+      "result": "e^(1/(x^sqrt(x) - x))"
+    },
+    {
+      "idx": 23875,
+      "F_str": "exp(1/(-x + pow(x,(-sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(-x + x^(-Sqrt[x]))^(-1)*(1 - (-(1/Sqrt[x]) - Log[x]/(2*Sqrt[x]))/x^Sqrt[x]))/(-x + x^(-Sqrt[x]))^2, x]",
+      "engine": "maxima",
+      "result": "e^(-x^sqrt(x)/(x*x^sqrt(x) - 1))"
+    },
+    {
+      "idx": 23876,
+      "F_str": "exp(1/(x + pow(x,(-sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x + x^(-Sqrt[x]))^(-1)*(-1 - (-(1/Sqrt[x]) - Log[x]/(2*Sqrt[x]))/x^Sqrt[x]))/(x + x^(-Sqrt[x]))^2, x]",
+      "engine": "maxima",
+      "result": "e^(x^sqrt(x)/(x*x^sqrt(x) + 1))"
+    },
+    {
+      "idx": 23879,
+      "F_str": "exp(1/(-x + pow(x,(sqrt(x)/2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(-x + x^(Sqrt[x]/2))^(-1)*(1 - x^(Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x]))))/(-x + x^(Sqrt[x]/2))^2, x]",
+      "engine": "maxima",
+      "result": "e^(1/(x^(1/2*sqrt(x)) - x))"
+    },
+    {
+      "idx": 23880,
+      "F_str": "exp(1/(x + pow(x,(sqrt(x)/2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x + x^(Sqrt[x]/2))^(-1)*(-1 - x^(Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x]))))/(x + x^(Sqrt[x]/2))^2, x]",
+      "engine": "maxima",
+      "result": "e^(1/(x + x^(1/2*sqrt(x))))"
+    },
+    {
+      "idx": 23881,
+      "F_str": "exp(1/(x - pow(x,(sqrt(x)/2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x - x^(Sqrt[x]/2))^(-1)*(-1 + x^(Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x]))))/(x - x^(Sqrt[x]/2))^2, x]",
+      "engine": "maxima",
+      "result": "e^(-1/(x^(1/2*sqrt(x)) - x))"
+    },
+    {
+      "idx": 23924,
+      "F_str": "exp(1/(-x + sqrt(x**2 + x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(-x + Sqrt[x + x^2])^(-1)*(1 + (-1/2 - x)/Sqrt[x + x^2]))/(-x + Sqrt[x + x^2])^2, x]",
+      "engine": "maxima",
+      "result": "e^(-1/(x - sqrt(x^2 + x)))"
+    },
+    {
+      "idx": 23927,
+      "F_str": "exp(1/(x*sqrt(x**2 + x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(1/(x*Sqrt[x + x^2]))*((-1/2 - x)/(x*(x + x^2)^(3/2)) - 1/(x^2*Sqrt[x + x^2])), x]",
+      "engine": "maxima",
+      "result": "e^(1/(sqrt(x^2 + x)*x))"
+    },
+    {
+      "idx": 24276,
+      "F_str": "exp(2*exp(1/sqrt(x**2 + x)))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[(E^(2*E^(1/Sqrt[x + x^2]) + 1/Sqrt[x + x^2])*(-1/2 - x))/(x + x^2)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(2*e^(1/(sqrt(x + 1)*sqrt(x))))"
+    },
+    {
+      "idx": 25716,
+      "F_str": "exp(2*exp(sqrt(x)*log(x**2)))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(2*Sqrt[x]))*x^(2*Sqrt[x])*(2/Sqrt[x] + Log[x]/Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^(2*sqrt(x)))"
+    },
+    {
+      "idx": 26550,
+      "F_str": "exp(2*pow(x,(1/(4*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(1/(4*Sqrt[x])))*x^(1/(4*Sqrt[x]))*(1/(4*x^(3/2)) - Log[x]/(8*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^(1/4/sqrt(x)))"
+    },
+    {
+      "idx": 26569,
+      "F_str": "exp(-2*pow(x,(1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-2*Integrate[(x^(1/Sqrt[x])*(x^(-3/2) - Log[x]/(2*x^(3/2))))/E^(2*x^(1/Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(-2*x^1/sqrt(x))"
+    },
+    {
+      "idx": 26570,
+      "F_str": "exp(-2/pow(x,(1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-2*Integrate[(-x^(-3/2) + Log[x]/(2*x^(3/2)))/(E^(2/x^(1/Sqrt[x]))*x^(1/Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(-2/x^1/sqrt(x))"
+    },
+    {
+      "idx": 26571,
+      "F_str": "exp(2*pow(x,(1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(1/Sqrt[x]))*x^(1/Sqrt[x])*(x^(-3/2) - Log[x]/(2*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^1/sqrt(x))"
+    },
+    {
+      "idx": 26572,
+      "F_str": "exp(2/pow(x,(1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[(E^(2/x^(1/Sqrt[x]))*(-x^(-3/2) + Log[x]/(2*x^(3/2))))/x^(1/Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(2/x^1/sqrt(x))"
+    },
+    {
+      "idx": 26577,
+      "F_str": "exp(2*pow(x,(1/sqrt(x)))/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(2*x^(-1 + 1/Sqrt[x]))*(-2*x^(-2 + 1/Sqrt[x]) + 2*x^(-1 + 1/Sqrt[x])*(x^(-3/2) - Log[x]/(2*x^(3/2)))), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^1/sqrt(x)/x)"
+    },
+    {
+      "idx": 26578,
+      "F_str": "exp(2*pow(x,(1/(-sqrt(x) + x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(-Sqrt[x] + x)^(-1))*x^(-Sqrt[x] + x)^(-1)*(1/(x*(-Sqrt[x] + x)) + ((-1 + 1/(2*Sqrt[x]))*Log[x])/(-Sqrt[x] + x)^2), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^(1/(x - sqrt(x))))"
+    },
+    {
+      "idx": 26579,
+      "F_str": "exp(2*pow(x,(1/(sqrt(x) + x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(Sqrt[x] + x)^(-1))*x^(Sqrt[x] + x)^(-1)*(1/(x*(Sqrt[x] + x)) + ((-1 - 1/(2*Sqrt[x]))*Log[x])/(Sqrt[x] + x)^2), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^(1/(x + sqrt(x))))"
+    },
+    {
+      "idx": 26580,
+      "F_str": "exp(2*pow(x,(1/(sqrt(x) - x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(Sqrt[x] - x)^(-1))*x^(Sqrt[x] - x)^(-1)*(1/((Sqrt[x] - x)*x) + ((1 - 1/(2*Sqrt[x]))*Log[x])/(Sqrt[x] - x)^2), x]",
+      "engine": "maxima",
+      "result": "e^(2/x^(1/(x - sqrt(x))))"
+    },
+    {
+      "idx": 26680,
+      "F_str": "exp(2*pow(x,exp(1/(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^E^(1/(2*Sqrt[x])))*x^E^(1/(2*Sqrt[x]))*(E^(1/(2*Sqrt[x]))/x - (E^(1/(2*Sqrt[x]))*Log[x])/(4*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^e^(1/2/sqrt(x)))"
+    },
+    {
+      "idx": 26683,
+      "F_str": "exp(2*pow(x,exp(-1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^E^(-(1/Sqrt[x])))*x^E^(-(1/Sqrt[x]))*(1/(E^(1/Sqrt[x])*x) + Log[x]/(2*E^(1/Sqrt[x])*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^e^(-1/sqrt(x)))"
+    },
+    {
+      "idx": 26690,
+      "F_str": "exp(2*pow(x,exp(2/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^E^(2/Sqrt[x]))*x^E^(2/Sqrt[x])*(E^(2/Sqrt[x])/x - (E^(2/Sqrt[x])*Log[x])/x^(3/2)), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^e^(2/sqrt(x)))"
+    },
+    {
+      "idx": 26695,
+      "F_str": "exp(2*pow(x,exp(a0/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^E^(a0/Sqrt[x]))*x^E^(a0/Sqrt[x])*(E^(a0/Sqrt[x])/x - (a0*E^(a0/Sqrt[x])*Log[x])/(2*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^e^(a0/sqrt(x)))"
+    },
+    {
+      "idx": 26739,
+      "F_str": "exp(2*pow(x,(exp(x/2)/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(E^(x/2)/Sqrt[x]))*x^(E^(x/2)/Sqrt[x])*(E^(x/2)/x^(3/2) + (-1/2*E^(x/2)/x^(3/2) + E^(x/2)/(2*Sqrt[x]))*Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^(e^(1/2*x)/sqrt(x)))"
+    },
+    {
+      "idx": 26751,
+      "F_str": "exp(2*pow(x,log(log(sqrt(x))**2)))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(2*(-Log[2] + Log[Log[x]])))*x^(2*(-Log[2] + Log[Log[x]]))*(2/x + (2*(-Log[2] + Log[Log[x]]))/x), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^log(1/4*log(x)^2))"
+    },
+    {
+      "idx": 26753,
+      "F_str": "exp(2*pow(x,log(sqrt(2)*sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(2*x^(Log[2]/2 + Log[x]/2))*x^(Log[2]/2 + Log[x]/2)*((Log[2]/2 + Log[x]/2)/x + Log[x]/(2*x)), x]",
+      "engine": "maxima",
+      "result": "e^(2*e^(1/2*log(2)*log(x) + 1/2*log(x)^2))"
+    },
+    {
+      "idx": 27617,
+      "F_str": "exp(-2*sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "-2*Integrate[(1/2 + x)/(E^(2*Sqrt[x + x^2])*Sqrt[x + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(-2*sqrt(x^2 + x))"
+    },
+    {
+      "idx": 27618,
+      "F_str": "exp(-2/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "-2*Integrate[(-1/2 - x)/(E^(2/Sqrt[x + x^2])*(x + x^2)^(3/2)), x]",
+      "engine": "maxima",
+      "result": "e^(-2/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 27619,
+      "F_str": "exp(2*sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[(E^(2*Sqrt[x + x^2])*(1/2 + x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(2*sqrt(x^2 + x))"
+    },
+    {
+      "idx": 27623,
+      "F_str": "exp(2/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[(E^(2/Sqrt[x + x^2])*(-1/2 - x))/(x + x^2)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(2/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 27949,
+      "F_str": "exp(2*sqrt(x))*exp(2*pow(x,x))",
+      "f_str": "2*x**x*(log(x) + 1)*exp(2*sqrt(x))*exp(2*x**x) + exp(2*sqrt(x))*exp(2*x**x)/sqrt(x)",
+      "mma_output": "Integrate[E^(2*Sqrt[x] + 2*x^x)/Sqrt[x] + 2*E^(2*Sqrt[x] + 2*x^x)*x^x*(1 + Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^x + 2*sqrt(x))"
+    },
+    {
+      "idx": 27947,
+      "F_str": "exp(-2*sqrt(x))*exp(2*pow(x,x))",
+      "f_str": "2*x**x*(log(x) + 1)*exp(-2*sqrt(x))*exp(2*x**x) - exp(-2*sqrt(x))*exp(2*x**x)/sqrt(x)",
+      "mma_output": "Integrate[-(E^(-2*Sqrt[x] + 2*x^x)/Sqrt[x]) + 2*E^(-2*Sqrt[x] + 2*x^x)*x^x*(1 + Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^x - 2*sqrt(x))"
+    },
+    {
+      "idx": 27948,
+      "F_str": "exp(2*sqrt(x))*exp(-2*pow(x,x))",
+      "f_str": "-2*x**x*(log(x) + 1)*exp(2*sqrt(x))*exp(-2*x**x) + exp(2*sqrt(x))*exp(-2*x**x)/sqrt(x)",
+      "mma_output": "Integrate[E^(2*Sqrt[x] - 2*x^x)/Sqrt[x] - 2*E^(2*Sqrt[x] - 2*x^x)*x^x*(1 + Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-2*x^x + 2*sqrt(x))"
+    },
+    {
+      "idx": 28195,
+      "F_str": "exp(2*sqrt(x))*exp(-pow(x,x))",
+      "f_str": "-x**x*(log(x) + 1)*exp(2*sqrt(x))*exp(-x**x) + exp(2*sqrt(x))*exp(-x**x)/sqrt(x)",
+      "mma_output": "Integrate[E^(2*Sqrt[x] - x^x)/Sqrt[x] - E^(2*Sqrt[x] - x^x)*x^x*(1 + Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x^x + 2*sqrt(x))"
+    },
+    {
+      "idx": 28782,
+      "F_str": "exp(2*sqrt(x)*pow(x,(sqrt(x)/2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(2*x^(1/2 + Sqrt[x]/2))*(x^(-1/2 + Sqrt[x]/2) + 2*x^(1/2 + Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(2*sqrt(x)*x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 28783,
+      "F_str": "exp(2*sqrt(x)/pow(x,(sqrt(x)/2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(2*x^(1/2 - Sqrt[x]/2))*(x^(-1/2 - Sqrt[x]/2) + 2*x^(1/2 - Sqrt[x]/2)*(-1/2*1/Sqrt[x] - Log[x]/(4*Sqrt[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(2*sqrt(x)/x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 28787,
+      "F_str": "exp(-2*sqrt(x)*pow(x,x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-x^(-1/2 + x) - 2*x^(1/2 + x)*(1 + Log[x]))/E^(2*x^(1/2 + x)), x]",
+      "engine": "maxima",
+      "result": "e^(-2*sqrt(x)*x^x)"
+    },
+    {
+      "idx": 28788,
+      "F_str": "exp(-2*sqrt(x)/pow(x,x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-x^(-1/2 - x) - 2*x^(1/2 - x)*(-1 - Log[x]))/E^(2*x^(1/2 - x)), x]",
+      "engine": "maxima",
+      "result": "e^(-2*sqrt(x)/x^x)"
+    },
+    {
+      "idx": 28881,
+      "F_str": "exp(-2*sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "-2*Integrate[(1/2 - x^(-3))/(E^(2*Sqrt[x^(-2) + x])*Sqrt[x^(-2) + x]), x]",
+      "engine": "maxima",
+      "result": "e^(-2*sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 28886,
+      "F_str": "exp(2*sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[(E^(2*Sqrt[x^(-2) + x])*(1/2 - x^(-3)))/Sqrt[x^(-2) + x], x]",
+      "engine": "maxima",
+      "result": "e^(2*sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 28960,
+      "F_str": "exp(2*sqrt(x + x**(-4)))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[(E^(2*Sqrt[x^(-4) + x])*(1/2 - 2/x^5))/Sqrt[x^(-4) + x], x]",
+      "engine": "maxima",
+      "result": "e^(2*sqrt(x + 1/x^4))"
+    },
+    {
+      "idx": 30900,
+      "F_str": "exp(4*pow(x,(sqrt(x) - x)))",
+      "f_str": "timeout",
+      "mma_output": "4*Integrate[E^(4*x^(Sqrt[x] - x))*x^(Sqrt[x] - x)*((Sqrt[x] - x)/x + (-1 + 1/(2*Sqrt[x]))*Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(4*e^(-x*log(x) + sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 30994,
+      "F_str": "exp(-4*sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "-4*Integrate[(1/2 + x)/(E^(4*Sqrt[x + x^2])*Sqrt[x + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(-4*sqrt(x^2 + x))"
+    },
+    {
+      "idx": 30995,
+      "F_str": "exp(4*sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "4*Integrate[(E^(4*Sqrt[x + x^2])*(1/2 + x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(4*sqrt(x^2 + x))"
+    },
+    {
+      "idx": 30996,
+      "F_str": "exp(4/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "4*Integrate[(E^(4/Sqrt[x + x^2])*(-1/2 - x))/(x + x^2)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(4/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 31281,
+      "F_str": "exp(4*sqrt(x)*pow(x,x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(4*x^(1/2 + x))*(2*x^(-1/2 + x) + 4*x^(1/2 + x)*(1 + Log[x])), x]",
+      "engine": "maxima",
+      "result": "e^(4*sqrt(x)*x^x)"
+    },
+    {
+      "idx": 31282,
+      "F_str": "exp(4*sqrt(x)/pow(x,x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(4*x^(1/2 - x))*(2*x^(-1/2 - x) + 4*x^(1/2 - x)*(-1 - Log[x])), x]",
+      "engine": "maxima",
+      "result": "e^(4*sqrt(x)/x^x)"
+    },
+    {
+      "idx": 31283,
+      "F_str": "exp(4*sqrt(x)*pow(x,(x/2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(4*x^(1/2 + x/2))*(2*x^(-1/2 + x/2) + 4*x^(1/2 + x/2)*(1/2 + Log[x]/2)), x]",
+      "engine": "maxima",
+      "result": "e^(4*sqrt(x)*x^(1/2*x))"
+    },
+    {
+      "idx": 31284,
+      "F_str": "exp(4*sqrt(x)/pow(x,(x/2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(4*x^(1/2 - x/2))*(2*x^(-1/2 - x/2) + 4*x^(1/2 - x/2)*(-1/2 - Log[x]/2)), x]",
+      "engine": "maxima",
+      "result": "e^(4*sqrt(x)/x^(1/2*x))"
+    },
+    {
+      "idx": 31857,
+      "F_str": "exp(a0 + 1/sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 + 1/Sqrt[x^(-1) + x])*(-1/2 + 1/(2*x^2)))/(x^(-1) + x)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(a0 + 1/sqrt(x + 1/x))"
+    },
+    {
+      "idx": 31860,
+      "F_str": "exp(a0 - 1/sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 - 1/Sqrt[x^(-1) + x])*(1/2 - 1/(2*x^2)))/(x^(-1) + x)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(a0 - 1/sqrt(x + 1/x))"
+    },
+    {
+      "idx": 31888,
+      "F_str": "exp(a0 + 1/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 + 1/Sqrt[x + x^2])*(-1/2 - x))/(x + x^2)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(a0 + 1/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 31889,
+      "F_str": "exp(a0 - 1/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 - 1/Sqrt[x + x^2])*(1/2 + x))/(x + x^2)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(a0 - 1/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 34054,
+      "F_str": "exp(a0*pow(x,(1/(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[E^(a0*x^(1/(2*Sqrt[x])))*x^(1/(2*Sqrt[x]))*(1/(2*x^(3/2)) - Log[x]/(4*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "e^(a0*x^(1/2/sqrt(x)))"
+    },
+    {
+      "idx": 34055,
+      "F_str": "exp(a0/pow(x,(1/(2*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^(a0/x^(1/(2*Sqrt[x])))*(-1/2*1/x^(3/2) + Log[x]/(4*x^(3/2))))/x^(1/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(a0/x^(1/2/sqrt(x)))"
+    },
+    {
+      "idx": 34548,
+      "F_str": "exp(a0 + sqrt(x + 1/x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 + Sqrt[x^(-1) + x]/2)*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]/2",
+      "engine": "maxima",
+      "result": "e^(a0 + 1/2*sqrt(x + 1/x))"
+    },
+    {
+      "idx": 34607,
+      "F_str": "exp(a0 - sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 - Sqrt[x^(-1) + x^2])*(1/(2*x^2) - x))/Sqrt[x^(-1) + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(a0 - sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 34735,
+      "F_str": "exp(a0*sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^(a0*Sqrt[x + x^2])*(1/2 + x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + x)*a0)"
+    },
+    {
+      "idx": 34739,
+      "F_str": "exp(a0/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^(a0/Sqrt[x + x^2])*(-1/2 - x))/(x + x^2)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(a0/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 34818,
+      "F_str": "exp(a0*sqrt(x**4 + x))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^(a0*Sqrt[x + x^4])*(1/2 + 2*x^3))/Sqrt[x + x^4], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^4 + x)*a0)"
+    },
+    {
+      "idx": 34819,
+      "F_str": "exp(a0/sqrt(x**4 + x))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^(a0/Sqrt[x + x^4])*(-1/2 - 2*x^3))/(x + x^4)^(3/2), x]",
+      "engine": "maxima",
+      "result": "e^(a0/sqrt(x^4 + x))"
+    },
+    {
+      "idx": 34823,
+      "F_str": "exp(a0 + sqrt(x**4 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 + Sqrt[x + x^4])*(1/2 + 2*x^3))/Sqrt[x + x^4], x]",
+      "engine": "maxima",
+      "result": "e^(a0 + sqrt(x^4 + x))"
+    },
+    {
+      "idx": 34825,
+      "F_str": "exp(a0 - sqrt(x**4 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 - Sqrt[x + x^4])*(-1/2 - 2*x^3))/Sqrt[x + x^4], x]",
+      "engine": "maxima",
+      "result": "e^(a0 - sqrt(x^4 + x))"
+    },
+    {
+      "idx": 35569,
+      "F_str": "exp(a0 + sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 + Sqrt[x^(-2) + x])*(1/2 - x^(-3)))/Sqrt[x^(-2) + x], x]",
+      "engine": "maxima",
+      "result": "e^(a0 + sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 35578,
+      "F_str": "exp(a0 - sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(a0 - Sqrt[x^(-2) + x])*(-1/2 + x^(-3)))/Sqrt[x^(-2) + x], x]",
+      "engine": "maxima",
+      "result": "e^(a0 - sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 42902,
+      "F_str": "exp(-exp(exp(sqrt(x + 1/x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(-E^E^Sqrt[x^(-1) + x] + E^Sqrt[x^(-1) + x] + Sqrt[x^(-1) + x])*(-1/2 + 1/(2*x^2)))/Sqrt[x^(-1) + x], x]",
+      "engine": "maxima",
+      "result": "e^(-e^(e^(sqrt(x^2 + 1)/sqrt(x))))"
+    },
+    {
+      "idx": 49612,
+      "F_str": "exp(exp(x/2)/pow(x,(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(E^(x/2)/x^Sqrt[x])*(E^(x/2)/(2*x^Sqrt[x]) + (E^(x/2)*(-(1/Sqrt[x]) - Log[x]/(2*Sqrt[x])))/x^Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(e^(-sqrt(x)*log(x) + 1/2*x))"
+    },
+    {
+      "idx": 51532,
+      "F_str": "exp(log(sqrt(2)*sqrt(x))**2/x**2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^((Log[2]/2 + Log[x]/2)^2/x^2)*((Log[2]/2 + Log[x]/2)/x^3 - (2*(Log[2]/2 + Log[x]/2)^2)/x^3), x]",
+      "engine": "maxima",
+      "result": "e^(log(sqrt(2)*sqrt(x))^2/x^2)"
+    },
+    {
+      "idx": 52142,
+      "F_str": "exp((log(x) - 1/sqrt(x))**4)",
+      "f_str": "timeout",
+      "mma_output": "WALL_TIMEOUT",
+      "engine": "maxima",
+      "result": "e^(log(x)^4 - 4*log(x)^3/sqrt(x) + 6*log(x)^2/x - 4*log(x)/x^(3/2) + 1/x^2)"
+    },
+    {
+      "idx": 52550,
+      "F_str": "exp(pow((1/(2*sqrt(x))),x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2^x*x^(x/2)))*(-1/2 - Log[2] - Log[x]/2))/(2^x*x^(x/2)), x]",
+      "engine": "maxima",
+      "result": "e^(e^(-x*log(2) - 1/2*x*log(x)))"
+    },
+    {
+      "idx": 52551,
+      "F_str": "exp(pow((1/(2*x)),(1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2^(1/Sqrt[x])*x^(1/Sqrt[x])))*(-x^(-3/2) - (-Log[2] - Log[x])/(2*x^(3/2))))/(2^(1/Sqrt[x])*x^(1/Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(e^(-log(2)/sqrt(x) - log(x)/sqrt(x)))"
+    },
+    {
+      "idx": 52552,
+      "F_str": "exp(pow((1/(2*x)),(2*sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2^(2*Sqrt[x])*x^(2*Sqrt[x])))*(-2/Sqrt[x] + (-Log[2] - Log[x])/Sqrt[x]))/(2^(2*Sqrt[x])*x^(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^((1/2/x)^(2*sqrt(x)))"
+    },
+    {
+      "idx": 52555,
+      "F_str": "exp(-pow((1/(2*x)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(-(1/Sqrt[x]) + (-Log[2] - Log[x])/(2*Sqrt[x]))/(2^Sqrt[x]*E^(1/(2^Sqrt[x]*x^Sqrt[x]))*x^Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-e^(-sqrt(x)*log(2) - sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 52556,
+      "F_str": "exp(pow((1/(2*x)),(-sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[2^Sqrt[x]*E^(2^Sqrt[x]*x^Sqrt[x])*x^Sqrt[x]*(1/Sqrt[x] - (-Log[2] - Log[x])/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(e^(sqrt(x)*log(2) + sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 52557,
+      "F_str": "exp(pow((1/(2*x)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2^Sqrt[x]*x^Sqrt[x]))*(-(1/Sqrt[x]) + (-Log[2] - Log[x])/(2*Sqrt[x])))/(2^Sqrt[x]*x^Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(e^(-sqrt(x)*log(2) - sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 52558,
+      "F_str": "exp(pow((1/(2*x)),(sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(2^(-1 - Sqrt[x])*E^(2^(-1 - Sqrt[x])/x^Sqrt[x])*(-(1/Sqrt[x]) + (-Log[2] - Log[x])/(2*Sqrt[x])))/x^Sqrt[x], x]",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(-sqrt(x)*log(2) - sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 52559,
+      "F_str": "exp(pow((1/(4*x**2)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(4^Sqrt[x]*x^(2*Sqrt[x])))*(-2/Sqrt[x] + (-2*Log[2] - 2*Log[x])/(2*Sqrt[x])))/(4^Sqrt[x]*x^(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(e^(-2*sqrt(x)*log(2) - 2*sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 52560,
+      "F_str": "exp(pow((16*x**4),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[16^Sqrt[x]*E^(16^Sqrt[x]*x^(4*Sqrt[x]))*x^(4*Sqrt[x])*(4/Sqrt[x] + (4*Log[2] + 4*Log[x])/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(e^(4*sqrt(x)*log(2) + 4*sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 52584,
+      "F_str": "exp(pow((2*sqrt(x)),(1/x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[2^x^(-1)*E^(2^x^(-1)*x^(1/(2*x)))*x^(1/(2*x))*(1/(2*x^2) - (Log[2] + Log[x]/2)/x^2), x]",
+      "engine": "maxima",
+      "result": "e^(e^(log(2)/x + 1/2*log(x)/x))"
+    },
+    {
+      "idx": 52674,
+      "F_str": "exp(pow((4*x),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[4^Sqrt[x]*E^(4^Sqrt[x]*x^Sqrt[x])*x^Sqrt[x]*(1/Sqrt[x] + (2*Log[2] + Log[x])/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(e^(2*sqrt(x)*log(2) + sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 52877,
+      "F_str": "exp(pow((sqrt(2)/(2*sqrt(x))),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2^(Sqrt[x]/2)*x^(Sqrt[x]/2)))*(-1/2*1/Sqrt[x] + (-1/2*Log[2] - Log[x]/2)/(2*Sqrt[x])))/(2^(Sqrt[x]/2)*x^(Sqrt[x]/2)), x]",
+      "engine": "maxima",
+      "result": "e^(e^(-1/2*sqrt(x)*log(2) - 1/2*sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 52972,
+      "F_str": "exp(-pow((sqrt(2)*sqrt(x)),(x**2)))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(2^(x^2/2)*x^(x^2/2)*(x/2 + 2*x*(Log[2]/2 + Log[x]/2)))/E^(2^(x^2/2)*x^(x^2/2)), x]",
+      "engine": "maxima",
+      "result": "e^(-e^(1/2*x^2*log(2) + 1/2*x^2*log(x)))"
+    },
+    {
+      "idx": 53426,
+      "F_str": "exp(pow(x,(1/4)))*exp(-exp(sqrt(x)))",
+      "f_str": "-exp(x**(1/4))*exp(sqrt(x))*exp(-exp(sqrt(x)))/(2*sqrt(x)) + exp(x**(1/4))*exp(-exp(sqrt(x)))/(4*x**(3/4))",
+      "mma_output": "",
+      "engine": "maxima",
+      "result": "e^(x^(1/4) - e^sqrt(x))"
+    },
+    {
+      "idx": 53546,
+      "F_str": "exp(-pow(x,(1/(4*sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^(1/(4*Sqrt[x]))*(1/(4*x^(3/2)) - Log[x]/(8*x^(3/2))))/E^x^(1/(4*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(-x^(1/4/sqrt(x)))"
+    },
+    {
+      "idx": 53558,
+      "F_str": "exp(pow(x,(1/(4*sqrt(x))))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/(4*Sqrt[x]))/2)*x^(1/(4*Sqrt[x]))*(1/(4*x^(3/2)) - Log[x]/(8*x^(3/2))), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*x^(1/4/sqrt(x)))"
+    },
+    {
+      "idx": 53567,
+      "F_str": "exp(pow(x,(1/4))*sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/4)*Sqrt[x + x^2])*((x^(1/4)*(1/2 + x))/Sqrt[x + x^2] + Sqrt[x + x^2]/(4*x^(3/4))), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + x)*x^0.25)"
+    },
+    {
+      "idx": 53568,
+      "F_str": "exp(pow(x,(1/4))/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/4)/Sqrt[x + x^2])*(((-1/2 - x)*x^(1/4))/(x + x^2)^(3/2) + 1/(4*x^(3/4)*Sqrt[x + x^2])), x]",
+      "engine": "maxima",
+      "result": "e^(x^0.25/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 53738,
+      "F_str": "exp(-pow(x,(1/sqrt(x)))/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(x^(-2 + 1/Sqrt[x]) - x^(-1 + 1/Sqrt[x])*(x^(-3/2) - Log[x]/(2*x^(3/2))))/E^x^(-1 + 1/Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x^1/sqrt(x)/x)"
+    },
+    {
+      "idx": 53759,
+      "F_str": "exp(pow((x + 1/x),(1/4))/sqrt(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^((x^(-1) + x)^(1/4)/Sqrt[x])*((1/4 - 1/(4*x^2))/(Sqrt[x]*(x^(-1) + x)^(3/4)) - (x^(-1) + x)^(1/4)/(2*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "2*(32*(21*x^4 + 14*x^2 + 5)*x^(69/4) - 32*(539*x^4 + 1122*x^2 + 475)*x^(61/4) - 64*(61*x^4 - 50*x^2 - 291)*x^(53/4) + 192*(289*x^4 + 726*x^2 + 529)*x^(45/4) + 96*(567*x^4 + 1370*x^2 + 935)*x^(37/4) + "
+    },
+    {
+      "idx": 53774,
+      "F_str": "exp(pow(x,(1/x))/(2*sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-1/2 + x^(-1))/2)*(-1/4*x^(-3/2 + x^(-1)) + (x^(-1/2 + x^(-1))*(x^(-2) - Log[x]/x^2))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*x^(1/x)/sqrt(x))"
+    },
+    {
+      "idx": 53802,
+      "F_str": "exp(-pow(x,(1/x))/sqrt(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(x^(-3/2 + x^(-1))/2 - x^(-1/2 + x^(-1))*(x^(-2) - Log[x]/x^2))/E^x^(-1/2 + x^(-1)), x]",
+      "engine": "maxima",
+      "result": "e^(-x^(1/x)/sqrt(x))"
+    },
+    {
+      "idx": 53809,
+      "F_str": "exp(pow((x/2),(1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x^(1/Sqrt[x])/2^(1/Sqrt[x]))*x^(1/Sqrt[x])*(x^(-3/2) - (-Log[2] + Log[x])/(2*x^(3/2))))/2^(1/Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(e^(-log(2)/sqrt(x) + log(x)/sqrt(x)))"
+    },
+    {
+      "idx": 53814,
+      "F_str": "exp(pow((x/2),(2*sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x^(2*Sqrt[x])/2^(2*Sqrt[x]))*x^(2*Sqrt[x])*(2/Sqrt[x] + (-Log[2] + Log[x])/Sqrt[x]))/2^(2*Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^((1/2*x)^(2*sqrt(x)))"
+    },
+    {
+      "idx": 53815,
+      "F_str": "exp(pow((x**2/2),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x^(2*Sqrt[x])/2^Sqrt[x])*x^(2*Sqrt[x])*(2/Sqrt[x] + (-Log[2] + 2*Log[x])/(2*Sqrt[x])))/2^Sqrt[x], x]",
+      "engine": "maxima",
+      "result": "e^(e^(-sqrt(x)*log(2) + 2*sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 53816,
+      "F_str": "exp(pow((x**2/4),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x^(2*Sqrt[x])/4^Sqrt[x])*x^(2*Sqrt[x])*(2/Sqrt[x] + (-2*Log[2] + 2*Log[x])/(2*Sqrt[x])))/4^Sqrt[x], x]",
+      "engine": "maxima",
+      "result": "e^(e^(-2*sqrt(x)*log(2) + 2*sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 54509,
+      "F_str": "exp(pow(x,(a0/sqrt(x)))/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^x^(-1 + a0/Sqrt[x])*(-x^(-2 + a0/Sqrt[x]) + x^(-1 + a0/Sqrt[x])*(a0/x^(3/2) - (a0*Log[x])/(2*x^(3/2)))), x]",
+      "engine": "maxima",
+      "result": "e^(x^(a0/sqrt(x))/x)"
+    },
+    {
+      "idx": 54628,
+      "F_str": "exp(-pow(x,exp(2/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^E^(2/Sqrt[x])*(E^(2/Sqrt[x])/x - (E^(2/Sqrt[x])*Log[x])/x^(3/2)))/E^x^E^(2/Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x^e^(2/sqrt(x)))"
+    },
+    {
+      "idx": 54641,
+      "F_str": "exp(pow(x,exp(2/sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^E^(2/Sqrt[x])/2)*x^E^(2/Sqrt[x])*(E^(2/Sqrt[x])/x - (E^(2/Sqrt[x])*Log[x])/x^(3/2)), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*x^e^(2/sqrt(x)))"
+    },
+    {
+      "idx": 54683,
+      "F_str": "exp(-pow(x,exp(a0/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^E^(a0/Sqrt[x])*(E^(a0/Sqrt[x])/x - (a0*E^(a0/Sqrt[x])*Log[x])/(2*x^(3/2))))/E^x^E^(a0/Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x^e^(a0/sqrt(x)))"
+    },
+    {
+      "idx": 54697,
+      "F_str": "exp(pow(x,exp(a0/sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^E^(a0/Sqrt[x])/2)*x^E^(a0/Sqrt[x])*(E^(a0/Sqrt[x])/x - (a0*E^(a0/Sqrt[x])*Log[x])/(2*x^(3/2))), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*x^e^(a0/sqrt(x)))"
+    },
+    {
+      "idx": 54971,
+      "F_str": "exp(pow((x*exp(-sqrt(x))),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + x^Sqrt[x]/E^x)*x^Sqrt[x]*((E^Sqrt[x]*(E^(-Sqrt[x]) - Sqrt[x]/(2*E^Sqrt[x])))/Sqrt[x] + (-Sqrt[x] + Log[x])/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(e^(sqrt(x)*log(x) - x))"
+    },
+    {
+      "idx": 55056,
+      "F_str": "exp(pow((x*exp(x)),(2*sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(2*x^(3/2) + E^(2*x^(3/2))*x^(2*Sqrt[x]))*x^(2*Sqrt[x])*((2*(E^x + E^x*x))/(E^x*Sqrt[x]) + (x + Log[x])/Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^((x*e^x)^(2*sqrt(x)))"
+    },
+    {
+      "idx": 55060,
+      "F_str": "exp(-pow(x,(exp(x/2)/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^(E^(x/2)/Sqrt[x])*(E^(x/2)/x^(3/2) + (-1/2*E^(x/2)/x^(3/2) + E^(x/2)/(2*Sqrt[x]))*Log[x]))/E^x^(E^(x/2)/Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x^(e^(1/2*x)/sqrt(x)))"
+    },
+    {
+      "idx": 55064,
+      "F_str": "exp(pow((x*exp(-x**2)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x^(5/2) + x^Sqrt[x]/E^x^(5/2))*x^Sqrt[x]*((E^x^2*(E^(-x^2) - (2*x^2)/E^x^2))/Sqrt[x] + (-x^2 + Log[x])/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^((x*e^(-x^2))^sqrt(x))"
+    },
+    {
+      "idx": 55065,
+      "F_str": "exp(pow((x*exp(-x/2)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-1/2*x^(3/2) + x^Sqrt[x]/E^(x^(3/2)/2))*x^Sqrt[x]*((E^(x/2)*(E^(-1/2*x) - x/(2*E^(x/2))))/Sqrt[x] + (-1/2*x + Log[x])/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^((x*e^(-1/2*x))^sqrt(x))"
+    },
+    {
+      "idx": 55067,
+      "F_str": "exp(pow((x*exp(x/2)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(3/2)/2 + E^(x^(3/2)/2)*x^Sqrt[x])*x^Sqrt[x]*((E^(x/2) + (E^(x/2)*x)/2)/(E^(x/2)*Sqrt[x]) + (x/2 + Log[x])/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^((x*e^(1/2*x))^sqrt(x))"
+    },
+    {
+      "idx": 55081,
+      "F_str": "exp(pow(x,(exp(x/2)/sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(E^(x/2)/Sqrt[x])/2)*x^(E^(x/2)/Sqrt[x])*(E^(x/2)/x^(3/2) + (-1/2*E^(x/2)/x^(3/2) + E^(x/2)/(2*Sqrt[x]))*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*x^(e^(1/2*x)/sqrt(x)))"
+    },
+    {
+      "idx": 55178,
+      "F_str": "exp(pow(x,log(log(1/sqrt(x))**2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^x^(2*(I*Pi - Log[2] + Log[Log[x]]))*x^(2*(I*Pi - Log[2] + Log[Log[x]]))*(2/x + (2*(I*Pi - Log[2] + Log[Log[x]]))/x), x]",
+      "engine": "maxima",
+      "result": "e^(x^log(1/4*log(x)^2))"
+    },
+    {
+      "idx": 55180,
+      "F_str": "exp(pow(x,(-log(log(sqrt(x))**2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^x^(-2*(-Log[2] + Log[Log[x]]))*(-2/x - (2*(-Log[2] + Log[Log[x]]))/x))/x^(2*(-Log[2] + Log[Log[x]])), x]",
+      "engine": "maxima",
+      "result": "e^(e^(2*log(2)*log(x) - 2*log(x)*log(log(x))))"
+    },
+    {
+      "idx": 55181,
+      "F_str": "exp(pow(x,log(log(sqrt(x))**(-2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^x^(-2*(-Log[2] + Log[Log[x]]))*(-2/x - (2*(-Log[2] + Log[Log[x]]))/x))/x^(2*(-Log[2] + Log[Log[x]])), x]",
+      "engine": "maxima",
+      "result": "e^(x^log(4/log(x)^2))"
+    },
+    {
+      "idx": 55728,
+      "F_str": "exp(pow(x,(sqrt(x)))*(a0 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]*(a0 + x))*(x^Sqrt[x] + x^Sqrt[x]*(a0 + x)*(1/Sqrt[x] + Log[x]/(2*Sqrt[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(a0*x^sqrt(x) + x*x^sqrt(x))"
+    },
+    {
+      "idx": 55729,
+      "F_str": "exp(pow(x,(sqrt(x)))*(a0 - x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^((a0 - x)*x^Sqrt[x])*(-x^Sqrt[x] + (a0 - x)*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(a0*x^sqrt(x) - x*x^sqrt(x))"
+    },
+    {
+      "idx": 55730,
+      "F_str": "exp(pow(x,(sqrt(x)))/(a0 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/(a0 + x))*(-(x^Sqrt[x]/(a0 + x)^2) + (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/(a0 + x)), x]",
+      "engine": "maxima",
+      "result": "e^(x^sqrt(x)/(a0 + x))"
+    },
+    {
+      "idx": 55731,
+      "F_str": "exp(pow(x,(sqrt(x)))/(a0 - x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/(a0 - x))*(x^Sqrt[x]/(a0 - x)^2 + (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/(a0 - x)), x]",
+      "engine": "maxima",
+      "result": "e^(x^sqrt(x)/(a0 - x))"
+    },
+    {
+      "idx": 55754,
+      "F_str": "exp(pow(x,(sqrt(x)))*exp(-2*x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/E^(2*x))*((-2*x^Sqrt[x])/E^(2*x) + (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^(2*x)), x]",
+      "engine": "maxima",
+      "result": "e^(e^(sqrt(x)*log(x) - 2*x))"
+    },
+    {
+      "idx": 55755,
+      "F_str": "exp(pow(x,(sqrt(x)))*exp(2*x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(E^(2*x)*x^Sqrt[x])*(2*E^(2*x)*x^Sqrt[x] + E^(2*x)*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(e^(sqrt(x)*log(x) + 2*x))"
+    },
+    {
+      "idx": 55795,
+      "F_str": "exp(-pow(x,(sqrt(x)))*exp(-x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(x^Sqrt[x]/E^x - (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^x)/E^(x^Sqrt[x]/E^x), x]",
+      "engine": "maxima",
+      "result": "e^(-e^(sqrt(x)*log(x) - x))"
+    },
+    {
+      "idx": 55797,
+      "F_str": "exp(-pow(x,(sqrt(x)*exp(-x))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^(Sqrt[x]/E^x)*(1/(E^x*Sqrt[x]) + (1/(2*E^x*Sqrt[x]) - Sqrt[x]/E^x)*Log[x]))/E^x^(Sqrt[x]/E^x), x]",
+      "engine": "maxima",
+      "result": "e^(-x^(sqrt(x)*e^(-x)))"
+    },
+    {
+      "idx": 55812,
+      "F_str": "exp(pow(x,(sqrt(x)))*exp(-x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/E^x)*(-(x^Sqrt[x]/E^x) + (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^x), x]",
+      "engine": "maxima",
+      "result": "e^(e^(sqrt(x)*log(x) - x))"
+    },
+    {
+      "idx": 55821,
+      "F_str": "exp(-pow(x,(sqrt(x)*exp(-x/2))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^(Sqrt[x]/E^(x/2))*(1/(E^(x/2)*Sqrt[x]) + (1/(2*E^(x/2)*Sqrt[x]) - Sqrt[x]/(2*E^(x/2)))*Log[x]))/E^x^(Sqrt[x]/E^(x/2)), x]",
+      "engine": "maxima",
+      "result": "e^(-x^(sqrt(x)*e^(-1/2*x)))"
+    },
+    {
+      "idx": 55822,
+      "F_str": "exp(-pow(x,(sqrt(x)*exp(x/2))))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[(x^(E^(x/2)*Sqrt[x])*(E^(x/2)/Sqrt[x] + (E^(x/2)/(2*Sqrt[x]) + (E^(x/2)*Sqrt[x])/2)*Log[x]))/E^x^(E^(x/2)*Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x^(sqrt(x)*e^(1/2*x)))"
+    },
+    {
+      "idx": 55841,
+      "F_str": "exp(pow(x,(sqrt(x)))*exp(-x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/(2*E^x))*(-1/2*x^Sqrt[x]/E^x + (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/(2*E^x)), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(sqrt(x)*log(x) - x))"
+    },
+    {
+      "idx": 55842,
+      "F_str": "exp(pow(x,(sqrt(x)))*exp(-x**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/E^x^2)*((-2*x^(1 + Sqrt[x]))/E^x^2 + (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^x^2), x]",
+      "engine": "maxima",
+      "result": "e^(e^(-x^2 + sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 55843,
+      "F_str": "exp(pow(x,(sqrt(x)))*exp(-x/2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^Sqrt[x]/E^(x/2))*(-1/2*x^Sqrt[x]/E^(x/2) + (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/E^(x/2)), x]",
+      "engine": "maxima",
+      "result": "e^(e^(sqrt(x)*log(x) - 1/2*x))"
+    },
+    {
+      "idx": 55846,
+      "F_str": "exp(pow(x,(sqrt(x)))*exp(x/2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(E^(x/2)*x^Sqrt[x])*((E^(x/2)*x^Sqrt[x])/2 + E^(x/2)*x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(e^(sqrt(x)*log(x) + 1/2*x))"
+    },
+    {
+      "idx": 55847,
+      "F_str": "exp(pow(x,(sqrt(x)*exp(-x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(Sqrt[x]/E^x)/2)*x^(Sqrt[x]/E^x)*(1/(E^x*Sqrt[x]) + (1/(2*E^x*Sqrt[x]) - Sqrt[x]/E^x)*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*x^(sqrt(x)*e^(-x)))"
+    },
+    {
+      "idx": 56022,
+      "F_str": "exp(pow(x,(sqrt(x) - x))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(Sqrt[x] - x)/2)*x^(Sqrt[x] - x)*((Sqrt[x] - x)/x + (-1 + 1/(2*Sqrt[x]))*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(-x*log(x) + sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 56036,
+      "F_str": "exp(pow(x,(-sqrt(x) + x**2))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-Sqrt[x] + x^2)/2)*x^(-Sqrt[x] + x^2)*((-Sqrt[x] + x^2)/x + (-1/2*1/Sqrt[x] + 2*x)*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(x^2*log(x) - sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 56037,
+      "F_str": "exp(pow(x,(sqrt(x) + x**2))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(Sqrt[x] + x^2)/2)*x^(Sqrt[x] + x^2)*((Sqrt[x] + x^2)/x + (1/(2*Sqrt[x]) + 2*x)*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(x^2*log(x) + sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 56038,
+      "F_str": "exp(pow(x,(sqrt(x) - x**2))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(Sqrt[x] - x^2)/2)*x^(Sqrt[x] - x^2)*((Sqrt[x] - x^2)/x + (1/(2*Sqrt[x]) - 2*x)*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(-x^2*log(x) + sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 56042,
+      "F_str": "exp(pow(x,(-sqrt(x) + x))/4)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-Sqrt[x] + x)/4)*x^(-Sqrt[x] + x)*((-Sqrt[x] + x)/x + (1 - 1/(2*Sqrt[x]))*Log[x]), x]/4",
+      "engine": "maxima",
+      "result": "e^(1/4*e^(x*log(x) - sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 56044,
+      "F_str": "exp(pow(x,(sqrt(x) + x))/4)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(Sqrt[x] + x)/4)*x^(Sqrt[x] + x)*((Sqrt[x] + x)/x + (1 + 1/(2*Sqrt[x]))*Log[x]), x]/4",
+      "engine": "maxima",
+      "result": "e^(1/4*e^(x*log(x) + sqrt(x)*log(x)))"
+    },
+    {
+      "idx": 56104,
+      "F_str": "exp(pow(x,(-x + 1/sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/Sqrt[x] - x)/2)*x^(1/Sqrt[x] - x)*((1/Sqrt[x] - x)/x + (-1 - 1/(2*x^(3/2)))*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(-x*log(x) + log(x)/sqrt(x)))"
+    },
+    {
+      "idx": 56105,
+      "F_str": "exp(pow(x,(x + 1/sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/Sqrt[x] + x)/2)*x^(1/Sqrt[x] + x)*((1/Sqrt[x] + x)/x + (1 - 1/(2*x^(3/2)))*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(x*log(x) + log(x)/sqrt(x)))"
+    },
+    {
+      "idx": 56106,
+      "F_str": "exp(pow(x,(x - 1/sqrt(x)))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-(1/Sqrt[x]) + x)/2)*x^(-(1/Sqrt[x]) + x)*((-(1/Sqrt[x]) + x)/x + (1 + 1/(2*x^(3/2)))*Log[x]), x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*e^(x*log(x) - log(x)/sqrt(x)))"
+    },
+    {
+      "idx": 56131,
+      "F_str": "exp(pow(x,(x**2/2))/(2*sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-1/2 + x^2/2)/2)*(-1/4*x^(-3/2 + x^2/2) + (x^(-1/2 + x^2/2)*(x/2 + x*Log[x]))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*x^(1/2*x^2)/sqrt(x))"
+    },
+    {
+      "idx": 56133,
+      "F_str": "exp(-pow(x,(x/2))/(2*sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(x^(-3/2 + x/2)/4 - (x^(-1/2 + x/2)*(1/2 + Log[x]/2))/2)/E^(x^(-1/2 + x/2)/2), x]",
+      "engine": "maxima",
+      "result": "e^(-1/2*x^(1/2*x)/sqrt(x))"
+    },
+    {
+      "idx": 56134,
+      "F_str": "exp(pow(x,(x**2))/(2*sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-1/2 + x^2)/2)*(-1/4*x^(-3/2 + x^2) + (x^(-1/2 + x^2)*(x + 2*x*Log[x]))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*x^(x^2)/sqrt(x))"
+    },
+    {
+      "idx": 56135,
+      "F_str": "exp(pow(x,(x/2))/(2*sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-1/2 + x/2)/2)*(-1/4*x^(-3/2 + x/2) + (x^(-1/2 + x/2)*(1/2 + Log[x]/2))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*x^(1/2*x)/sqrt(x))"
+    },
+    {
+      "idx": 56137,
+      "F_str": "exp(-pow(x,(x**2/2))/sqrt(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(x^(-3/2 + x^2/2)/2 - x^(-1/2 + x^2/2)*(x/2 + x*Log[x]))/E^x^(-1/2 + x^2/2), x]",
+      "engine": "maxima",
+      "result": "e^(-x^(1/2*x^2)/sqrt(x))"
+    },
+    {
+      "idx": 56333,
+      "F_str": "exp(pow(x,x)*exp(-sqrt(x))/2)",
+      "f_str": "timeout",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "e^(1/2*x^x*e^(-sqrt(x)))"
+    },
+    {
+      "idx": 57005,
+      "F_str": "exp(sqrt(2)*sqrt(x)*pow(x,x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[2]*x^(1/2 + x))*(x^(-1/2 + x)/Sqrt[2] + Sqrt[2]*x^(1/2 + x)*(1 + Log[x])), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(2)*sqrt(x)*x^x)"
+    },
+    {
+      "idx": 58337,
+      "F_str": "exp(sqrt(pow(x,(1/x)) + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-1) + x^x^(-1)]*(-1/2*1/x^2 + (x^x^(-1)*(x^(-2) - Log[x]/x^2))/2))/Sqrt[x^(-1) + x^x^(-1)], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^(1/x) + 1/x))"
+    },
+    {
+      "idx": 58637,
+      "F_str": "exp(sqrt(sqrt(x) + x)*log(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^Sqrt[Sqrt[x] + x]*(Sqrt[Sqrt[x] + x]/x + ((1/2 + 1/(4*Sqrt[x]))*Log[x])/Sqrt[Sqrt[x] + x]), x]",
+      "engine": "maxima",
+      "result": "x^(x^(1/4)*sqrt(sqrt(x) + 1))"
+    },
+    {
+      "idx": 58718,
+      "F_str": "exp(sqrt(x**16 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x^16]*(1/2 + 8*x^15))/Sqrt[x + x^16], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^16 + x))"
+    },
+    {
+      "idx": 59060,
+      "F_str": "exp(sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-1) + x]*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + 1/x))"
+    },
+    {
+      "idx": 59200,
+      "F_str": "exp(-sqrt(x + 1/x)/4)",
+      "f_str": "timeout",
+      "mma_output": "-1/4*Integrate[(1/2 - 1/(2*x^2))/(E^(Sqrt[x^(-1) + x]/4)*Sqrt[x^(-1) + x]), x]",
+      "engine": "maxima",
+      "result": "e^(-1/4*sqrt(x + 1/x))"
+    },
+    {
+      "idx": 59282,
+      "F_str": "exp(sqrt(x + 1/x)*log(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^Sqrt[x^(-1) + x]*(Sqrt[x^(-1) + x]/x + ((1/2 - 1/(2*x^2))*Log[x])/Sqrt[x^(-1) + x]), x]",
+      "engine": "maxima",
+      "result": "2*(2*x^(15/2) + 2*x^(11/2)*(4*log(x) + 1) + 2*x^(7/2)*(4*log(x) - 1) + ((x*log(x)^2 + 4*x*log(x) + 4*x)*x^6 - (x*log(x)^2 - 4*x*log(x) - 12*x)*x^4 - (x*log(x)^2 + 4*x*log(x) - 12*x)*x^2 + x*log(x)^2 -"
+    },
+    {
+      "idx": 59283,
+      "F_str": "exp(sqrt(x + 1/x)/log(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x^(-1) + x]/Log[x])*(-(Sqrt[x^(-1) + x]/(x*Log[x]^2)) + (1/2 - 1/(2*x^2))/(Sqrt[x^(-1) + x]*Log[x])), x]",
+      "engine": "maxima",
+      "result": "-2*(2*x^(15/2)*log(x)^2 + 2*(4*log(x)^3 + log(x)^2)*x^(11/2) + 2*(4*log(x)^3 - log(x)^2)*x^(7/2) - 2*x^(3/2)*log(x)^2 + ((x*log(x)^2 - 4*x*log(x) + 4*x)*x^6 - (x*log(x)^2 + 4*x*log(x) - 12*x)*x^4 - (x"
+    },
+    {
+      "idx": 59386,
+      "F_str": "exp(sqrt(x)/2 + 1/(2*pow(x,x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x]/2 + 1/(2*x^x))*(1/(4*Sqrt[x]) + (-1 - Log[x])/(2*x^x)), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x) + 1/2/x^x)"
+    },
+    {
+      "idx": 59387,
+      "F_str": "exp(sqrt(x)/2 - 1/(2*pow(x,x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x]/2 - 1/(2*x^x))*(1/(4*Sqrt[x]) - (-1 - Log[x])/(2*x^x)), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x) - 1/2/x^x)"
+    },
+    {
+      "idx": 59402,
+      "F_str": "exp(sqrt(x**2 + 1/(2*x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[1/(2*x) + x^2]*(-1/4*1/x^2 + x))/Sqrt[1/(2*x) + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + 1/2/x))"
+    },
+    {
+      "idx": 59403,
+      "F_str": "exp(sqrt(x/2 + 1/(2*x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[1/(2*x) + x/2]*(1/4 - 1/(4*x^2)))/Sqrt[1/(2*x) + x/2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(1/2*x + 1/2/x))"
+    },
+    {
+      "idx": 59482,
+      "F_str": "exp(sqrt(x**2 + 1/x)/sqrt(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x^(-1) + x^2]/Sqrt[x])*((-1/2*1/x^2 + x)/(Sqrt[x]*Sqrt[x^(-1) + x^2]) - Sqrt[x^(-1) + x^2]/(2*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + 1/x)/sqrt(x))"
+    },
+    {
+      "idx": 59487,
+      "F_str": "exp(sqrt(x**2 + 1/x)/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x^(-1) + x^2]/x)*((-1/2*1/x^2 + x)/(x*Sqrt[x^(-1) + x^2]) - Sqrt[x^(-1) + x^2]/x^2), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + 1/x)/x)"
+    },
+    {
+      "idx": 59493,
+      "F_str": "exp(-sqrt(x**2 + 2*x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1 - x)/(E^Sqrt[2*x + x^2]*Sqrt[2*x + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(-sqrt(x + 2)*sqrt(x))"
+    },
+    {
+      "idx": 59495,
+      "F_str": "exp(sqrt(x**2 + 2*x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[2*x + x^2]*(1 + x))/Sqrt[2*x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + 2)*sqrt(x))"
+    },
+    {
+      "idx": 59496,
+      "F_str": "exp(sqrt(x**2/2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x^2/2]*(1/2 + x/2))/Sqrt[x + x^2/2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(1/2*x^2 + x))"
+    },
+    {
+      "idx": 59500,
+      "F_str": "exp(sqrt(x**2 + 2*x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(Sqrt[2*x + x^2]/2)*(1 + x))/Sqrt[2*x + x^2], x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x + 2)*sqrt(x))"
+    },
+    {
+      "idx": 59501,
+      "F_str": "exp(sqrt(x**2/2 + x/2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x/2 + x^2/2]*(1/4 + x/2))/Sqrt[x/2 + x^2/2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(1/2*x^2 + 1/2*x))"
+    },
+    {
+      "idx": 59833,
+      "F_str": "exp(sqrt(x)/2)*exp(-pow(x,x))",
+      "f_str": "-x**x*(log(x) + 1)*exp(sqrt(x)/2)*exp(-x**x) + exp(sqrt(x)/2)*exp(-x**x)/(4*sqrt(x))",
+      "mma_output": "Integrate[E^(Sqrt[x]/2 - x^x)/(4*Sqrt[x]) - E^(Sqrt[x]/2 - x^x)*x^x*(1 + Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x^x + 1/2*sqrt(x))"
+    },
+    {
+      "idx": 59837,
+      "F_str": "exp(-sqrt(x)/2)*exp(pow(x,x)/2)",
+      "f_str": "x**x*(log(x) + 1)*exp(-sqrt(x)/2)*exp(x**x/2)/2 - exp(-sqrt(x)/2)*exp(x**x/2)/(4*sqrt(x))",
+      "mma_output": "Integrate[-1/4*E^(-1/2*Sqrt[x] + x^x/2)/Sqrt[x] + (E^(-1/2*Sqrt[x] + x^x/2)*x^x*(1 + Log[x]))/2, x]",
+      "engine": "maxima",
+      "result": "e^(1/2*x^x - 1/2*sqrt(x))"
+    },
+    {
+      "idx": 59841,
+      "F_str": "exp(sqrt(x)/2)*exp(pow(x,x)/2)",
+      "f_str": "x**x*(log(x) + 1)*exp(sqrt(x)/2)*exp(x**x/2)/2 + exp(sqrt(x)/2)*exp(x**x/2)/(4*sqrt(x))",
+      "mma_output": "Integrate[E^(Sqrt[x]/2 + x^x/2)/(4*Sqrt[x]) + (E^(Sqrt[x]/2 + x^x/2)*x^x*(1 + Log[x]))/2, x]",
+      "engine": "maxima",
+      "result": "e^(1/2*x^x + 1/2*sqrt(x))"
+    },
+    {
+      "idx": 59840,
+      "F_str": "exp(sqrt(x)/2)*exp(-pow(x,x)/2)",
+      "f_str": "-x**x*(log(x) + 1)*exp(sqrt(x)/2)*exp(-x**x/2)/2 + exp(sqrt(x)/2)*exp(-x**x/2)/(4*sqrt(x))",
+      "mma_output": "Integrate[E^(Sqrt[x]/2 - x^x/2)/(4*Sqrt[x]) - (E^(Sqrt[x]/2 - x^x/2)*x^x*(1 + Log[x]))/2, x]",
+      "engine": "maxima",
+      "result": "e^(-1/2*x^x + 1/2*sqrt(x))"
+    },
+    {
+      "idx": 60168,
+      "F_str": "exp(sqrt(x**2*log(x)**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x^2*Log[x]^2]*(1/2 + x*Log[x] + x*Log[x]^2))/Sqrt[x + x^2*Log[x]^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2*log(x)^2 + x))"
+    },
+    {
+      "idx": 60258,
+      "F_str": "exp(sqrt(x)/(2*pow(x,x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/2 - x)/2)*(x^(-1/2 - x)/4 + (x^(1/2 - x)*(-1 - Log[x]))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x)/x^x)"
+    },
+    {
+      "idx": 60264,
+      "F_str": "exp(sqrt(x**2 + pow(x,(-x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^2 + x^(-x)]*(x + (-1 - Log[x])/(2*x^x)))/Sqrt[x^2 + x^(-x)], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + 1/x^x))"
+    },
+    {
+      "idx": 60266,
+      "F_str": "exp(-sqrt(x)/(2*pow(x,(x/2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1/4*x^(-1/2 - x/2) - (x^(1/2 - x/2)*(-1/2 - Log[x]/2))/2)/E^(x^(1/2 - x/2)/2), x]",
+      "engine": "maxima",
+      "result": "e^(-1/2*sqrt(x)/x^(1/2*x))"
+    },
+    {
+      "idx": 60267,
+      "F_str": "exp(sqrt(x)/(2*pow(x,(x**2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/2 - x^2)/2)*(x^(-1/2 - x^2)/4 + (x^(1/2 - x^2)*(-x - 2*x*Log[x]))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x)/x^(x^2))"
+    },
+    {
+      "idx": 60268,
+      "F_str": "exp(sqrt(x)/(2*pow(x,(x/2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/2 - x/2)/2)*(x^(-1/2 - x/2)/4 + (x^(1/2 - x/2)*(-1/2 - Log[x]/2))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x)/x^(1/2*x))"
+    },
+    {
+      "idx": 60542,
+      "F_str": "exp(sqrt(x**2 + x)*exp(-x/2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x + x^2]/E^(x/2))*((1/2 + x)/(E^(x/2)*Sqrt[x + x^2]) - Sqrt[x + x^2]/(2*E^(x/2))), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + x)*e^(-1/2*x))"
+    },
+    {
+      "idx": 60543,
+      "F_str": "exp(sqrt(x**2 + x)*exp(x/2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(E^(x/2)*Sqrt[x + x^2])*((E^(x/2)*(1/2 + x))/Sqrt[x + x^2] + (E^(x/2)*Sqrt[x + x^2])/2), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + x)*e^(1/2*x))"
+    },
+    {
+      "idx": 60544,
+      "F_str": "-exp(sqrt(x**2 + x)) + log(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^(-1) + (E^Sqrt[x + x^2]*(-1/2 - x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "-e^(sqrt(x^2 + x)) + log(x)"
+    },
+    {
+      "idx": 60550,
+      "F_str": "exp(sqrt(x**2 + x)) + log(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^(-1) + (E^Sqrt[x + x^2]*(1/2 + x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + x)) + log(x)"
+    },
+    {
+      "idx": 60551,
+      "F_str": "exp(sqrt(x**2 + x)) - log(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-x^(-1) + (E^Sqrt[x + x^2]*(1/2 + x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + x)) - log(x)"
+    },
+    {
+      "idx": 60554,
+      "F_str": "exp(sqrt(x**2 + x)*log(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^Sqrt[x + x^2]*(Sqrt[x + x^2]/x + ((1/2 + x)*Log[x])/Sqrt[x + x^2]), x]",
+      "engine": "maxima",
+      "result": "x^(sqrt(x + 1)*sqrt(x))"
+    },
+    {
+      "idx": 60555,
+      "F_str": "exp(sqrt(x**2 + x)/log(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x + x^2]/Log[x])*(-(Sqrt[x + x^2]/(x*Log[x]^2)) + (1/2 + x)/(Sqrt[x + x^2]*Log[x])), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + x)/log(x))"
+    },
+    {
+      "idx": 60838,
+      "F_str": "exp(sqrt(x**4 + x)/sqrt(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x + x^4]/Sqrt[x])*((1/2 + 2*x^3)/(Sqrt[x]*Sqrt[x + x^4]) - Sqrt[x + x^4]/(2*x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^4 + x)/sqrt(x))"
+    },
+    {
+      "idx": 60840,
+      "F_str": "exp(sqrt(x**4 + x)/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x + x^4]/x)*((1/2 + 2*x^3)/(x*Sqrt[x + x^4]) - Sqrt[x + x^4]/x^2), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^4 + x)/x)"
+    },
+    {
+      "idx": 60841,
+      "F_str": "exp(sqrt(x**5 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x^5]*(1/2 + (5*x^4)/2))/Sqrt[x + x^5], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^5 + x))"
+    },
+    {
+      "idx": 60843,
+      "F_str": "exp(sqrt(x**6 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x^6]*(1/2 + 3*x^5))/Sqrt[x + x^6], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^6 + x))"
+    },
+    {
+      "idx": 60936,
+      "F_str": "exp(sqrt(x + (a0 + 1/x)**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[(a0 + x^(-1))^2 + x]*(1/2 - (a0 + x^(-1))/x^2))/Sqrt[(a0 + x^(-1))^2 + x], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt((a0 + 1/x)^2 + x))"
+    },
+    {
+      "idx": 60937,
+      "F_str": "exp(sqrt(x + (a0 - 1/x)**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[(a0 - x^(-1))^2 + x]*(1/2 + (a0 - x^(-1))/x^2))/Sqrt[(a0 - x^(-1))^2 + x], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt((a0 - 1/x)^2 + x))"
+    },
+    {
+      "idx": 61755,
+      "F_str": "exp(-sqrt(x))*exp(2*pow(x,x))",
+      "f_str": "2*x**x*(log(x) + 1)*exp(-sqrt(x))*exp(2*x**x) - exp(-sqrt(x))*exp(2*x**x)/(2*sqrt(x))",
+      "mma_output": "Integrate[-1/2*E^(-Sqrt[x] + 2*x^x)/Sqrt[x] + 2*E^(-Sqrt[x] + 2*x^x)*x^x*(1 + Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(2*x^x - sqrt(x))"
+    },
+    {
+      "idx": 63502,
+      "F_str": "exp(-sqrt(x))*exp(-pow(x,x))",
+      "f_str": "-x**x*(log(x) + 1)*exp(-sqrt(x))*exp(-x**x) - exp(-sqrt(x))*exp(-x**x)/(2*sqrt(x))",
+      "mma_output": "Integrate[-1/2*E^(-Sqrt[x] - x^x)/Sqrt[x] - E^(-Sqrt[x] - x^x)*x^x*(1 + Log[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x^x - sqrt(x))"
+    },
+    {
+      "idx": 63536,
+      "F_str": "exp(-sqrt(x))*exp(pow(x,x)/2)",
+      "f_str": "x**x*(log(x) + 1)*exp(-sqrt(x))*exp(x**x/2)/2 - exp(-sqrt(x))*exp(x**x/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[-1/2*E^(-Sqrt[x] + x^x/2)/Sqrt[x] + (E^(-Sqrt[x] + x^x/2)*x^x*(1 + Log[x]))/2, x]",
+      "engine": "maxima",
+      "result": "e^(1/2*x^x - sqrt(x))"
+    },
+    {
+      "idx": 64861,
+      "F_str": "exp(sqrt(x)/log(2*x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x]/(Log[2] + Log[x]))*(-(1/(Sqrt[x]*(Log[2] + Log[x])^2)) + 1/(2*Sqrt[x]*(Log[2] + Log[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x)/log(2*x))"
+    },
+    {
+      "idx": 64869,
+      "F_str": "exp(-sqrt(x) + log(2*x)**2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-Sqrt[x] + (Log[2] + Log[x])^2)*(-1/2*1/Sqrt[x] + (2*(Log[2] + Log[x]))/x), x]",
+      "engine": "maxima",
+      "result": "e^(log(2*x)^2 - sqrt(x))"
+    },
+    {
+      "idx": 64871,
+      "F_str": "exp(sqrt(x + log(2*x)**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + (Log[2] + Log[x])^2]*(1/2 + (Log[2] + Log[x])/x))/Sqrt[x + (Log[2] + Log[x])^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(log(2*x)^2 + x))"
+    },
+    {
+      "idx": 64872,
+      "F_str": "exp(sqrt(x) + log(2*x)**2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x] + (Log[2] + Log[x])^2)*(1/(2*Sqrt[x]) + (2*(Log[2] + Log[x]))/x), x]",
+      "engine": "maxima",
+      "result": "e^(log(2*x)^2 + sqrt(x))"
+    },
+    {
+      "idx": 64873,
+      "F_str": "exp(sqrt(x) - log(2*x)**2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x] - (Log[2] + Log[x])^2)*(1/(2*Sqrt[x]) - (2*(Log[2] + Log[x]))/x), x]",
+      "engine": "maxima",
+      "result": "e^(-log(2*x)^2 + sqrt(x))"
+    },
+    {
+      "idx": 65143,
+      "F_str": "exp(sqrt(x)/log(sqrt(2)*sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x]/(Log[2]/2 + Log[x]/2))*(-1/2*1/(Sqrt[x]*(Log[2]/2 + Log[x]/2)^2) + 1/(2*Sqrt[x]*(Log[2]/2 + Log[x]/2))), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x)/log(sqrt(2)*sqrt(x)))"
+    },
+    {
+      "idx": 65490,
+      "F_str": "exp(sqrt(x + log(x)**2/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + Log[x]^2/x]*(1/2 + Log[x]/x^2 - Log[x]^2/(2*x^2)))/Sqrt[x + Log[x]^2/x], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + log(x)^2/x))"
+    },
+    {
+      "idx": 65549,
+      "F_str": "exp(sqrt(x*log(x)**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x*Log[x]^2]*(1/2 + Log[x] + Log[x]^2/2))/Sqrt[x + x*Log[x]^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x*log(x)^2 + x))"
+    },
+    {
+      "idx": 65909,
+      "F_str": "exp(sqrt(x + pow(x,(1/sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x^(1/Sqrt[x])]*(1/2 + (x^(1/Sqrt[x])*(x^(-3/2) - Log[x]/(2*x^(3/2))))/2))/Sqrt[x + x^(1/Sqrt[x])], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + x^1/sqrt(x)))"
+    },
+    {
+      "idx": 65921,
+      "F_str": "exp(-sqrt(x)*pow(x,(1/x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1/2*x^(-1/2 + x^(-1)) - x^(1/2 + x^(-1))*(x^(-2) - Log[x]/x^2))/E^x^(1/2 + x^(-1)), x]",
+      "engine": "maxima",
+      "result": "e^(-sqrt(x)*x^(1/x))"
+    },
+    {
+      "idx": 65922,
+      "F_str": "exp(-sqrt(x)/pow(x,(1/x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1/2*x^(-1/2 - x^(-1)) - x^(1/2 - x^(-1))*(-x^(-2) + Log[x]/x^2))/E^x^(1/2 - x^(-1)), x]",
+      "engine": "maxima",
+      "result": "e^(-sqrt(x)/x^(1/x))"
+    },
+    {
+      "idx": 65930,
+      "F_str": "exp(sqrt(x)*pow((x + 1/x),(1/4)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x]*(x^(-1) + x)^(1/4))*(((1/4 - 1/(4*x^2))*Sqrt[x])/(x^(-1) + x)^(3/4) + (x^(-1) + x)^(1/4)/(2*Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "2*(288*(77*x^4 + 110*x^2 + 45)*x^(57/4) + 96*(935*x^4 + 1370*x^2 + 567)*x^(49/4) + 192*(529*x^4 + 726*x^2 + 289)*x^(41/4) + 64*(291*x^4 + 50*x^2 - 61)*x^(33/4) - 32*(475*x^4 + 1122*x^2 + 539)*x^(25/4)"
+    },
+    {
+      "idx": 66072,
+      "F_str": "exp(sqrt(x + pow(x,a0)/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x^(-1 + a0)]*(1/2 - x^(-2 + a0)/2 + (a0*x^(-2 + a0))/2))/Sqrt[x + x^(-1 + a0)], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^(a0 - 1) + x))"
+    },
+    {
+      "idx": 66088,
+      "F_str": "exp(sqrt(x*pow(x,a0) + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + x^(1 + a0)]*(1/2 + x^a0/2 + (a0*x^a0)/2))/Sqrt[x + x^(1 + a0)], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + x^(a0 + 1)))"
+    },
+    {
+      "idx": 66312,
+      "F_str": "exp(sqrt(x)*pow(x,(sqrt(x)/2))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/2 + Sqrt[x]/2)/2)*(x^(-1/2 + Sqrt[x]/2)/4 + (x^(1/2 + Sqrt[x]/2)*(1/(2*Sqrt[x]) + Log[x]/(4*Sqrt[x])))/2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x)*x^(1/2*sqrt(x)))"
+    },
+    {
+      "idx": 66317,
+      "F_str": "exp(-sqrt(x + pow(x,(-x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1/2 - (-1 - Log[x])/(2*x^x))/(E^Sqrt[x + x^(-x)]*Sqrt[x + x^(-x)]), x]",
+      "engine": "maxima",
+      "result": "e^(-sqrt(x + 1/x^x))"
+    },
+    {
+      "idx": 66822,
+      "F_str": "exp(sqrt(x + (x + 1/x)**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + (x^(-1) + x)^2]*(1/2 + ((2 - 2/x^2)*(x^(-1) + x))/2))/Sqrt[x + (x^(-1) + x)^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt((x + 1/x)^2 + x))"
+    },
+    {
+      "idx": 66823,
+      "F_str": "exp(sqrt(x + (x - 1/x)**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x + (-x^(-1) + x)^2]*(1/2 + ((2 + 2/x^2)*(-x^(-1) + x))/2))/Sqrt[x + (-x^(-1) + x)^2], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt((x - 1/x)^2 + x))"
+    },
+    {
+      "idx": 66873,
+      "F_str": "exp(-sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1/2 + x^(-3))/(E^Sqrt[x^(-2) + x]*Sqrt[x^(-2) + x]), x]",
+      "engine": "maxima",
+      "result": "e^(-sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 66883,
+      "F_str": "exp(sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-2) + x]*(1/2 - x^(-3)))/Sqrt[x^(-2) + x], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 66966,
+      "F_str": "exp(-sqrt(x + x**(-2))/2)",
+      "f_str": "timeout",
+      "mma_output": "-1/2*Integrate[(1/2 - x^(-3))/(E^(Sqrt[x^(-2) + x]/2)*Sqrt[x^(-2) + x]), x]",
+      "engine": "maxima",
+      "result": "e^(-1/2*sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 66969,
+      "F_str": "exp(sqrt(x + x**(-2))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(Sqrt[x^(-2) + x]/2)*(1/2 - x^(-3)))/Sqrt[x^(-2) + x], x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 67020,
+      "F_str": "exp(sqrt(x + x**(-2))/4)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(Sqrt[x^(-2) + x]/4)*(1/2 - x^(-3)))/Sqrt[x^(-2) + x], x]/4",
+      "engine": "maxima",
+      "result": "e^(1/4*sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 67319,
+      "F_str": "exp(-sqrt(x + x**(-4)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1/2 + 2/x^5)/(E^Sqrt[x^(-4) + x]*Sqrt[x^(-4) + x]), x]",
+      "engine": "maxima",
+      "result": "e^(-sqrt(x + 1/x^4))"
+    },
+    {
+      "idx": 67327,
+      "F_str": "exp(sqrt(x + x**(-4)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-4) + x]*(1/2 - 2/x^5))/Sqrt[x^(-4) + x], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + 1/x^4))"
+    },
+    {
+      "idx": 67352,
+      "F_str": "exp(sqrt(x + x**(-4))/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(Sqrt[x^(-4) + x]/2)*(1/2 - 2/x^5))/Sqrt[x^(-4) + x], x]/2",
+      "engine": "maxima",
+      "result": "e^(1/2*sqrt(x + 1/x^4))"
+    },
+    {
+      "idx": 67416,
+      "F_str": "exp(sqrt(x + x**(-8)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^Sqrt[x^(-8) + x]*(1/2 - 4/x^9))/Sqrt[x^(-8) + x], x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x + 1/x^8))"
+    },
+    {
+      "idx": 68315,
+      "F_str": "exp(-x - 1/pow(x,(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x - x^(-Sqrt[x]))*(-1 - (-(1/Sqrt[x]) - Log[x]/(2*Sqrt[x]))/x^Sqrt[x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x - 1/x^sqrt(x))"
+    },
+    {
+      "idx": 68436,
+      "F_str": "exp(x + 1/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x + 1/Sqrt[x + x^2])*(1 + (-1/2 - x)/(x + x^2)^(3/2)), x]",
+      "engine": "maxima",
+      "result": "e^(x + 1/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 68437,
+      "F_str": "exp(x - 1/sqrt(x**2 + x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x - 1/Sqrt[x + x^2])*(1 + (1/2 + x)/(x + x^2)^(3/2)), x]",
+      "engine": "maxima",
+      "result": "e^(x - 1/sqrt(x^2 + x))"
+    },
+    {
+      "idx": 73274,
+      "F_str": "exp(x)*exp(-sqrt(sqrt(x) + x))",
+      "f_str": "-(1/2 + 1/(4*sqrt(x)))*exp(x)*exp(-sqrt(sqrt(x) + x))/sqrt(sqrt(x) + x) + exp(x)*exp(-sqrt(sqrt(x) + x))",
+      "mma_output": "Integrate[E^(x - Sqrt[Sqrt[x] + x]) + (E^(x - Sqrt[Sqrt[x] + x])*(-1/2 - 1/(4*Sqrt[x])))/Sqrt[Sqrt[x] + x], x]",
+      "engine": "maxima",
+      "result": "e^(x - x^(1/4)*sqrt(sqrt(x) + 1))"
+    },
+    {
+      "idx": 73269,
+      "F_str": "exp(-x)*exp(sqrt(sqrt(x) + x))",
+      "f_str": "(1/2 + 1/(4*sqrt(x)))*exp(-x)*exp(sqrt(sqrt(x) + x))/sqrt(sqrt(x) + x) - exp(-x)*exp(sqrt(sqrt(x) + x))",
+      "mma_output": "Integrate[-E^(-x + Sqrt[Sqrt[x] + x]) + (E^(-x + Sqrt[Sqrt[x] + x])*(1/2 + 1/(4*Sqrt[x])))/Sqrt[Sqrt[x] + x], x]",
+      "engine": "maxima",
+      "result": "e^(-x + x^(1/4)*sqrt(sqrt(x) + 1))"
+    },
+    {
+      "idx": 73275,
+      "F_str": "exp(x)*exp(sqrt(sqrt(x) + x))",
+      "f_str": "(1/2 + 1/(4*sqrt(x)))*exp(x)*exp(sqrt(sqrt(x) + x))/sqrt(sqrt(x) + x) + exp(x)*exp(sqrt(sqrt(x) + x))",
+      "mma_output": "Integrate[E^(x + Sqrt[Sqrt[x] + x]) + (E^(x + Sqrt[Sqrt[x] + x])*(1/2 + 1/(4*Sqrt[x])))/Sqrt[Sqrt[x] + x], x]",
+      "engine": "maxima",
+      "result": "e^(x + x^(1/4)*sqrt(sqrt(x) + 1))"
+    },
+    {
+      "idx": 73472,
+      "F_str": "exp(-x)*exp(sqrt(x**2 + x))",
+      "f_str": "(x + 1/2)*exp(-x)*exp(sqrt(x**2 + x))/sqrt(x**2 + x) - exp(-x)*exp(sqrt(x**2 + x))",
+      "mma_output": "Integrate[-E^(-x + Sqrt[x + x^2]) + (E^(-x + Sqrt[x + x^2])*(1/2 + x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(-x + sqrt(x^2 + x))"
+    },
+    {
+      "idx": 73484,
+      "F_str": "exp(x)*exp(-sqrt(x**2 + x))",
+      "f_str": "-(x + 1/2)*exp(x)*exp(-sqrt(x**2 + x))/sqrt(x**2 + x) + exp(x)*exp(-sqrt(x**2 + x))",
+      "mma_output": "Integrate[E^(x - Sqrt[x + x^2]) + (E^(x - Sqrt[x + x^2])*(-1/2 - x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(x - sqrt(x^2 + x))"
+    },
+    {
+      "idx": 73485,
+      "F_str": "exp(x)*exp(sqrt(x**2 + x))",
+      "f_str": "(x + 1/2)*exp(x)*exp(sqrt(x**2 + x))/sqrt(x**2 + x) + exp(x)*exp(sqrt(x**2 + x))",
+      "mma_output": "Integrate[E^(x + Sqrt[x + x^2]) + (E^(x + Sqrt[x + x^2])*(1/2 + x))/Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "e^(x + sqrt(x^2 + x))"
+    },
+    {
+      "idx": 74645,
+      "F_str": "exp(-x + log(sqrt(2)*sqrt(x))**2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + (Log[2]/2 + Log[x]/2)^2)*(-1 + (Log[2]/2 + Log[x]/2)/x), x]",
+      "engine": "maxima",
+      "result": "e^(log(sqrt(2)*sqrt(x))^2 - x)"
+    },
+    {
+      "idx": 74648,
+      "F_str": "exp(x + log(sqrt(2)*sqrt(x))**2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x + (Log[2]/2 + Log[x]/2)^2)*(1 + (Log[2]/2 + Log[x]/2)/x), x]",
+      "engine": "maxima",
+      "result": "e^(log(sqrt(2)*sqrt(x))^2 + x)"
+    },
+    {
+      "idx": 75680,
+      "F_str": "exp(-x + pow(x,(sqrt(x)))/x)",
+      "f_str": "timeout",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "e^(-x + x^sqrt(x)/x)"
+    },
+    {
+      "idx": 75699,
+      "F_str": "exp(x*pow(x,(sqrt(x))) - x)",
+      "f_str": "timeout",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "e^(x*x^sqrt(x) - x)"
+    },
+    {
+      "idx": 76045,
+      "F_str": "exp(x/sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x/Sqrt[x^(-1) + x])*(((-1/2 + 1/(2*x^2))*x)/(x^(-1) + x)^(3/2) + 1/Sqrt[x^(-1) + x]), x]",
+      "engine": "maxima",
+      "result": "e^(x/sqrt(x + 1/x))"
+    },
+    {
+      "idx": 76046,
+      "F_str": "exp((-x + sqrt(x + 1/x))**2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + Sqrt[x^(-1) + x])^2*(-2 + (2*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x])*(-x + Sqrt[x^(-1) + x]), x]",
+      "engine": "maxima",
+      "result": "-(18*x^11*e^(x^2 + x + 1/x) - 3*(4*x^3 - x^2 - 2)*x^8*e^(x^2 + x + 1/x) + 30*x^9*e^(x^2 + x + 1/x) - 2*(14*x^3 + 4*x^2 - 4*x - 7)*x^6*e^(x^2 + x + 1/x) + 14*x^7*e^(x^2 + x + 1/x) - 2*(10*x^3 + 9*x^2 -"
+    },
+    {
+      "idx": 76078,
+      "F_str": "exp(-x + sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + Sqrt[x^(-1) + x^2])*(-1 + (-1/2*1/x^2 + x)/Sqrt[x^(-1) + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(-x + sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 76079,
+      "F_str": "exp(x + sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x + Sqrt[x^(-1) + x^2])*(1 + (-1/2*1/x^2 + x)/Sqrt[x^(-1) + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(x + sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 76080,
+      "F_str": "exp(x - sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x - Sqrt[x^(-1) + x^2])*(1 + (1/(2*x^2) - x)/Sqrt[x^(-1) + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(x - sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 76082,
+      "F_str": "exp(x*sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x*Sqrt[x^(-1) + x^2])*((x*(-1/2*1/x^2 + x))/Sqrt[x^(-1) + x^2] + Sqrt[x^(-1) + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(sqrt(x^2 + 1/x)*x)"
+    },
+    {
+      "idx": 76083,
+      "F_str": "exp(x/sqrt(x**2 + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x/Sqrt[x^(-1) + x^2])*(((1/(2*x^2) - x)*x)/(x^(-1) + x^2)^(3/2) + 1/Sqrt[x^(-1) + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(x/sqrt(x^2 + 1/x))"
+    },
+    {
+      "idx": 76084,
+      "F_str": "exp(-x + sqrt(x**2 + exp(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + Sqrt[E^x + x^2])*(-1 + (E^x/2 + x)/Sqrt[E^x + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(-x + sqrt(x^2 + e^x))"
+    },
+    {
+      "idx": 76085,
+      "F_str": "exp(x + sqrt(x**2 + exp(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x + Sqrt[E^x + x^2])*(1 + (E^x/2 + x)/Sqrt[E^x + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(x + sqrt(x^2 + e^x))"
+    },
+    {
+      "idx": 76086,
+      "F_str": "exp(x - sqrt(x**2 + exp(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x - Sqrt[E^x + x^2])*(1 + (-1/2*E^x - x)/Sqrt[E^x + x^2]), x]",
+      "engine": "maxima",
+      "result": "e^(x - sqrt(x^2 + e^x))"
+    },
+    {
+      "idx": 76286,
+      "F_str": "exp(-x + sqrt(x + log(x)**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + Sqrt[x + Log[x]^2])*(-1 + (1/2 + Log[x]/x)/Sqrt[x + Log[x]^2]), x]",
+      "engine": "maxima",
+      "result": "e^(-x + sqrt(log(x)^2 + x))"
+    },
+    {
+      "idx": 76291,
+      "F_str": "exp(x + sqrt(x + log(x)**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x + Sqrt[x + Log[x]^2])*(1 + (1/2 + Log[x]/x)/Sqrt[x + Log[x]^2]), x]",
+      "engine": "maxima",
+      "result": "e^(x + sqrt(log(x)^2 + x))"
+    },
+    {
+      "idx": 76331,
+      "F_str": "exp(-x + sqrt(x + pow(x,a0)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + Sqrt[x + x^a0])*(-1 + (1/2 + (a0*x^(-1 + a0))/2)/Sqrt[x + x^a0]), x]",
+      "engine": "maxima",
+      "result": "e^(-x + sqrt(x + x^a0))"
+    },
+    {
+      "idx": 76332,
+      "F_str": "exp(x + sqrt(x + pow(x,a0)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x + Sqrt[x + x^a0])*(1 + (1/2 + (a0*x^(-1 + a0))/2)/Sqrt[x + x^a0]), x]",
+      "engine": "maxima",
+      "result": "e^(x + sqrt(x + x^a0))"
+    },
+    {
+      "idx": 76333,
+      "F_str": "exp(x - sqrt(x + pow(x,a0)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x - Sqrt[x + x^a0])*(1 - (1/2 + (a0*x^(-1 + a0))/2)/Sqrt[x + x^a0]), x]",
+      "engine": "maxima",
+      "result": "e^(x - sqrt(x + x^a0))"
+    },
+    {
+      "idx": 76346,
+      "F_str": "exp(-x + sqrt(x + pow(x,x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + Sqrt[x + x^x])*(-1 + (1/2 + (x^x*(1 + Log[x]))/2)/Sqrt[x + x^x]), x]",
+      "engine": "maxima",
+      "result": "e^(-x + sqrt(x + x^x))"
+    },
+    {
+      "idx": 76347,
+      "F_str": "exp(x + sqrt(x + pow(x,x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x + Sqrt[x + x^x])*(1 + (1/2 + (x^x*(1 + Log[x]))/2)/Sqrt[x + x^x]), x]",
+      "engine": "maxima",
+      "result": "e^(x + sqrt(x + x^x))"
+    },
+    {
+      "idx": 76348,
+      "F_str": "exp(x - sqrt(x + pow(x,x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x - Sqrt[x + x^x])*(1 - (1/2 + (x^x*(1 + Log[x]))/2)/Sqrt[x + x^x]), x]",
+      "engine": "maxima",
+      "result": "e^(x - sqrt(x + x^x))"
+    },
+    {
+      "idx": 76456,
+      "F_str": "exp(x/sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x/Sqrt[x^(-2) + x])*(((-1/2 + x^(-3))*x)/(x^(-2) + x)^(3/2) + 1/Sqrt[x^(-2) + x]), x]",
+      "engine": "maxima",
+      "result": "e^(x/sqrt(x + 1/x^2))"
+    },
+    {
+      "idx": 84025,
+      "F_str": "log(x)**2/(-x + exp(sqrt(x)))**2",
+      "f_str": "timeout",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "-(2*(x*log(x)^2 - 4*x*log(x))*x^(5/2) + 4*(x^2*log(x) + 2*x*log(x)^2)*x^2 + (8*x^2*log(x) - (x^3 + 14*x^2)*log(x)^2)*x^(3/2) + 2*(3*x^3*log(x)^2 - 2*x^3*log(x))*x - 2*(2*x^3*log(x)^2 - 2*x^3*log(x) + "
+    },
+    {
+      "idx": 84027,
+      "F_str": "log(x)**2/(x - exp(sqrt(x)))**2",
+      "f_str": "timeout",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "-(2*(x*log(x)^2 - 4*x*log(x))*x^(5/2) + 4*(x^2*log(x) + 2*x*log(x)^2)*x^2 + (8*x^2*log(x) - (x^3 + 14*x^2)*log(x)^2)*x^(3/2) + 2*(3*x^3*log(x)^2 - 2*x^3*log(x))*x - 2*(2*x^3*log(x)^2 - 2*x^3*log(x) + "
+    },
+    {
+      "idx": 85311,
+      "F_str": "pow((1/(2*x)),exp(1/sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-(E^(1/Sqrt[x])/x) - (E^(1/Sqrt[x])*(-Log[2] - Log[x]))/(2*x^(3/2)))/(2^E^(1/Sqrt[x])*x^E^(1/Sqrt[x])), x]",
+      "engine": "maxima",
+      "result": "e^(-e^(1/sqrt(x))*log(2) - e^(1/sqrt(x))*log(x))"
+    },
+    {
+      "idx": 89243,
+      "F_str": "pow(x,(2*exp(sqrt(x**2 + x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^(2*E^Sqrt[x + x^2])*((2*E^Sqrt[x + x^2])/x + (2*E^Sqrt[x + x^2]*(1/2 + x)*Log[x])/Sqrt[x + x^2]), x]",
+      "engine": "maxima",
+      "result": "x^(2*e^(sqrt(x + 1)*sqrt(x)))"
+    },
+    {
+      "idx": 90484,
+      "F_str": "pow(x,exp(1/log(x)))/sqrt(x)",
+      "f_str": "x**exp(1/log(x))*(exp(1/log(x))/x - exp(1/log(x))/(x*log(x)))/sqrt(x) - x**exp(1/log(x))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^Log[x]^(-1)) + x^(-1/2 + E^Log[x]^(-1))*(E^Log[x]^(-1)/x - E^Log[x]^(-1)/(x*Log[x])), x]",
+      "engine": "maxima",
+      "result": "x^e^(1/log(x))/sqrt(x)"
+    },
+    {
+      "idx": 90757,
+      "F_str": "pow(x,exp(2*log(x)/sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^x^(2/Sqrt[x])*(x^(-1 + 2/Sqrt[x]) + x^(2/Sqrt[x])*Log[x]*(2/x^(3/2) - Log[x]/x^(3/2))), x]",
+      "engine": "maxima",
+      "result": "x^(x^(2/sqrt(x)))"
+    },
+    {
+      "idx": 91880,
+      "F_str": "pow(x,(exp(log(x)**2)/2))/sqrt(x)",
+      "f_str": "x**(exp(log(x)**2)/2)*(exp(log(x)**2)*log(x)**2/x + exp(log(x)**2)/(2*x))/sqrt(x) - x**(exp(log(x)**2)/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^Log[x]^2/2) + x^(-1/2 + E^Log[x]^2/2)*(E^Log[x]^2/(2*x) + (E^Log[x]^2*Log[x]^2)/x), x]",
+      "engine": "maxima",
+      "result": "x^(1/2*e^(log(x)^2))/sqrt(x)"
+    },
+    {
+      "idx": 91888,
+      "F_str": "pow(x,exp(log(x)**2))/sqrt(x)",
+      "f_str": "x**exp(log(x)**2)*(2*exp(log(x)**2)*log(x)**2/x + exp(log(x)**2)/x)/sqrt(x) - x**exp(log(x)**2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^Log[x]^2) + x^(-1/2 + E^Log[x]^2)*(E^Log[x]^2/x + (2*E^Log[x]^2*Log[x]^2)/x), x]",
+      "engine": "maxima",
+      "result": "x^e^(log(x)^2)/sqrt(x)"
+    },
+    {
+      "idx": 91929,
+      "F_str": "pow(x,(exp(pow(x,a0))/2))/sqrt(x)",
+      "f_str": "x**(exp(x**a0)/2)*(a0*x**a0*exp(x**a0)*log(x)/(2*x) + exp(x**a0)/(2*x))/sqrt(x) - x**(exp(x**a0)/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^x^a0/2) + x^(-1/2 + E^x^a0/2)*(E^x^a0/(2*x) + (a0*E^x^a0*x^(-1 + a0)*Log[x])/2), x]",
+      "engine": "maxima",
+      "result": "x^(1/2*e^(x^a0))/sqrt(x)"
+    },
+    {
+      "idx": 91939,
+      "F_str": "pow(x,exp(pow(x,a0)))/sqrt(x)",
+      "f_str": "x**exp(x**a0)*(a0*x**a0*exp(x**a0)*log(x)/x + exp(x**a0)/x)/sqrt(x) - x**exp(x**a0)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^x^a0) + x^(-1/2 + E^x^a0)*(E^x^a0/x + a0*E^x^a0*x^(-1 + a0)*Log[x]), x]",
+      "engine": "maxima",
+      "result": "x^e^(x^a0)/sqrt(x)"
+    },
+    {
+      "idx": 92310,
+      "F_str": "pow(x,(-exp(sqrt(x**2 + x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-(E^Sqrt[x + x^2]/x) + (E^Sqrt[x + x^2]*(-1/2 - x)*Log[x])/Sqrt[x + x^2])/x^E^Sqrt[x + x^2], x]",
+      "engine": "maxima",
+      "result": "1/(x^e^(sqrt(x + 1)*sqrt(x)))"
+    },
+    {
+      "idx": 93367,
+      "F_str": "pow(x,(exp(x*log(sqrt(x)))/2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^(x^(x/2)/2)*(x^(-1 + x/2)/2 + (x^(x/2)*(1/2 + Log[x]/2)*Log[x])/2), x]",
+      "engine": "maxima",
+      "result": "x^(1/2*x^(1/2*x))"
+    },
+    {
+      "idx": 93861,
+      "F_str": "pow(x,(pow(x,(exp(x/2)/sqrt(x)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^x^(E^(x/2)/Sqrt[x])*(x^(-1 + E^(x/2)/Sqrt[x]) + x^(E^(x/2)/Sqrt[x])*Log[x]*(E^(x/2)/x^(3/2) + (-1/2*E^(x/2)/x^(3/2) + E^(x/2)/(2*Sqrt[x]))",
+      "engine": "maxima",
+      "result": "x^(x^(e^(1/2*x)/sqrt(x)))"
+    },
+    {
+      "idx": 97593,
+      "F_str": "sqrt(exp(1/log(x**2/4)))",
+      "f_str": "timeout",
+      "mma_output": "-Integrate[E^(1/(2*(-2*Log[2] + 2*Log[x])))/(x*(-2*Log[2] + 2*Log[x])^2), x]",
+      "engine": "maxima",
+      "result": "e^(1/2/log(1/4*x^2))"
+    },
+    {
+      "idx": 100616,
+      "F_str": "sqrt(exp(exp(pow(x,x))) + 1/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-1/2*1/x^2 + (E^(E^x^x + x^x)*x^x*(1 + Log[x]))/2)/Sqrt[E^E^x^x + x^(-1)], x]",
+      "engine": "maxima",
+      "result": "sqrt(1/x + e^(e^(x^x)))"
+    },
+    {
+      "idx": 101723,
+      "F_str": "sqrt(exp(pow(x,x)) + x**(-2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(-x^(-3) + (E^x^x*x^x*(1 + Log[x]))/2)/Sqrt[E^x^x + x^(-2)], x]",
+      "engine": "maxima",
+      "result": "sqrt(1/x^2 + e^(x^x))"
+    },
+    {
+      "idx": 102777,
+      "F_str": "sqrt(exp(x/log(1/(2*x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x/(2*(-Log[2] - Log[x])))*(1/(2*(-Log[2] - Log[x])^2) + 1/(2*(-Log[2] - Log[x]))), x]",
+      "engine": "maxima",
+      "result": "e^(1/2*x/log(1/2/x))"
+    },
+    {
+      "idx": 103430,
+      "F_str": "sqrt(pow(x,exp(1/log(x))))/sqrt(x)",
+      "f_str": "(exp(1/log(x))/(2*x) - exp(1/log(x))/(2*x*log(x)))*sqrt(x**exp(1/log(x)))/sqrt(x) - sqrt(x**exp(1/log(x)))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^Log[x]^(-1)/2) + x^(-1/2 + E^Log[x]^(-1)/2)*(E^Log[x]^(-1)/(2*x) - E^Log[x]^(-1)/(2*x*Log[x])), x]",
+      "engine": "maxima",
+      "result": "sqrt(x^e^(1/log(x)))/sqrt(x)"
+    },
+    {
+      "idx": 115365,
+      "F_str": "sqrt(x)*pow(x,exp(1/log(x)))",
+      "f_str": "sqrt(x)*x**exp(1/log(x))*(exp(1/log(x))/x - exp(1/log(x))/(x*log(x))) + x**exp(1/log(x))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^Log[x]^(-1))/2 + x^(1/2 + E^Log[x]^(-1))*(E^Log[x]^(-1)/x - E^Log[x]^(-1)/(x*Log[x])), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)*x^e^(1/log(x))"
+    },
+    {
+      "idx": 115366,
+      "F_str": "sqrt(x)/pow(x,exp(1/log(x)))",
+      "f_str": "sqrt(x)*(-exp(1/log(x))/x + exp(1/log(x))/(x*log(x)))/x**exp(1/log(x)) + 1/(2*sqrt(x)*x**exp(1/log(x)))",
+      "mma_output": "Integrate[x^(-1/2 - E^Log[x]^(-1))/2 + x^(1/2 - E^Log[x]^(-1))*(-(E^Log[x]^(-1)/x) + E^Log[x]^(-1)/(x*Log[x])), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)/x^e^(1/log(x))"
+    },
+    {
+      "idx": 115597,
+      "F_str": "sqrt(x)*pow(x,exp(log(x)**2))",
+      "f_str": "sqrt(x)*x**exp(log(x)**2)*(2*exp(log(x)**2)*log(x)**2/x + exp(log(x)**2)/x) + x**exp(log(x)**2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^Log[x]^2)/2 + x^(1/2 + E^Log[x]^2)*(E^Log[x]^2/x + (2*E^Log[x]^2*Log[x]^2)/x), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)*x^e^(log(x)^2)"
+    },
+    {
+      "idx": 115598,
+      "F_str": "sqrt(x)/pow(x,exp(log(x)**2))",
+      "f_str": "sqrt(x)*(-2*exp(log(x)**2)*log(x)**2/x - exp(log(x)**2)/x)/x**exp(log(x)**2) + 1/(2*sqrt(x)*x**exp(log(x)**2))",
+      "mma_output": "Integrate[x^(-1/2 - E^Log[x]^2)/2 + x^(1/2 - E^Log[x]^2)*(-(E^Log[x]^2/x) - (2*E^Log[x]^2*Log[x]^2)/x), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)/x^e^(log(x)^2)"
+    },
+    {
+      "idx": 115599,
+      "F_str": "sqrt(x)*pow(x,(exp(log(x)**2)/2))",
+      "f_str": "sqrt(x)*x**(exp(log(x)**2)/2)*(exp(log(x)**2)*log(x)**2/x + exp(log(x)**2)/(2*x)) + x**(exp(log(x)**2)/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^Log[x]^2/2)/2 + x^(1/2 + E^Log[x]^2/2)*(E^Log[x]^2/(2*x) + (E^Log[x]^2*Log[x]^2)/x), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)*x^(1/2*e^(log(x)^2))"
+    },
+    {
+      "idx": 115600,
+      "F_str": "sqrt(x)/pow(x,(exp(log(x)**2)/2))",
+      "f_str": "sqrt(x)*(-exp(log(x)**2)*log(x)**2/x - exp(log(x)**2)/(2*x))/x**(exp(log(x)**2)/2) + 1/(2*sqrt(x)*x**(exp(log(x)**2)/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^Log[x]^2/2)/2 + x^(1/2 - E^Log[x]^2/2)*(-1/2*E^Log[x]^2/x - (E^Log[x]^2*Log[x]^2)/x), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)/x^(1/2*e^(log(x)^2))"
+    },
+    {
+      "idx": 115613,
+      "F_str": "sqrt(x)*pow(x,exp(pow(x,a0)))",
+      "f_str": "sqrt(x)*x**exp(x**a0)*(a0*x**a0*exp(x**a0)*log(x)/x + exp(x**a0)/x) + x**exp(x**a0)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^x^a0)/2 + x^(1/2 + E^x^a0)*(E^x^a0/x + a0*E^x^a0*x^(-1 + a0)*Log[x]), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)*x^e^(x^a0)"
+    },
+    {
+      "idx": 115614,
+      "F_str": "sqrt(x)/pow(x,exp(pow(x,a0)))",
+      "f_str": "sqrt(x)*(-a0*x**a0*exp(x**a0)*log(x)/x - exp(x**a0)/x)/x**exp(x**a0) + 1/(2*sqrt(x)*x**exp(x**a0))",
+      "mma_output": "Integrate[x^(-1/2 - E^x^a0)/2 + x^(1/2 - E^x^a0)*(-(E^x^a0/x) - a0*E^x^a0*x^(-1 + a0)*Log[x]), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)/x^e^(x^a0)"
+    },
+    {
+      "idx": 115615,
+      "F_str": "sqrt(x)*pow(x,(exp(pow(x,a0))/2))",
+      "f_str": "sqrt(x)*x**(exp(x**a0)/2)*(a0*x**a0*exp(x**a0)*log(x)/(2*x) + exp(x**a0)/(2*x)) + x**(exp(x**a0)/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^x^a0/2)/2 + x^(1/2 + E^x^a0/2)*(E^x^a0/(2*x) + (a0*E^x^a0*x^(-1 + a0)*Log[x])/2), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)*x^(1/2*e^(x^a0))"
+    },
+    {
+      "idx": 115616,
+      "F_str": "sqrt(x)/pow(x,(exp(pow(x,a0))/2))",
+      "f_str": "sqrt(x)*(-a0*x**a0*exp(x**a0)*log(x)/(2*x) - exp(x**a0)/(2*x))/x**(exp(x**a0)/2) + 1/(2*sqrt(x)*x**(exp(x**a0)/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^x^a0/2)/2 + x^(1/2 - E^x^a0/2)*(-1/2*E^x^a0/x - (a0*E^x^a0*x^(-1 + a0)*Log[x])/2), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)/x^(1/2*e^(x^a0))"
+    },
+    {
+      "idx": 116244,
+      "F_str": "sqrt(x)*sqrt(pow(x,exp(1/log(x))))",
+      "f_str": "sqrt(x)*(exp(1/log(x))/(2*x) - exp(1/log(x))/(2*x*log(x)))*sqrt(x**exp(1/log(x))) + sqrt(x**exp(1/log(x)))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^Log[x]^(-1)/2)/2 + x^(1/2 + E^Log[x]^(-1)/2)*(E^Log[x]^(-1)/(2*x) - E^Log[x]^(-1)/(2*x*Log[x])), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)*sqrt(x^e^(1/log(x)))"
+    },
+    {
+      "idx": 116243,
+      "F_str": "sqrt(x)*sqrt(pow(x,(-exp(1/log(x)))))",
+      "f_str": "sqrt(x)*(-exp(1/log(x))/(2*x) + exp(1/log(x))/(2*x*log(x)))*sqrt(x**(-exp(1/log(x)))) + sqrt(x**(-exp(1/log(x))))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 - E^Log[x]^(-1)/2)/2 + x^(1/2 - E^Log[x]^(-1)/2)*(-1/2*E^Log[x]^(-1)/x + E^Log[x]^(-1)/(2*x*Log[x])), x]",
+      "engine": "maxima",
+      "result": "sqrt(x)/sqrt(x^e^(1/log(x)))"
+    },
+    {
+      "idx": 122155,
+      "F_str": "x + exp(1/log(log(sqrt(x))**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[1 - E^(1/(2*(-Log[2] + Log[Log[x]])))/(2*x*Log[x]*(-Log[2] + Log[Log[x]])^2), x]",
+      "engine": "maxima",
+      "result": "x + e^(1/log(1/4*log(x)^2))"
+    },
+    {
+      "idx": 122156,
+      "F_str": "x - exp(1/log(log(sqrt(x))**2))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[1 + E^(1/(2*(-Log[2] + Log[Log[x]])))/(2*x*Log[x]*(-Log[2] + Log[Log[x]])^2), x]",
+      "engine": "maxima",
+      "result": "x - e^(1/log(1/4*log(x)^2))"
+    },
+    {
+      "idx": 124505,
+      "F_str": "x*exp(-exp(2*sqrt(x) - 2*x))",
+      "f_str": "-x*(-2 + 1/sqrt(x))*exp(2*sqrt(x) - 2*x)*exp(-exp(2*sqrt(x) - 2*x)) + exp(-exp(2*sqrt(x) - 2*x))",
+      "mma_output": "Integrate[E^(-E^(2*Sqrt[x] - 2*x)) - E^(-E^(2*Sqrt[x] - 2*x) + 2*Sqrt[x] - 2*x)*(-2 + 1/Sqrt[x])*x, x]",
+      "engine": "maxima",
+      "result": "x*e^(-e^(-2*x + 2*sqrt(x)))"
+    },
+    {
+      "idx": 125413,
+      "F_str": "x*exp(-exp(sqrt(x)/2 - x/2))",
+      "f_str": "-x*(-1/2 + 1/(4*sqrt(x)))*exp(sqrt(x)/2 - x/2)*exp(-exp(sqrt(x)/2 - x/2)) + exp(-exp(sqrt(x)/2 - x/2))",
+      "mma_output": "Integrate[E^(-E^(Sqrt[x]/2 - x/2)) - E^(-E^(Sqrt[x]/2 - x/2) + Sqrt[x]/2 - x/2)*(-1/2 + 1/(4*Sqrt[x]))*x, x]",
+      "engine": "maxima",
+      "result": "x*e^(-e^(-1/2*x + 1/2*sqrt(x)))"
+    },
+    {
+      "idx": 126403,
+      "F_str": "x*exp(-pow(x,exp(-sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "x*e^(-x^e^(-sqrt(x)))"
+    },
+    {
+      "idx": 133547,
+      "F_str": "-x + x/(sqrt(x) + exp(x))",
+      "f_str": "x*(-exp(x) - 1/(2*sqrt(x)))/(sqrt(x) + exp(x))**2 - 1 + 1/(sqrt(x) + exp(x))",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "-x - ((2*x - 1)*sqrt(x)*e^x + x - e^(2*x))/((2*x - 1)*e^x + (2*x - 1)*sqrt(x)) + (2*x^(3/2) - e^x)/(2*x - 1)"
+    },
+    {
+      "idx": 133546,
+      "F_str": "-x + x/(-sqrt(x) + exp(x))",
+      "f_str": "x*(-exp(x) + 1/(2*sqrt(x)))/(-sqrt(x) + exp(x))**2 - 1 + 1/(-sqrt(x) + exp(x))",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "-x + ((2*x - 1)*sqrt(x)*e^x - x + e^(2*x))/((2*x - 1)*e^x - (2*x - 1)*sqrt(x)) - (2*x^(3/2) + e^x)/(2*x - 1)"
+    },
+    {
+      "idx": 133550,
+      "F_str": "x + x/(sqrt(x) + exp(x))",
+      "f_str": "x*(-exp(x) - 1/(2*sqrt(x)))/(sqrt(x) + exp(x))**2 + 1 + 1/(sqrt(x) + exp(x))",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "x - ((2*x - 1)*sqrt(x)*e^x + x - e^(2*x))/((2*x - 1)*e^x + (2*x - 1)*sqrt(x)) + (2*x^(3/2) - e^x)/(2*x - 1)"
+    },
+    {
+      "idx": 133549,
+      "F_str": "x + x/(-sqrt(x) + exp(x))",
+      "f_str": "x*(-exp(x) + 1/(2*sqrt(x)))/(-sqrt(x) + exp(x))**2 + 1 + 1/(-sqrt(x) + exp(x))",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "x + ((2*x - 1)*sqrt(x)*e^x - x + e^(2*x))/((2*x - 1)*e^x - (2*x - 1)*sqrt(x)) - (2*x^(3/2) + e^x)/(2*x - 1)"
+    },
+    {
+      "idx": 133553,
+      "F_str": "x - x/(sqrt(x) + exp(x))",
+      "f_str": "-x*(-exp(x) - 1/(2*sqrt(x)))/(sqrt(x) + exp(x))**2 + 1 - 1/(sqrt(x) + exp(x))",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "x + ((2*x - 1)*sqrt(x)*e^x + x - e^(2*x))/((2*x - 1)*e^x + (2*x - 1)*sqrt(x)) - (2*x^(3/2) - e^x)/(2*x - 1)"
+    },
+    {
+      "idx": 133548,
+      "F_str": "-x + x/(sqrt(x) - exp(x))",
+      "f_str": "x*(exp(x) - 1/(2*sqrt(x)))/(sqrt(x) - exp(x))**2 - 1 + 1/(sqrt(x) - exp(x))",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "-x - ((2*x - 1)*sqrt(x)*e^x - x + e^(2*x))/((2*x - 1)*e^x - (2*x - 1)*sqrt(x)) + (2*x^(3/2) + e^x)/(2*x - 1)"
+    },
+    {
+      "idx": 133551,
+      "F_str": "x + x/(sqrt(x) - exp(x))",
+      "f_str": "x*(exp(x) - 1/(2*sqrt(x)))/(sqrt(x) - exp(x))**2 + 1 + 1/(sqrt(x) - exp(x))",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "x - ((2*x - 1)*sqrt(x)*e^x - x + e^(2*x))/((2*x - 1)*e^x - (2*x - 1)*sqrt(x)) + (2*x^(3/2) + e^x)/(2*x - 1)"
+    },
+    {
+      "idx": 133554,
+      "F_str": "x - x/(sqrt(x) - exp(x))",
+      "f_str": "-x*(exp(x) - 1/(2*sqrt(x)))/(sqrt(x) - exp(x))**2 + 1 - 1/(sqrt(x) - exp(x))",
+      "mma_output": "$Aborted",
+      "engine": "maxima",
+      "result": "x + ((2*x - 1)*sqrt(x)*e^x - x + e^(2*x))/((2*x - 1)*e^x - (2*x - 1)*sqrt(x)) - (2*x^(3/2) + e^x)/(2*x - 1)"
+    }
+  ],
+  "sage_failed": [
+    {
+      "idx": 5029,
+      "F_str": "1/(sqrt(x)*pow(x,exp(exp(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-1/2*x^(-3/2 - E^E^x) + x^(-1/2 - E^E^x)*(-(E^E^x/x) - E^(E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 5030,
+      "F_str": "1/(sqrt(x)*pow(x,(exp(exp(x))/2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-1/2*x^(-3/2 - E^E^x/2) + x^(-1/2 - E^E^x/2)*(-1/2*E^E^x/x - (E^(E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 17456,
+      "F_str": "(a0 - sqrt(x))/(-x + exp(x))",
+      "f_str": "(1 - exp(x))*(a0 - sqrt(x))/(-x + exp(x))**2 - 1/(2*sqrt(x)*(-x + exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 17457,
+      "F_str": "(a0 - sqrt(x))/(x + exp(x))",
+      "f_str": "(a0 - sqrt(x))*(-exp(x) - 1)/(x + exp(x))**2 - 1/(2*sqrt(x)*(x + exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 18956,
+      "F_str": "(a0 - x)/(sqrt(x) + exp(x))",
+      "f_str": "(a0 - x)*(-exp(x) - 1/(2*sqrt(x)))/(sqrt(x) + exp(x))**2 - 1/(sqrt(x) + exp(x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 20249,
+      "F_str": "exp(1/(2*sqrt(x + x**(-2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/(2*Sqrt[x^(-2) + x]))*(-1/2 + x^(-3)))/(x^(-2) + x)^(3/2), x]/2"
+    },
+    {
+      "idx": 20427,
+      "F_str": "exp(1/(2*x))/sqrt(x**2 + x)",
+      "f_str": "(-x - 1/2)*exp(1/(2*x))/(x**2 + x)**(3/2) - exp(1/(2*x))/(2*x**2*sqrt(x**2 + x))",
+      "mma_output": "Integrate[(E^(1/(2*x))*(-1/2 - x))/(x + x^2)^(3/2) - E^(1/(2*x))/(2*x^2*Sqrt[x + x^2]), x]"
+    },
+    {
+      "idx": 22978,
+      "F_str": "exp(-1/sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(1/2 - x^(-3))/(E^(1/Sqrt[x^(-2) + x])*(x^(-2) + x)^(3/2)), x]"
+    },
+    {
+      "idx": 22981,
+      "F_str": "exp(1/sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x^(-2) + x])*(-1/2 + x^(-3)))/(x^(-2) + x)^(3/2), x]"
+    },
+    {
+      "idx": 23025,
+      "F_str": "exp(1/sqrt(x + x**(-4)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(1/Sqrt[x^(-4) + x])*(-1/2 + 2/x^5))/(x^(-4) + x)^(3/2), x]"
+    },
+    {
+      "idx": 23923,
+      "F_str": "exp(1/x)/sqrt(x**2 + x)",
+      "f_str": "(-x - 1/2)*exp(1/x)/(x**2 + x)**(3/2) - exp(1/x)/(x**2*sqrt(x**2 + x))",
+      "mma_output": "Integrate[(E^x^(-1)*(-1/2 - x))/(x + x^2)^(3/2) - E^x^(-1)/(x^2*Sqrt[x + x^2]), x]"
+    },
+    {
+      "idx": 26741,
+      "F_str": "exp(2*pow((x*exp(-x)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "2*Integrate[E^(-x^(3/2) + (2*x^Sqrt[x])/E^x^(3/2))*x^Sqrt[x]*((E^x*(E^(-x) - x/E^x))/Sqrt[x] + (-x + Log[x])/(2*Sqrt[x])), x]"
+    },
+    {
+      "idx": 27335,
+      "F_str": "exp(2*sqrt(x + 1/x)/sqrt(x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^((2*Sqrt[x^(-1) + x])/Sqrt[x])*((2*(1/2 - 1/(2*x^2)))/(Sqrt[x]*Sqrt[x^(-1) + x]) - Sqrt[x^(-1) + x]/x^(3/2)), x]"
+    },
+    {
+      "idx": 27340,
+      "F_str": "exp(2*sqrt(x + 1/x)/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^((2*Sqrt[x^(-1) + x])/x)*((2*(1/2 - 1/(2*x^2)))/(x*Sqrt[x^(-1) + x]) - (2*Sqrt[x^(-1) + x])/x^2), x]"
+    },
+    {
+      "idx": 30338,
+      "F_str": "exp(2*x)/sqrt(x**2 + x)",
+      "f_str": "(-x - 1/2)*exp(2*x)/(x**2 + x)**(3/2) + 2*exp(2*x)/sqrt(x**2 + x)",
+      "mma_output": "Integrate[(E^(2*x)*(-1/2 - x))/(x + x^2)^(3/2) + (2*E^(2*x))/Sqrt[x + x^2], x]"
+    },
+    {
+      "idx": 35537,
+      "F_str": "exp(a0/sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "a0*Integrate[(E^(a0/Sqrt[x^(-2) + x])*(-1/2 + x^(-3)))/(x^(-2) + x)^(3/2), x]"
+    },
+    {
+      "idx": 38678,
+      "F_str": "exp(exp(-2*sqrt(x + 1/x)))",
+      "f_str": "timeout",
+      "mma_output": "-2*Integrate[(E^(E^(-2*Sqrt[x^(-1) + x]) - 2*Sqrt[x^(-1) + x])*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 53557,
+      "F_str": "exp(pow(x,(1/4))/sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(1/4)/Sqrt[x^(-1) + x])*(((-1/2 + 1/(2*x^2))*x^(1/4))/(x^(-1) + x)^(3/2) + 1/(4*x^(3/4)*Sqrt[x^(-1) + x])), x]"
+    },
+    {
+      "idx": 54661,
+      "F_str": "exp(pow((x*exp(-2*x)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-2*x^(3/2) + x^Sqrt[x]/E^(2*x^(3/2)))*x^Sqrt[x]*((E^(2*x)*(E^(-2*x) - (2*x)/E^(2*x)))/Sqrt[x] + (-2*x + Log[x])/(2*Sqrt[x])), x]"
+    },
+    {
+      "idx": 54662,
+      "F_str": "exp(pow((x*exp(2*x)),(sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(2*x^(3/2) + E^(2*x^(3/2))*x^Sqrt[x])*x^Sqrt[x]*((E^(2*x) + 2*E^(2*x)*x)/(E^(2*x)*Sqrt[x]) + (2*x + Log[x])/(2*Sqrt[x])), x]"
+    },
+    {
+      "idx": 54854,
+      "F_str": "exp(pow(x,exp(sqrt(x + 1/x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^x^E^Sqrt[x^(-1) + x]*x^E^Sqrt[x^(-1) + x]*(E^Sqrt[x^(-1) + x]/x + (E^Sqrt[x^(-1) + x]*(1/2 - 1/(2*x^2))*Log[x])/Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 55034,
+      "F_str": "exp(pow((x*exp(-x)),(1/sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-Sqrt[x] + x^(1/Sqrt[x])/E^Sqrt[x])*x^(1/Sqrt[x])*((E^x*(E^(-x) - x/E^x))/x^(3/2) - (-x + Log[x])/(2*x^(3/2))), x]"
+    },
+    {
+      "idx": 55055,
+      "F_str": "exp(pow((x*exp(-x)),(2*sqrt(x))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-2*x^(3/2) + x^(2*Sqrt[x])/E^(2*x^(3/2)))*x^(2*Sqrt[x])*((2*E^x*(E^(-x) - x/E^x))/Sqrt[x] + (-x + Log[x])/Sqrt[x]), x]"
+    },
+    {
+      "idx": 55075,
+      "F_str": "exp(pow(x,exp(-x))/2)/sqrt(x)",
+      "f_str": "timeout",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 55433,
+      "F_str": "exp(pow((x + pow(x,(sqrt(x)))),(1/4)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[(E^(x + x^Sqrt[x])^(1/4)*(1/4 + (x^Sqrt[x]*(1/Sqrt[x] + Log[x]/(2*Sqrt[x])))/4))/(x + x^Sqrt[x])^(3/4), x]"
+    },
+    {
+      "idx": 56019,
+      "F_str": "exp(pow(x,(sqrt(x + x**(-2)))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^x^Sqrt[x^(-2) + x]*x^Sqrt[x^(-2) + x]*(Sqrt[x^(-2) + x]/x + ((1/2 - x^(-3))*Log[x])/Sqrt[x^(-2) + x]), x]"
+    },
+    {
+      "idx": 56444,
+      "F_str": "exp(re(pow(x,(sqrt(x)/a0))))*cos(im(pow(x,(sqrt(x)/a0))))",
+      "f_str": "-exp(re(x**(sqrt(x)/a0)))*sin(im(x**(sqrt(x)/a0)))*Derivative(im(x**(sqrt(x)/a0)), x) + exp(re(x**(sqrt(x)/a0)))*cos(im(x**(sqrt(x)/a0)))*Derivative(re(x**(sqrt(x)/a0)), x)",
+      "mma_output": "Integrate[E^Re[x^(Sqrt[x]/a0)]*Cos[Im[x^(Sqrt[x]/a0)]]*Hold[D[Re[x^(x^(1/2)/a0)], x]] - E^Re[x^(Sqrt[x]/a0)]*Hold[D[Im[x^(x^(1/2)/a0)], x]]*Sin[Im[x^("
+    },
+    {
+      "idx": 59077,
+      "F_str": "-exp(sqrt(x + 1/x)) + 1/x",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-x^(-2) + (E^Sqrt[x^(-1) + x]*(-1/2 + 1/(2*x^2)))/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 59080,
+      "F_str": "exp(-sqrt(x + 1/x) + 1/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-1) - Sqrt[x^(-1) + x])*(-x^(-2) + (-1/2 + 1/(2*x^2))/Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 59083,
+      "F_str": "exp(sqrt(x + 1/x) + 1/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x^(-1) + Sqrt[x^(-1) + x])*(-x^(-2) + (1/2 - 1/(2*x^2))/Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 59084,
+      "F_str": "exp(sqrt(x + 1/x) - 1/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x^(-1) + Sqrt[x^(-1) + x])*(x^(-2) + (1/2 - 1/(2*x^2))/Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 59085,
+      "F_str": "exp(sqrt(x + 1/x)) + 1/x",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-x^(-2) + (E^Sqrt[x^(-1) + x]*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 59142,
+      "F_str": "exp(sqrt(x + 1/x)/(2*sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x^(-1) + x]/(2*Sqrt[x]))*((1/2 - 1/(2*x^2))/(2*Sqrt[x]*Sqrt[x^(-1) + x]) - Sqrt[x^(-1) + x]/(4*x^(3/2))), x]"
+    },
+    {
+      "idx": 59153,
+      "F_str": "exp(sqrt(x + 1/x)/(2*x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x^(-1) + x]/(2*x))*((1/2 - 1/(2*x^2))/(2*x*Sqrt[x^(-1) + x]) - Sqrt[x^(-1) + x]/(2*x^2)), x]"
+    },
+    {
+      "idx": 59278,
+      "F_str": "exp(sqrt(x + 1/x)) + log(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^(-1) + (E^Sqrt[x^(-1) + x]*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 59279,
+      "F_str": "exp(sqrt(x + 1/x)) - log(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-x^(-1) + (E^Sqrt[x^(-1) + x]*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 60294,
+      "F_str": "exp(sqrt(x)/2)/sqrt(sqrt(x) + x)",
+      "f_str": "(-1/2 - 1/(4*sqrt(x)))*exp(sqrt(x)/2)/(sqrt(x) + x)**(3/2) + exp(sqrt(x)/2)/(4*sqrt(x)*sqrt(sqrt(x) + x))",
+      "mma_output": "Integrate[(E^(Sqrt[x]/2)*(-1/2 - 1/(4*Sqrt[x])))/(Sqrt[x] + x)^(3/2) + E^(Sqrt[x]/2)/(4*Sqrt[x]*Sqrt[Sqrt[x] + x]), x]"
+    },
+    {
+      "idx": 65931,
+      "F_str": "exp(sqrt(x)/pow((x + 1/x),(1/4)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x]/(x^(-1) + x)^(1/4))*(((-1/4 + 1/(4*x^2))*Sqrt[x])/(x^(-1) + x)^(5/4) + 1/(2*Sqrt[x]*(x^(-1) + x)^(1/4))), x]"
+    },
+    {
+      "idx": 66528,
+      "F_str": "exp(sqrt(x))/sqrt(sqrt(x) + x)",
+      "f_str": "(-1/2 - 1/(4*sqrt(x)))*exp(sqrt(x))/(sqrt(x) + x)**(3/2) + exp(sqrt(x))/(2*sqrt(x)*sqrt(sqrt(x) + x))",
+      "mma_output": "Integrate[(E^Sqrt[x]*(-1/2 - 1/(4*Sqrt[x])))/(Sqrt[x] + x)^(3/2) + E^Sqrt[x]/(2*Sqrt[x]*Sqrt[Sqrt[x] + x]), x]"
+    },
+    {
+      "idx": 67229,
+      "F_str": "exp(sqrt(x + x**(-2))/x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(Sqrt[x^(-2) + x]/x)*((1/2 - x^(-3))/(x*Sqrt[x^(-2) + x]) - Sqrt[x^(-2) + x]/x^2), x]"
+    },
+    {
+      "idx": 69119,
+      "F_str": "exp(x**2/2)/sqrt(x + 1/x)",
+      "f_str": "x*exp(x**2/2)/sqrt(x + 1/x) + (-1/2 + 1/(2*x**2))*exp(x**2/2)/(x + 1/x)**(3/2)",
+      "mma_output": "Integrate[(E^(x^2/2)*(-1/2 + 1/(2*x^2)))/(x^(-1) + x)^(3/2) + (E^(x^2/2)*x)/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 70381,
+      "F_str": "exp(x**2)*log(x)/sqrt(x)",
+      "f_str": "2*sqrt(x)*exp(x**2)*log(x) - exp(x**2)*log(x)/(2*x**(3/2)) + exp(x**2)/x**(3/2)",
+      "mma_output": ""
+    },
+    {
+      "idx": 70618,
+      "F_str": "exp(-x/2 + sqrt(x + 1/x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-1/2*x + Sqrt[x^(-1) + x]/2)*(-1/2 + (1/2 - 1/(2*x^2))/(2*Sqrt[x^(-1) + x])), x]"
+    },
+    {
+      "idx": 70625,
+      "F_str": "exp(x/2 + sqrt(x + 1/x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x/2 + Sqrt[x^(-1) + x]/2)*(1/2 + (1/2 - 1/(2*x^2))/(2*Sqrt[x^(-1) + x])), x]"
+    },
+    {
+      "idx": 70626,
+      "F_str": "exp(x/2 - sqrt(x + 1/x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x/2 - Sqrt[x^(-1) + x]/2)*(1/2 - (1/2 - 1/(2*x^2))/(2*Sqrt[x^(-1) + x])), x]"
+    },
+    {
+      "idx": 70649,
+      "F_str": "exp(x/2)/sqrt(x**2 + x)",
+      "f_str": "(-x - 1/2)*exp(x/2)/(x**2 + x)**(3/2) + exp(x/2)/(2*sqrt(x**2 + x))",
+      "mma_output": "Integrate[(E^(x/2)*(-1/2 - x))/(x + x^2)^(3/2) + E^(x/2)/(2*Sqrt[x + x^2]), x]"
+    },
+    {
+      "idx": 70645,
+      "F_str": "exp(-x/2)/sqrt(x**2 + x)",
+      "f_str": "(-x - 1/2)*exp(-x/2)/(x**2 + x)**(3/2) - exp(-x/2)/(2*sqrt(x**2 + x))",
+      "mma_output": "Integrate[(-1/2 - x)/(E^(x/2)*(x + x^2)^(3/2)) - 1/(2*E^(x/2)*Sqrt[x + x^2]), x]"
+    },
+    {
+      "idx": 71302,
+      "F_str": "exp(x/4)/sqrt(x**2 + x)",
+      "f_str": "(-x - 1/2)*exp(x/4)/(x**2 + x)**(3/2) + exp(x/4)/(4*sqrt(x**2 + x))",
+      "mma_output": "Integrate[(E^(x/4)*(-1/2 - x))/(x + x^2)^(3/2) + E^(x/4)/(4*Sqrt[x + x^2]), x]"
+    },
+    {
+      "idx": 73319,
+      "F_str": "exp(-x)*exp(sqrt(x + 1/x))",
+      "f_str": "(1/2 - 1/(2*x**2))*exp(-x)*exp(sqrt(x + 1/x))/sqrt(x + 1/x) - exp(-x)*exp(sqrt(x + 1/x))",
+      "mma_output": "Integrate[-E^(-x + Sqrt[x^(-1) + x]) + (E^(-x + Sqrt[x^(-1) + x])*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 73348,
+      "F_str": "exp(x)*exp(-sqrt(x + 1/x))",
+      "f_str": "-(1/2 - 1/(2*x**2))*exp(x)*exp(-sqrt(x + 1/x))/sqrt(x + 1/x) + exp(x)*exp(-sqrt(x + 1/x))",
+      "mma_output": "Integrate[E^(x - Sqrt[x^(-1) + x]) + (E^(x - Sqrt[x^(-1) + x])*(-1/2 + 1/(2*x^2)))/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 73351,
+      "F_str": "exp(x)*exp(sqrt(x + 1/x))",
+      "f_str": "(1/2 - 1/(2*x**2))*exp(x)*exp(sqrt(x + 1/x))/sqrt(x + 1/x) + exp(x)*exp(sqrt(x + 1/x))",
+      "mma_output": "Integrate[E^(x + Sqrt[x^(-1) + x]) + (E^(x + Sqrt[x^(-1) + x])*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 76001,
+      "F_str": "exp(-x + sqrt(x + 1/sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(-x + Sqrt[1/Sqrt[x] + x])*(-1 + (1/2 - 1/(4*x^(3/2)))/Sqrt[1/Sqrt[x] + x]), x]"
+    },
+    {
+      "idx": 76002,
+      "F_str": "exp(x + sqrt(x + 1/sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x + Sqrt[1/Sqrt[x] + x])*(1 + (1/2 - 1/(4*x^(3/2)))/Sqrt[1/Sqrt[x] + x]), x]"
+    },
+    {
+      "idx": 76003,
+      "F_str": "exp(x - sqrt(x + 1/sqrt(x)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x - Sqrt[1/Sqrt[x] + x])*(1 + (-1/2 + 1/(4*x^(3/2)))/Sqrt[1/Sqrt[x] + x]), x]"
+    },
+    {
+      "idx": 76041,
+      "F_str": "exp(x*sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x*Sqrt[x^(-1) + x])*(((1/2 - 1/(2*x^2))*x)/Sqrt[x^(-1) + x] + Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 76070,
+      "F_str": "exp(x*sqrt(x + 1/x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^((x*Sqrt[x^(-1) + x])/2)*(((1/2 - 1/(2*x^2))*x)/(2*Sqrt[x^(-1) + x]) + Sqrt[x^(-1) + x]/2), x]"
+    },
+    {
+      "idx": 76104,
+      "F_str": "exp(-x)/sqrt(x**2 + x)",
+      "f_str": "(-x - 1/2)*exp(-x)/(x**2 + x)**(3/2) - exp(-x)/sqrt(x**2 + x)",
+      "mma_output": "Integrate[(-1/2 - x)/(E^x*(x + x^2)^(3/2)) - 1/(E^x*Sqrt[x + x^2]), x]"
+    },
+    {
+      "idx": 76109,
+      "F_str": "exp(x)/sqrt(x**2 + x)",
+      "f_str": "(-x - 1/2)*exp(x)/(x**2 + x)**(3/2) + exp(x)/sqrt(x**2 + x)",
+      "mma_output": "Integrate[(E^x*(-1/2 - x))/(x + x^2)^(3/2) + E^x/Sqrt[x + x^2], x]"
+    },
+    {
+      "idx": 76447,
+      "F_str": "exp(x*sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[E^(x*Sqrt[x^(-2) + x])*(((1/2 - x^(-3))*x)/Sqrt[x^(-2) + x] + Sqrt[x^(-2) + x]), x]"
+    },
+    {
+      "idx": 80401,
+      "F_str": "log(pow((sqrt(x) + exp(2*x)),x))",
+      "f_str": "x*(2*exp(2*x) + 1/(2*sqrt(x)))/(sqrt(x) + exp(2*x)) + log(sqrt(x) + exp(2*x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 80453,
+      "F_str": "log(pow((sqrt(x) + exp(x)),(2*x)))",
+      "f_str": "2*x*(exp(x) + 1/(2*sqrt(x)))/(sqrt(x) + exp(x)) + 2*log(sqrt(x) + exp(x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 80457,
+      "F_str": "log(pow((sqrt(x) + exp(x/2)),x))",
+      "f_str": "x*(exp(x/2)/2 + 1/(2*sqrt(x)))/(sqrt(x) + exp(x/2)) + log(sqrt(x) + exp(x/2))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 80488,
+      "F_str": "log(pow((sqrt(x) + exp(x)),(-x)))",
+      "f_str": "-x*(exp(x) + 1/(2*sqrt(x)))/(sqrt(x) + exp(x)) - log(sqrt(x) + exp(x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 80494,
+      "F_str": "log(pow((sqrt(x) + exp(x)),(x/2)))",
+      "f_str": "x*(exp(x) + 1/(2*sqrt(x)))/(2*(sqrt(x) + exp(x))) + log(sqrt(x) + exp(x))/2",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 84958,
+      "F_str": "log(x + exp(x))**2/sqrt(x)",
+      "f_str": "2*(exp(x) + 1)*log(x + exp(x))/(sqrt(x)*(x + exp(x))) - log(x + exp(x))**2/(2*x**(3/2))",
+      "mma_output": "Integrate[(2*(1 + E^x)*Log[E^x + x])/(Sqrt[x]*(E^x + x)) - Log[E^x + x]^2/(2*x^(3/2)), x]"
+    },
+    {
+      "idx": 89163,
+      "F_str": "pow(x,(2*exp(exp(x))))/sqrt(x)",
+      "f_str": "x**(2*exp(exp(x)))*(2*exp(x)*exp(exp(x))*log(x) + 2*exp(exp(x))/x)/sqrt(x) - x**(2*exp(exp(x)))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + 2*E^E^x) + x^(-1/2 + 2*E^E^x)*((2*E^E^x)/x + 2*E^(E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 90738,
+      "F_str": "pow(x,(exp(2*exp(x))/2))/sqrt(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^(2*E^x)/2) + x^(-1/2 + E^(2*E^x)/2)*(E^(2*E^x)/(2*x) + E^(2*E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 90744,
+      "F_str": "pow(x,exp(2*exp(x)))/sqrt(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^(2*E^x)) + x^(-1/2 + E^(2*E^x))*(E^(2*E^x)/x + 2*E^(2*E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 91283,
+      "F_str": "pow(x,exp(exp(1/x)))/sqrt(x)",
+      "f_str": "x**exp(exp(1/x))*(exp(exp(1/x))/x - exp(1/x)*exp(exp(1/x))*log(x)/x**2)/sqrt(x) - x**exp(exp(1/x))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^x^(-1)) + x^(-1/2 + E^E^x^(-1))*(E^E^x^(-1)/x - (E^(E^x^(-1) + x^(-1))*Log[x])/x^2), x]"
+    },
+    {
+      "idx": 91277,
+      "F_str": "pow(x,(exp(exp(1/x))/2))/sqrt(x)",
+      "f_str": "x**(exp(exp(1/x))/2)*(exp(exp(1/x))/(2*x) - exp(1/x)*exp(exp(1/x))*log(x)/(2*x**2))/sqrt(x) - x**(exp(exp(1/x))/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^x^(-1)/2) + x^(-1/2 + E^E^x^(-1)/2)*(E^E^x^(-1)/(2*x) - (E^(E^x^(-1) + x^(-1))*Log[x])/(2*x^2)), x]"
+    },
+    {
+      "idx": 91332,
+      "F_str": "pow(x,(exp(exp(2*x))/2))/sqrt(x)",
+      "f_str": "x**(exp(exp(2*x))/2)*(exp(2*x)*exp(exp(2*x))*log(x) + exp(exp(2*x))/(2*x))/sqrt(x) - x**(exp(exp(2*x))/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^(2*x)/2) + x^(-1/2 + E^E^(2*x)/2)*(E^E^(2*x)/(2*x) + E^(E^(2*x) + 2*x)*Log[x]), x]"
+    },
+    {
+      "idx": 91338,
+      "F_str": "pow(x,exp(exp(2*x)))/sqrt(x)",
+      "f_str": "x**exp(exp(2*x))*(2*exp(2*x)*exp(exp(2*x))*log(x) + exp(exp(2*x))/x)/sqrt(x) - x**exp(exp(2*x))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^(2*x)) + x^(-1/2 + E^E^(2*x))*(E^E^(2*x)/x + 2*E^(E^(2*x) + 2*x)*Log[x]), x]"
+    },
+    {
+      "idx": 91475,
+      "F_str": "pow(x,exp(exp(exp(x))))/sqrt(x)",
+      "f_str": "x**exp(exp(exp(x)))*(exp(x)*exp(exp(x))*exp(exp(exp(x)))*log(x) + exp(exp(exp(x)))/x)/sqrt(x) - x**exp(exp(exp(x)))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^E^x) + x^(-1/2 + E^E^E^x)*(E^E^E^x/x + E^(E^E^x + E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 91467,
+      "F_str": "pow(x,(exp(exp(exp(x)))/2))/sqrt(x)",
+      "f_str": "x**(exp(exp(exp(x)))/2)*(exp(x)*exp(exp(x))*exp(exp(exp(x)))*log(x)/2 + exp(exp(exp(x)))/(2*x))/sqrt(x) - x**(exp(exp(exp(x)))/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^E^x/2) + x^(-1/2 + E^E^E^x/2)*(E^E^E^x/(2*x) + (E^(E^E^x + E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 91733,
+      "F_str": "pow(x,(exp(exp(x)/2)/2))/sqrt(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^(E^x/2)/2) + x^(-1/2 + E^(E^x/2)/2)*(E^(E^x/2)/(2*x) + (E^(E^x/2 + x)*Log[x])/4), x]"
+    },
+    {
+      "idx": 91734,
+      "F_str": "pow(x,(exp(exp(x**2))/2))/sqrt(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^x^2/2) + x^(-1/2 + E^E^x^2/2)*(E^E^x^2/(2*x) + E^(E^x^2 + x^2)*x*Log[x]), x]"
+    },
+    {
+      "idx": 91736,
+      "F_str": "pow(x,(exp(exp(x/2))/2))/sqrt(x)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^(x/2)/2) + x^(-1/2 + E^E^(x/2)/2)*(E^E^(x/2)/(2*x) + (E^(E^(x/2) + x/2)*Log[x])/4), x]"
+    },
+    {
+      "idx": 91755,
+      "F_str": "pow(x,(exp(-exp(x))/2))/sqrt(x)",
+      "f_str": "x**(exp(-exp(x))/2)*(-exp(x)*exp(-exp(x))*log(x)/2 + exp(-exp(x))/(2*x))/sqrt(x) - x**(exp(-exp(x))/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + 1/(2*E^E^x)) + x^(-1/2 + 1/(2*E^E^x))*(1/(2*E^E^x*x) - (E^(-E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 91757,
+      "F_str": "pow(x,(exp(exp(-x))/2))/sqrt(x)",
+      "f_str": "x**(exp(exp(-x))/2)*(-exp(-x)*exp(exp(-x))*log(x)/2 + exp(exp(-x))/(2*x))/sqrt(x) - x**(exp(exp(-x))/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^(-x)/2) + x^(-1/2 + E^E^(-x)/2)*(E^E^(-x)/(2*x) - (E^(E^(-x) - x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 91759,
+      "F_str": "pow(x,(exp(exp(x))/2))/sqrt(x)",
+      "f_str": "x**(exp(exp(x))/2)*(exp(x)*exp(exp(x))*log(x)/2 + exp(exp(x))/(2*x))/sqrt(x) - x**(exp(exp(x))/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^x/2) + x^(-1/2 + E^E^x/2)*(E^E^x/(2*x) + (E^(E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 91765,
+      "F_str": "pow(x,exp(exp(x)/2))/sqrt(x)",
+      "f_str": "x**exp(exp(x)/2)*(exp(x)*exp(exp(x)/2)*log(x)/2 + exp(exp(x)/2)/x)/sqrt(x) - x**exp(exp(x)/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^(E^x/2)) + x^(-1/2 + E^(E^x/2))*(E^(E^x/2)/x + (E^(E^x/2 + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 91766,
+      "F_str": "pow(x,exp(exp(x**2)))/sqrt(x)",
+      "f_str": "x**exp(exp(x**2))*(2*x*exp(x**2)*exp(exp(x**2))*log(x) + exp(exp(x**2))/x)/sqrt(x) - x**exp(exp(x**2))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^x^2) + x^(-1/2 + E^E^x^2)*(E^E^x^2/x + 2*E^(E^x^2 + x^2)*x*Log[x]), x]"
+    },
+    {
+      "idx": 91768,
+      "F_str": "pow(x,exp(exp(x/2)))/sqrt(x)",
+      "f_str": "x**exp(exp(x/2))*(exp(x/2)*exp(exp(x/2))*log(x)/2 + exp(exp(x/2))/x)/sqrt(x) - x**exp(exp(x/2))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^(x/2)) + x^(-1/2 + E^E^(x/2))*(E^E^(x/2)/x + (E^(E^(x/2) + x/2)*Log[x])/2), x]"
+    },
+    {
+      "idx": 91771,
+      "F_str": "pow(x,(exp(exp(x))/4))/sqrt(x)",
+      "f_str": "x**(exp(exp(x))/4)*(exp(x)*exp(exp(x))*log(x)/4 + exp(exp(x))/(4*x))/sqrt(x) - x**(exp(exp(x))/4)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^x/4) + x^(-1/2 + E^E^x/4)*(E^E^x/(4*x) + (E^(E^x + x)*Log[x])/4), x]"
+    },
+    {
+      "idx": 91820,
+      "F_str": "pow(x,exp(-exp(x)))/sqrt(x)",
+      "f_str": "x**exp(-exp(x))*(-exp(x)*exp(-exp(x))*log(x) + exp(-exp(x))/x)/sqrt(x) - x**exp(-exp(x))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^(-E^x)) + x^(-1/2 + E^(-E^x))*(1/(E^E^x*x) - E^(-E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 91822,
+      "F_str": "pow(x,exp(exp(-x)))/sqrt(x)",
+      "f_str": "x**exp(exp(-x))*(-exp(-x)*exp(exp(-x))*log(x) + exp(exp(-x))/x)/sqrt(x) - x**exp(exp(-x))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^(-x)) + x^(-1/2 + E^E^(-x))*(E^E^(-x)/x - E^(E^(-x) - x)*Log[x]), x]"
+    },
+    {
+      "idx": 91824,
+      "F_str": "pow(x,exp(exp(x)))/sqrt(x)",
+      "f_str": "x**exp(exp(x))*(exp(x)*exp(exp(x))*log(x) + exp(exp(x))/x)/sqrt(x) - x**exp(exp(x))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^E^x) + x^(-1/2 + E^E^x)*(E^E^x/x + E^(E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 91992,
+      "F_str": "pow(x,(exp(pow(x,x))/2))/sqrt(x)",
+      "f_str": "x**(exp(x**x)/2)*(x**x*(log(x) + 1)*exp(x**x)*log(x)/2 + exp(x**x)/(2*x))/sqrt(x) - x**(exp(x**x)/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^x^x/2) + x^(-1/2 + E^x^x/2)*(E^x^x/(2*x) + (E^x^x*x^x*Log[x]*(1 + Log[x]))/2), x]"
+    },
+    {
+      "idx": 91999,
+      "F_str": "pow(x,exp(pow(x,x)))/sqrt(x)",
+      "f_str": "x**exp(x**x)*(x**x*(log(x) + 1)*exp(x**x)*log(x) + exp(x**x)/x)/sqrt(x) - x**exp(x**x)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + E^x^x) + x^(-1/2 + E^x^x)*(E^x^x/x + E^x^x*x^x*Log[x]*(1 + Log[x])), x]"
+    },
+    {
+      "idx": 92820,
+      "F_str": "pow(x,exp(sqrt(x + x**(-2))))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[x^E^Sqrt[x^(-2) + x]*(E^Sqrt[x^(-2) + x]/x + (E^Sqrt[x^(-2) + x]*(1/2 - x^(-3))*Log[x])/Sqrt[x^(-2) + x]), x]"
+    },
+    {
+      "idx": 93870,
+      "F_str": "pow(x,(pow(x,exp(x))))/sqrt(x)",
+      "f_str": "x**(x**exp(x))*(x**exp(x)*(exp(x)*log(x) + exp(x)/x)*log(x) + x**exp(x)/x)/sqrt(x) - x**(x**exp(x))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + x^E^x) + x^(-1/2 + x^E^x)*(x^(-1 + E^x) + x^E^x*Log[x]*(E^x/x + E^x*Log[x])), x]"
+    },
+    {
+      "idx": 93862,
+      "F_str": "pow(x,(pow(x,exp(x))/2))/sqrt(x)",
+      "f_str": "x**(x**exp(x)/2)*(x**exp(x)*(exp(x)*log(x) + exp(x)/x)*log(x)/2 + x**exp(x)/(2*x))/sqrt(x) - x**(x**exp(x)/2)/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*x^(-3/2 + x^E^x/2) + x^(-1/2 + x^E^x/2)*(x^(-1 + E^x)/2 + (x^E^x*Log[x]*(E^x/x + E^x*Log[x]))/2), x]"
+    },
+    {
+      "idx": 104450,
+      "F_str": "sqrt(x + 1/x)*exp(-x**2)",
+      "f_str": "-2*x*sqrt(x + 1/x)*exp(-x**2) + (1/2 - 1/(2*x**2))*exp(-x**2)/sqrt(x + 1/x)",
+      "mma_output": "Integrate[(1/2 - 1/(2*x^2))/(E^x^2*Sqrt[x^(-1) + x]) - (2*x*Sqrt[x^(-1) + x])/E^x^2, x]"
+    },
+    {
+      "idx": 104452,
+      "F_str": "sqrt(x + 1/x)*exp(x**2)",
+      "f_str": "2*x*sqrt(x + 1/x)*exp(x**2) + (1/2 - 1/(2*x**2))*exp(x**2)/sqrt(x + 1/x)",
+      "mma_output": "Integrate[(E^x^2*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x] + 2*E^x^2*x*Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 104487,
+      "F_str": "sqrt(x + 1/x)*exp(x**2/2)",
+      "f_str": "x*sqrt(x + 1/x)*exp(x**2/2) + (1/2 - 1/(2*x**2))*exp(x**2/2)/sqrt(x + 1/x)",
+      "mma_output": "Integrate[(E^(x^2/2)*(1/2 - 1/(2*x^2)))/Sqrt[x^(-1) + x] + E^(x^2/2)*x*Sqrt[x^(-1) + x], x]"
+    },
+    {
+      "idx": 104486,
+      "F_str": "sqrt(x + 1/x)*exp(-x**2/2)",
+      "f_str": "-x*sqrt(x + 1/x)*exp(-x**2/2) + (1/2 - 1/(2*x**2))*exp(-x**2/2)/sqrt(x + 1/x)",
+      "mma_output": "Integrate[(1/2 - 1/(2*x^2))/(E^(x^2/2)*Sqrt[x^(-1) + x]) - (x*Sqrt[x^(-1) + x])/E^(x^2/2), x]"
+    },
+    {
+      "idx": 104914,
+      "F_str": "sqrt(x**2 + x)*exp(-1/x)",
+      "f_str": "(x + 1/2)*exp(-1/x)/sqrt(x**2 + x) + sqrt(x**2 + x)*exp(-1/x)/x**2",
+      "mma_output": "Integrate[(1/2 + x)/(E^x^(-1)*Sqrt[x + x^2]) + Sqrt[x + x^2]/(E^x^(-1)*x^2), x]"
+    },
+    {
+      "idx": 104908,
+      "F_str": "sqrt(x**2 + x)*exp(-1/(2*x))",
+      "f_str": "(x + 1/2)*exp(-1/(2*x))/sqrt(x**2 + x) + sqrt(x**2 + x)*exp(-1/(2*x))/(2*x**2)",
+      "mma_output": "Integrate[(1/2 + x)/(E^(1/(2*x))*Sqrt[x + x^2]) + Sqrt[x + x^2]/(2*E^(1/(2*x))*x^2), x]"
+    },
+    {
+      "idx": 104909,
+      "F_str": "sqrt(x**2 + x)*exp(1/(2*x))",
+      "f_str": "(x + 1/2)*exp(1/(2*x))/sqrt(x**2 + x) - sqrt(x**2 + x)*exp(1/(2*x))/(2*x**2)",
+      "mma_output": "Integrate[(E^(1/(2*x))*(1/2 + x))/Sqrt[x + x^2] - (E^(1/(2*x))*Sqrt[x + x^2])/(2*x^2), x]"
+    },
+    {
+      "idx": 104915,
+      "F_str": "sqrt(x**2 + x)*exp(1/x)",
+      "f_str": "(x + 1/2)*exp(1/x)/sqrt(x**2 + x) - sqrt(x**2 + x)*exp(1/x)/x**2",
+      "mma_output": "Integrate[(E^x^(-1)*(1/2 + x))/Sqrt[x + x^2] - (E^x^(-1)*Sqrt[x + x^2])/x^2, x]"
+    },
+    {
+      "idx": 111255,
+      "F_str": "sqrt(x)*exp(-pow(x,exp(-x)))",
+      "f_str": "-sqrt(x)*x**exp(-x)*(-exp(-x)*log(x) + exp(-x)/x)*exp(-x**exp(-x)) + exp(-x**exp(-x))/(2*sqrt(x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 111276,
+      "F_str": "sqrt(x)*exp(-pow(x,exp(-x))/2)",
+      "f_str": "-sqrt(x)*x**exp(-x)*(-exp(-x)*log(x) + exp(-x)/x)*exp(-x**exp(-x)/2)/2 + exp(-x**exp(-x)/2)/(2*sqrt(x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 111281,
+      "F_str": "sqrt(x)*exp(pow(x,exp(-x))/2)",
+      "f_str": "sqrt(x)*x**exp(-x)*(-exp(-x)*log(x) + exp(-x)/x)*exp(x**exp(-x)/2)/2 + exp(x**exp(-x)/2)/(2*sqrt(x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 115156,
+      "F_str": "sqrt(x)*log(x + exp(x))**2",
+      "f_str": "2*sqrt(x)*(exp(x) + 1)*log(x + exp(x))/(x + exp(x)) + log(x + exp(x))**2/(2*sqrt(x))",
+      "mma_output": "Integrate[(2*(1 + E^x)*Sqrt[x]*Log[E^x + x])/(E^x + x) + Log[E^x + x]^2/(2*Sqrt[x]), x]"
+    },
+    {
+      "idx": 115240,
+      "F_str": "sqrt(x)*pow(x,(2*exp(exp(x))))",
+      "f_str": "sqrt(x)*x**(2*exp(exp(x)))*(2*exp(x)*exp(exp(x))*log(x) + 2*exp(exp(x))/x) + x**(2*exp(exp(x)))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + 2*E^E^x)/2 + x^(1/2 + 2*E^E^x)*((2*E^E^x)/x + 2*E^(E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115241,
+      "F_str": "sqrt(x)/pow(x,(2*exp(exp(x))))",
+      "f_str": "sqrt(x)*(-2*exp(x)*exp(exp(x))*log(x) - 2*exp(exp(x))/x)/x**(2*exp(exp(x))) + 1/(2*sqrt(x)*x**(2*exp(exp(x))))",
+      "mma_output": "Integrate[x^(-1/2 - 2*E^E^x)/2 + x^(1/2 - 2*E^E^x)*((-2*E^E^x)/x - 2*E^(E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115405,
+      "F_str": "sqrt(x)*pow(x,exp(2*exp(x)))",
+      "f_str": "sqrt(x)*x**exp(2*exp(x))*(2*exp(x)*exp(2*exp(x))*log(x) + exp(2*exp(x))/x) + x**exp(2*exp(x))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^(2*E^x))/2 + x^(1/2 + E^(2*E^x))*(E^(2*E^x)/x + 2*E^(2*E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115406,
+      "F_str": "sqrt(x)/pow(x,exp(2*exp(x)))",
+      "f_str": "sqrt(x)*(-2*exp(x)*exp(2*exp(x))*log(x) - exp(2*exp(x))/x)/x**exp(2*exp(x)) + 1/(2*sqrt(x)*x**exp(2*exp(x)))",
+      "mma_output": "Integrate[x^(-1/2 - E^(2*E^x))/2 + x^(1/2 - E^(2*E^x))*(-(E^(2*E^x)/x) - 2*E^(2*E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115408,
+      "F_str": "sqrt(x)/pow(x,(exp(2*exp(x))/2))",
+      "f_str": "sqrt(x)*(-exp(x)*exp(2*exp(x))*log(x) - exp(2*exp(x))/(2*x))/x**(exp(2*exp(x))/2) + 1/(2*sqrt(x)*x**(exp(2*exp(x))/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^(2*E^x)/2)/2 + x^(1/2 - E^(2*E^x)/2)*(-1/2*E^(2*E^x)/x - E^(2*E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115407,
+      "F_str": "sqrt(x)*pow(x,(exp(2*exp(x))/2))",
+      "f_str": "sqrt(x)*x**(exp(2*exp(x))/2)*(exp(x)*exp(2*exp(x))*log(x) + exp(2*exp(x))/(2*x)) + x**(exp(2*exp(x))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^(2*E^x)/2)/2 + x^(1/2 + E^(2*E^x)/2)*(E^(2*E^x)/(2*x) + E^(2*E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115507,
+      "F_str": "sqrt(x)*pow(x,exp(exp(1/x)))",
+      "f_str": "sqrt(x)*x**exp(exp(1/x))*(exp(exp(1/x))/x - exp(1/x)*exp(exp(1/x))*log(x)/x**2) + x**exp(exp(1/x))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^x^(-1))/2 + x^(1/2 + E^E^x^(-1))*(E^E^x^(-1)/x - (E^(E^x^(-1) + x^(-1))*Log[x])/x^2), x]"
+    },
+    {
+      "idx": 115509,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(1/x))/2))",
+      "f_str": "sqrt(x)*x**(exp(exp(1/x))/2)*(exp(exp(1/x))/(2*x) - exp(1/x)*exp(exp(1/x))*log(x)/(2*x**2)) + x**(exp(exp(1/x))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^x^(-1)/2)/2 + x^(1/2 + E^E^x^(-1)/2)*(E^E^x^(-1)/(2*x) - (E^(E^x^(-1) + x^(-1))*Log[x])/(2*x^2)), x]"
+    },
+    {
+      "idx": 115510,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(1/x))/2))",
+      "f_str": "sqrt(x)*(-exp(exp(1/x))/(2*x) + exp(1/x)*exp(exp(1/x))*log(x)/(2*x**2))/x**(exp(exp(1/x))/2) + 1/(2*sqrt(x)*x**(exp(exp(1/x))/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^x^(-1)/2)/2 + x^(1/2 - E^E^x^(-1)/2)*(-1/2*E^E^x^(-1)/x + (E^(E^x^(-1) + x^(-1))*Log[x])/(2*x^2)), x]"
+    },
+    {
+      "idx": 115508,
+      "F_str": "sqrt(x)/pow(x,exp(exp(1/x)))",
+      "f_str": "sqrt(x)*(-exp(exp(1/x))/x + exp(1/x)*exp(exp(1/x))*log(x)/x**2)/x**exp(exp(1/x)) + 1/(2*sqrt(x)*x**exp(exp(1/x)))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^x^(-1))/2 + x^(1/2 - E^E^x^(-1))*(-(E^E^x^(-1)/x) + (E^(E^x^(-1) + x^(-1))*Log[x])/x^2), x]"
+    },
+    {
+      "idx": 115515,
+      "F_str": "sqrt(x)*pow(x,exp(exp(2*x)))",
+      "f_str": "sqrt(x)*x**exp(exp(2*x))*(2*exp(2*x)*exp(exp(2*x))*log(x) + exp(exp(2*x))/x) + x**exp(exp(2*x))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^(2*x))/2 + x^(1/2 + E^E^(2*x))*(E^E^(2*x)/x + 2*E^(E^(2*x) + 2*x)*Log[x]), x]"
+    },
+    {
+      "idx": 115517,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(2*x))/2))",
+      "f_str": "sqrt(x)*x**(exp(exp(2*x))/2)*(exp(2*x)*exp(exp(2*x))*log(x) + exp(exp(2*x))/(2*x)) + x**(exp(exp(2*x))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^(2*x)/2)/2 + x^(1/2 + E^E^(2*x)/2)*(E^E^(2*x)/(2*x) + E^(E^(2*x) + 2*x)*Log[x]), x]"
+    },
+    {
+      "idx": 115516,
+      "F_str": "sqrt(x)/pow(x,exp(exp(2*x)))",
+      "f_str": "sqrt(x)*(-2*exp(2*x)*exp(exp(2*x))*log(x) - exp(exp(2*x))/x)/x**exp(exp(2*x)) + 1/(2*sqrt(x)*x**exp(exp(2*x)))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^(2*x))/2 + x^(1/2 - E^E^(2*x))*(-(E^E^(2*x)/x) - 2*E^(E^(2*x) + 2*x)*Log[x]), x]"
+    },
+    {
+      "idx": 115518,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(2*x))/2))",
+      "f_str": "sqrt(x)*(-exp(2*x)*exp(exp(2*x))*log(x) - exp(exp(2*x))/(2*x))/x**(exp(exp(2*x))/2) + 1/(2*sqrt(x)*x**(exp(exp(2*x))/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^(2*x)/2)/2 + x^(1/2 - E^E^(2*x)/2)*(-1/2*E^E^(2*x)/x - E^(E^(2*x) + 2*x)*Log[x]), x]"
+    },
+    {
+      "idx": 115523,
+      "F_str": "sqrt(x)*pow(x,exp(exp(exp(x))))",
+      "f_str": "sqrt(x)*x**exp(exp(exp(x)))*(exp(x)*exp(exp(x))*exp(exp(exp(x)))*log(x) + exp(exp(exp(x)))/x) + x**exp(exp(exp(x)))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^E^x)/2 + x^(1/2 + E^E^E^x)*(E^E^E^x/x + E^(E^E^x + E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115524,
+      "F_str": "sqrt(x)/pow(x,exp(exp(exp(x))))",
+      "f_str": "sqrt(x)*(-exp(x)*exp(exp(x))*exp(exp(exp(x)))*log(x) - exp(exp(exp(x)))/x)/x**exp(exp(exp(x))) + 1/(2*sqrt(x)*x**exp(exp(exp(x))))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^E^x)/2 + x^(1/2 - E^E^E^x)*(-(E^E^E^x/x) - E^(E^E^x + E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115525,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(exp(x)))/2))",
+      "f_str": "sqrt(x)*x**(exp(exp(exp(x)))/2)*(exp(x)*exp(exp(x))*exp(exp(exp(x)))*log(x)/2 + exp(exp(exp(x)))/(2*x)) + x**(exp(exp(exp(x)))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^E^x/2)/2 + x^(1/2 + E^E^E^x/2)*(E^E^E^x/(2*x) + (E^(E^E^x + E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115526,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(exp(x)))/2))",
+      "f_str": "sqrt(x)*(-exp(x)*exp(exp(x))*exp(exp(exp(x)))*log(x)/2 - exp(exp(exp(x)))/(2*x))/x**(exp(exp(exp(x)))/2) + 1/(2*sqrt(x)*x**(exp(exp(exp(x)))/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^E^x/2)/2 + x^(1/2 - E^E^E^x/2)*(-1/2*E^E^E^x/x - (E^(E^E^x + E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115548,
+      "F_str": "sqrt(x)*pow(x,exp(exp(x)))",
+      "f_str": "sqrt(x)*x**exp(exp(x))*(exp(x)*exp(exp(x))*log(x) + exp(exp(x))/x) + x**exp(exp(x))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^x)/2 + x^(1/2 + E^E^x)*(E^E^x/x + E^(E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115546,
+      "F_str": "sqrt(x)*pow(x,exp(-exp(x)))",
+      "f_str": "sqrt(x)*x**exp(-exp(x))*(-exp(x)*exp(-exp(x))*log(x) + exp(-exp(x))/x) + x**exp(-exp(x))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^(-E^x))/2 + x^(1/2 + E^(-E^x))*(1/(E^E^x*x) - E^(-E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115551,
+      "F_str": "sqrt(x)/pow(x,exp(exp(x)))",
+      "f_str": "sqrt(x)*(-exp(x)*exp(exp(x))*log(x) - exp(exp(x))/x)/x**exp(exp(x)) + 1/(2*sqrt(x)*x**exp(exp(x)))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^x)/2 + x^(1/2 - E^E^x)*(-(E^E^x/x) - E^(E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115549,
+      "F_str": "sqrt(x)/pow(x,exp(-exp(x)))",
+      "f_str": "sqrt(x)*(exp(x)*exp(-exp(x))*log(x) - exp(-exp(x))/x)/x**exp(-exp(x)) + 1/(2*sqrt(x)*x**exp(-exp(x)))",
+      "mma_output": "Integrate[x^(-1/2 - E^(-E^x))/2 + x^(1/2 - E^(-E^x))*(-(1/(E^E^x*x)) + E^(-E^x + x)*Log[x]), x]"
+    },
+    {
+      "idx": 115547,
+      "F_str": "sqrt(x)*pow(x,exp(exp(-x)))",
+      "f_str": "sqrt(x)*x**exp(exp(-x))*(-exp(-x)*exp(exp(-x))*log(x) + exp(exp(-x))/x) + x**exp(exp(-x))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^(-x))/2 + x^(1/2 + E^E^(-x))*(E^E^(-x)/x - E^(E^(-x) - x)*Log[x]), x]"
+    },
+    {
+      "idx": 115550,
+      "F_str": "sqrt(x)/pow(x,exp(exp(-x)))",
+      "f_str": "sqrt(x)*(exp(-x)*exp(exp(-x))*log(x) - exp(exp(-x))/x)/x**exp(exp(-x)) + 1/(2*sqrt(x)*x**exp(exp(-x)))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^(-x))/2 + x^(1/2 - E^E^(-x))*(-(E^E^(-x)/x) + E^(E^(-x) - x)*Log[x]), x]"
+    },
+    {
+      "idx": 115573,
+      "F_str": "sqrt(x)*pow(x,(exp(-exp(x))/2))",
+      "f_str": "sqrt(x)*x**(exp(-exp(x))/2)*(-exp(x)*exp(-exp(x))*log(x)/2 + exp(-exp(x))/(2*x)) + x**(exp(-exp(x))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + 1/(2*E^E^x))/2 + x^(1/2 + 1/(2*E^E^x))*(1/(2*E^E^x*x) - (E^(-E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115574,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(-x))/2))",
+      "f_str": "sqrt(x)*x**(exp(exp(-x))/2)*(-exp(-x)*exp(exp(-x))*log(x)/2 + exp(exp(-x))/(2*x)) + x**(exp(exp(-x))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^(-x)/2)/2 + x^(1/2 + E^E^(-x)/2)*(E^E^(-x)/(2*x) - (E^(E^(-x) - x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115576,
+      "F_str": "sqrt(x)*pow(x,exp(exp(x)/2))",
+      "f_str": "sqrt(x)*x**exp(exp(x)/2)*(exp(x)*exp(exp(x)/2)*log(x)/2 + exp(exp(x)/2)/x) + x**exp(exp(x)/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^(E^x/2))/2 + x^(1/2 + E^(E^x/2))*(E^(E^x/2)/x + (E^(E^x/2 + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115578,
+      "F_str": "sqrt(x)*pow(x,exp(exp(x/2)))",
+      "f_str": "sqrt(x)*x**exp(exp(x/2))*(exp(x/2)*exp(exp(x/2))*log(x)/2 + exp(exp(x/2))/x) + x**exp(exp(x/2))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^(x/2))/2 + x^(1/2 + E^E^(x/2))*(E^E^(x/2)/x + (E^(E^(x/2) + x/2)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115575,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(x))/2))",
+      "f_str": "sqrt(x)*x**(exp(exp(x))/2)*(exp(x)*exp(exp(x))*log(x)/2 + exp(exp(x))/(2*x)) + x**(exp(exp(x))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^x/2)/2 + x^(1/2 + E^E^x/2)*(E^E^x/(2*x) + (E^(E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115577,
+      "F_str": "sqrt(x)*pow(x,exp(exp(x**2)))",
+      "f_str": "sqrt(x)*x**exp(exp(x**2))*(2*x*exp(x**2)*exp(exp(x**2))*log(x) + exp(exp(x**2))/x) + x**exp(exp(x**2))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^x^2)/2 + x^(1/2 + E^E^x^2)*(E^E^x^2/x + 2*E^(E^x^2 + x^2)*x*Log[x]), x]"
+    },
+    {
+      "idx": 115579,
+      "F_str": "sqrt(x)/pow(x,(exp(-exp(x))/2))",
+      "f_str": "sqrt(x)*(exp(x)*exp(-exp(x))*log(x)/2 - exp(-exp(x))/(2*x))/x**(exp(-exp(x))/2) + 1/(2*sqrt(x)*x**(exp(-exp(x))/2))",
+      "mma_output": "Integrate[x^(-1/2 - 1/(2*E^E^x))/2 + x^(1/2 - 1/(2*E^E^x))*(-1/2*1/(E^E^x*x) + (E^(-E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115580,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(-x))/2))",
+      "f_str": "sqrt(x)*(exp(-x)*exp(exp(-x))*log(x)/2 - exp(exp(-x))/(2*x))/x**(exp(exp(-x))/2) + 1/(2*sqrt(x)*x**(exp(exp(-x))/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^(-x)/2)/2 + x^(1/2 - E^E^(-x)/2)*(-1/2*E^E^(-x)/x + (E^(E^(-x) - x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115581,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(x))/2))",
+      "f_str": "sqrt(x)*(-exp(x)*exp(exp(x))*log(x)/2 - exp(exp(x))/(2*x))/x**(exp(exp(x))/2) + 1/(2*sqrt(x)*x**(exp(exp(x))/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^x/2)/2 + x^(1/2 - E^E^x/2)*(-1/2*E^E^x/x - (E^(E^x + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115582,
+      "F_str": "sqrt(x)/pow(x,exp(exp(x)/2))",
+      "f_str": "sqrt(x)*(-exp(x)*exp(exp(x)/2)*log(x)/2 - exp(exp(x)/2)/x)/x**exp(exp(x)/2) + 1/(2*sqrt(x)*x**exp(exp(x)/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^(E^x/2))/2 + x^(1/2 - E^(E^x/2))*(-(E^(E^x/2)/x) - (E^(E^x/2 + x)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115584,
+      "F_str": "sqrt(x)/pow(x,exp(exp(x/2)))",
+      "f_str": "sqrt(x)*(-exp(x/2)*exp(exp(x/2))*log(x)/2 - exp(exp(x/2))/x)/x**exp(exp(x/2)) + 1/(2*sqrt(x)*x**exp(exp(x/2)))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^(x/2))/2 + x^(1/2 - E^E^(x/2))*(-(E^E^(x/2)/x) - (E^(E^(x/2) + x/2)*Log[x])/2), x]"
+    },
+    {
+      "idx": 115583,
+      "F_str": "sqrt(x)/pow(x,exp(exp(x**2)))",
+      "f_str": "sqrt(x)*(-2*x*exp(x**2)*exp(exp(x**2))*log(x) - exp(exp(x**2))/x)/x**exp(exp(x**2)) + 1/(2*sqrt(x)*x**exp(exp(x**2)))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^x^2)/2 + x^(1/2 - E^E^x^2)*(-(E^E^x^2/x) - 2*E^(E^x^2 + x^2)*x*Log[x]), x]"
+    },
+    {
+      "idx": 115585,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(x)/2)/2))",
+      "f_str": "sqrt(x)*x**(exp(exp(x)/2)/2)*(exp(x)*exp(exp(x)/2)*log(x)/4 + exp(exp(x)/2)/(2*x)) + x**(exp(exp(x)/2)/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^(E^x/2)/2)/2 + x^(1/2 + E^(E^x/2)/2)*(E^(E^x/2)/(2*x) + (E^(E^x/2 + x)*Log[x])/4), x]"
+    },
+    {
+      "idx": 115587,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(x/2))/2))",
+      "f_str": "sqrt(x)*x**(exp(exp(x/2))/2)*(exp(x/2)*exp(exp(x/2))*log(x)/4 + exp(exp(x/2))/(2*x)) + x**(exp(exp(x/2))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^(x/2)/2)/2 + x^(1/2 + E^E^(x/2)/2)*(E^E^(x/2)/(2*x) + (E^(E^(x/2) + x/2)*Log[x])/4), x]"
+    },
+    {
+      "idx": 115586,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(x**2))/2))",
+      "f_str": "sqrt(x)*x**(exp(exp(x**2))/2)*(x*exp(x**2)*exp(exp(x**2))*log(x) + exp(exp(x**2))/(2*x)) + x**(exp(exp(x**2))/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^x^2/2)/2 + x^(1/2 + E^E^x^2/2)*(E^E^x^2/(2*x) + E^(E^x^2 + x^2)*x*Log[x]), x]"
+    },
+    {
+      "idx": 115588,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(x)/2)/2))",
+      "f_str": "sqrt(x)*(-exp(x)*exp(exp(x)/2)*log(x)/4 - exp(exp(x)/2)/(2*x))/x**(exp(exp(x)/2)/2) + 1/(2*sqrt(x)*x**(exp(exp(x)/2)/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^(E^x/2)/2)/2 + x^(1/2 - E^(E^x/2)/2)*(-1/2*E^(E^x/2)/x - (E^(E^x/2 + x)*Log[x])/4), x]"
+    },
+    {
+      "idx": 115591,
+      "F_str": "sqrt(x)*pow(x,(exp(exp(x))/4))",
+      "f_str": "sqrt(x)*x**(exp(exp(x))/4)*(exp(x)*exp(exp(x))*log(x)/4 + exp(exp(x))/(4*x)) + x**(exp(exp(x))/4)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^E^x/4)/2 + x^(1/2 + E^E^x/4)*(E^E^x/(4*x) + (E^(E^x + x)*Log[x])/4), x]"
+    },
+    {
+      "idx": 115590,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(x/2))/2))",
+      "f_str": "sqrt(x)*(-exp(x/2)*exp(exp(x/2))*log(x)/4 - exp(exp(x/2))/(2*x))/x**(exp(exp(x/2))/2) + 1/(2*sqrt(x)*x**(exp(exp(x/2))/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^(x/2)/2)/2 + x^(1/2 - E^E^(x/2)/2)*(-1/2*E^E^(x/2)/x - (E^(E^(x/2) + x/2)*Log[x])/4), x]"
+    },
+    {
+      "idx": 115589,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(x**2))/2))",
+      "f_str": "sqrt(x)*(-x*exp(x**2)*exp(exp(x**2))*log(x) - exp(exp(x**2))/(2*x))/x**(exp(exp(x**2))/2) + 1/(2*sqrt(x)*x**(exp(exp(x**2))/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^x^2/2)/2 + x^(1/2 - E^E^x^2/2)*(-1/2*E^E^x^2/x - E^(E^x^2 + x^2)*x*Log[x]), x]"
+    },
+    {
+      "idx": 115592,
+      "F_str": "sqrt(x)/pow(x,(exp(exp(x))/4))",
+      "f_str": "sqrt(x)*(-exp(x)*exp(exp(x))*log(x)/4 - exp(exp(x))/(4*x))/x**(exp(exp(x))/4) + 1/(2*sqrt(x)*x**(exp(exp(x))/4))",
+      "mma_output": "Integrate[x^(-1/2 - E^E^x/4)/2 + x^(1/2 - E^E^x/4)*(-1/4*E^E^x/x - (E^(E^x + x)*Log[x])/4), x]"
+    },
+    {
+      "idx": 115621,
+      "F_str": "sqrt(x)*pow(x,exp(pow(x,x)))",
+      "f_str": "sqrt(x)*x**exp(x**x)*(x**x*(log(x) + 1)*exp(x**x)*log(x) + exp(x**x)/x) + x**exp(x**x)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^x^x)/2 + x^(1/2 + E^x^x)*(E^x^x/x + E^x^x*x^x*Log[x]*(1 + Log[x])), x]"
+    },
+    {
+      "idx": 115622,
+      "F_str": "sqrt(x)/pow(x,exp(pow(x,x)))",
+      "f_str": "sqrt(x)*(-x**x*(log(x) + 1)*exp(x**x)*log(x) - exp(x**x)/x)/x**exp(x**x) + 1/(2*sqrt(x)*x**exp(x**x))",
+      "mma_output": "Integrate[x^(-1/2 - E^x^x)/2 + x^(1/2 - E^x^x)*(-(E^x^x/x) - E^x^x*x^x*Log[x]*(1 + Log[x])), x]"
+    },
+    {
+      "idx": 115623,
+      "F_str": "sqrt(x)*pow(x,(exp(pow(x,x))/2))",
+      "f_str": "sqrt(x)*x**(exp(x**x)/2)*(x**x*(log(x) + 1)*exp(x**x)*log(x)/2 + exp(x**x)/(2*x)) + x**(exp(x**x)/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + E^x^x/2)/2 + x^(1/2 + E^x^x/2)*(E^x^x/(2*x) + (E^x^x*x^x*Log[x]*(1 + Log[x]))/2), x]"
+    },
+    {
+      "idx": 115624,
+      "F_str": "sqrt(x)/pow(x,(exp(pow(x,x))/2))",
+      "f_str": "sqrt(x)*(-x**x*(log(x) + 1)*exp(x**x)*log(x)/2 - exp(x**x)/(2*x))/x**(exp(x**x)/2) + 1/(2*sqrt(x)*x**(exp(x**x)/2))",
+      "mma_output": "Integrate[x^(-1/2 - E^x^x/2)/2 + x^(1/2 - E^x^x/2)*(-1/2*E^x^x/x - (E^x^x*x^x*Log[x]*(1 + Log[x]))/2), x]"
+    },
+    {
+      "idx": 115826,
+      "F_str": "sqrt(x + pow(x,exp(x)))/sqrt(x)",
+      "f_str": "(x**exp(x)*(exp(x)*log(x) + exp(x)/x)/2 + 1/2)/(sqrt(x)*sqrt(x + x**exp(x))) - sqrt(x + x**exp(x))/(2*x**(3/2))",
+      "mma_output": "Integrate[-1/2*Sqrt[x + x^E^x]/x^(3/2) + (1/2 + (x^E^x*(E^x/x + E^x*Log[x]))/2)/(Sqrt[x]*Sqrt[x + x^E^x]), x]"
+    },
+    {
+      "idx": 115876,
+      "F_str": "sqrt(x)*pow(x,(pow(x,exp(x))))",
+      "f_str": "sqrt(x)*x**(x**exp(x))*(x**exp(x)*(exp(x)*log(x) + exp(x)/x)*log(x) + x**exp(x)/x) + x**(x**exp(x))/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + x^E^x)/2 + x^(1/2 + x^E^x)*(x^(-1 + E^x) + x^E^x*Log[x]*(E^x/x + E^x*Log[x])), x]"
+    },
+    {
+      "idx": 115877,
+      "F_str": "sqrt(x)/pow(x,(pow(x,exp(x))))",
+      "f_str": "sqrt(x)*(-x**exp(x)*(exp(x)*log(x) + exp(x)/x)*log(x) - x**exp(x)/x)/x**(x**exp(x)) + 1/(2*sqrt(x)*x**(x**exp(x)))",
+      "mma_output": "Integrate[x^(-1/2 - x^E^x)/2 + x^(1/2 - x^E^x)*(-x^(-1 + E^x) - x^E^x*Log[x]*(E^x/x + E^x*Log[x])), x]"
+    },
+    {
+      "idx": 115879,
+      "F_str": "sqrt(x)/pow(x,(pow(x,exp(x))/2))",
+      "f_str": "sqrt(x)*(-x**exp(x)*(exp(x)*log(x) + exp(x)/x)*log(x)/2 - x**exp(x)/(2*x))/x**(x**exp(x)/2) + 1/(2*sqrt(x)*x**(x**exp(x)/2))",
+      "mma_output": "Integrate[x^(-1/2 - x^E^x/2)/2 + x^(1/2 - x^E^x/2)*(-1/2*x^(-1 + E^x) - (x^E^x*Log[x]*(E^x/x + E^x*Log[x]))/2), x]"
+    },
+    {
+      "idx": 115878,
+      "F_str": "sqrt(x)*pow(x,(pow(x,exp(x))/2))",
+      "f_str": "sqrt(x)*x**(x**exp(x)/2)*(x**exp(x)*(exp(x)*log(x) + exp(x)/x)*log(x)/2 + x**exp(x)/(2*x)) + x**(x**exp(x)/2)/(2*sqrt(x))",
+      "mma_output": "Integrate[x^(-1/2 + x^E^x/2)/2 + x^(1/2 + x^E^x/2)*(x^(-1 + E^x)/2 + (x^E^x*Log[x]*(E^x/x + E^x*Log[x]))/2), x]"
+    },
+    {
+      "idx": 116401,
+      "F_str": "sqrt(x)/sqrt(x + pow(x,exp(x)))",
+      "f_str": "sqrt(x)*(-x**exp(x)*(exp(x)*log(x) + exp(x)/x)/2 - 1/2)/(x + x**exp(x))**(3/2) + 1/(2*sqrt(x)*sqrt(x + x**exp(x)))",
+      "mma_output": "Integrate[1/(2*Sqrt[x]*Sqrt[x + x^E^x]) + (Sqrt[x]*(-1/2 - (x^E^x*(E^x/x + E^x*Log[x]))/2))/(x + x^E^x)^(3/2), x]"
+    },
+    {
+      "idx": 118196,
+      "F_str": "-sqrt(x)/(x + exp(x)) + x",
+      "f_str": "-sqrt(x)*(-exp(x) - 1)/(x + exp(x))**2 + 1 - 1/(2*sqrt(x)*(x + exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 118195,
+      "F_str": "-sqrt(x)/(-x + exp(x)) + x",
+      "f_str": "-sqrt(x)*(1 - exp(x))/(-x + exp(x))**2 + 1 - 1/(2*sqrt(x)*(-x + exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 118230,
+      "F_str": "sqrt(x)/(x + exp(x)) + x",
+      "f_str": "sqrt(x)*(-exp(x) - 1)/(x + exp(x))**2 + 1 + 1/(2*sqrt(x)*(x + exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 118231,
+      "F_str": "sqrt(x)/(x + exp(x)) - x",
+      "f_str": "sqrt(x)*(-exp(x) - 1)/(x + exp(x))**2 - 1 + 1/(2*sqrt(x)*(x + exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 118233,
+      "F_str": "sqrt(x)/(x - exp(x)) + x",
+      "f_str": "sqrt(x)*(exp(x) - 1)/(x - exp(x))**2 + 1 + 1/(2*sqrt(x)*(x - exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 118234,
+      "F_str": "sqrt(x)/(x - exp(x)) - x",
+      "f_str": "sqrt(x)*(exp(x) - 1)/(x - exp(x))**2 - 1 + 1/(2*sqrt(x)*(x - exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 124503,
+      "F_str": "x*exp(-exp(-2*sqrt(x) + 2*x))",
+      "f_str": "-x*(2 - 1/sqrt(x))*exp(-2*sqrt(x) + 2*x)*exp(-exp(-2*sqrt(x) + 2*x)) + exp(-exp(-2*sqrt(x) + 2*x))",
+      "mma_output": "Integrate[E^(-E^(-2*Sqrt[x] + 2*x)) - E^(-E^(-2*Sqrt[x] + 2*x) - 2*Sqrt[x] + 2*x)*(2 - 1/Sqrt[x])*x, x]"
+    },
+    {
+      "idx": 125411,
+      "F_str": "x*exp(-exp(-sqrt(x)/2 + x/2))",
+      "f_str": "-x*(1/2 - 1/(4*sqrt(x)))*exp(-sqrt(x)/2 + x/2)*exp(-exp(-sqrt(x)/2 + x/2)) + exp(-exp(-sqrt(x)/2 + x/2))",
+      "mma_output": "Integrate[E^(-E^(-1/2*Sqrt[x] + x/2)) - E^(-E^(-1/2*Sqrt[x] + x/2) - Sqrt[x]/2 + x/2)*(1/2 - 1/(4*Sqrt[x]))*x, x]"
+    },
+    {
+      "idx": 126941,
+      "F_str": "x + exp(-sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[1 + (-1/2 + 1/(2*x^2))/(E^Sqrt[x^(-1) + x]*Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 126947,
+      "F_str": "x - exp(-sqrt(x + 1/x))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[1 + (1/2 - 1/(2*x^2))/(E^Sqrt[x^(-1) + x]*Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 127015,
+      "F_str": "x + exp(sqrt(x + 1/x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[1 + (E^(Sqrt[x^(-1) + x]/2)*(1/2 - 1/(2*x^2)))/(2*Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 127024,
+      "F_str": "x - exp(sqrt(x + 1/x)/2)",
+      "f_str": "timeout",
+      "mma_output": "Integrate[1 - (E^(Sqrt[x^(-1) + x]/2)*(1/2 - 1/(2*x^2)))/(2*Sqrt[x^(-1) + x]), x]"
+    },
+    {
+      "idx": 127145,
+      "F_str": "(-x + exp(sqrt(x)/2))**2/x**2",
+      "f_str": "timeout",
+      "mma_output": ""
+    },
+    {
+      "idx": 128666,
+      "F_str": "x - exp(sqrt(x + x**(-2)))",
+      "f_str": "timeout",
+      "mma_output": "Integrate[1 + (E^Sqrt[x^(-2) + x]*(-1/2 + x^(-3)))/Sqrt[x^(-2) + x], x]"
+    },
+    {
+      "idx": 130051,
+      "F_str": "x*log(1/(sqrt(x) + exp(x)))",
+      "f_str": "x*(-exp(x) - 1/(2*sqrt(x)))/(sqrt(x) + exp(x)) + log(1/(sqrt(x) + exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 130382,
+      "F_str": "x*log(sqrt(sqrt(x) + exp(x)))",
+      "f_str": "x*(exp(x)/2 + 1/(4*sqrt(x)))/(sqrt(x) + exp(x)) + log(sqrt(sqrt(x) + exp(x)))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 130476,
+      "F_str": "x*log(sqrt(x) + exp(2*x))",
+      "f_str": "x*(2*exp(2*x) + 1/(2*sqrt(x)))/(sqrt(x) + exp(2*x)) + log(sqrt(x) + exp(2*x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 130590,
+      "F_str": "x*log(sqrt(x) + exp(x))",
+      "f_str": "x*(exp(x) + 1/(2*sqrt(x)))/(sqrt(x) + exp(x)) + log(sqrt(x) + exp(x))",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 130672,
+      "F_str": "x*log((sqrt(x) + exp(x))**2)",
+      "f_str": "x*(2*exp(x) + 1/sqrt(x))/(sqrt(x) + exp(x)) + log((sqrt(x) + exp(x))**2)",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 130673,
+      "F_str": "x*log((sqrt(x) - exp(x))**2)",
+      "f_str": "x*(-2*exp(x) + 1/sqrt(x))/(sqrt(x) - exp(x)) + log((sqrt(x) - exp(x))**2)",
+      "mma_output": "$Aborted"
+    },
+    {
+      "idx": 130676,
+      "F_str": "x*log(sqrt(x) + exp(x/2))",
+      "f_str": "x*(exp(x/2)/2 + 1/(2*sqrt(x)))/(sqrt(x) + exp(x/2)) + log(sqrt(x) + exp(x/2))",
+      "mma_output": "$Aborted"
+    }
+  ]
+}

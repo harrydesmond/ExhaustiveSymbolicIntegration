@@ -1,0 +1,1658 @@
+{
+  "1": {
+    "F_str": "sqrt(Abs(a0/Abs(a1)**(2*x) - x))",
+    "k": 9,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "2": {
+    "F_str": "x*sqrt(Abs(x - exp(-x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "3": {
+    "F_str": "sqrt(Abs(a0 + exp(2*x)))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "4": {
+    "F_str": "sqrt(Abs(a0 + exp(1/x)))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "5": {
+    "F_str": "exp(-x/2)*sqrt(Abs(a0 + sqrt(x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "6": {
+    "F_str": "x**(1/4)*Abs(a0 - exp(x))**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "7": {
+    "F_str": "sqrt(Abs(a0 + exp(x)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "9": {
+    "F_str": "exp(x)/sqrt(Abs(sqrt(x) - x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "10": {
+    "F_str": "x*sqrt(Abs(a0 - exp(2*x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "13": {
+    "F_str": "x*sqrt(Abs(a0 + exp(x**2)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "15": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0*exp(-x) - x))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "18": {
+    "F_str": "sqrt(Abs(a0 + exp(x**2)))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "20": {
+    "F_str": "(-x + sqrt(Abs(a0 - exp(-x))))**2",
+    "k": 9,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "21": {
+    "F_str": "sqrt(Abs(x - x**a0))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "23": {
+    "F_str": "sqrt(Abs(x**2 - exp(-x)))",
+    "k": 7,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "24": {
+    "F_str": "exp(x/2)*sqrt(Abs(a0 + sqrt(x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "25": {
+    "F_str": "Abs(a0 + exp(x))**(1/4)/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "27": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - exp(exp(x))))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "28": {
+    "F_str": "((a0 - conjugate(Abs(a1)**(-a2 + x)))**2*(a0 - Abs(a1)**(-a2 + x))**2)**(1/4)",
+    "k": 9,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "29": {
+    "F_str": "sqrt(Abs(a0 - exp(2*x)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "30": {
+    "F_str": "exp(x/2)/sqrt(Abs(sqrt(x) - x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "33": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - exp(x/2)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "34": {
+    "F_str": "x**(1/4)*sqrt(Abs(x - exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "35": {
+    "F_str": "exp(-x/2)*sqrt(Abs(x - exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "37": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - exp(2*x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "38": {
+    "F_str": "x*sqrt(Abs(a0 + exp(exp(x))))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "39": {
+    "F_str": "sqrt(Abs(a0 + exp(x)))/x**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "40": {
+    "F_str": "sqrt(Abs(a0*exp(-x) - x))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "41": {
+    "F_str": "exp(x)*sqrt(Abs(x - exp(-x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "43": {
+    "F_str": "x**(1/4)*Abs(x - exp(x))**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "44": {
+    "F_str": "Abs(x - exp(x))**(1/4)/x**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "45": {
+    "F_str": "sqrt(Abs(a0 - exp(exp(x))))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "46": {
+    "F_str": "sqrt(Abs(a0*exp(x) + x))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "48": {
+    "F_str": "Abs(a0 - exp(x))**(1/4)/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "49": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - x*exp(x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "51": {
+    "F_str": "Abs(a0 + exp(x))**(1/4)/x**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "52": {
+    "F_str": "sqrt(Abs(x - exp(-x)))",
+    "k": 6,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "53": {
+    "F_str": "sqrt(Abs(a0 - exp(x)))/x**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "54": {
+    "F_str": "sqrt(Abs(a0 - exp(x)))/x",
+    "k": 7,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "56": {
+    "F_str": "sqrt(Abs(a0 - exp(x/2)))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "58": {
+    "F_str": "exp(x/2)*sqrt(Abs(a0 - sqrt(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "59": {
+    "F_str": "x**(1/4)*Abs(sqrt(x) - x)**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "60": {
+    "F_str": "sqrt(Abs(x - x**x))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "61": {
+    "F_str": "sqrt(Abs(a0*(x - exp(-x))))",
+    "k": 8,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "62": {
+    "F_str": "x*sqrt(Abs(a0 + exp(-x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "63": {
+    "F_str": "sqrt(Abs(a0 + x**x))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "64": {
+    "F_str": "sqrt(x)/sqrt(Abs(a0 + sqrt(Abs(a1 - x))))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "66": {
+    "F_str": "sqrt(Abs(sqrt(x) - exp(x)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "67": {
+    "F_str": "x*sqrt(Abs(a0 - exp(-x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "68": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - exp(x)))",
+    "k": 7,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "69": {
+    "F_str": "sqrt(Abs(a0 + exp(-x)))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "71": {
+    "F_str": "sqrt(Abs(x - Abs(a0)**x))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "72": {
+    "F_str": "sqrt(Abs(x - 1/Abs(a0)**x))",
+    "k": 7,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "73": {
+    "F_str": "sqrt(Abs(a0 - x*exp(x)))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "74": {
+    "F_str": "sqrt(Abs(a0 + Abs(a1)**x))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "75": {
+    "F_str": "x*sqrt(Abs(a0*exp(-x) - x))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "77": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 + x**x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "78": {
+    "F_str": "sqrt(Abs(a0 - exp(-x)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "79": {
+    "F_str": "x*sqrt(Abs(x - exp(x)))",
+    "k": 7,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "80": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - exp(-x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "81": {
+    "F_str": "-x + 1/sqrt(Abs(x - exp(-x)))",
+    "k": 9,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "83": {
+    "F_str": "sqrt(Abs(a0 + exp(x)))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "84": {
+    "F_str": "sqrt(Abs(x - exp(2*x)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "85": {
+    "F_str": "x + 1/sqrt(Abs(x - exp(-x)))",
+    "k": 9,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "86": {
+    "F_str": "exp(x)/sqrt(Abs(x - exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "87": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - x**x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "89": {
+    "F_str": "sqrt(Abs(x - (x - exp(-x))**2))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "90": {
+    "F_str": "Abs(a0 + exp(x))**(1/4)/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "92": {
+    "F_str": "sqrt(Abs(x - exp(-2*x)))",
+    "k": 7,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "93": {
+    "F_str": "sqrt(Abs(a0 + exp(sqrt(x))))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "94": {
+    "F_str": "exp(-x/2)*sqrt(Abs(a0 - sqrt(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "95": {
+    "F_str": "sqrt(Abs(x - exp(1/x)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "96": {
+    "F_str": "x**(1/4)*sqrt(Abs(a0 - exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "97": {
+    "F_str": "x*sqrt(Abs(a0 + x**x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "98": {
+    "F_str": "x*sqrt(Abs(a0 - exp(exp(x))))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "99": {
+    "F_str": "exp(-x/2)*sqrt(Abs(sqrt(x) - x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "100": {
+    "F_str": "exp(-x)*sqrt(Abs(a0 - sqrt(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "102": {
+    "F_str": "sqrt(Abs(x - exp(sqrt(x))))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "103": {
+    "F_str": "x*sqrt(Abs(a0*exp(x) + x))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "106": {
+    "F_str": "sqrt(Abs(x*exp(-x) - exp(x)))",
+    "k": 8,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "108": {
+    "F_str": "x**2*sqrt(Abs(a0 - exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "109": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0*exp(x) + x))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "110": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - x**x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "112": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - Abs(a0)**x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "113": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 + exp(2*x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "115": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - exp(1/x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "116": {
+    "F_str": "sqrt(Abs(x - exp(x)))/sqrt(x)",
+    "k": 7,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "118": {
+    "F_str": "sqrt(Abs(a0*exp(-x**2) - exp(x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "119": {
+    "F_str": "exp(-x)*sqrt(Abs(a0 + sqrt(x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "120": {
+    "F_str": "sqrt(x)/sqrt(Abs(a0 - sqrt(Abs(a1 - x))))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "121": {
+    "F_str": "a0 - sqrt(Abs(x - exp(-x)))",
+    "k": 8,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "123": {
+    "F_str": "sqrt(Abs(a0 - exp(x)))/sqrt(x)",
+    "k": 7,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "124": {
+    "F_str": "sqrt(Abs(a0 - x**x))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "125": {
+    "F_str": "x*sqrt(Abs(a0 - exp(x/2)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "126": {
+    "F_str": "x*sqrt(Abs(a0 - exp(x)))",
+    "k": 7,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "127": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 + exp(sqrt(x))))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "129": {
+    "F_str": "sqrt(Abs(a0/Abs(a1)**x - x))",
+    "k": 8,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "130": {
+    "F_str": "sqrt(Abs(x - exp(-x**2)))",
+    "k": 7,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "131": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - exp(2*x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "132": {
+    "F_str": "sqrt(Abs(a0 + exp(-x)))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "133": {
+    "F_str": "x - 1/sqrt(Abs(x - exp(-x)))",
+    "k": 9,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "135": {
+    "F_str": "sqrt(Abs(a0 - exp(exp(x))))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "136": {
+    "F_str": "exp(x/2)/sqrt(Abs(a0 + sqrt(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "137": {
+    "F_str": "sqrt(Abs(a0 - exp(x**2)))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "139": {
+    "F_str": "exp(x/2)*sqrt(Abs(x - exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "140": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - exp(x**2)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "142": {
+    "F_str": "sqrt(Abs(a0 - exp(2*x)))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "143": {
+    "F_str": "sqrt(Abs(x - exp(-x**2 + x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "144": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 + exp(x**2)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "145": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - exp(x)))",
+    "k": 7,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "146": {
+    "F_str": "Abs(a0)*Abs(x - exp(-x))**(1/4)",
+    "k": 9,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "149": {
+    "F_str": "x*sqrt(Abs(a0 - exp(x**2)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "150": {
+    "F_str": "sqrt(Abs(a0 - exp(x**2)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "152": {
+    "F_str": "sqrt(Abs(x - x**a0))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "154": {
+    "F_str": "sqrt(Abs(x*exp(x) - exp(x)))",
+    "k": 8,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "157": {
+    "F_str": "sqrt(Abs(a0 + exp(2*x)))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "159": {
+    "F_str": "sqrt(Abs(a0 + exp(exp(x))))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "160": {
+    "F_str": "sqrt(Abs(x - exp(x**2)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "161": {
+    "F_str": "sqrt(Abs(a0 - exp(sqrt(x))))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "162": {
+    "F_str": "sqrt(Abs(a0*exp(-x) - exp(exp(x))))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "163": {
+    "F_str": "sqrt(Abs(a0 + x**x))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "164": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - exp(sqrt(x))))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "165": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 + exp(1/x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "167": {
+    "F_str": "x*Abs(a0 - exp(x))**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "170": {
+    "F_str": "sqrt(Abs(a0 - x**x))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "173": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - x**a0))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "174": {
+    "F_str": "x*Abs(a0 + exp(x))**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "175": {
+    "F_str": "sqrt(Abs(a0*exp(-x) - x))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "177": {
+    "F_str": "sqrt(Abs(a0*exp(x) + x))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "180": {
+    "F_str": "exp(x/2)/sqrt(Abs(a0 - sqrt(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "181": {
+    "F_str": "sqrt(Abs(x - exp(-x)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "182": {
+    "F_str": "sqrt(Abs(x - exp(x/2)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "183": {
+    "F_str": "exp(x)/sqrt(Abs(a0 - sqrt(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "184": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 + exp(exp(x))))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "185": {
+    "F_str": "sqrt(Abs(x - exp(-x/2)))",
+    "k": 7,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "186": {
+    "F_str": "sqrt(Abs(a0 - exp(-x)))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "187": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 + exp(x/2)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "189": {
+    "F_str": "sqrt(Abs(a0 + exp(exp(x))))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "190": {
+    "F_str": "x*sqrt(Abs(a0 - x**x))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "191": {
+    "F_str": "a0*sqrt(Abs(x - exp(x)))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "192": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - exp(x/2)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "193": {
+    "F_str": "x**(1/4)*Abs(sqrt(x) - x**2)**(1/4)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "194": {
+    "F_str": "sqrt(Abs(x**2 - (x - exp(x))**2))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "195": {
+    "F_str": "x*sqrt(Abs(a0 + exp(1/x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "197": {
+    "F_str": "x*sqrt(Abs(a0 + exp(sqrt(x))))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "198": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - exp(sqrt(x))))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "200": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 + exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "203": {
+    "F_str": "1/sqrt(Abs(a0/(x - exp(-x))))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "204": {
+    "F_str": "x*sqrt(Abs(a0 + exp(2*x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "206": {
+    "F_str": "sqrt(Abs(a0 + exp(sqrt(x))))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "207": {
+    "F_str": "Abs(a0 - exp(x))**(1/4)/x**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "208": {
+    "F_str": "x*sqrt(Abs(a0 - exp(1/x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "209": {
+    "F_str": "sqrt(Abs(a0 + exp(1/x)))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "211": {
+    "F_str": "sqrt(Abs(a0/Abs(a1)**(x/2) - x))",
+    "k": 9,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "212": {
+    "F_str": "Abs(x - exp(-x))**(1/4)",
+    "k": 7,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "214": {
+    "F_str": "sqrt(x)*sqrt(Abs(a0 - exp(exp(x))))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "215": {
+    "F_str": "x**(1/4)*sqrt(Abs(a0 + exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "218": {
+    "F_str": "x*sqrt(Abs(a0 + exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "219": {
+    "F_str": "sqrt(x)*Abs(a0 + exp(x))**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "221": {
+    "F_str": "exp(x)*sqrt(Abs(a0 - sqrt(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "222": {
+    "F_str": "sqrt(x)*sqrt(Abs(x - exp(x**2)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "223": {
+    "F_str": "sqrt(Abs(a0 - exp(x/2)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "224": {
+    "F_str": "x**(1/4)*Abs(a0 + exp(x))**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "225": {
+    "F_str": "sqrt(Abs(a0 - Abs(a1)**x))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "226": {
+    "F_str": "sqrt(Abs(a0 + exp(x**2)))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "227": {
+    "F_str": "sqrt(Abs(a0 - exp(1/x)))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "228": {
+    "F_str": "x*sqrt(Abs(a0 + exp(x/2)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "230": {
+    "F_str": "sqrt(Abs(a0 - exp(x)))/x**2",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "231": {
+    "F_str": "sqrt(Abs(a0 + exp(x/2)))/sqrt(x)",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "232": {
+    "F_str": "Abs(a0 - exp(x))**(1/4)/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "234": {
+    "F_str": "exp(x)*sqrt(Abs(a0 + sqrt(x)))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "237": {
+    "F_str": "a0*sqrt(Abs(x - exp(-x)))",
+    "k": 8,
+    "sympy_solved": true,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": false
+  },
+  "238": {
+    "F_str": "sqrt(x)*sqrt(Abs(x**2 - exp(x)))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "240": {
+    "F_str": "sqrt(Abs(x - exp(-exp(x))))",
+    "k": 7,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "241": {
+    "F_str": "sqrt(Abs(a0 + exp(x)))/x**2",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "242": {
+    "F_str": "x*sqrt(Abs(a0 - exp(sqrt(x))))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "244": {
+    "F_str": "sqrt(x)*Abs(a0 - exp(x))**(1/4)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "246": {
+    "F_str": "exp(x/2)*sqrt(Abs(exp(x) - 1/x))",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "247": {
+    "F_str": "sqrt(Abs(a0 + exp(x/2)))/x",
+    "k": 9,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "248": {
+    "F_str": "sqrt(Abs(a0 - exp(1/x)))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "249": {
+    "F_str": "sqrt(Abs(a0 - exp(sqrt(x))))/x",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "252": {
+    "F_str": "sqrt(Abs(x - exp(-x + exp(x))))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "253": {
+    "F_str": "sqrt(Abs(x - exp(exp(x))))/sqrt(x)",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  },
+  "254": {
+    "F_str": "x*sqrt(Abs(x - x**a0))",
+    "k": 8,
+    "sympy_solved": false,
+    "rubi_solved": false,
+    "maxima_solved": false,
+    "giac_solved": false,
+    "all_failed": true
+  }
+}

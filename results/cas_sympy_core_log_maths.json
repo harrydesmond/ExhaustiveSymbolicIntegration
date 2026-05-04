@@ -1,0 +1,1028 @@
+{
+  "metadata": {
+    "n_clusters": 5669,
+    "timeout": 180,
+    "n_ranks": 28,
+    "elapsed": 2335.2294104099274,
+    "pkl": "results_core_log_maths_k8.pkl",
+    "strategies": "clean_fair -> orig_fair -> clean_manual -> orig_manual"
+  },
+  "summary": {
+    "success": 5525,
+    "failed": 35,
+    "timeout": 109,
+    "error": 0,
+    "fg_failures": 0,
+    "nonfg_failures": 144
+  },
+  "failures": [
+    {
+      "derivative": "a0*Abs(log(Abs(log(x))))**a0*sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))/(log(x)*Abs(log(Abs(log(x))))) + Abs(log(Abs(log(x))))**a0",
+      "our_k": 7,
+      "our_expr": "x*Abs(log(Abs(log(x))))**a0",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x + 1/x)**log(x)*((1 - 1/x**2)*log(x)/(x + 1/x) + log(x + 1/x)/x)",
+      "our_k": 7,
+      "our_expr": "(x + 1/x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a1*(a0 - re((log(x)/sign(log(x)))**a1))*re((log(x)/sign(log(x)))**a1)*sign(log(x))**2/(x*log(x)) - a1*im((log(x)/sign(log(x)))**a1)**2*sign(log(x))**2/(x*log(x)))*sign(a0 - (log(x)/sign(log(x)))**a1)/((a0 - (log(x)/sign(log(x)))**a1)*Abs(a0 - Abs(log(x))**a1))",
+      "our_k": 8,
+      "our_expr": "-log(Abs(a0 - Abs(log(x))**a1))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-log(x)*sign(a1 + x)/Abs(a1 + x) - log(Abs(a1 + x))/x)*Abs(a1 + x)**log(x)",
+      "our_k": 8,
+      "our_expr": "a0 - Abs(a1 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "x**(Abs(a0 + x)**log(x))*((log(x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x)*log(x)*Abs(a0 + x)**log(x) + Abs(a0 + x)**log(x)/x)",
+      "our_k": 8,
+      "our_expr": "x**(Abs(a0 + x)**log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a0*im((log(x)/sign(log(x)))**a0)**2*sign(log(x))**2/(x*log(x)) + (x - re((log(x)/sign(log(x)))**a0))*(-a0*re((log(x)/sign(log(x)))**a0)*sign(log(x))**2/(x*log(x)) + 1))*sign(x - (log(x)/sign(log(x)))**a0)/((x - (log(x)/sign(log(x)))**a0)*Abs(x - Abs(log(x))**a0))",
+      "our_k": 7,
+      "our_expr": "log(Abs(x - Abs(log(x))**a0))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a1*Abs(log(x))**a1*sign(log(x))/Abs(log(x)) + Abs(log(x))**a1)*log(Abs(a0))*Abs(a0)**(x*Abs(log(x))**a1)",
+      "our_k": 8,
+      "our_expr": "Abs(a0)**(x*Abs(log(x))**a1)",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a0*log(x)*sign(a0*(a1 + x))/Abs(a0*(a1 + x)) + log(Abs(a0*(a1 + x)))/x)*Abs(a0*(a1 + x))**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0*(a1 + x))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(a0 + x)/(log(Abs(a0 + x))**2*Abs(a0 + x)) - 1/(x*log(Abs(a0 + x))))/x**(1/log(Abs(a0 + x)))",
+      "our_k": 8,
+      "our_expr": "x**(-1/log(Abs(a0 + x)))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "x*(log(x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x)*Abs(a0 + x)**log(x) + Abs(a0 + x)**log(x)",
+      "our_k": 8,
+      "our_expr": "x*Abs(a0 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "-x*(log(Abs(log(x)/sign(log(x)))) + sign(log(x))**2/log(x))*sign(log(Abs((log(x)/sign(log(x)))**x)))/(log(Abs(log(Abs(log(x))**x)))**2*Abs(log(Abs(log(x))**x))) + 1/log(Abs(log(Abs(log(x))**x)))",
+      "our_k": 8,
+      "our_expr": "x/log(Abs(log(Abs(log(x))**x)))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*Abs(log(Abs(log(x))))**a0*sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))/(x**2*log(x)*Abs(log(Abs(log(x))))) - Abs(log(Abs(log(x))))**a0/x**2",
+      "our_k": 7,
+      "our_expr": "Abs(log(Abs(log(x))))**a0/x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "-sign(a0 - x)/(log(x)*Abs(a0 - x)) - log(Abs(a0 - x))/(x*log(x)**2)",
+      "our_k": 7,
+      "our_expr": "log(Abs(a0 - x))/log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*(x/Abs(a0 + x))**a1*(-x*sign(a0 + x)/(a0 + x)**2 + 1/Abs(a0 + x))*Abs(a0 + x)/x",
+      "our_k": 7,
+      "our_expr": "(x/Abs(a0 + x))**a1",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((x*(log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x) + log(x**log(Abs(log(x)/sign(log(x))))))*re((x**log(Abs(log(x)/sign(log(x)))))**x)**2 + (x*(log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x) + log(x**log(Abs(log(x)/sign(log(x))))))*im((x**log(Abs(log(x)/sign(log(x)))))**x)**2)*sign((x**log(Abs(log(x)/sign(log(x)))))**x)/((x**log(Abs(log(x)/sign(log(x)))))**x*Abs((x**log(Abs(log(x))))**x))",
+      "our_k": 8,
+      "our_expr": "log(Abs((x**log(Abs(log(x))))**x))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x/Abs(a0))**(a1 + x)*(log(x*Abs(1/Abs(a0))) + (a1 + x)/x)",
+      "our_k": 7,
+      "our_expr": "(x/Abs(a0))**(a1 + x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(a0 + x)**2*sign(log(Abs((a0 + x)/sign(a0 + x))))**2*sign(log(Abs(log(Abs((a0 + x)/sign(a0 + x)))/sign(log(Abs((a0 + x)/sign(a0 + x)))))))/((a0 + x)*log(Abs((a0 + x)/sign(a0 + x)))*Abs(log(Abs(log(Abs(a0 + x)))))) + log(Abs(log(Abs(log(Abs(a0 + x))))))/x)*Abs(log(Abs(log(Abs(a0 + x)))))**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(log(Abs(log(Abs(a0 + x)))))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "x**(Abs(log(1/Abs(a0)))**log(x))*(log(x)*log(Abs(log(1/Abs(a0))))*Abs(log(1/Abs(a0)))**log(x)/x + Abs(log(1/Abs(a0)))**log(x)/x)",
+      "our_k": 8,
+      "our_expr": "x**(Abs(log(1/Abs(a0)))**log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "-log(Abs(a0))*sign(log(x))/(Abs(a0)**log(Abs(log(x)))*Abs(log(x))) + Abs(a0)**(-log(Abs(log(x))))",
+      "our_k": 7,
+      "our_expr": "x/Abs(a0)**log(Abs(log(x)))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(-log(x)*sign(a1 + x)/Abs(a1 + x) - log(Abs(a1 + x))/x)/Abs(a1 + x)**log(x)",
+      "our_k": 8,
+      "our_expr": "a0/Abs(a1 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "log(Abs(a0*log(Abs(a1))))*Abs(a0*log(Abs(a1)))**log(x)/x",
+      "our_k": 8,
+      "our_expr": "Abs(a0*log(Abs(a1)))**log(x)",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a0*x**a0*log(Abs(log(Abs(log(x)))))/x + x**a0*sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))/(x*log(x)*Abs(log(Abs(log(x))))))*Abs(log(Abs(log(x))))**(x**a0)",
+      "our_k": 7,
+      "our_expr": "Abs(log(Abs(log(x))))**(x**a0)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0 + x)/x)**log(x)*(x*(sign(a0 + x)/x - Abs(a0 + x)/x**2)*log(x)/Abs(a0 + x) + log(Abs(Abs(a0 + x))/x)/x)",
+      "our_k": 8,
+      "our_expr": "(Abs(a0 + x)/x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x/Abs(a0))**(a1 + log(x))*((a1 + log(x))/x + log(x*Abs(1/Abs(a0)))/x)",
+      "our_k": 8,
+      "our_expr": "(x/Abs(a0))**(a1 + log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(x*Abs(log(Abs(log(Abs(log(x)))))))**a0*(Abs(log(Abs(log(Abs(log(x)))))) + sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))**2*sign(log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x))))))))*sign(Abs(log(Abs(log(Abs(log(x)))))))/(log(x)*log(Abs(log(x)/sign(log(x))))))/(x*Abs(log(Abs(log(Abs(log(x)))))))",
+      "our_k": 8,
+      "our_expr": "(x*Abs(log(Abs(log(Abs(log(x)))))))**a0",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*log(Abs(a0/sign(a0)))*sign(log(Abs((a0/sign(a0))**x)))/Abs(log(Abs(a0)**x)) + log(Abs(log(Abs(a0)**x)))/x)*Abs(log(Abs(a0)**x))**log(x)",
+      "our_k": 7,
+      "our_expr": "Abs(log(Abs(a0)**x))**log(x)",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "log(Abs(a0))*log(Abs(log(x)))*Abs(a0)**log(x)/x + Abs(a0)**log(x)*sign(log(x))/(x*Abs(log(x)))",
+      "our_k": 8,
+      "our_expr": "log(Abs(log(x)))*Abs(a0)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a1*(a0 + re((log(x)/sign(log(x)))**a1))*re((log(x)/sign(log(x)))**a1)*sign(log(x))**2/(x*log(x)) + a1*im((log(x)/sign(log(x)))**a1)**2*sign(log(x))**2/(x*log(x)))*sign(a0 + (log(x)/sign(log(x)))**a1)/((a0 + (log(x)/sign(log(x)))**a1)*Abs(a0 + Abs(log(x))**a1))",
+      "our_k": 7,
+      "our_expr": "log(Abs(a0 + Abs(log(x))**a1))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*x**a1*log(x)*log(Abs(a0))*Abs(a0)**(x**a1)/x + Abs(a0)**(x**a1)/x",
+      "our_k": 8,
+      "our_expr": "log(x**(Abs(a0)**(x**a1)))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(2*x)**log(x)*(log(x)/x + log(2*x)/x)*log(Abs(a0))*Abs(a0)**((2*x)**log(x))",
+      "our_k": 8,
+      "our_expr": "Abs(a0)**((2*x)**log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "log(Abs(log(Abs(a0))/a1))*Abs(log(Abs(a0))/a1)**log(x)/x",
+      "our_k": 8,
+      "our_expr": "Abs(log(Abs(a0))/a1)**log(x)",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x)*Abs(a0 + x)**log(x) + 1",
+      "our_k": 8,
+      "our_expr": "x + Abs(a0 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-log(x)*sign(a0 + x)/Abs(a0 + x) - log(Abs(a0 + x))/x)/Abs(a0 + x)**log(x)",
+      "our_k": 7,
+      "our_expr": "Abs(a0 + x)**(-log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-a1*(a0 - re((log(x)/sign(log(x)))**a1))*re((log(x)/sign(log(x)))**a1)*sign(log(x))**2/(x*log(x)) + a1*im((log(x)/sign(log(x)))**a1)**2*sign(log(x))**2/(x*log(x)))*sign(a0 - (log(x)/sign(log(x)))**a1)/((a0 - (log(x)/sign(log(x)))**a1)*Abs(a0 - Abs(log(x))**a1))",
+      "our_k": 7,
+      "our_expr": "log(Abs(a0 - Abs(log(x))**a1))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(log(x)*sign(a1 + x)/Abs(a1 + x) + log(Abs(a1 + x))/x)*Abs(a1 + x)**log(x)",
+      "our_k": 8,
+      "our_expr": "a0*Abs(a1 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a0*x**a0*log(x)/(x*sign(log(x)/sign(log(x)))*sign(log(x))) + x**a0*sign(log(x)/sign(log(x)))*sign(log(x))/x)*log(x**a0*Abs(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x)))))*sign(log(x)/sign(log(x)))*sign(log(x))*sign(log(Abs(log(x**(x**a0))/sign(log(x**(x**a0))))))/(x**a0*log(x)*log(Abs(log(x**(x**a0))/sign(log(x**(x**a0)))))*Abs(log(Abs(log(x**(x**a0))))))",
+      "our_k": 8,
+      "our_expr": "log(Abs(log(Abs(log(x**(x**a0))))))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "log(x)*log(Abs(a0))*re(Abs(a0)**log(Abs(log(x))))*sign(log(x))/(x*Abs(log(x))) + re(Abs(a0)**log(Abs(log(x))))/x",
+      "our_k": 8,
+      "our_expr": "log(x**re(Abs(a0)**log(Abs(log(x)))))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*log(x)*re(Abs(log(x))**a0)*sign(log(x))/(x*Abs(log(x))) + re(Abs(log(x))**a0)/x",
+      "our_k": 7,
+      "our_expr": "log(x**re(Abs(log(x))**a0))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x**a0/Abs(a1))**log(x)*(a0*log(x)/x + log(x**a0*Abs(1/Abs(a1)))/x)",
+      "our_k": 8,
+      "our_expr": "(x**a0/Abs(a1))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x**x*(log(x) + 1)*log(x)*sign(a0 + x**x)/Abs(a0 + x**x) + log(Abs(a0 + x**x))/x)*Abs(a0 + x**x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + x**x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x/Abs(a1))**log(x)*(log(x)/x + log(x*Abs(1/Abs(a1)))/x)*log(Abs(a0))*Abs(a0)**((x/Abs(a1))**log(x))",
+      "our_k": 8,
+      "our_expr": "Abs(a0)**((x/Abs(a1))**log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0)/x)**log(Abs(log(x)))*(log(Abs(Abs(a0))/x)*sign(log(x))/(x*Abs(log(x))) - log(Abs(log(x)))/x)",
+      "our_k": 7,
+      "our_expr": "(Abs(a0)/x)**log(Abs(log(x)))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((-1 + x**(-2))*log(x)/(x + 1/x) - log(x + 1/x)/x)/(x + 1/x)**log(x)",
+      "our_k": 8,
+      "our_expr": "(x + 1/x)**(-log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*Abs(log(Abs(a0 - 1/x)))**a1*sign(a0 - 1/x)**2*sign(log(Abs((a0 - 1/x)/sign(a0 - 1/x))))/(x**2*(a0 - 1/x)*Abs(log(Abs(a0 - 1/x))))",
+      "our_k": 7,
+      "our_expr": "Abs(log(Abs(a0 - 1/x)))**a1",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(1 + x**(-2))*Abs(log(Abs(x - 1/x)))**a0*sign(x - 1/x)**2*sign(log(Abs((x - 1/x)/sign(x - 1/x))))/((x - 1/x)*Abs(log(Abs(x - 1/x))))",
+      "our_k": 7,
+      "our_expr": "Abs(log(Abs(x - 1/x)))**a0",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0 + x)/x)**x*(x**2*(sign(a0 + x)/x - Abs(a0 + x)/x**2)/Abs(a0 + x) + log(Abs(Abs(a0 + x))/x))",
+      "our_k": 7,
+      "our_expr": "(Abs(a0 + x)/x)**x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "x**(a0 - x**a1)*(-a1*x**a1*log(x)/x + (a0 - x**a1)/x)",
+      "our_k": 7,
+      "our_expr": "x**(a0 - x**a1)",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "((-a0 + re(x**log(Abs(log(x)/sign(log(x))))))*(log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x)*re(x**log(Abs(log(x)/sign(log(x))))) + (log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x)*im(x**log(Abs(log(x)/sign(log(x)))))**2)*sign(a0 - x**log(Abs(log(x)/sign(log(x)))))/((a0 - x**log(Abs(log(x)/sign(log(x)))))*Abs(a0 - x**log(Abs(log(x)))))",
+      "our_k": 8,
+      "our_expr": "log(Abs(a0 - x**log(Abs(log(x)))))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x/Abs(a0))**log(Abs(log(Abs(log(x)))))*(log(Abs(log(Abs(log(x)))))/x + log(x*Abs(1/Abs(a0)))*sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))/(x*log(x)*Abs(log(Abs(log(x))))))",
+      "our_k": 8,
+      "our_expr": "(x/Abs(a0))**log(Abs(log(Abs(log(x)))))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x)*Abs(a0 + x)**log(x) - 1",
+      "our_k": 8,
+      "our_expr": "-x + Abs(a0 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*log(x*Abs(sign(a0)/(a0*sign(sign(a0)/a0))))*Abs(log(x*Abs(1/Abs(a0))))**a1*sign(log(x*Abs(sign(a0)/a0)))/(log(x*Abs(sign(a0)/a0))*Abs(log(x*Abs(1/Abs(a0))))) + Abs(log(x*Abs(1/Abs(a0))))**a1",
+      "our_k": 8,
+      "our_expr": "x*Abs(log(x*Abs(1/Abs(a0))))**a1",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(x/Abs(log(x)))**a0*(1/Abs(log(x)) - sign(log(x))/log(x)**2)*Abs(log(x)) + (x/Abs(log(x)))**a0",
+      "our_k": 8,
+      "our_expr": "x*(x/Abs(log(x)))**a0",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(1 - 1/x**2)*(x + 1/x)**log(1/Abs(a0))*log(1/Abs(a0))/(x + 1/x)",
+      "our_k": 8,
+      "our_expr": "(x + 1/x)**log(1/Abs(a0))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*x**a0/(x*log(Abs(log(x)))) - x**a0*sign(log(x))/(x*log(Abs(log(x)))**2*Abs(log(x)))",
+      "our_k": 7,
+      "our_expr": "x**a0/log(Abs(log(x)))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "((-log(x)/x**2 + x**(-2))*log(Abs(a0 + x)) + log(x)*sign(a0 + x)/(x*Abs(a0 + x)))*Abs(a0 + x)**(log(x)/x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + x)**(log(x)/x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-1/log(Abs(log(x))) + sign(log(x))/(log(Abs(log(x)))**2*Abs(log(x))))*log(Abs(a0))/Abs(a0)**(x/log(Abs(log(x))))",
+      "our_k": 8,
+      "our_expr": "Abs(a0)**(-x/log(Abs(log(x))))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(a1 + x)/Abs(a1 + x) + log(Abs(a1 + x))/x)*log(Abs(a0))*Abs(a0)**(Abs(a1 + x)**log(x))*Abs(a1 + x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0)**(Abs(a1 + x)**log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-log(x) - 1)*Abs(a0)**log(x)/x**x + log(Abs(a0))*Abs(a0)**log(x)/(x*x**x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0)**log(x)/x**x",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(Abs(log(Abs(log(Abs(log(Abs(log(x)))))))))/x + sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))**2*sign(log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x))))))))**2*sign(log(Abs(log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x)))))))/sign(log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x)))))))))))/(x*log(Abs(log(x)/sign(log(x))))*log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x)))))))*Abs(log(Abs(log(Abs(log(Abs(log(x))))))))))*Abs(log(Abs(log(Abs(log(Abs(log(x))))))))**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(log(Abs(log(Abs(log(Abs(log(x))))))))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((a0 + re((log(x)/sign(log(x)))**log(x)))*(log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x)*re((log(x)/sign(log(x)))**log(x)) + (log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x)*im((log(x)/sign(log(x)))**log(x))**2)*sign(a0 + (log(x)/sign(log(x)))**log(x))/((a0 + (log(x)/sign(log(x)))**log(x))*Abs(a0 + Abs(log(x))**log(x)))",
+      "our_k": 8,
+      "our_expr": "log(Abs(a0 + Abs(log(x))**log(x)))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((x + re((log(x)/sign(log(x)))**log(x)))*((log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x)*re((log(x)/sign(log(x)))**log(x)) + 1) + (log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x)*im((log(x)/sign(log(x)))**log(x))**2)*sign(x + (log(x)/sign(log(x)))**log(x))/((x + (log(x)/sign(log(x)))**log(x))*Abs(x + Abs(log(x))**log(x)))",
+      "our_k": 8,
+      "our_expr": "log(Abs(x + Abs(log(x))**log(x)))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-1/(x**2*log(Abs(log(x)))) - sign(log(x))/(x**2*log(Abs(log(x)))**2*Abs(log(x))))*log(Abs(a0))*Abs(a0)**(1/(x*log(Abs(log(x)))))",
+      "our_k": 8,
+      "our_expr": "Abs(a0)**(1/(x*log(Abs(log(x)))))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((-a0*x**a0/x + 1)*log(x)*sign(x - x**a0)/Abs(x - x**a0) + log(Abs(x - x**a0))/x)*Abs(x - x**a0)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(x - x**a0)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-a1*(a0 + re((log(x)/sign(log(x)))**a1))*re((log(x)/sign(log(x)))**a1)*sign(log(x))**2/(x*log(x)) - a1*im((log(x)/sign(log(x)))**a1)**2*sign(log(x))**2/(x*log(x)))*sign(a0 + (log(x)/sign(log(x)))**a1)/((a0 + (log(x)/sign(log(x)))**a1)*Abs(a0 + Abs(log(x))**a1))",
+      "our_k": 8,
+      "our_expr": "-log(Abs(a0 + Abs(log(x))**a1))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(Abs(log(x)/sign(log(x)))) + sign(log(x))**2/log(x))*sign(log(Abs((log(x)/sign(log(x)))**x)))/(x*Abs(log(Abs(log(x))**x))) - log(Abs(log(Abs(log(x))**x)))/x**2",
+      "our_k": 8,
+      "our_expr": "log(Abs(log(Abs(log(x))**x)))/x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x**x/Abs(a0))**log(x)*((log(x) + 1)*log(x) + log(x**x*Abs(1/Abs(a0)))/x)",
+      "our_k": 8,
+      "our_expr": "(x**x/Abs(a0))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x)*Abs(a0 + x)**log(x)/x - Abs(a0 + x)**log(x)/x**2",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + x)**log(x)/x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "sign(log(x))/(x*log(x)*Abs(log(x))) - log(Abs(log(x)))/(x*log(x)**2)",
+      "our_k": 6,
+      "our_expr": "log(Abs(log(x)))/log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((log(Abs((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))) + log(Abs(a0/sign(a0)))*sign(log(x))**2/log(x))*re(((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))**x)**2 + (log(Abs((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))) + log(Abs(a0/sign(a0)))*sign(log(x))**2/log(x))*im(((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))**x)**2)*sign(((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))**x)/(((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))**x*Abs((Abs(a0)**log(Abs(log(x))))**x))",
+      "our_k": 8,
+      "our_expr": "log(Abs((Abs(a0)**log(Abs(log(x))))**x))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(Abs(a0 + 1/x))/x - log(x)*sign(a0 + 1/x)/(x**2*Abs(a0 + 1/x)))*Abs(a0 + 1/x)**log(x)",
+      "our_k": 7,
+      "our_expr": "Abs(a0 + 1/x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "-log(Abs(log(x)))/(x**2*log(x)) + sign(log(x))/(x**2*log(x)*Abs(log(x))) - log(Abs(log(x)))/(x**2*log(x)**2)",
+      "our_k": 8,
+      "our_expr": "log(Abs(log(x)))/(x*log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*re(Abs(log(Abs(log(x))))**a0*sign(log(Abs(log(x)/sign(log(x))))))*sign(log(x))**2/(x*Abs(log(Abs(log(x))))) + re(Abs(log(Abs(log(x))))**a0)/x",
+      "our_k": 8,
+      "our_expr": "log(x**re(Abs(log(Abs(log(x))))**a0))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0)/Abs(a1)**x)**log(x)*(-log(x)*log(Abs(a1)) + log(Abs(Abs(a0))/Abs(a1)**x)/x)",
+      "our_k": 8,
+      "our_expr": "(Abs(a0)/Abs(a1)**x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(1 - 1/x**2)*(x + 1/x)**a0/(x + 1/x)",
+      "our_k": 6,
+      "our_expr": "(x + 1/x)**a0",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*x**a0*log(Abs(log(Abs(log(x)))))/x + x**a0*sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))/(x*log(x)*Abs(log(Abs(log(x)))))",
+      "our_k": 8,
+      "our_expr": "log(Abs(log(Abs(log(x))))**(x**a0))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(2*x*log(x)*sign(a0 + x**2)/Abs(a0 + x**2) + log(Abs(a0 + x**2))/x)*Abs(a0 + x**2)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + x**2)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-a0*log(x)*sign(a0/(a1 + x))/((a1 + x)**2*Abs(a0/(a1 + x))) + log(Abs(a0/(a1 + x)))/x)*Abs(a0/(a1 + x))**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0/(a1 + x))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "-log(1/Abs(log(x)))/(x*log(x)**2) - Abs(log(x))*sign(log(x))/(x*log(x)**3)",
+      "our_k": 7,
+      "our_expr": "log(1/Abs(log(x)))/log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(((-log(x) - 1)*re((log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))**(-x))/x**x + (-log(Abs(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))) - sign(log(x)/sign(log(x)))**2*sign(log(x))**2/log(x))*re((log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))**(-x))/x**x)*re((log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))**(-x))/x**x + ((-log(x) - 1)*im((log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))**(-x))/x**x + (-log(Abs(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))) - sign(log(x)/sign(log(x)))**2*sign(log(x))**2/log(x))*im((log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))**(-x))/x**x)*im((log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))**(-x))/x**x)*sign((sign(log(x)/sign(log(x)))*sign(log(x))/(x*log(x)))**x)/((sign(log(x)/sign(log(x)))*sign(log(x))/(x*log(x)))**x*Abs((1/(x*Abs(log(x))))**x))",
+      "our_k": 8,
+      "our_expr": "log(Abs((1/(x*Abs(log(x))))**x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(log(x))/(x*Abs(log(x))) + log(Abs(log(x)))/x)*log(x)*re(Abs(log(x))**log(x)) + re(Abs(log(x))**log(x))/x",
+      "our_k": 8,
+      "our_expr": "log(x**re(Abs(log(x))**log(x)))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x*(log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x)*sign(log(Abs((log(x)/sign(log(x)))**log(x))))/Abs(log(Abs(log(x))**log(x))) + log(Abs(log(Abs(log(x))**log(x)))))*Abs(log(Abs(log(x))**log(x)))**x",
+      "our_k": 8,
+      "our_expr": "Abs(log(Abs(log(x))**log(x)))**x",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(1 - 1/x**2)*Abs(log(x + 1/x))**a0*sign(log(x + 1/x))/((x + 1/x)*Abs(log(x + 1/x)))",
+      "our_k": 7,
+      "our_expr": "Abs(log(x + 1/x))**a0",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(a1 + x)/Abs(a1 + x) + log(Abs(a1 + x))/x)*Abs(a1 + x)**log(x)",
+      "our_k": 8,
+      "our_expr": "a0 + Abs(a1 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x + 1)**log(x)*(log(x)/(x + 1) + log(x + 1)/x)",
+      "our_k": 8,
+      "our_expr": "(x + 1)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "log(Abs(a0/log(1/Abs(a1))))*Abs(a0/log(1/Abs(a1)))**log(x)/x",
+      "our_k": 8,
+      "our_expr": "Abs(a0/log(1/Abs(a1)))**log(x)",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x**2*(-log(x)/(x**2*sign(log(x)/sign(log(x)))*sign(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))*sign(log(x))) + sign(log(x)/sign(log(x)))*sign(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))*sign(log(x))/x**2)*log(Abs(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))*sign(log(x))))/x)*sign(log(x)/sign(log(x)))*sign(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))*sign(log(x))*sign(log(Abs(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))/x))**2*sign(log(Abs(log(Abs(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))/x)/sign(log(Abs(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))/x)))))/(log(x)*log(Abs(log(x)/(sign(log(x)/sign(log(x)))*sign(log(x))))/x)**2*Abs(log(Abs(log(Abs(Abs(log(x)))/x))))) + log(Abs(log(Abs(log(Abs(Abs(log(x)))/x))))))*Abs(log(Abs(log(Abs(Abs(log(x)))/x))))**x",
+      "our_k": 8,
+      "our_expr": "Abs(log(Abs(log(Abs(Abs(log(x)))/x))))**x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x)*Abs(a0 + x)**log(x)",
+      "our_k": 6,
+      "our_expr": "Abs(a0 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(1/x - 1/x**2)*Abs(log(x) + 1/x)**a0*sign(log(x) + 1/x)/Abs(log(x) + 1/x)",
+      "our_k": 7,
+      "our_expr": "Abs(log(x) + 1/x)**a0",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-log(x)*sign(a0 + x)/Abs(a0 + x) - log(Abs(a0 + x))/x)/log(Abs(a0 + x)**log(x))**2",
+      "our_k": 8,
+      "our_expr": "1/log(Abs(a0 + x)**log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x*Abs(log(x)))**(x**a0)*(a0*x**a0*log(x*Abs(Abs(log(x))))/x + x**a0*(Abs(log(x)) + sign(log(x))*sign(Abs(log(x))))/(x*Abs(log(x))))",
+      "our_k": 8,
+      "our_expr": "(x*Abs(log(x)))**(x**a0)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-log(Abs(a0 + 1/x))/x + log(x)*sign(a0 + 1/x)/(x**2*Abs(a0 + 1/x)))/Abs(a0 + 1/x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + 1/x)**(-log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(2*x)**(log(x)/x)*((-log(x)/x**2 + x**(-2))*log(2*x) + log(x)/x**2)",
+      "our_k": 8,
+      "our_expr": "(2*x)**(log(x)/x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0)/x)**(a1 + log(x))*((-a1 - log(x))/x + log(Abs(Abs(a0))/x)/x)",
+      "our_k": 8,
+      "our_expr": "(Abs(a0)/x)**(a1 + log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x*Abs(a0 + x))**log(x)*((x*sign(a0 + x) + Abs(a0 + x))*log(x)/(x*Abs(a0 + x)) + log(x*Abs(Abs(a0 + x)))/x)",
+      "our_k": 8,
+      "our_expr": "(x*Abs(a0 + x))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "x**(Abs(log(Abs(log(x))))**a0)*(a0*Abs(log(Abs(log(x))))**a0*sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))/(x*Abs(log(Abs(log(x))))) + Abs(log(Abs(log(x))))**a0/x)",
+      "our_k": 7,
+      "our_expr": "x**(Abs(log(Abs(log(x))))**a0)",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*log(Abs(a0))/(x*log(x)**2*log(Abs(a0)**(a1/log(x)))**2)",
+      "our_k": 8,
+      "our_expr": "1/log(Abs(a0)**(a1/log(x)))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "x**(x**a0)*(a0*x**a0*log(x)/x + x**a0/x)*log(x) + x**(x**a0)/x",
+      "our_k": 8,
+      "our_expr": "log(x**(x**(x**a0)))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0)/x)**(a1 - log(x))*((-a1 + log(x))/x - log(Abs(Abs(a0))/x)/x)",
+      "our_k": 8,
+      "our_expr": "(Abs(a0)/x)**(a1 - log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x + Abs(a0)**x)**log(x)*((log(Abs(a0))*Abs(a0)**x + 1)*log(x)/(x + Abs(a0)**x) + log(x + Abs(a0)**x)/x)",
+      "our_k": 8,
+      "our_expr": "(x + Abs(a0)**x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(x*Abs(log(x)))**a0*(Abs(log(x)) + sign(log(x))*sign(Abs(log(x))))/(x**2*Abs(log(x))) - (x*Abs(log(x)))**a0/x**2",
+      "our_k": 8,
+      "our_expr": "(x*Abs(log(x)))**a0/x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*x*(sign((a0 + x)/sign(a0 + x))*sign(a0 + x)/x - (a0 + x)/(x**2*sign((a0 + x)/sign(a0 + x))*sign(a0 + x)))*log(Abs((a0 + x)/(sign((a0 + x)/sign(a0 + x))*sign(a0 + x)))/x)*Abs(log(Abs(Abs(a0 + x))/x))**a1*sign((a0 + x)/sign(a0 + x))*sign(a0 + x)*sign(log(Abs((a0 + x)/sign(a0 + x))/x))/((a0 + x)*log(Abs((a0 + x)/sign(a0 + x))/x)*Abs(log(Abs(Abs(a0 + x))/x)))",
+      "our_k": 8,
+      "our_expr": "Abs(log(Abs(Abs(a0 + x))/x))**a1",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*sign(log(x))/(x*log(x)*Abs(log(x))) - a0*log(Abs(log(x)))/(x*log(x)**2)",
+      "our_k": 8,
+      "our_expr": "a0*log(Abs(log(x)))/log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0)/x)**x*(log(Abs(Abs(a0))/x) - 1)*log(x) + (Abs(a0)/x)**x/x",
+      "our_k": 8,
+      "our_expr": "log(x**((Abs(a0)/x)**x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0)**x*Abs(a1))**log(x)*(log(x)*log(Abs(a0)) + log(Abs(a0)**x*Abs(Abs(a1)))/x)",
+      "our_k": 8,
+      "our_expr": "(Abs(a0)**x*Abs(a1))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(Abs(a0 + 1/x)) - sign(a0 + 1/x)/(x*Abs(a0 + 1/x)))*Abs(a0 + 1/x)**x",
+      "our_k": 6,
+      "our_expr": "Abs(a0 + 1/x)**x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(1/x + x**(-2))*Abs(log(x) - 1/x)**a0*sign(log(x) - 1/x)/Abs(log(x) - 1/x)",
+      "our_k": 7,
+      "our_expr": "Abs(log(x) - 1/x)**a0",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((x - re((log(x)/sign(log(x)))**log(x)))*((-log(Abs(log(x)/sign(log(x))))/x - sign(log(x))**2/x)*re((log(x)/sign(log(x)))**log(x)) + 1) + (log(Abs(log(x)/sign(log(x))))/x + sign(log(x))**2/x)*im((log(x)/sign(log(x)))**log(x))**2)*sign(x - (log(x)/sign(log(x)))**log(x))/((x - (log(x)/sign(log(x)))**log(x))*Abs(x - Abs(log(x))**log(x)))",
+      "our_k": 8,
+      "our_expr": "log(Abs(x - Abs(log(x))**log(x)))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(2*log(x)*sign(log(x**log(x)))/(x**2*Abs(log(x**log(x)))) - log(Abs(log(x**log(x))))/x**2)*Abs(log(x**log(x)))**(1/x)",
+      "our_k": 8,
+      "our_expr": "Abs(log(x**log(x)))**(1/x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*x*(Abs(a0*log(x))/x)**a1*(a0*sign(a0*log(x))/x**2 - Abs(a0*log(x))/x**2)/Abs(a0*log(x))",
+      "our_k": 8,
+      "our_expr": "(Abs(a0*log(x))/x)**a1",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x + x**a0)**log(x)*((a0*x**a0/x + 1)*log(x)/(x + x**a0) + log(x + x**a0)/x)",
+      "our_k": 8,
+      "our_expr": "(x + x**a0)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x*(log(Abs(log(x)/sign(log(x)))) + sign(log(x))**2/log(x))*sign(log(Abs((log(x)/sign(log(x)))**x)))**2*sign(log(Abs(log(Abs((log(x)/sign(log(x)))**x))/sign(log(Abs((log(x)/sign(log(x)))**x))))))/(log(Abs((log(x)/sign(log(x)))**x))*Abs(log(Abs(log(Abs(log(x))**x))))) + log(Abs(log(Abs(log(Abs(log(x))**x))))))*Abs(log(Abs(log(Abs(log(x))**x))))**x",
+      "our_k": 8,
+      "our_expr": "Abs(log(Abs(log(Abs(log(x))**x))))**x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(Abs(log(Abs(log(Abs(log(Abs(log(x))))))))) + sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))**2*sign(log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x))))))))**2*sign(log(Abs(log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x)))))))/sign(log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x)))))))))))/(log(x)*log(Abs(log(x)/sign(log(x))))*log(Abs(log(Abs(log(x)/sign(log(x))))/sign(log(Abs(log(x)/sign(log(x)))))))*Abs(log(Abs(log(Abs(log(Abs(log(x))))))))))*Abs(log(Abs(log(Abs(log(Abs(log(x))))))))**x",
+      "our_k": 7,
+      "our_expr": "Abs(log(Abs(log(Abs(log(Abs(log(x))))))))**x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(1/log(Abs(log(x))) - sign(log(x))/(log(Abs(log(x)))**2*Abs(log(x))))*log(Abs(a0))*Abs(a0)**(x/log(Abs(log(x))))",
+      "our_k": 7,
+      "our_expr": "Abs(a0)**(x/log(Abs(log(x))))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a0*im((log(x)/sign(log(x)))**a0)**2*sign(log(x))**2/(x*log(x)) + (x + re((log(x)/sign(log(x)))**a0))*(a0*re((log(x)/sign(log(x)))**a0)*sign(log(x))**2/(x*log(x)) + 1))*sign(x + (log(x)/sign(log(x)))**a0)/((x + (log(x)/sign(log(x)))**a0)*Abs(x + Abs(log(x))**a0))",
+      "our_k": 7,
+      "our_expr": "log(Abs(x + Abs(log(x))**a0))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(2*x)**log(Abs(a0 + x))*(log(2*x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x)",
+      "our_k": 8,
+      "our_expr": "(2*x)**log(Abs(a0 + x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x + x**x)**log(x)*((x**x*(log(x) + 1) + 1)*log(x)/(x + x**x) + log(x + x**x)/x)",
+      "our_k": 8,
+      "our_expr": "(x + x**x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((-a0/x**2 + 1)*log(x)*sign(a0/x + x)/Abs(a0/x + x) + log(Abs(a0/x + x))/x)*Abs(a0/x + x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0/x + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x**2*(x**x*(log(x) + 1)/x - x**x/x**2)*sign(log(x**x/x))/(x**x*Abs(log(x**x/x))) + log(Abs(log(x**x/x))))*Abs(log(x**x/x))**x",
+      "our_k": 8,
+      "our_expr": "Abs(log(x**x/x))**x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-log(x)*sign(a0 + x)/Abs(a0 + x) - log(Abs(a0 + x))/x)*Abs(a0 + x)**log(x) + 1",
+      "our_k": 8,
+      "our_expr": "x - Abs(a0 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x/Abs(a0))**log(Abs(log(x)))*(log(x*Abs(1/Abs(a0)))*sign(log(x))/(x*Abs(log(x))) + log(Abs(log(x)))/x)",
+      "our_k": 7,
+      "our_expr": "(x/Abs(a0))**log(Abs(log(x)))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a1*log(Abs(a0/sign(a0)))*re(((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))**a1)**2*sign(log(x))**2/(x*log(x)) + a1*log(Abs(a0/sign(a0)))*im(((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))**a1)**2*sign(log(x))**2/(x*log(x)))*sign(((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))**a1)/(((a0/sign(a0))**log(Abs(log(x)/sign(log(x)))))**a1*Abs((Abs(a0)**log(Abs(log(x))))**a1))",
+      "our_k": 8,
+      "our_expr": "log(Abs((Abs(a0)**log(Abs(log(x))))**a1))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(log(1/Abs(a0)))/x)**log(x)*(-log(x)/x + log(Abs(Abs(log(1/Abs(a0))))/x)/x)",
+      "our_k": 8,
+      "our_expr": "(Abs(log(1/Abs(a0)))/x)**log(x)",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x**2 + x)**log(x)*((2*x + 1)*log(x)/(x**2 + x) + log(x**2 + x)/x)",
+      "our_k": 8,
+      "our_expr": "(x**2 + x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(-a0*log(x)*sign(a0/x + a1)/(x**2*Abs(a0/x + a1)) + log(Abs(a0/x + a1))/x)*Abs(a0/x + a1)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0/x + a1)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x*(log(x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x) + log(x**log(Abs(a0 + x))))*(x**log(Abs(a0 + x)))**x",
+      "our_k": 8,
+      "our_expr": "(x**log(Abs(a0 + x)))**x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "-2*a0*a1*x*x**a1/((x**2 + 1)*(x**2 + 1)**a1) + a0*a1*x**a1/(x*(x**2 + 1)**a1)",
+      "our_k": 8,
+      "our_expr": "a0*x**a1/(x**2 + 1)**a1",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "Abs(a0 - x)*sign(a0 - x)/((a0 - x)**2*log(x)) - log(1/Abs(a0 - x))/(x*log(x)**2)",
+      "our_k": 8,
+      "our_expr": "log(1/Abs(a0 - x))/log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(2*log(x)*sign(a0 + 2*x)/Abs(a0 + 2*x) + log(Abs(a0 + 2*x))/x)*Abs(a0 + 2*x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + 2*x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((1/x - 1/x**2)*log(x)*sign(log(x) + 1/x)/Abs(log(x) + 1/x) + log(Abs(log(x) + 1/x))/x)*Abs(log(x) + 1/x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(log(x) + 1/x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(log(x)*log(Abs(a1))*Abs(a1)**x*sign(a0 + Abs(a1)**x)/Abs(a0 + Abs(a1)**x) + log(Abs(a0 + Abs(a1)**x))/x)*Abs(a0 + Abs(a1)**x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + Abs(a1)**x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "((1/x + x**(-2))*log(x)*sign(log(x) - 1/x)/Abs(log(x) - 1/x) + log(Abs(log(x) - 1/x))/x)*Abs(log(x) - 1/x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(log(x) - 1/x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*x**a0/(x**2*log(x)) - x**a0/(x**2*log(x)) - x**a0/(x**2*log(x)**2)",
+      "our_k": 8,
+      "our_expr": "x**a0/(x*log(x))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*(log(x)*sign(a0 + x)/Abs(a0 + x) + log(Abs(a0 + x))/x)*(x**log(Abs(a0 + x)))**a1",
+      "our_k": 8,
+      "our_expr": "(x**log(Abs(a0 + x)))**a1",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a1*x**a1*log(x)*sign(a0 + x**a1)/(x*Abs(a0 + x**a1)) + log(Abs(a0 + x**a1))/x)*Abs(a0 + x**a1)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + x**a1)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "x**((x*Abs(log(x)))**a0)*(a0*(x*Abs(log(x)))**a0*(Abs(log(x)) + sign(log(x))*sign(Abs(log(x))))*log(x)/(x*Abs(log(x))) + (x*Abs(log(x)))**a0/x)",
+      "our_k": 8,
+      "our_expr": "x**((x*Abs(log(x)))**a0)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*x*(Abs(log(Abs(log(x))))/x)**a0*(-Abs(log(Abs(log(x))))/x**2 + sign(log(x))**2*sign(log(Abs(log(x)/sign(log(x)))))*sign(Abs(log(Abs(log(x)))))/(x**2*log(x)))/Abs(log(Abs(log(x))))",
+      "our_k": 7,
+      "our_expr": "(Abs(log(Abs(log(x))))/x)**a0",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "log(Abs(a0))*Abs(a0)**log(Abs(log(x)))*sign(log(x))/Abs(log(x)) + Abs(a0)**log(Abs(log(x)))",
+      "our_k": 7,
+      "our_expr": "x*Abs(a0)**log(Abs(log(x)))",
+      "status": "failed",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x/Abs(a0 + x))**x*((-x*sign(a0 + x)/(a0 + x)**2 + 1/Abs(a0 + x))*Abs(a0 + x) + log(x*Abs(1/Abs(a0 + x))))",
+      "our_k": 7,
+      "our_expr": "(x/Abs(a0 + x))**x",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "re(Abs(a0)**(1/log(x)))/x - log(Abs(a0))*re(Abs(a0)**(1/log(x)))/(x*log(x))",
+      "our_k": 8,
+      "our_expr": "log(x**re(Abs(a0)**(1/log(x))))",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(Abs(a0)**x/Abs(a1))**log(x)*(log(x)*log(Abs(a0)) + log(Abs(a0)**x*Abs(1/Abs(a1)))/x)",
+      "our_k": 8,
+      "our_expr": "(Abs(a0)**x/Abs(a1))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(x/Abs(a0 + x))**log(x)*((-x*sign(a0 + x)/(a0 + x)**2 + 1/Abs(a0 + x))*log(x)*Abs(a0 + x)/x + log(x*Abs(1/Abs(a0 + x)))/x)",
+      "our_k": 8,
+      "our_expr": "(x/Abs(a0 + x))**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "(a1*log(x)*sign(a0 + a1*x)/Abs(a0 + a1*x) + log(Abs(a0 + a1*x))/x)*Abs(a0 + a1*x)**log(x)",
+      "our_k": 8,
+      "our_expr": "Abs(a0 + a1*x)**log(x)",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a1*x*(-sign((a0 - x)/sign(a0 - x))*sign(a0 - x)/x - (a0 - x)/(x**2*sign((a0 - x)/sign(a0 - x))*sign(a0 - x)))*log(Abs((a0 - x)/(sign((a0 - x)/sign(a0 - x))*sign(a0 - x)))/x)*Abs(log(Abs(Abs(a0 - x))/x))**a1*sign((a0 - x)/sign(a0 - x))*sign(a0 - x)*sign(log(Abs((a0 - x)/sign(a0 - x))/x))/((a0 - x)*log(Abs((a0 - x)/sign(a0 - x))/x)*Abs(log(Abs(Abs(a0 - x))/x)))",
+      "our_k": 8,
+      "our_expr": "Abs(log(Abs(Abs(a0 - x))/x))**a1",
+      "status": "timeout",
+      "is_fg": false
+    },
+    {
+      "derivative": "a0*(x*Abs(log(x)))**a0*(Abs(log(x)) + sign(log(x))*sign(Abs(log(x))))/Abs(log(x)) + (x*Abs(log(x)))**a0",
+      "our_k": 8,
+      "our_expr": "x*(x*Abs(log(x)))**a0",
+      "status": "failed",
+      "is_fg": false
+    }
+  ]
+}

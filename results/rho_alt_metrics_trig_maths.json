@@ -1,0 +1,206 @@
+{
+  "esr_k": {
+    "3": {
+      "n_functions": 21,
+      "n_closed": 2,
+      "rho": 0.09523809523809523,
+      "n_records": 21
+    },
+    "4": {
+      "n_functions": 116,
+      "n_closed": 8,
+      "rho": 0.06896551724137931,
+      "n_records": 116
+    },
+    "5": {
+      "n_functions": 653,
+      "n_closed": 32,
+      "rho": 0.04900459418070444,
+      "n_records": 658
+    },
+    "6": {
+      "n_functions": 3899,
+      "n_closed": 192,
+      "rho": 0.04924339574249808,
+      "n_records": 3959
+    },
+    "7": {
+      "n_functions": 23465,
+      "n_closed": 1207,
+      "rho": 0.051438312380140634,
+      "n_records": 24128
+    },
+    "8": {
+      "n_functions": 144168,
+      "n_closed": 6029,
+      "rho": 0.041819266411408915,
+      "n_records": 150388
+    }
+  },
+  "sympy_depth": {
+    "1": {
+      "n_functions": 34,
+      "n_closed": 2,
+      "rho": 0.058823529411764705,
+      "n_records": 34
+    },
+    "2": {
+      "n_functions": 869,
+      "n_closed": 190,
+      "rho": 0.2186421173762946,
+      "n_records": 952
+    },
+    "3": {
+      "n_functions": 10896,
+      "n_closed": 1396,
+      "rho": 0.12812041116005873,
+      "n_records": 11841
+    },
+    "4": {
+      "n_functions": 46903,
+      "n_closed": 3136,
+      "rho": 0.06686139479351001,
+      "n_records": 49614
+    },
+    "5": {
+      "n_functions": 94688,
+      "n_closed": 4744,
+      "rho": 0.05010138560324434,
+      "n_records": 99196
+    },
+    "6": {
+      "n_functions": 130195,
+      "n_closed": 5649,
+      "rho": 0.04338876300933216,
+      "n_records": 135844
+    },
+    "7": {
+      "n_functions": 143233,
+      "n_closed": 5967,
+      "rho": 0.041659394134033356,
+      "n_records": 149447
+    },
+    "8": {
+      "n_functions": 144164,
+      "n_closed": 6029,
+      "rho": 0.04182042673621709,
+      "n_records": 150384
+    },
+    "9": {
+      "n_functions": 144168,
+      "n_closed": 6029,
+      "rho": 0.041819266411408915,
+      "n_records": 150388
+    }
+  },
+  "sympy_ops": {
+    "1": {
+      "n_functions": 34,
+      "n_closed": 2,
+      "rho": 0.058823529411764705,
+      "n_records": 34
+    },
+    "2": {
+      "n_functions": 343,
+      "n_closed": 92,
+      "rho": 0.26822157434402333,
+      "n_records": 362
+    },
+    "3": {
+      "n_functions": 2277,
+      "n_closed": 379,
+      "rho": 0.16644707949055776,
+      "n_records": 2511
+    },
+    "4": {
+      "n_functions": 11370,
+      "n_closed": 1137,
+      "rho": 0.1,
+      "n_records": 12478
+    },
+    "5": {
+      "n_functions": 39573,
+      "n_closed": 2453,
+      "rho": 0.06198670810906426,
+      "n_records": 42471
+    },
+    "6": {
+      "n_functions": 94636,
+      "n_closed": 4549,
+      "rho": 0.04806838835115601,
+      "n_records": 99396
+    },
+    "7": {
+      "n_functions": 140957,
+      "n_closed": 5930,
+      "rho": 0.04206956731485489,
+      "n_records": 146863
+    },
+    "8": {
+      "n_functions": 144154,
+      "n_closed": 6029,
+      "rho": 0.04182332782995963,
+      "n_records": 150369
+    },
+    "9": {
+      "n_functions": 144162,
+      "n_closed": 6029,
+      "rho": 0.04182100692276744,
+      "n_records": 150381
+    },
+    "10": {
+      "n_functions": 144166,
+      "n_closed": 6029,
+      "rho": 0.041819846565764464,
+      "n_records": 150385
+    },
+    "11": {
+      "n_functions": 144168,
+      "n_closed": 6029,
+      "rho": 0.041819266411408915,
+      "n_records": 150388
+    }
+  },
+  "esr_k_min": {
+    "3": {
+      "n_functions": 21,
+      "n_closed": 6,
+      "rho": 0.2857142857142857,
+      "n_records": 57
+    },
+    "4": {
+      "n_functions": 116,
+      "n_closed": 19,
+      "rho": 0.16379310344827586,
+      "n_records": 229
+    },
+    "5": {
+      "n_functions": 653,
+      "n_closed": 66,
+      "rho": 0.10107197549770292,
+      "n_records": 1112
+    },
+    "6": {
+      "n_functions": 3899,
+      "n_closed": 383,
+      "rho": 0.09823031546550398,
+      "n_records": 6912
+    },
+    "7": {
+      "n_functions": 23465,
+      "n_closed": 1552,
+      "rho": 0.06614106115491157,
+      "n_records": 27859
+    },
+    "8": {
+      "n_functions": 144168,
+      "n_closed": 6029,
+      "rho": 0.041819266411408915,
+      "n_records": 150388
+    }
+  },
+  "basis": "trig_maths",
+  "n_records": 150388,
+  "n_parse_fail": 0,
+  "cross_k_dup_rate": 0.028007553794185708
+}

@@ -1,0 +1,33 @@
+\begin{table*}
+  \centering
+  \caption{The 5 integrals that resist all six CAS engines under the standard integration call but are solved by ESI. ``Robust'' means that the integral also resists all alternative Mathematica strategies we tested; non-robust entries fail the standard call but are solved after a domain restriction or roundtrip transformation.}
+  \label{tab:cas_blind}
+  \small
+  \begin{tabular}{clllc}
+    \toprule
+    $k$ & Basis & Integrand $f(x)$ & Antiderivative $F(x)$ & Robust \\
+    \midrule
+    9 & \texttt{ext\_log} &
+      $\dfrac{(2x+1)\,e^x + 1}{2\sqrt{x + e^{-x}}}$ &
+      $e^x\sqrt{x + e^{-x}}$ &
+      $\checkmark$ \\[8pt]
+    8 & \texttt{ext\_log} &
+      $\dfrac{x + (\log\log x + 1)\,\lvert\!\log x\rvert^{\log x}}{2x\sqrt{\bigl\lvert x + \lvert\!\log x\rvert^{\log x}\bigr\rvert}}$ &
+      $\sqrt{\bigl\lvert x + \lvert\!\log x\rvert^{\log x}\bigr\rvert}$ &
+      $\times$ \\[8pt]
+    8 & \texttt{ext\_log} &
+      $\dfrac{x - (\log\log x + 1)\,\lvert\!\log x\rvert^{\log x}}{2x\sqrt{\bigl\lvert x - \lvert\!\log x\rvert^{\log x}\bigr\rvert}}$ &
+      $\sqrt{\bigl\lvert x - \lvert\!\log x\rvert^{\log x}\bigr\rvert}$ &
+      $\times$ \\[8pt]
+    \midrule
+    9 & \texttt{ext} &
+      $\dfrac{(2x+1)\,e^x - 1}{2\sqrt{\lvert x - e^{-x}\rvert}}$ &
+      $e^x\sqrt{\lvert x - e^{-x}\rvert}$ &
+      $\checkmark$ \\[8pt]
+    8 & \texttt{ext} &
+      $\dfrac{x^{x - 3/2}\,(1 - x - x\log x)}{2\sqrt{\lvert x - x^x\rvert}}$ &
+      $\sqrt{\lvert x - x^x\rvert}\,/\,\sqrt{x}$ &
+      $\checkmark$ \\[8pt]
+    \bottomrule
+  \end{tabular}
+\end{table*}

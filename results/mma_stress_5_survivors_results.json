@@ -1,0 +1,392 @@
+{
+  "0": {
+    "k": 9,
+    "basis": "ext_log_maths",
+    "tag": "absfree_headline",
+    "F_str": "exp(x)*sqrt(x + exp(-x))",
+    "f_str_abs": "(1/2 - exp(-x)/2)*exp(x)/sqrt(x + exp(-x)) + sqrt(x + exp(-x))*exp(x)",
+    "f_str_plain": "(2*x*exp(x) + exp(x) + 1)*exp(x/2)/(2*sqrt(x*exp(x) + 1))",
+    "f_mma_plain": "(1/2)*(2*x*Exp[x] + Exp[x] + 1)*Exp[(1/2)*x]/(x*Exp[x] + 1)^(1/2)",
+    "F_mma_plain": "(x + Exp[-x])^(1/2)*Exp[x]",
+    "tests": {
+      "sympy_plain": {
+        "solved": true,
+        "output": "x*(2*x*exp(x) + exp(x) + 1)*exp(x/2)/(2*sqrt(x*exp(x) + 1))",
+        "time": 0.3011505603790283
+      },
+      "mma_direct": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x + 2*E^x*x))/Sqrt[1 + E^x*x], x]/2",
+        "time": 4.429182291030884
+      },
+      "mma_xgt0": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x + 2*E^x*x))/Sqrt[1 + E^x*x], x, Assumptions -> {x > 0}]/2",
+        "time": 3.0531165599823
+      },
+      "mma_xgt1": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x + 2*E^x*x))/Sqrt[1 + E^x*x], x, Assumptions -> {x > 1}]/2",
+        "time": 3.1048827171325684
+      },
+      "mma_powerexpand": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x + 2*E^x*x))/Sqrt[1 + E^x*x], x]/2",
+        "time": 2.8773839473724365
+      },
+      "mma_powerexpand_xgt0": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x + 2*E^x*x))/Sqrt[1 + E^x*x], x, Assumptions -> {x > 0}]/2",
+        "time": 3.0124127864837646
+      },
+      "mma_fullsimp": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x*(1 + 2*x)))/Sqrt[1 + E^x*x], x]/2",
+        "time": 3.1523208618164062
+      },
+      "mma_fullsimp_xgt0": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x*(1 + 2*x)))/Sqrt[1 + E^x*x], x, Assumptions -> {x > 0}]/2",
+        "time": 3.097555160522461
+      },
+      "mma_expand": {
+        "solved": false,
+        "output": "Integrate[E^(x/2)/(2*Sqrt[1 + E^x*x]) + E^((3*x)/2)/(2*Sqrt[1 + E^x*x]) + (E^((3*x)/2)*x)/Sqrt[1 + E^x*x], x]",
+        "time": 3.0729477405548096
+      },
+      "mma_factor": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x + 2*E^x*x))/Sqrt[1 + E^x*x], x]/2",
+        "time": 3.292288064956665
+      },
+      "mma_roundtrip": {
+        "solved": false,
+        "output": "Integrate[(E^x*(1 - E^(-x)))/(2*Sqrt[E^(-x) + x]) + E^x*Sqrt[E^(-x) + x], x]",
+        "time": 3.5288784503936768
+      },
+      "mma_roundtrip_xgt0": {
+        "solved": false,
+        "output": "Integrate[(E^x*(1 - E^(-x)))/(2*Sqrt[E^(-x) + x]) + E^x*Sqrt[E^(-x) + x], x, Assumptions -> {x > 0}]",
+        "time": 3.4348456859588623
+      },
+      "mma_genconds_false": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(1 + E^x + 2*E^x*x))/Sqrt[1 + E^x*x], x, GenerateConditions -> False]/2",
+        "time": 3.0528714656829834
+      }
+    },
+    "any_solved": true
+  },
+  "1": {
+    "k": 8,
+    "basis": "ext_log_maths",
+    "tag": "abs_ext_log_1",
+    "F_str": "sqrt(Abs(x + Abs(log(x))**log(x)))",
+    "f_str_abs": "((x + re((log(x)/sign(log(x)))**log(x)))*((log(log(x)/sign(log(x)))/x + sign(log(x))**2/x)*re((log(x)/sign(log(x)))**log(x)) + 1) + (log(log(x)/sign(log(x)))/x + sign(log(x))**2/x)*im((log(x)/sign(log(x)))**log(x))**2)*sign(x + (log(x)/sign(log(x)))**log(x))/(2*(x + (log(x)/sign(log(x)))**log(x))*sqrt(Abs(x + Abs(log(x))**log(x))))",
+    "f_str_plain": "((x + (log(log(x)) + 1)*re(log(x)**log(x)))*(x + re(log(x)**log(x))) + (log(log(x)) + 1)*im(log(x)**log(x))**2)/(2*x*(x + log(x)**log(x))**(3/2))",
+    "f_mma_plain": "(1/2)*((x + (Log[Log[x]] + 1)*Re[Log[x]^Log[x]])*(x + Re[Log[x]^Log[x]]) + (Log[Log[x]] + 1)*Im[Log[x]^Log[x]]^2)/(x*(x + Log[x]^Log[x])^(3/2))",
+    "F_mma_plain": "(x + Log[x]^Log[x])^(1/2)",
+    "tests": {
+      "sympy_plain": {
+        "solved": true,
+        "output": "x*((x + (log(log(x)) + 1)*re(log(x)**log(x)))*(x + re(log(x)**log(x))) + (log(log(x)) + 1)*im(log(x)**log(x))**2)/(2*x*(x + log(x)**log(x))**(3/2))",
+        "time": 0.003911018371582031
+      },
+      "mma_direct": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x + Re[Log[x]^Log[x]])*(x + (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x + Log[x]^Log[x])^(3/2)), x]/2",
+        "time": 5.1082658767700195
+      },
+      "mma_xgt0": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x + Re[Log[x]^Log[x]])*(x + (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x + Log[x]^Log[x])^(3/2)), x, Assumptions -> {x > 0}]/2",
+        "time": 11.652714014053345
+      },
+      "mma_xgt1": {
+        "solved": true,
+        "output": "Sqrt[x + Log[x]^Log[x]]",
+        "time": 3.0033957958221436
+      },
+      "mma_powerexpand": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x + Re[Log[x]^Log[x]])*(x + (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x + Log[x]^Log[x])^(3/2)), x]/2",
+        "time": 5.245295524597168
+      },
+      "mma_powerexpand_xgt0": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x + Re[Log[x]^Log[x]])*(x + (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x + Log[x]^Log[x])^(3/2)), x, Assumptions -> {x > 0}]/2",
+        "time": 5.472742319107056
+      },
+      "mma_fullsimp": {
+        "solved": false,
+        "output": "Integrate[(Abs[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + x*(x + (2 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x + Log[x]^Log[x])^(3/2)), x]/2",
+        "time": 5.202332496643066
+      },
+      "mma_fullsimp_xgt0": {
+        "solved": false,
+        "output": "Integrate[(x^2 + (Log[x]^2)^Log[x]*(1 + Log[Log[x]]) + x*(2 + Log[Log[x]])*Re[Log[x]^Log[x]])/(x*(x + Log[x]^Log[x])^(3/2)), x, Assumptions -> {x > 0}]/2",
+        "time": 6.26288914680481
+      },
+      "mma_expand": {
+        "solved": false,
+        "output": "Integrate[x/(2*(x + Log[x]^Log[x])^(3/2)) + Im[Log[x]^Log[x]]^2/(2*x*(x + Log[x]^Log[x])^(3/2)) + (Im[Log[x]^Log[x]]^2*Log[Log[x]])/(2*x*(x + Log[x]^Log[x])^(3/2)) + Re[Log[x]^Log[x]]/(x + Log[x]^Log[x])^(3/2) + (Log[Log[x]]*Re[Log[x]^Log[x]])/(2*(x + Log[x]^Log[x])^(3/2)) + Re[Log[x]^Log[x]]^2/(2*x",
+        "time": 3.7605204582214355
+      },
+      "mma_factor": {
+        "solved": false,
+        "output": "Integrate[(x^2 + Im[Log[x]^Log[x]]^2 + Im[Log[x]^Log[x]]^2*Log[Log[x]] + 2*x*Re[Log[x]^Log[x]] + x*Log[Log[x]]*Re[Log[x]^Log[x]] + Re[Log[x]^Log[x]]^2 + Log[Log[x]]*Re[Log[x]^Log[x]]^2)/(x*(x + Log[x]^Log[x])^(3/2)), x]/2",
+        "time": 4.338895320892334
+      },
+      "mma_roundtrip": {
+        "solved": true,
+        "output": "Sqrt[x + Log[x]^Log[x]]",
+        "time": 2.1956167221069336
+      },
+      "mma_roundtrip_xgt0": {
+        "solved": true,
+        "output": "Sqrt[x + Log[x]^Log[x]]",
+        "time": 2.2074551582336426
+      },
+      "mma_genconds_false": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x + Re[Log[x]^Log[x]])*(x + (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x + Log[x]^Log[x])^(3/2)), x, GenerateConditions -> False]/2",
+        "time": 4.2499730587005615
+      }
+    },
+    "any_solved": true
+  },
+  "2": {
+    "k": 8,
+    "basis": "ext_log_maths",
+    "tag": "abs_ext_log_2",
+    "F_str": "sqrt(Abs(x - Abs(log(x))**log(x)))",
+    "f_str_abs": "((x - re((log(x)/sign(log(x)))**log(x)))*(-(log(log(x)/sign(log(x)))/x + sign(log(x))**2/x)*re((log(x)/sign(log(x)))**log(x)) + 1) + (log(log(x)/sign(log(x)))/x + sign(log(x))**2/x)*im((log(x)/sign(log(x)))**log(x))**2)*sign(x - (log(x)/sign(log(x)))**log(x))/(2*(x - (log(x)/sign(log(x)))**log(x))*sqrt(Abs(x - Abs(log(x))**log(x))))",
+    "f_str_plain": "(-(-x + (log(log(x)) + 1)*re(log(x)**log(x)))*(x - re(log(x)**log(x))) + (log(log(x)) + 1)*im(log(x)**log(x))**2)/(2*x*(x - log(x)**log(x))**(3/2))",
+    "f_mma_plain": "(1/2)*(-(-x + (Log[Log[x]] + 1)*Re[Log[x]^Log[x]])*(x - Re[Log[x]^Log[x]]) + (Log[Log[x]] + 1)*Im[Log[x]^Log[x]]^2)/(x*(x - Log[x]^Log[x])^(3/2))",
+    "F_mma_plain": "(x - Log[x]^Log[x])^(1/2)",
+    "tests": {
+      "sympy_plain": {
+        "solved": true,
+        "output": "x*(-(-x + (log(log(x)) + 1)*re(log(x)**log(x)))*(x - re(log(x)**log(x))) + (log(log(x)) + 1)*im(log(x)**log(x))**2)/(2*x*(x - log(x)**log(x))**(3/2))",
+        "time": 0.002075672149658203
+      },
+      "mma_direct": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x - Re[Log[x]^Log[x]])*(x - (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x - Log[x]^Log[x])^(3/2)), x]/2",
+        "time": 4.5745625495910645
+      },
+      "mma_xgt0": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x - Re[Log[x]^Log[x]])*(x - (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x - Log[x]^Log[x])^(3/2)), x, Assumptions -> {x > 0}]/2",
+        "time": 4.879126787185669
+      },
+      "mma_xgt1": {
+        "solved": true,
+        "output": "Sqrt[x - Log[x]^Log[x]]",
+        "time": 2.948594093322754
+      },
+      "mma_powerexpand": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x - Re[Log[x]^Log[x]])*(x - (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x - Log[x]^Log[x])^(3/2)), x]/2",
+        "time": 4.630607843399048
+      },
+      "mma_powerexpand_xgt0": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x - Re[Log[x]^Log[x]])*(x - (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x - Log[x]^Log[x])^(3/2)), x, Assumptions -> {x > 0}]/2",
+        "time": 4.9761741161346436
+      },
+      "mma_fullsimp": {
+        "solved": false,
+        "output": "-1/2*Integrate[(-(Abs[Log[x]^Log[x]]^2*(1 + Log[Log[x]])) + x*(-x + (2 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x - Log[x]^Log[x])^(3/2)), x]",
+        "time": 5.010951280593872
+      },
+      "mma_fullsimp_xgt0": {
+        "solved": false,
+        "output": "-1/2*Integrate[(-x^2 - (Log[x]^2)^Log[x]*(1 + Log[Log[x]]) + x*(2 + Log[Log[x]])*Re[Log[x]^Log[x]])/(x*(x - Log[x]^Log[x])^(3/2)), x, Assumptions -> {x > 0}]",
+        "time": 6.6961376667022705
+      },
+      "mma_expand": {
+        "solved": false,
+        "output": "Integrate[x/(2*(x - Log[x]^Log[x])^(3/2)) + Im[Log[x]^Log[x]]^2/(2*x*(x - Log[x]^Log[x])^(3/2)) + (Im[Log[x]^Log[x]]^2*Log[Log[x]])/(2*x*(x - Log[x]^Log[x])^(3/2)) - Re[Log[x]^Log[x]]/(x - Log[x]^Log[x])^(3/2) - (Log[Log[x]]*Re[Log[x]^Log[x]])/(2*(x - Log[x]^Log[x])^(3/2)) + Re[Log[x]^Log[x]]^2/(2*x",
+        "time": 4.308586120605469
+      },
+      "mma_factor": {
+        "solved": false,
+        "output": "Integrate[(x^2 + Im[Log[x]^Log[x]]^2 + Im[Log[x]^Log[x]]^2*Log[Log[x]] - 2*x*Re[Log[x]^Log[x]] - x*Log[Log[x]]*Re[Log[x]^Log[x]] + Re[Log[x]^Log[x]]^2 + Log[Log[x]]*Re[Log[x]^Log[x]]^2)/(x*(x - Log[x]^Log[x])^(3/2)), x]/2",
+        "time": 9.775074243545532
+      },
+      "mma_roundtrip": {
+        "solved": true,
+        "output": "Sqrt[x - Log[x]^Log[x]]",
+        "time": 2.1773691177368164
+      },
+      "mma_roundtrip_xgt0": {
+        "solved": true,
+        "output": "Sqrt[x - Log[x]^Log[x]]",
+        "time": 2.1460843086242676
+      },
+      "mma_genconds_false": {
+        "solved": false,
+        "output": "Integrate[(Im[Log[x]^Log[x]]^2*(1 + Log[Log[x]]) + (x - Re[Log[x]^Log[x]])*(x - (1 + Log[Log[x]])*Re[Log[x]^Log[x]]))/(x*(x - Log[x]^Log[x])^(3/2)), x, GenerateConditions -> False]/2",
+        "time": 10.598548412322998
+      }
+    },
+    "any_solved": true
+  },
+  "3": {
+    "k": 9,
+    "basis": "ext_maths",
+    "tag": "abs_ext_maths_1",
+    "F_str": "exp(x)*sqrt(Abs(x - exp(-x)))",
+    "f_str_abs": "(1 + exp(-x))*exp(x)*sign(x - exp(-x))/(2*sqrt(Abs(x - exp(-x)))) + exp(x)*sqrt(Abs(x - exp(-x)))",
+    "f_str_plain": "(2*x*exp(x) + exp(x) - 1)*exp(x/2)/(2*sqrt(x*exp(x) - 1))",
+    "f_mma_plain": "(1/2)*(2*x*Exp[x] + Exp[x] - 1)*Exp[(1/2)*x]/(x*Exp[x] - 1)^(1/2)",
+    "F_mma_plain": "(x - Exp[-x])^(1/2)*Exp[x]",
+    "tests": {
+      "sympy_plain": {
+        "solved": true,
+        "output": "x*(2*x*exp(x) + exp(x) - 1)*exp(x/2)/(2*sqrt(x*exp(x) - 1))",
+        "time": 0.007071495056152344
+      },
+      "mma_direct": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x + 2*E^x*x))/Sqrt[-1 + E^x*x], x]/2",
+        "time": 2.5820672512054443
+      },
+      "mma_xgt0": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x + 2*E^x*x))/Sqrt[-1 + E^x*x], x, Assumptions -> {x > 0}]/2",
+        "time": 2.6305782794952393
+      },
+      "mma_xgt1": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x + 2*E^x*x))/Sqrt[-1 + E^x*x], x, Assumptions -> {x > 1}]/2",
+        "time": 8.349172115325928
+      },
+      "mma_powerexpand": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x + 2*E^x*x))/Sqrt[-1 + E^x*x], x]/2",
+        "time": 3.1516873836517334
+      },
+      "mma_powerexpand_xgt0": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x + 2*E^x*x))/Sqrt[-1 + E^x*x], x, Assumptions -> {x > 0}]/2",
+        "time": 3.238224506378174
+      },
+      "mma_fullsimp": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x*(1 + 2*x)))/Sqrt[-1 + E^x*x], x]/2",
+        "time": 3.165346622467041
+      },
+      "mma_fullsimp_xgt0": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x*(1 + 2*x)))/Sqrt[-1 + E^x*x], x, Assumptions -> {x > 0}]/2",
+        "time": 3.2142550945281982
+      },
+      "mma_expand": {
+        "solved": false,
+        "output": "Integrate[-1/2*E^(x/2)/Sqrt[-1 + E^x*x] + E^((3*x)/2)/(2*Sqrt[-1 + E^x*x]) + (E^((3*x)/2)*x)/Sqrt[-1 + E^x*x], x]",
+        "time": 3.1806893348693848
+      },
+      "mma_factor": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x + 2*E^x*x))/Sqrt[-1 + E^x*x], x]/2",
+        "time": 8.328542947769165
+      },
+      "mma_roundtrip": {
+        "solved": false,
+        "output": "Integrate[(E^x*(1 + E^(-x)))/(2*Sqrt[-E^(-x) + x]) + E^x*Sqrt[-E^(-x) + x], x]",
+        "time": 3.5280823707580566
+      },
+      "mma_roundtrip_xgt0": {
+        "solved": false,
+        "output": "Integrate[(E^x*(1 + E^(-x)))/(2*Sqrt[-E^(-x) + x]) + E^x*Sqrt[-E^(-x) + x], x, Assumptions -> {x > 0}]",
+        "time": 3.3641936779022217
+      },
+      "mma_genconds_false": {
+        "solved": false,
+        "output": "Integrate[(E^(x/2)*(-1 + E^x + 2*E^x*x))/Sqrt[-1 + E^x*x], x, GenerateConditions -> False]/2",
+        "time": 2.9501020908355713
+      }
+    },
+    "any_solved": true
+  },
+  "4": {
+    "k": 8,
+    "basis": "ext_maths",
+    "tag": "abs_ext_maths_2",
+    "F_str": "sqrt(Abs(x - x**x))/sqrt(x)",
+    "f_str_abs": "(-x**x*(log(x) + 1) + 1)*sign(x - x**x)/(2*sqrt(x)*sqrt(Abs(x - x**x))) - sqrt(Abs(x - x**x))/(2*x**(3/2))",
+    "f_str_plain": "x**(x - 3/2)*(-x*log(x) - x + 1)/(2*sqrt(x - x**x))",
+    "f_mma_plain": "(1/2)*x^(x - 3/2)*(-x*Log[x] - x + 1)/(x - x^x)^(1/2)",
+    "F_mma_plain": "(x - x^x)^(1/2)/x^(1/2)",
+    "tests": {
+      "sympy_plain": {
+        "solved": true,
+        "output": "x*x**(x - 3/2)*(-x*log(x) - x + 1)/(2*sqrt(x - x**x))",
+        "time": 0.004956722259521484
+      },
+      "mma_direct": {
+        "solved": false,
+        "output": "Integrate[(x^(-3/2 + x)*(1 - x - x*Log[x]))/Sqrt[x - x^x], x]/2",
+        "time": 2.9210755825042725
+      },
+      "mma_xgt0": {
+        "solved": false,
+        "output": "Integrate[(x^(-3/2 + x)*(1 - x - x*Log[x]))/Sqrt[x - x^x], x, Assumptions -> {x > 0}]/2",
+        "time": 2.7636170387268066
+      },
+      "mma_xgt1": {
+        "solved": false,
+        "output": "Integrate[(x^(-3/2 + x)*(1 - x - x*Log[x]))/Sqrt[x - x^x], x, Assumptions -> {x > 1}]/2",
+        "time": 2.8596854209899902
+      },
+      "mma_powerexpand": {
+        "solved": false,
+        "output": "Integrate[(x^(-3/2 + x)*(1 - x - x*Log[x]))/Sqrt[x - x^x], x]/2",
+        "time": 2.8994827270507812
+      },
+      "mma_powerexpand_xgt0": {
+        "solved": false,
+        "output": "Integrate[(x^(-3/2 + x)*(1 - x - x*Log[x]))/Sqrt[x - x^x], x, Assumptions -> {x > 0}]/2",
+        "time": 2.764998197555542
+      },
+      "mma_fullsimp": {
+        "solved": false,
+        "output": "-1/2*Integrate[(x^(-3/2 + x)*(-1 + x + x*Log[x]))/Sqrt[x - x^x], x]",
+        "time": 2.9109933376312256
+      },
+      "mma_fullsimp_xgt0": {
+        "solved": false,
+        "output": "-1/2*Integrate[(x^(-3/2 + x)*(-1 + x + x*Log[x]))/Sqrt[x - x^x], x, Assumptions -> {x > 0}]",
+        "time": 2.8591086864471436
+      },
+      "mma_expand": {
+        "solved": false,
+        "output": "Integrate[x^(-3/2 + x)/(2*Sqrt[x - x^x]) - x^(-1/2 + x)/(2*Sqrt[x - x^x]) - (x^(-1/2 + x)*Log[x])/(2*Sqrt[x - x^x]), x]",
+        "time": 2.7604498863220215
+      },
+      "mma_factor": {
+        "solved": false,
+        "output": "-1/2*Integrate[(x^(-3/2 + x)*(-1 + x + x*Log[x]))/Sqrt[x - x^x], x]",
+        "time": 2.8861660957336426
+      },
+      "mma_roundtrip": {
+        "solved": false,
+        "output": "Integrate[-1/2*Sqrt[x - x^x]/x^(3/2) + (1 - x^x*(1 + Log[x]))/(2*Sqrt[x]*Sqrt[x - x^x]), x]",
+        "time": 2.722334384918213
+      },
+      "mma_roundtrip_xgt0": {
+        "solved": false,
+        "output": "Integrate[-1/2*Sqrt[x - x^x]/x^(3/2) + (1 - x^x*(1 + Log[x]))/(2*Sqrt[x]*Sqrt[x - x^x]), x, Assumptions -> {x > 0}]",
+        "time": 2.673687219619751
+      },
+      "mma_genconds_false": {
+        "solved": false,
+        "output": "Integrate[(x^(-3/2 + x)*(1 - x - x*Log[x]))/Sqrt[x - x^x], x, GenerateConditions -> False]/2",
+        "time": 2.8114538192749023
+      }
+    },
+    "any_solved": true
+  }
+}

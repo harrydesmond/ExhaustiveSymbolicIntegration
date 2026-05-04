@@ -1,0 +1,97 @@
+{
+  "description": "Final CAS-resistance summary for the ESI paper after the Mathematica assumptions-bug correction and the broad k=9/trig_maths follow-up cascades.",
+  "cas_tested_bases": [
+    "core_maths",
+    "ext_maths",
+    "ext_log_maths",
+    "trig_maths"
+  ],
+  "rho_operator_bases": [
+    "core_maths",
+    "core_log_maths",
+    "ext_maths",
+    "ext_log_maths",
+    "trig_maths"
+  ],
+  "all_six_engine_resistant_under_standard_call": 5,
+  "robust_under_all_mathematica_variants_tested": 3,
+  "standard_call_only_abs_cases": 2,
+  "survivors": [
+    {
+      "tag": "absfree_headline",
+      "basis": "ext_log_maths",
+      "k": 9,
+      "primitive": "exp(x)*sqrt(x + exp(-x))",
+      "robust": true
+    },
+    {
+      "tag": "abs_ext_log_plus",
+      "basis": "ext_log_maths",
+      "k": 8,
+      "primitive": "sqrt(Abs(x + Abs(log(x))**log(x)))",
+      "robust": false,
+      "solved_by_alternative_mathematica_variants": [
+        "x > 1",
+        "roundtrip",
+        "roundtrip + x > 0"
+      ]
+    },
+    {
+      "tag": "abs_ext_log_minus",
+      "basis": "ext_log_maths",
+      "k": 8,
+      "primitive": "sqrt(Abs(x - Abs(log(x))**log(x)))",
+      "robust": false,
+      "solved_by_alternative_mathematica_variants": [
+        "x > 1",
+        "roundtrip",
+        "roundtrip + x > 0"
+      ]
+    },
+    {
+      "tag": "abs_ext_maths_exp",
+      "basis": "ext_maths",
+      "k": 9,
+      "primitive": "exp(x)*sqrt(Abs(x - exp(-x)))",
+      "robust": true
+    },
+    {
+      "tag": "abs_ext_maths_xx",
+      "basis": "ext_maths",
+      "k": 8,
+      "primitive": "sqrt(Abs(x - x**x))/sqrt(x)",
+      "robust": true
+    }
+  ],
+  "supporting_counts": {
+    "ext_log_maths_sympy_and_mathematica_failures_at_180s": 503,
+    "ext_log_maths_solved_by_extended_sympy_or_mathematica_stress": 270,
+    "ext_log_maths_resist_sympy_and_mathematica_after_stress": 232,
+    "ext_log_maths_fricas_solved_from_232": 218,
+    "broad_k9_mma_failed": 551,
+    "broad_k9_sage_solved": 372,
+    "broad_k9_fricas_input": 179,
+    "broad_k9_fricas_solved": 179,
+    "broad_k9_final_resistant": 0,
+    "trig_maths_mma_failed": 685,
+    "trig_maths_sage_solved": 502,
+    "trig_maths_fricas_input": 183,
+    "trig_maths_fricas_solved": 183,
+    "trig_maths_final_resistant": 0,
+    "ext_maths_abs_direct_mma_rerun_solved": 161,
+    "ext_maths_abs_direct_mma_rerun_failed": 2,
+    "ext_log_abs_direct_mma_rerun_solved": 3,
+    "ext_log_abs_direct_mma_rerun_failed": 3
+  },
+  "source_artifacts": [
+    "mma_stress_5_survivors_results.json",
+    "ext_maths_mma_rerun_part_97_result.pkl",
+    "ext_maths_mma_rerun_part_98_result.pkl",
+    "k9_broad_sage_results.json",
+    "k9_broad_final_resistant.json",
+    "trig_maths_sage_results.json",
+    "trig_maths_final_resistant.json",
+    "k9_followup_results.json",
+    "abs_all_cas_results.json"
+  ]
+}
