@@ -7,17 +7,6 @@ __pycache__/
 *.pkl
 data/*/compl_*/
 
-# LaTeX build artifacts
-paper/*.aux
-paper/*.bbl
-paper/*.blg
-paper/*.log
-paper/*.out
-paper/*.synctex.gz
-paper/*.fls
-paper/*.fdb_latexmk
-paper/*.pdf
-
 # Figures (regenerated from data)
 figures/*.png
 

@@ -3,8 +3,8 @@
 Code for the paper "Exhaustive Symbolic Integration: Integration by
 Differentiation and the Landscape of Symbolic Integrability" (Desmond, 2026).
 
-This GitHub repository is the maintained code and paper-source repository. The
-larger data files used by the paper are deposited separately on Zenodo:
+This GitHub repository is the maintained code repository. The larger data
+files used by the paper are deposited separately on Zenodo:
 
 - DOI: `10.5281/zenodo.20027938`
 - Record: <https://zenodo.org/records/20027938>
@@ -104,8 +104,8 @@ omitted from the Zenodo package. They are reproducible or environment-specific
 and are not used directly by the paper analysis scripts.
 
 GitHub contains the code: the ESI pipeline, lookup tool, CAS-comparison scripts,
-figure-generation scripts, paper source, and documentation. Zenodo contains the
-data files consumed by those scripts.
+figure-generation scripts, and documentation. Zenodo contains the data files
+consumed by those scripts.
 
 ## Repository Structure
 
@@ -154,12 +154,6 @@ ESI/
 |   |-- gen_trig_all.py
 |   |-- gen_ext_log_mpi.py
 |   +-- gen_trig_mpi.py
-|
-|-- paper/
-|   |-- Draft.tex
-|   |-- references.bib
-|   |-- table_cas_blind.tex
-|   +-- table_fg_integrals.tex
 |
 |-- function_catalogues/
 |   |-- core_maths/compl_*/
