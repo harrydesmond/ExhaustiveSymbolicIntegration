@@ -12,7 +12,10 @@ Usage:
   python3 esi_integrate.py --interactive
   python3 esi_integrate.py --basis ext_log_maths --max-k 8 "1/x"
 
-The first invocation loads the database (~5s), then lookups are instant.
+The first invocation loads the lookup database (~5s), then lookups are instant.
+Run `python3 download_data.py` first to download the required results_*.pkl
+files from Zenodo. The unique-equation function catalogues are not needed for
+lookup; they are only for rerunning the ESI pipeline.
 """
 
 import argparse
@@ -242,7 +245,9 @@ def main():
         pkls = [p for p in pkls if args.basis in p]
     if not pkls:
         print(f"No database files found in {args.data_dir}")
-        print("Run the ESI pipeline first, or specify --data-dir")
+        print("Download the lookup database with `python3 download_data.py`,")
+        print("or specify --data-dir pointing to a directory containing results_*.pkl files.")
+        print("Function catalogues are not sufficient for lookup.")
         sys.exit(1)
 
     db = ESIDatabase()

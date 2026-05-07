@@ -1,165 +1,215 @@
-# ESI: Exhaustive Symbolic Integration
+# Exhaustive Symbolic Integration
 
-Code and data for "Operator Basis Determines the Landscape of Symbolic Integrability" (Desmond, 2026).
+Code for the paper "Exhaustive Symbolic Integration: Integration by
+Differentiation and the Landscape of Symbolic Integrability" (Desmond, 2026).
 
-ESI measures the integrability fraction rho(k) -- the proportion of functions in a bounded symbolic space whose derivatives also lie within that space -- and identifies integrals that expose gaps in current computer algebra systems.
+This GitHub repository is the maintained code and paper-source repository. The
+larger data files used by the paper are deposited separately on Zenodo:
 
-## Quick start
+- DOI: `10.5281/zenodo.20027938`
+- Record: <https://zenodo.org/records/20027938>
 
-### Use the integration lookup tool
+ESI measures the integrability fraction `rho(k)`: the proportion of functions in
+a bounded symbolic space whose derivatives also lie within that space. It also
+identifies integrals that expose gaps in current computer algebra systems.
 
-```bash
-# 1. Download the lookup database (~650MB)
-python3 download_data.py
+## The ESI Pipeline
 
-# 2. Look up an integral
-python3 esi_integrate.py "1/x"                    # -> log(x)
-python3 esi_integrate.py "x**x*(log(x)+1)"        # -> x^x
-python3 esi_integrate.py "exp(x**2)"               # -> Not found (non-elementary)
-python3 esi_integrate.py -v "exp(x)"               # Verbose: show all representations
-python3 esi_integrate.py -i                         # Interactive mode
+```text
+Load F_<=k
+  -> canonicalise parameters
+  -> differentiate with SymPy
+  -> numerical fingerprint at 60 points, 50-digit precision
+  -> hash and cluster by derivative fingerprint
+  -> compute rho(k) and build equivalence classes
 ```
 
-Or use the Jupyter notebook `esi_integrate_demo.ipynb` for interactive exploration.
+Each expression is evaluated at 60 random points (`x` in `(0.2, 5)`,
+parameters in `(0.5, 3.0)`), rounded to 10 significant figures, and MD5-hashed.
+The false-positive rate is below `10^{-590}` per pair, with zero empirical false
+positives found in 518K pair comparisons.
 
-### Reproduce the paper results
+## Quick Start
+
+### Use The Integration Lookup Tool
 
 ```bash
-# 1. Download everything needed for lookup, auditing, and pipeline input regeneration (~1.9GB)
+# 1. Download the lookup database from Zenodo.
+python3 download_data.py
+
+# 2. Look up an integral.
+python3 esi_integrate.py "1/x"                    # -> log(x)
+python3 esi_integrate.py "x**x*(log(x)+1)"        # -> x^x
+python3 esi_integrate.py "exp(x**2)"              # -> Not found
+python3 esi_integrate.py -v "exp(x)"              # Verbose mode
+python3 esi_integrate.py -i                       # Interactive mode
+```
+
+The default download extracts only the precomputed lookup database needed by
+`esi_integrate.py`. The ESR function catalogues are needed only when rerunning
+the ESI pipeline from the enumerated functions.
+
+The notebook `esi_integrate_demo.ipynb` provides the same lookup workflow in an
+interactive form.
+
+### Reproduce The Paper Results
+
+```bash
+# 1. Download lookup data, raw outputs, and function catalogues.
 python3 download_data.py --all
 
-# 2. Run the ESI pipeline (differentiate, fingerprint, cluster)
+# 2. Run the ESI pipeline.
 python3 run_parallel.py \
     --data-dir function_catalogues/ext_log_maths \
     --max-complexity 8 \
     --ncores 4 \
     --mode both
 
-# 3. Analyse: rho decomposition, delta distribution
+# 3. Analyse rho decomposition and delta distribution.
 python3 analysis/analyse_rho_decomposition.py \
     --raw results/raw_results_ext_log_maths_k8.pkl \
     --max-k 8
 
-# 4. Generate paper figures
+# 4. Generate paper figures.
 python3 figures/make_figures.py
 ```
 
-## Repository structure
+## Data Download
 
+The paper data are deposited on Zenodo at
+<https://zenodo.org/records/20027938>. The download script fetches the published
+`Archive.tar.gz` file and extracts the requested subset.
+
+```bash
+python3 download_data.py              # Lookup database only
+python3 download_data.py --raw        # Lookup database + raw outputs
+python3 download_data.py --functions  # Function catalogues only
+python3 download_data.py --all        # Lookup + raw outputs + catalogues
 ```
+
+The Zenodo data package contains:
+
+- final JSON and PKL result artifacts used for the paper tables, figures, and
+  CAS-resistance claims;
+- lookup-equivalence databases for `core_maths`, `core_log_maths`, `ext_maths`,
+  `ext_log_maths`, and `trig_maths`, plus `esi_hash_index.json`;
+- raw derivative and fingerprint outputs needed for rho decomposition and audit
+  scripts;
+- `function_catalogues_unique_equations.tar.gz`, containing only the
+  `unique_equations_k.txt` catalogues for the five bases.
+
+Large ESR generation intermediates (`trees`, `orig_trees`, `matches`,
+`inv_subs`, etc.), cluster logs, and external CAS installations are intentionally
+omitted from the Zenodo package. They are reproducible or environment-specific
+and are not used directly by the paper analysis scripts.
+
+GitHub contains the code: the ESI pipeline, lookup tool, CAS-comparison scripts,
+figure-generation scripts, paper source, and documentation. Zenodo contains the
+data files consumed by those scripts.
+
+## Repository Structure
+
+```text
 ESI/
 |-- README.md
-|-- download_data.py         # Download databases from Zenodo
-|-- esi_integrate.py         # Integration lookup tool (command-line)
-|-- esi_integrate_demo.ipynb # Integration lookup tool (Jupyter notebook)
-|-- esi_pipeline.py          # Core library: parse, canonicalise, differentiate, fingerprint, cluster
-|-- run_parallel.py          # Main pipeline: parallelised over expressions, produces rho(k) + clusters
+|-- LICENSE
+|-- download_data.py
+|-- esi_integrate.py
+|-- esi_integrate_demo.ipynb
+|-- esi_pipeline.py
+|-- run_parallel.py
 |
 |-- analysis/
-|   |-- analyse_rho_decomposition.py   # Decompose rho(k) by operator presence; delta distribution
-|   |-- compute_trig_model.py          # Growth-rate crossover model (alpha, beta, alpha/beta)
-|   |-- theoretical_model.py           # Theoretical model for rho(k) scaling
-|   |-- theoretical_model_refined.py   # Refined model with basis-specific parameters
-|   |-- cluster_stats.py               # Cluster-size distribution statistics
-|   |-- collision_check.py             # Empirical validation of fingerprint collision rate
-|   +-- abs_dedup_check.py             # Verify Abs-wrapping doesn't bias rho(k)
+|   |-- analyse_rho_decomposition.py
+|   |-- compute_trig_model.py
+|   |-- theoretical_model.py
+|   |-- theoretical_model_refined.py
+|   |-- cluster_stats.py
+|   |-- collision_check.py
+|   +-- abs_dedup_check.py
 |
 |-- cas_comparison/
-|   |-- cas_full_sympy.py              # SymPy comparison on ext_log_maths (MPI, 4 strategies, 180s)
-|   |-- cas_full_mathematica.py        # Mathematica comparison on ext_log_maths (MPI, assumptions, 180s)
-|   |-- cas_sympy_allbases.py          # SymPy comparison across the CAS-tested bases (MPI)
-|   |-- cas_mma_allbases.py            # Mathematica comparison across the CAS-tested bases (MPI, --start/--end for chunking)
-|   |-- cas_stress_600s.py             # Deep stress test on ext_log_maths: 600s, 9 SymPy + 3 MMA strategies
-|   |-- cas_stress_allbases.py         # Deep stress test across all bases (MPI, 600s, all strategies)
-|   |-- cas_fricas_test.py             # FriCAS comparison on CAS-blind integrals
-|   |-- cas_fricas_retest.py           # FriCAS retest with refined parameters
-|   |-- cas_fricas_verify.py           # Final FriCAS verification of genuinely resistant integrals
-|   |-- cas_singleton_test.py          # SymPy test on singleton equivalence classes
-|   |-- extract_singleton_failures.py  # Extract SymPy-hard singletons for FriCAS testing
-|   |-- rubi_comparison.py             # Compare ESI against RUBI test suite (72,401 integrals)
-|   |-- rubi_comparison_fast.py        # Fast RUBI comparison via fingerprint matching
-|   |-- check_rubi_failures.py         # Check RUBI's own failure cases against ESI
-|   |-- merge_mma_ext_chunks.py        # Merge chunked Mathematica results into single JSON
-|   +-- table_fg_integrals.py          # Build verification table of f^g CAS-blind integrals
+|   |-- cas_full_sympy.py
+|   |-- cas_full_mathematica.py
+|   |-- cas_sympy_allbases.py
+|   |-- cas_mma_allbases.py
+|   |-- cas_stress_600s.py
+|   |-- cas_stress_allbases.py
+|   |-- cas_fricas_test.py
+|   |-- cas_fricas_retest.py
+|   |-- cas_fricas_verify.py
+|   |-- cas_singleton_test.py
+|   |-- extract_singleton_failures.py
+|   |-- rubi_comparison.py
+|   |-- rubi_comparison_fast.py
+|   |-- check_rubi_failures.py
+|   |-- merge_mma_ext_chunks.py
+|   +-- table_fg_integrals.py
 |
 |-- figures/
-|   |-- make_figures.py                # Generate all paper figures (rho, decomposition, model, delta)
-|   +-- fig_cluster_sizes.py           # Cluster-size distribution figure
+|   |-- make_figures.py
+|   +-- fig_cluster_sizes.py
 |
 |-- generation/
-|   |-- gen_trig_all.py                # Generate trig_maths function set via ESR (MPI)
-|   |-- gen_ext_log_mpi.py             # Generate ext_log_maths function set via ESR (MPI)
-|   +-- gen_trig_mpi.py                # Generate trig_maths functions at specific complexities (MPI)
+|   |-- gen_trig_all.py
+|   |-- gen_ext_log_mpi.py
+|   +-- gen_trig_mpi.py
 |
 |-- paper/
-|   |-- Draft.tex                      # Paper source
-|   |-- references.bib                 # Bibliography
-|   |-- table_cas_blind.tex            # 5 final all-engine CAS-resistant integrals (LaTeX table)
-|   +-- table_fg_integrals.tex         # f^g integral table (LaTeX)
+|   |-- Draft.tex
+|   |-- references.bib
+|   |-- table_cas_blind.tex
+|   +-- table_fg_integrals.tex
 |
-|-- function_catalogues/               # Downloaded unique-equation catalogues (see Data section)
-|   |-- core_maths/compl_*/            # ESR function sets (symlinks or downloads)
+|-- function_catalogues/
+|   |-- core_maths/compl_*/
 |   |-- ext_maths/compl_*/
 |   |-- ext_log_maths/compl_*/
 |   +-- trig_maths/compl_*/
 |
-+-- results/                           # Pipeline outputs
-    |-- rho_results_*.json             # rho(k) for each basis
-    |-- rho_decomposition_*.json       # Operator decomposition + delta distribution
-    |-- cas_full_*_results.json        # Comprehensive CAS comparison results (ext_log_maths)
++-- results/
+    |-- rho_results_*.json
+    |-- rho_decomposition_*.json
+    |-- cas_full_*_results.json
     |-- theoretical_model_all_bases.json
-    +-- *.pkl                          # Raw pipeline outputs (large)
+    +-- *.pkl
 ```
 
-## Reproducing the paper results
+`function_catalogues/` and `results/` are populated by `download_data.py`; large
+files are not stored directly in Git.
+
+## Reproducing The Paper Results
 
 ### Prerequisites
 
-- Python 3.11+ with: `sympy`, `numpy`, `mpmath`, `matplotlib`
-- For MPI-parallel runs: `mpi4py`
-- For Mathematica comparison: Wolfram Mathematica (command-line `math` binary)
-- For FriCAS comparison: FriCAS 1.3.12+ (via Singularity container or native install)
-- For RUBI comparison: RUBI test suite files (Mathematica `.m` format)
-- For function generation: [ESR](https://github.com/DeaglanBartlett/ESR)
+- Python 3.11+ with `sympy`, `numpy`, `mpmath`, and `matplotlib`
+- `mpi4py` for MPI-parallel runs
+- Wolfram Mathematica for Mathematica comparisons
+- FriCAS 1.3.12+ for FriCAS comparisons
+- RUBI test suite files for RUBI comparisons
+- [ESR](https://github.com/DeaglanBartlett/ESR) for function generation
 
-### Data download
+### Step 1: Function Space Generation
 
-All data can be downloaded from Zenodo using `download_data.py`:
-
-```bash
-python3 download_data.py              # Lookup database only (~650MB) -- enough for esi_integrate.py
-python3 download_data.py --all        # Database + raw outputs + function catalogues (~1.9GB)
-python3 download_data.py --functions  # Function sets only (for reproducing the pipeline)
-```
-
-The prepared Zenodo data package contains:
-
-- final JSON and PKL result artifacts used for the paper tables, figures, and CAS-resistance claims;
-- lookup-equivalence databases for `core_maths`, `core_log_maths`, `ext_maths`, `ext_log_maths`, and `trig_maths`, plus `esi_hash_index.json`;
-- raw derivative/fingerprint outputs needed for rho decomposition and audit scripts;
-- `function_catalogues_unique_equations.tar.gz`, containing only the `unique_equations_k.txt` catalogues for the five bases.
-
-Large ESR generation intermediates (`trees`, `orig_trees`, `matches`, `inv_subs`, etc.), cluster logs, and external CAS installations are intentionally omitted from the Zenodo package. They are reproducible or environment-specific and are not used directly by the paper analysis scripts. The staged local upload package is in `zenodo/upload/`; after Zenodo assigns a record, replace the placeholder `ZENODO_RECORD` in `download_data.py`.
-
-### Step 1: Function space generation
-
-Pre-generated function catalogues for all five operator bases are available via `download_data.py --functions`.
-To regenerate from scratch using ESR:
+Pre-generated function catalogues for all five operator bases are available via
+`download_data.py --functions` or `download_data.py --all`. To regenerate from
+scratch using ESR:
 
 ```bash
-# Core, ext bases (already available in ESR's function_library/)
-# Ext_log basis:
+# Ext_log basis
 mpirun -np 20 python3 generation/gen_ext_log_mpi.py
-# Trig basis:
+
+# Trig basis
 mpirun -np 20 python3 generation/gen_trig_all.py
 ```
 
-This produces `unique_equations_k.txt` files in `ESR/esr/function_library/<basis>/compl_k/`.
+This produces `unique_equations_k.txt` files in
+`ESR/esr/function_library/<basis>/compl_k/`.
 
-### Step 2: ESI pipeline
+### Step 2: ESI Pipeline
 
 For each basis, run the pipeline to differentiate all functions, compute
-fingerprints, measure rho(k), and build equivalence classes:
+fingerprints, measure `rho(k)`, and build equivalence classes:
 
 ```bash
 python3 run_parallel.py \
@@ -171,142 +221,161 @@ python3 run_parallel.py \
 ```
 
 This produces:
-- `rho_results_ext_log_maths_k8.json` -- rho(k) at each complexity
-- `results_ext_log_maths_k8.pkl` -- equivalence classes (clusters)
-- `raw_results_ext_log_maths_k8.pkl` -- per-expression results
 
-Repeat for each basis (core_maths, ext_maths, ext_log_maths, trig_maths).
+- `rho_results_ext_log_maths_k8.json`: `rho(k)` at each complexity;
+- `results_ext_log_maths_k8.pkl`: equivalence classes;
+- `raw_results_ext_log_maths_k8.pkl`: per-expression results.
+
+Repeat for each basis: `core_maths`, `core_log_maths`, `ext_maths`,
+`ext_log_maths`, and `trig_maths`.
 
 ### Step 3: Analysis
 
 ```bash
-# Rho decomposition by operator presence + delta distribution
+# Rho decomposition by operator presence and delta distribution.
 python3 analysis/analyse_rho_decomposition.py \
-    --raw raw_results_ext_log_maths_k8.pkl --max-k 8
+    --raw raw_results_ext_log_maths_k8.pkl \
+    --max-k 8
 
-# Growth-rate model parameters
+# Growth-rate model parameters.
 python3 analysis/compute_trig_model.py
 
-# Fingerprint collision validation
+# Fingerprint collision validation.
 python3 analysis/collision_check.py
 ```
 
-### Step 4: CAS comparison
+### Step 4: CAS Comparison
 
 The CAS comparison tests multi-member equivalence classes against SymPy,
-Mathematica, RUBI, and FriCAS. This is compute-intensive and best run on a cluster.
+Mathematica, RUBI, and FriCAS. This is compute-intensive and best run on a
+cluster.
 
-#### ext_log_maths (primary analysis, 49,538 clusters)
+For the primary `ext_log_maths` analysis:
 
 ```bash
-# SymPy (MPI, ~200 cores, ~1 hour)
+# SymPy: MPI, around 200 cores, around 1 hour.
 mpirun -np 200 python3 cas_comparison/cas_full_sympy.py
 
-# Mathematica (MPI, 5 cores due to license limits, ~6 hours)
+# Mathematica: MPI, around 5 ranks because of license limits.
 mpirun -np 5 python3 cas_comparison/cas_full_mathematica.py
 
-# Deep stress test on both-fail integrals (600s timeout, all strategies)
+# Deep stress test on integrals failed by both engines.
 python3 cas_comparison/cas_stress_600s.py --index 0 --with-mma
 ```
 
-#### All bases (core_maths, ext_maths, trig_maths)
+Across the other CAS-tested bases:
 
 ```bash
-# SymPy across all bases (MPI, no -s flag)
+# SymPy across bases.
 mpirun -np 84 python3 cas_comparison/cas_sympy_allbases.py \
-    --pkl results_core_maths_k10.pkl --out cas_sympy_core_maths.json
+    --pkl results_core_maths_k10.pkl \
+    --out cas_sympy_core_maths.json
 
-# Mathematica across all bases (MPI, max 5 ranks for license)
+# Mathematica across bases.
 mpirun -np 5 python3 cas_comparison/cas_mma_allbases.py \
-    --pkl results_ext_maths_k9.pkl --out cas_mma_ext_maths.json
+    --pkl results_ext_maths_k9.pkl \
+    --out cas_mma_ext_maths.json
 
-# For large bases, use --start/--end to chunk:
+# Chunk large bases.
 mpirun -np 5 python3 cas_comparison/cas_mma_allbases.py \
-    --pkl results_ext_maths_k9.pkl --out cas_mma_ext_maths_chunk_00.json \
-    --start 0 --end 9052
+    --pkl results_ext_maths_k9.pkl \
+    --out cas_mma_ext_maths_chunk_00.json \
+    --start 0 \
+    --end 9052
 
-# Merge chunked results
+# Merge chunked Mathematica results.
 python3 cas_comparison/merge_mma_ext_chunks.py
 
-# Deep stress test across all bases (MPI, 600s, 9 SymPy + 3 MMA strategies)
+# Deep stress test across bases.
 mpirun -np 28 python3 cas_comparison/cas_stress_allbases.py \
-    --input stress_input_core_maths.json --out stress_core_maths.json
+    --input stress_input_core_maths.json \
+    --out stress_core_maths.json
 ```
 
-#### FriCAS (on CAS-blind integrals)
+FriCAS checks:
 
 ```bash
-# Test CAS-blind integrals against FriCAS
 python3 cas_comparison/cas_fricas_test.py --start 0 --end 100
-
-# Retest with refined parameters
 python3 cas_comparison/cas_fricas_retest.py
-
-# Final verification of genuinely resistant integrals
 python3 cas_comparison/cas_fricas_verify.py
 ```
 
-#### RUBI test suite cross-check
+RUBI test-suite cross-check:
 
 ```bash
-# Compare ESI database against RUBI's 72,401 test integrals
 python3 cas_comparison/rubi_comparison.py
-
-# Check RUBI's own failure cases
 python3 cas_comparison/check_rubi_failures.py
 ```
 
 ### Step 5: Figures
 
 ```bash
-python3 figures/make_figures.py           # Main paper figures
-python3 figures/fig_cluster_sizes.py      # Cluster size distribution
+python3 figures/make_figures.py
+python3 figures/fig_cluster_sizes.py
 ```
 
-## Key results
+## Key Results
 
-| Basis | k_max | deduplicated | rho(k=6) | rho(k_max) | CAS status |
-|-------|-------|---------------|----------|------------|------------|
-| core_maths | 10 | 77,053 | 0.058 | 0.035 | CAS cascade tested; no final all-engine failures |
-| core_log_maths | 8 | 21,214 | **0.192** | 0.174 | SymPy-only fill-in: 5,669 tested, 144 hard, 59 stress-impossible; not in the full CAS cascade |
-| ext_maths | 9 | 628,400 | 0.041 | 0.029 | 2 final all-engine failures |
-| ext_log_maths | 9 | 1,454,666 | 0.116 | 0.083 | 3 final all-engine failures |
-| trig_maths | 9 | 897,293 | 0.049 | 0.037 | CAS cascade tested; no final all-engine failures |
+- `core_maths`: `k_max=10`, 77,053 deduplicated functions, `rho(k=6)=0.058`,
+  `rho(k_max)=0.035`; CAS cascade tested with no final all-engine failures.
+- `core_log_maths`: `k_max=8`, 21,214 deduplicated functions,
+  `rho(k=6)=0.192`, `rho(k_max)=0.174`; SymPy-only fill-in gives 5,669 tested,
+  144 hard, and 59 stress-impossible. This basis is not in the full CAS
+  cascade.
+- `ext_maths`: `k_max=9`, 628,400 deduplicated functions, `rho(k=6)=0.041`,
+  `rho(k_max)=0.029`; two robust all-engine failures.
+- `ext_log_maths`: `k_max=9`, 1,454,666 deduplicated functions,
+  `rho(k=6)=0.116`, `rho(k_max)=0.083`; one robust all-engine failure plus two
+  standard-call Abs-only failures.
+- `trig_maths`: `k_max=9`, 897,293 deduplicated functions, `rho(k=6)=0.049`,
+  `rho(k_max)=0.037`; CAS cascade tested with no final all-engine failures.
 
-- Adding log to the basis boosts rho(k) by factors of order 2--3 over most shared complexity levels and produces a non-monotonic peak at k=6 in the ESR node-count metric.
-- `core_log_maths` isolates the logarithm effect for rho(k). A lightweight SymPy-only fill-in was run after the main analysis, but the full six-engine CAS cascade still covers the four other bases.
-- In `ext_log_maths`, 503 integrals fail both SymPy and Mathematica at 180 s. Extended SymPy/Mathematica stress tests solve 270, leaving 232 that still resist both engines; FriCAS solves 218 of these.
-- The final six-engine cascade identifies **5 all-engine CAS-resistant integrals under the standard call**. Three are robust under every Mathematica variant tested; two are absolute-value cases solved only after a domain restriction or roundtrip transformation.
-- Broad k=9 and `trig_maths` follow-up cascades add zero new all-engine CAS-resistant integrals (`k9_broad_final_resistant.json`, `trig_maths_final_resistant.json`).
-- ESI solves 184 RUBI benchmark integrals, including 7 classified as "hard" by RUBI. A separate check of RUBI's reported failures gives 134 failures, 122 mappable into ESI's fingerprint framework, 3 raw matches, and 2 robust solves after removing one branch artifact.
+Adding `log` to the basis boosts `rho(k)` by factors of order 2-3 over most
+shared complexity levels and produces a non-monotonic peak at `k=6` in the ESR
+node-count metric.
 
-Final CAS-result artifacts are in `results/final_cas_summary.json` and the supporting files named there. Table-level stress-test artifacts are also included as `results/stress_results_*.json`, including the late `core_log_maths` SymPy fill-in.
+The final six-engine cascade identifies five all-engine CAS-resistant integrals
+under the standard call. Three resist all tested strategies; two are
+absolute-value cases solved by Mathematica after a domain restriction or
+roundtrip transformation, and are therefore not counted in the robust
+all-strategy headline.
 
-## The ESI pipeline
-
-```
-Load F_<=k  ->  Canonicalise params  ->  Differentiate (SymPy)
-    ->  Numerical fingerprint (60 pts, 50-digit, 10 sig fig, MD5)
-    ->  Hash  ->  Cluster by derivative hash
-    ->  Compute rho(k), build equivalence classes
-```
-
-**Numerical fingerprinting:** Each expression is evaluated at 60 random points
-(x in (0.2, 5), params in (0.5, 3.0)) at 50-digit precision, rounded to 10
-significant figures, and MD5-hashed. False positive rate < 10^{-590} per pair;
-empirically validated with 0 false positives in 518K pair comparisons.
+Final CAS-result artifacts are in `results/final_cas_summary.json` and the
+supporting files named there. Table-level stress-test artifacts are included as
+`results/stress_results_*.json`.
 
 ## Citation
 
 ```bibtex
 @article{Desmond2026,
-  author = {Harry Desmond},
-  title  = {Operator Basis Determines the Landscape of Symbolic Integrability},
+  author  = {Harry Desmond},
+  title   = {Exhaustive Symbolic Integration: Integration by Differentiation
+             and the Landscape of Symbolic Integrability},
   journal = {Journal of Symbolic Computation},
-  year   = {2026}
+  year    = {2026}
+}
+```
+
+Data package:
+
+```bibtex
+@dataset{Desmond2026ESIData,
+  author    = {Desmond, Harry},
+  title     = {Data for "Exhaustive Symbolic Integration: Integration by
+               Differentiation and the Landscape of Symbolic Integrability"},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20027938},
+  url       = {https://zenodo.org/records/20027938}
 }
 ```
 
 ## License
 
-[TBD]
+This repository is licensed under the GNU General Public License v3.0. See
+[LICENSE](LICENSE).
+
+## Contact
+
+For questions or comments, email Harry Desmond
+(harry.desmond@port.ac.uk).
