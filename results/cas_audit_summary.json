@@ -1,0 +1,556 @@
+{
+ "description": "Verified CAS audit of ESI integrands (revision for Mathematics in Computer Science, Oct 2026)",
+ "systems": {
+  "SymPy": "1.14.0",
+  "Mathematica": "13.3.1",
+  "RUBI": "4.17.3.0",
+  "FriCAS": "1.3.12",
+  "Maxima": "5.47.0 (SageMath 10.8)",
+  "Giac": "2.0.0 (conda-forge)"
+ },
+ "verification": "antiderivative differentiated in the same system and compared with the integrand at 8 points in (0.2,5) at fixed parameter values, relative tolerance 1e-6",
+ "cascade_table": {
+  "core_maths": {
+   "tested": 13993,
+   "fail_sympy": 1059,
+   "fail_sympy_and_mathematica": 411,
+   "fail_giac_fricas_maxima": 1,
+   "fail_all_strategies_tilde_f": 0,
+   "abs_artefacts_solved_in_real_form": 0,
+   "resist_all_six": 0
+  },
+  "core_log_maths": {
+   "tested": 5669,
+   "fail_sympy": 144,
+   "fail_sympy_and_mathematica": 5,
+   "fail_giac_fricas_maxima": 0,
+   "fail_all_strategies_tilde_f": 0,
+   "abs_artefacts_solved_in_real_form": 0,
+   "resist_all_six": 0
+  },
+  "ext_maths": {
+   "tested": 117674,
+   "fail_sympy": 8183,
+   "fail_sympy_and_mathematica": 905,
+   "fail_giac_fricas_maxima": 5,
+   "fail_all_strategies_tilde_f": 1,
+   "abs_artefacts_solved_in_real_form": 0,
+   "resist_all_six": 1
+  },
+  "ext_log_maths": {
+   "tested": 49538,
+   "fail_sympy": 2431,
+   "fail_sympy_and_mathematica": 502,
+   "fail_giac_fricas_maxima": 24,
+   "fail_all_strategies_tilde_f": 6,
+   "abs_artefacts_solved_in_real_form": 6,
+   "resist_all_six": 0
+  },
+  "trig_maths": {
+   "tested": 51027,
+   "fail_sympy": 9795,
+   "fail_sympy_and_mathematica": 685,
+   "fail_giac_fricas_maxima": 9,
+   "fail_all_strategies_tilde_f": 0,
+   "abs_artefacts_solved_in_real_form": 0,
+   "resist_all_six": 0
+  },
+  "ext_log_k9_subset": {
+   "tested": 138395,
+   "fail_sympy": 35863,
+   "fail_sympy_and_mathematica": 584,
+   "fail_giac_fricas_maxima": 31,
+   "fail_all_strategies_tilde_f": 8,
+   "abs_artefacts_solved_in_real_form": 0,
+   "resist_all_six": 8
+  }
+ },
+ "cascade_total": {
+  "tested": 376296,
+  "fail_sympy": 57475,
+  "fail_sympy_and_mathematica": 3092,
+  "fail_giac_fricas_maxima": 70,
+  "fail_all_strategies_tilde_f": 15,
+  "abs_artefacts_solved_in_real_form": 6,
+  "resist_all_six": 9
+ },
+ "giac_fricas_maxima": {
+  "solved_by_engine": {
+   "maxima": 2409,
+   "giac": 2224,
+   "fricas": 2720
+  },
+  "solved_by_only_this_engine": {
+   "fricas": 275,
+   "maxima": 154,
+   "giac": 22
+  },
+  "candidates": 3092,
+  "solved": 3022
+ },
+ "full_protocol_on_survivors": {
+  "input": 70,
+  "solved": 55,
+  "solved_by_engine": {
+   "sympy": 47,
+   "fricas": 14,
+   "mma": 26,
+   "rubi": 24,
+   "giac": 18,
+   "maxima": 26
+  }
+ },
+ "abs_artefacts": [
+  "B1585",
+  "B1586",
+  "B1937",
+  "B1938",
+  "B1944",
+  "B1947"
+ ],
+ "cas_resistant": [
+  {
+   "fid": "B0926",
+   "basis": "ext_maths",
+   "set": "ext_maths",
+   "F_catalogue": "sqrt(Abs(x - x**x))/sqrt(x)"
+  },
+  {
+   "fid": "B3088",
+   "basis": "ext_log_maths",
+   "set": "ext_log_k9_broad",
+   "F_catalogue": "exp(sqrt(x)/2)/sqrt(sqrt(x) + x)"
+  },
+  {
+   "fid": "B3090",
+   "basis": "ext_log_maths",
+   "set": "ext_log_k9_broad",
+   "F_catalogue": "exp(sqrt(x))/sqrt(sqrt(x) + x)"
+  },
+  {
+   "fid": "B3127",
+   "basis": "ext_log_maths",
+   "set": "ext_log_k9_broad",
+   "F_catalogue": "pow(x,(exp(exp(x**2))/2))/sqrt(x)"
+  },
+  {
+   "fid": "B3185",
+   "basis": "ext_log_maths",
+   "set": "ext_log_k9_broad",
+   "F_catalogue": "sqrt(x)*pow(x,exp(exp(x**2)))"
+  },
+  {
+   "fid": "B3191",
+   "basis": "ext_log_maths",
+   "set": "ext_log_k9_broad",
+   "F_catalogue": "sqrt(x)/pow(x,exp(exp(x**2)))"
+  },
+  {
+   "fid": "B3194",
+   "basis": "ext_log_maths",
+   "set": "ext_log_k9_broad",
+   "F_catalogue": "sqrt(x)*pow(x,(exp(exp(x**2))/2))"
+  },
+  {
+   "fid": "B3198",
+   "basis": "ext_log_maths",
+   "set": "ext_log_k9_broad",
+   "F_catalogue": "sqrt(x)/pow(x,(exp(exp(x**2))/2))"
+  },
+  {
+   "fid": "B3204",
+   "basis": "ext_log_maths",
+   "set": "ext_log_k9_broad",
+   "F_catalogue": "sqrt(x + pow(x,exp(x)))/sqrt(x)"
+  }
+ ],
+ "submitted_version_integrals": [
+  {
+   "fid": "A00",
+   "item": "S1",
+   "form": "headline: real, Abs-free",
+   "F": "exp(x)*sqrt(x + exp(-x))",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:default",
+    "giac:risch",
+    "giac:roundtrip",
+    "sympy:heurisch"
+   ]
+  },
+  {
+   "fid": "A01",
+   "item": "S2",
+   "form": "x>W(1) piece",
+   "F": "exp(x)*sqrt(x - exp(-x))",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:default",
+    "giac:risch",
+    "giac:roundtrip",
+    "mma:fullsimplify",
+    "sympy:heurisch"
+   ]
+  },
+  {
+   "fid": "A02",
+   "item": "S2",
+   "form": "x<W(1) piece",
+   "F": "exp(x)*sqrt(exp(-x) - x)",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:default",
+    "giac:risch",
+    "giac:roundtrip",
+    "sympy:heurisch"
+   ]
+  },
+  {
+   "fid": "A03",
+   "item": "S2",
+   "form": "true real form with Abs/sign",
+   "F": "exp(x)*sqrt(Abs(x - exp(-x)))",
+   "solved_by": []
+  },
+  {
+   "fid": "A04",
+   "item": "S2",
+   "form": "old stripped form (complex for x<W(1))",
+   "F": "exp(x)*sqrt(x - exp(-x))",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:default",
+    "giac:risch",
+    "giac:roundtrip",
+    "mma:fullsimplify",
+    "sympy:heurisch"
+   ]
+  },
+  {
+   "fid": "A05",
+   "item": "S3",
+   "form": "real Abs-free form (x^x>=x)",
+   "F": "sqrt(x**x - x)/sqrt(x)",
+   "solved_by": []
+  },
+  {
+   "fid": "A06",
+   "item": "S3",
+   "form": "true real form with Abs/sign",
+   "F": "sqrt(Abs(x - x**x))/sqrt(x)",
+   "solved_by": []
+  },
+  {
+   "fid": "A07",
+   "item": "S3",
+   "form": "old stripped form (imaginary)",
+   "F": "sqrt(x - x**x)/sqrt(x)",
+   "solved_by": []
+  },
+  {
+   "fid": "A08",
+   "item": "S4",
+   "form": "x>1 piece",
+   "F": "sqrt(x + log(x)**log(x))",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:default",
+    "giac:risch",
+    "giac:roundtrip",
+    "giac:simplify",
+    "maxima:assume_pos",
+    "maxima:default",
+    "maxima:radcan",
+    "maxima:risch",
+    "maxima:roundtrip",
+    "mma:assume_gt1",
+    "mma:assume_lt1",
+    "mma:assume_pos",
+    "mma:default",
+    "mma:expand",
+    "mma:fullsimplify",
+    "mma:noconds",
+    "mma:powerexpand",
+    "mma:roundtrip",
+    "mma:simplify",
+    "mma:together",
+    "sympy:default",
+    "sympy:manual",
+    "sympy:positive",
+    "sympy:simplify"
+   ]
+  },
+  {
+   "fid": "A09",
+   "item": "S4",
+   "form": "0<x<1 piece",
+   "F": "sqrt(x + (-log(x))**log(x))",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:default",
+    "giac:risch",
+    "giac:roundtrip",
+    "giac:simplify",
+    "maxima:assume_pos",
+    "maxima:default",
+    "maxima:radcan",
+    "maxima:risch",
+    "maxima:roundtrip",
+    "mma:assume_gt1",
+    "mma:assume_lt1",
+    "mma:assume_pos",
+    "mma:default",
+    "mma:expand",
+    "mma:fullsimplify",
+    "mma:noconds",
+    "mma:roundtrip",
+    "mma:simplify",
+    "mma:together",
+    "sympy:default",
+    "sympy:manual",
+    "sympy:positive",
+    "sympy:simplify"
+   ]
+  },
+  {
+   "fid": "A10",
+   "item": "S4",
+   "form": "true real form with Abs/sign",
+   "F": "sqrt(x + Abs(log(x))**log(x))",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:roundtrip",
+    "maxima:roundtrip"
+   ]
+  },
+  {
+   "fid": "A11",
+   "item": "S5",
+   "form": "x>1 piece",
+   "F": "sqrt(x - log(x)**log(x))",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:default",
+    "giac:risch",
+    "giac:roundtrip",
+    "giac:simplify",
+    "maxima:assume_pos",
+    "maxima:default",
+    "maxima:radcan",
+    "maxima:risch",
+    "maxima:roundtrip",
+    "mma:assume_gt1",
+    "mma:assume_lt1",
+    "mma:assume_pos",
+    "mma:default",
+    "mma:expand",
+    "mma:fullsimplify",
+    "mma:noconds",
+    "mma:powerexpand",
+    "mma:roundtrip",
+    "mma:simplify",
+    "mma:together",
+    "sympy:default",
+    "sympy:manual",
+    "sympy:positive",
+    "sympy:simplify"
+   ]
+  },
+  {
+   "fid": "A12",
+   "item": "S5",
+   "form": "0.07<x<1 piece",
+   "F": "sqrt((-log(x))**log(x) - x)",
+   "solved_by": [
+    "giac:assume_pos",
+    "giac:default",
+    "giac:risch",
+    "giac:roundtrip",
+    "giac:simplify",
+    "maxima:assume_pos",
+    "maxima:default",
+    "maxima:radcan",
+    "maxima:risch",
+    "maxima:roundtrip",
+    "mma:assume_gt1",
+    "mma:assume_lt1",
+    "mma:assume_pos",
+    "mma:default",
+    "mma:expand",
+    "mma:fullsimplify",
+    "mma:noconds",
+    "mma:roundtrip",
+    "mma:simplify",
+    "mma:together",
+    "sympy:default",
+    "sympy:manual",
+    "sympy:positive",
+    "sympy:simplify"
+   ]
+  },
+  {
+   "fid": "A13",
+   "item": "S5",
+   "form": "true real form with Abs/sign",
+   "F": "sqrt(Abs(x - Abs(log(x))**log(x)))",
+   "solved_by": [
+    "giac:roundtrip"
+   ]
+  }
+ ],
+ "rubi_suite_integrals_rubi_fails": [
+  {
+   "F": "-x**(-1/x)",
+   "solved_by": [
+    "fricas",
+    "giac",
+    "maxima",
+    "mma",
+    "sympy"
+   ]
+  },
+  {
+   "F": "x*exp(x + 1/log(x))",
+   "solved_by": [
+    "fricas",
+    "giac",
+    "maxima",
+    "mma",
+    "sympy"
+   ]
+  }
+ ],
+ "sample_check": {
+  "strata": {
+   "sample_core_maths_M": {
+    "population": 648,
+    "sampled": 648,
+    "after_giac": 318,
+    "after_maxima": 86,
+    "after_fricas": 5,
+    "after_full_non_mathematica": 0,
+    "after_full_protocol": 0
+   },
+   "sample_core_maths_S": {
+    "population": 12934,
+    "sampled": 1000,
+    "after_giac": 225,
+    "after_maxima": 33,
+    "after_fricas": 3,
+    "after_full_non_mathematica": 0,
+    "after_full_protocol": 0
+   },
+   "sample_core_log_maths_S": {
+    "population": 5525,
+    "sampled": 1000,
+    "after_giac": 95,
+    "after_maxima": 18,
+    "after_fricas": 3,
+    "after_full_non_mathematica": 2,
+    "after_full_protocol": 2
+   },
+   "sample_ext_maths_M": {
+    "population": 8013,
+    "sampled": 1000,
+    "after_giac": 361,
+    "after_maxima": 146,
+    "after_fricas": 25,
+    "after_full_non_mathematica": 8,
+    "after_full_protocol": 0
+   },
+   "sample_ext_maths_S": {
+    "population": 108756,
+    "sampled": 1000,
+    "after_giac": 123,
+    "after_maxima": 87,
+    "after_fricas": 7,
+    "after_full_non_mathematica": 0,
+    "after_full_protocol": 0
+   },
+   "sample_ext_log_maths_M": {
+    "population": 1925,
+    "sampled": 1000,
+    "after_giac": 324,
+    "after_maxima": 209,
+    "after_fricas": 79,
+    "after_full_non_mathematica": 25,
+    "after_full_protocol": 0
+   },
+   "sample_ext_log_maths_S": {
+    "population": 47102,
+    "sampled": 1000,
+    "after_giac": 81,
+    "after_maxima": 29,
+    "after_fricas": 4,
+    "after_full_non_mathematica": 0,
+    "after_full_protocol": 0
+   },
+   "sample_trig_maths_M": {
+    "population": 9613,
+    "sampled": 1000,
+    "after_giac": 366,
+    "after_maxima": 182,
+    "after_fricas": 32,
+    "after_full_non_mathematica": 2,
+    "after_full_protocol": 0
+   },
+   "sample_trig_maths_S": {
+    "population": 40729,
+    "sampled": 1000,
+    "after_giac": 139,
+    "after_maxima": 37,
+    "after_fricas": 4,
+    "after_full_non_mathematica": 0,
+    "after_full_protocol": 0
+   },
+   "sample_ext_log_k9_broad_M": {
+    "population": 34375,
+    "sampled": 1000,
+    "after_giac": 299,
+    "after_maxima": 168,
+    "after_fricas": 36,
+    "after_full_non_mathematica": 12,
+    "after_full_protocol": 4
+   },
+   "sample_ext_log_k9_broad_S": {
+    "population": 98650,
+    "sampled": 1000,
+    "after_giac": 187,
+    "after_maxima": 113,
+    "after_fricas": 28,
+    "after_full_non_mathematica": 13,
+    "after_full_protocol": 12
+   }
+  },
+  "total_sampled": 10648,
+  "final_unsolved_by_harness": 18,
+  "towers_mathematica_verified_arbitrary_precision": [
+   "S09080",
+   "S09895",
+   "S09919",
+   "S10138",
+   "S10209",
+   "S10214",
+   "S10333",
+   "S10418",
+   "S10477",
+   "S10583"
+  ],
+  "towers_mathematica_answer_identical_to_F": [
+   "S09279",
+   "S09746",
+   "S10341",
+   "S09807"
+  ],
+  "abs_artefacts_solved_in_real_form": [
+   "S01783",
+   "S02359"
+  ],
+  "degenerate_constant_where_defined": [
+   "S08669",
+   "S09408"
+  ],
+  "unresolved": [],
+  "bound": "no resistant integrand in any stratum; rule of three gives < 3/n per stratum at 95% confidence (< 0.3% for n = 1000; the core_maths Mathematica-only stratum was tested in full)"
+ }
+}

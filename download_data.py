@@ -6,6 +6,7 @@ Usage:
   python3 download_data.py              # Download lookup database only (~650MB)
   python3 download_data.py --all        # Download lookup/raw data plus function catalogues (~1.9GB)
   python3 download_data.py --functions  # Download function catalogues only (for reproducing from scratch)
+  python3 download_data.py --cas-audit  # Download the verified CAS audit (inputs, outputs, summary)
 
 The lookup database (results pkl files) is all you need to use esi_integrate.py.
 The unique-equation function catalogues are only needed to rerun the ESI
@@ -14,17 +15,34 @@ pipeline from its enumerated function inputs.
 
 import argparse
 import hashlib
+import json
 import os
 import tarfile
 import urllib.request
 import shutil
 
 # ── Zenodo record ───────────────────────────────────────────────────
-ZENODO_RECORD = "20027938"
-ZENODO_DOI = "10.5281/zenodo.20027938"
-ZENODO_BASE = f"https://zenodo.org/records/{ZENODO_RECORD}/files"
+# The concept record resolves to the latest version; version 1 is the fallback.
+ZENODO_CONCEPT = "20027937"
+ZENODO_CONCEPT_DOI = "10.5281/zenodo.20027937"
+ZENODO_FALLBACK_RECORD = "20027938"
 ARCHIVE_NAME = "Archive.tar.gz"
-ARCHIVE_URL = f"{ZENODO_BASE}/{ARCHIVE_NAME}?download=1"
+CAS_AUDIT_NAME = "cas_audit.tar.gz"
+
+
+def latest_record():
+    """ID of the latest version of the Zenodo record (falls back to version 1)."""
+    url = f"https://zenodo.org/api/records/{ZENODO_CONCEPT}/versions/latest"
+    try:
+        with urllib.request.urlopen(url, timeout=30) as resp:
+            return str(json.load(resp)["id"])
+    except Exception as e:
+        print(f"  Could not query the latest Zenodo version ({e}); using record {ZENODO_FALLBACK_RECORD}")
+        return ZENODO_FALLBACK_RECORD
+
+
+def file_url(name):
+    return f"https://zenodo.org/records/{latest_record()}/files/{name}?download=1"
 
 # ── File manifest ──────────────────────────────────────────────────
 
@@ -77,7 +95,8 @@ def download_file(url, dest, desc=None):
 def download_archive(data_dir):
     """Download the published Zenodo archive."""
     archive = os.path.join(data_dir, ARCHIVE_NAME)
-    download_file(ARCHIVE_URL, archive, desc=ARCHIVE_NAME)
+    if not os.path.exists(archive):
+        download_file(file_url(ARCHIVE_NAME), archive, desc=ARCHIVE_NAME)
     return archive
 
 
@@ -145,14 +164,28 @@ def download_functions(data_dir):
         print(f"  Extracted function_catalogues/ into {data_dir}")
 
 
+def download_cas_audit(data_dir):
+    """Download and extract the verified CAS audit (Zenodo version 2 onwards)."""
+    print("\nDownloading the verified CAS audit...")
+    archive = os.path.join(data_dir, CAS_AUDIT_NAME)
+    if not os.path.exists(archive) and not download_file(file_url(CAS_AUDIT_NAME), archive, desc=CAS_AUDIT_NAME):
+        print(f"  {CAS_AUDIT_NAME} is not in the latest Zenodo version")
+        return
+    with tarfile.open(archive, "r:gz") as tar:
+        tar.extractall(data_dir)
+    print(f"  Extracted cas_audit/ into {data_dir}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Download ESI data from Zenodo")
     parser.add_argument('--all', action='store_true',
-                        help='Download everything (lookup db + raw results + function catalogues)')
+                        help='Download everything (lookup db + raw results + function catalogues + CAS audit)')
     parser.add_argument('--functions', action='store_true',
                         help='Download function catalogues only (for reproducing from scratch)')
     parser.add_argument('--raw', action='store_true',
                         help='Download raw results (for decomposition analysis)')
+    parser.add_argument('--cas-audit', action='store_true',
+                        help='Download the verified CAS audit (inputs, outputs, summary)')
     parser.add_argument('--dir', default='.',
                         help='Directory to download into (default: current)')
     args = parser.parse_args()
@@ -161,6 +194,9 @@ def main():
         download_lookup(args.dir)
         download_raw(args.dir)
         download_functions(args.dir)
+        download_cas_audit(args.dir)
+    elif args.cas_audit:
+        download_cas_audit(args.dir)
     elif args.functions:
         download_functions(args.dir)
     elif args.raw:
