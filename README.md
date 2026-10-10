@@ -7,7 +7,8 @@ This GitHub repository is the maintained code repository. The larger data
 files used by the paper are deposited separately on Zenodo:
 
 - Concept DOI (latest version): `10.5281/zenodo.20027937`
-- Version 1: `10.5281/zenodo.20027938`; version 2 adds `cas_audit.tar.gz`, the verified CAS audit
+- Version 1: `10.5281/zenodo.20027938`; version 2 (`10.5281/zenodo.23279393`) adds
+  `cas_audit.tar.gz`, the verified CAS audit
 
 ESI measures the integrability fraction `rho(k)`: the proportion of functions in
 a bounded symbolic space whose derivatives also lie within that space. It also

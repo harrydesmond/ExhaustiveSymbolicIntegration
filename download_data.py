@@ -18,27 +18,53 @@ import hashlib
 import json
 import os
 import tarfile
+import urllib.error
 import urllib.request
 import shutil
 
 # ── Zenodo record ───────────────────────────────────────────────────
-# The concept record resolves to the latest version; version 1 is the fallback.
+# The concept record resolves to the latest version; the last known version is the fallback.
 ZENODO_CONCEPT = "20027937"
 ZENODO_CONCEPT_DOI = "10.5281/zenodo.20027937"
-ZENODO_FALLBACK_RECORD = "20027938"
+ZENODO_FALLBACK_RECORD = "23279393"  # version 2
 ARCHIVE_NAME = "Archive.tar.gz"
 CAS_AUDIT_NAME = "cas_audit.tar.gz"
+_LATEST = None
+
+
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        return None
 
 
 def latest_record():
-    """ID of the latest version of the Zenodo record (falls back to version 1)."""
-    url = f"https://zenodo.org/api/records/{ZENODO_CONCEPT}/versions/latest"
+    """ID of the latest version of the Zenodo record.
+
+    Tries the API, then the redirect of the concept record's landing page, then the last known version.
+    """
+    global _LATEST
+    if _LATEST:
+        return _LATEST
     try:
+        url = f"https://zenodo.org/api/records/{ZENODO_CONCEPT}/versions/latest"
         with urllib.request.urlopen(url, timeout=30) as resp:
-            return str(json.load(resp)["id"])
-    except Exception as e:
-        print(f"  Could not query the latest Zenodo version ({e}); using record {ZENODO_FALLBACK_RECORD}")
-        return ZENODO_FALLBACK_RECORD
+            _LATEST = str(json.load(resp)["id"])
+            return _LATEST
+    except Exception:
+        pass
+    try:
+        opener = urllib.request.build_opener(_NoRedirect)
+        opener.open(f"https://zenodo.org/records/{ZENODO_CONCEPT}", timeout=30)
+    except urllib.error.HTTPError as e:
+        loc = e.headers.get("Location", "")
+        if e.code in (301, 302, 303, 307, 308) and "/records/" in loc:
+            _LATEST = loc.rstrip("/").split("/records/")[-1].split("?")[0]
+            return _LATEST
+    except Exception:
+        pass
+    print(f"  Could not query the latest Zenodo version; using record {ZENODO_FALLBACK_RECORD}")
+    _LATEST = ZENODO_FALLBACK_RECORD
+    return _LATEST
 
 
 def file_url(name):
@@ -81,15 +107,20 @@ def download_file(url, dest, desc=None):
     os.makedirs(os.path.dirname(dest) or '.', exist_ok=True)
     desc = desc or os.path.basename(dest)
 
-    try:
-        print(f"  Downloading {desc}...", end=' ', flush=True)
-        urllib.request.urlretrieve(url, dest)
-        size = os.path.getsize(dest) / 1e6
-        print(f"done ({size:.1f} MB)")
-        return True
-    except Exception as e:
-        print(f"FAILED: {e}")
-        return False
+    tmp = dest + ".part"
+    for attempt in range(1, 4):  # Zenodo sometimes returns transient 5xx errors
+        try:
+            print(f"  Downloading {desc}...", end=' ', flush=True)
+            urllib.request.urlretrieve(url, tmp)
+            os.replace(tmp, dest)
+            size = os.path.getsize(dest) / 1e6
+            print(f"done ({size:.1f} MB)")
+            return True
+        except Exception as e:
+            print(f"attempt {attempt} failed: {e}")
+            if os.path.exists(tmp):
+                os.remove(tmp)
+    return False
 
 
 def download_archive(data_dir):
