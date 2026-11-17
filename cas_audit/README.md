@@ -7,9 +7,9 @@ with no unevaluated integral or error in the output. These scripts supersede the
 results of `../cas_comparison/`, whose success checks were defective (see "Relation to earlier
 scripts" below).
 
-The inputs and outputs of the runs used for the paper are in `cas_audit.tar.gz` in version 2 of the
-Zenodo deposit (concept DOI 10.5281/zenodo.20027937), and `../results/cas_audit_summary.json` holds
-the numbers quoted in the paper.
+The inputs and outputs of the runs used for the paper are in `cas_audit.tar.gz` in version 3 of the
+Zenodo deposit (concept DOI 10.5281/zenodo.20027937), and `../results/cas_audit_summary.json` and
+`../results/maple_summary.json` hold the numbers quoted in the paper.
 
 ## Systems
 
@@ -21,6 +21,7 @@ the numbers quoted in the paper.
 | FriCAS | 1.3.12 | `ESI_FRICAS` (`fricas`) |
 | Maxima | 5.47.0 | `ESI_MAXIMA` (`maxima`) |
 | Giac | 2.0.0 | `ESI_GIAC` (`icas`) |
+| Maple | 2026.2 | `ESI_MAPLE` (`~/maple2026/bin/maple`) |
 
 Each variable may hold a full command, e.g. a container invocation; `env_glamdring.sh` is the
 configuration used for the paper. Note that SageMath's `integrate(..., algorithm='giac')` silently
@@ -31,8 +32,11 @@ returns the integral unevaluated when Giac is not installed, which is why the ha
 
 - `cas_audit.py`: the harness. Runs each (form, system, strategy) in its own process with a hard
   timeout, verifies the result and appends one JSON record per task to a checkpoint file, so an
-  interrupted run resumes where it stopped. `--strip` removes absolute values from the antiderivative
-  before differentiating; `--strategies fast` runs one call per system, `full` the full set (7 SymPy,
+  interrupted run resumes where it stopped. `--strip` removes absolute values (and real parts,
+  imaginary parts, arguments and `atan2(0, .)`) from the antiderivative before differentiating, by a
+  bottom-up rewrite repeated until nothing changes. (The harness in version 2 of the deposit used
+  SymPy's `replace`, which re-created an absolute value or left an `atan2` term in 22 integrands; see
+  step 6 below.) `--strategies fast` runs one call per system, `full` the full set (7 SymPy,
   11 Mathematica, 2 RUBI, 3 FriCAS, 5 Maxima, 5 Giac).
 - `cas_audit_build.py`: builds the candidate list (integrands failed by SymPy and Mathematica in the
   screening sweeps) and the corresponding harness forms.
@@ -43,6 +47,12 @@ returns the integral unevaluated when Giac is not installed, which is why the ha
   values overflow the in-system check.
 - `cas_audit_report.py`: regenerates `cas_audit_summary.json` from the deposit.
 - `cas_audit_summary.py`: status counts per system for result files.
+- `cas_audit_maple.py`: Maple engine on top of `cas_audit.py` (same integrands and verification);
+  `--strategies full` runs 7 strategies, `stress` 6 further rewrites; `--mem-mb` runs each Maple
+  call in a memory-capped systemd user scope.
+- `cas_audit_maple_xcheck.py`: independent check of Maple's solves (numerical derivative of the
+  antiderivative at 50 digits against the SymPy integrand evaluated with mpmath).
+- `cas_audit_maple_report.py`: regenerates `maple_summary.json` from the deposit.
 - `cas_abs_share.py`, `cas_const_check.py`: fraction of catalogue functions containing absolute
   values, and the lowest complexity of selected constant-bearing functions (Sec. 4.3).
 
@@ -75,8 +85,8 @@ python3 cas_audit.py audit_forms_stage2.json stage2_results.jsonl --strip \
 python3 cas_audit_analyse.py audit_forms_stage2.json stage2_results.jsonl \
     --write-survivors audit_forms_stage3.json
 
-# 4. Real integrands of survivors containing absolute values, on intervals of fixed sign
-#    (audit_forms_stage3_real.json lists the pieces and in-interval verification points)
+# 4. (Version 2 only) real integrands of six survivors that were artefacts of the faulty stripping;
+#    no survivor needs this after the correction, and the files are in superseded/ of the deposit
 python3 cas_audit.py audit_forms_stage3_real.json stage3_results.jsonl \
     --engines giac,fricas,maxima,sympy,mma,rubi --strategies full --timeout 600
 
@@ -106,19 +116,35 @@ python3 cas_audit_analyse.py sample_after_s2a.json sample_s2_mma.jsonl \
     --write-survivors sample_final_survivors.json
 python3 cas_audit_reverify.py sample_final_survivors.json sample_s2_mma.jsonl sample_s2_fast.jsonl
 
+# 6. Corrected stripping: the 22 integrands whose stripped form changed (19 of Job B, 3 of the sample)
+#    are re-run at the Giac/FriCAS/Maxima stage; all 22 are solved there, and their rows replace the
+#    old ones in jobB_results.jsonl and the sample outputs (raw rows in stripfix_stage1.jsonl)
+python3 cas_audit.py audit_forms_stripfix22.json stripfix_stage1.jsonl --strip \
+    --engines giac,fricas,maxima --timeout 180
+
+# 7. Maple (one licensed machine): the full-protocol integrands, the nine six-system survivors
+#    with further rewrites, positive controls, and the independent check of Maple's solves
+python3 cas_audit_maple.py audit_forms_maple_stage2.json maple_stage2.jsonl --strip \
+    --strategies full --timeout 600 --workers 2 --mem-mb 1400
+python3 cas_audit_maple.py audit_forms_maple_nine.json maple_nine_full.jsonl --strip --strategies full --timeout 600
+python3 cas_audit_maple.py audit_forms_maple_nine.json maple_nine_stress.jsonl --strip --strategies stress --timeout 600
+python3 cas_audit_maple.py audit_forms_maple_controls.json maple_controls.jsonl --strip --strategies full --timeout 60
+nice -n 19 python3 cas_audit_maple_xcheck.py audit_forms_maple_stage2.json maple_stage2.jsonl maple_xcheck.json
+
 # Summary (arrange the files as inputs/, outputs/, intermediate/, logs/ as in the deposit)
 python3 cas_audit_report.py <dir> cas_audit_summary.json
+python3 cas_audit_maple_report.py <dir> maple_summary.json
 ```
 
 ## Results
 
 Of 376,296 tested integrands, 3,092 fail both screening systems. Giac, FriCAS and Maxima solve
-3,022 of these, the full strategy set solves 55 of the remaining 70, and 6 of the last 15 are
-absolute-value artefacts whose real integrands are solved. Nine integrals resist all six systems
-under every strategy (Table 4 of the paper): sqrt(x^x - x)/sqrt(x), sqrt(x + x^(e^x))/sqrt(x),
+3,031 of these, and the full strategy set solves 52 of the remaining 61. Nine integrals resist all six
+systems under every strategy (Table 4 of the paper): sqrt(x^x - x)/sqrt(x), sqrt(x + x^(e^x))/sqrt(x),
 e^sqrt(x)/sqrt(x + sqrt(x)), e^(sqrt(x)/2)/sqrt(x + sqrt(x)) and five towers
-x^(s e^(e^(x^2))/m + t/2). None of 10,648 integrands sampled from the screening's eliminations
-resists all six systems.
+x^(s e^(e^(x^2))/m + t/2). Maple, run on the 61, solves 32 of them, including the five towers (after
+simplification), so the first four resist all seven systems. None of 10,648 integrands sampled from
+the screening's eliminations resists all six systems.
 
 ## Relation to earlier scripts
 

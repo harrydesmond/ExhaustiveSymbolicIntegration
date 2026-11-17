@@ -62,18 +62,42 @@ NS.update({'x': x, 'pow': sp.Pow, 'Abs': sp.Abs, 'sqrt': sp.sqrt, 'exp': sp.exp,
 # Integrand construction and syntax conversion
 # ----------------------------------------------------------------------------------------------
 
-def strip_F(F):
-    """Analytic, Abs-free version of an ESR antiderivative (valid on the positive real domain)."""
-    F = F.replace(sp.atan2, lambda a, b: sp.S.Zero if a == 0 else sp.atan2(a, b))
-    F = F.replace(sp.Abs, lambda u: u).replace(sp.re, lambda u: u)
-    F = F.replace(sp.im, lambda u: sp.S.Zero).replace(sp.arg, lambda u: sp.S.Zero)
-    return F
+STRIPPED = (sp.Abs, sp.re, sp.im, sp.arg, sp.atan2)
+
+
+def _strip_once(e):
+    # Rebuild each node from already-stripped arguments. (SymPy's replace() re-evaluates rebuilt nodes, which
+    # re-created absolute values, e.g. Abs(1/u) -> 1/Abs(u), and could leave atan2(0, .) inside re(...).)
+    if e.is_Atom:
+        return e
+    args = [_strip_once(a) for a in e.args]
+    if isinstance(e, (sp.Abs, sp.re)):
+        return args[0]
+    if isinstance(e, (sp.im, sp.arg)):
+        return sp.S.Zero
+    if isinstance(e, sp.atan2):
+        return sp.S.Zero if args[0] == 0 else sp.atan2(*args)
+    return e.func(*args)
+
+
+def strip_F(F, max_iter=20):
+    """Analytic, Abs-free version of an ESR antiderivative (valid on the positive real domain).
+
+    Abs and re are dropped, im and arg set to zero, atan2(0, .) set to zero; repeated until nothing changes."""
+    for _ in range(max_iter):
+        G = _strip_once(F)
+        if G == F:
+            return G
+        F = G
+    raise RuntimeError('strip_F did not reach a fixed point')
 
 
 def build(form, strip):
     F = sp.sympify(form['F'], locals=NS)
     if strip:
         F = strip_F(F)
+        if F.has(*STRIPPED):
+            raise ValueError(f'stripped antiderivative still contains Abs/re/im/arg/atan2: {F}')
     if form.get('real'):
         F = F.subs(x, xr)
         f = sp.diff(F, xr).subs(xr, x)

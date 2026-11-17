@@ -1,0 +1,83 @@
+{
+ "system": "Maple 2026.2 (one-month licence, single machine; full-protocol stage only)",
+ "strategies": [
+  "default",
+  "assume_pos",
+  "simplify",
+  "symbolic",
+  "risch",
+  "allmethods",
+  "roundtrip"
+ ],
+ "full_protocol_integrands": 61,
+ "solved_by_engine": {
+  "sympy": 45,
+  "mma": 23,
+  "maxima": 25,
+  "rubi": 24,
+  "giac": 18,
+  "fricas": 14,
+  "maple": 32
+ },
+ "union_six": 52,
+ "union_seven": 57,
+ "solved_by_only_this_engine": {
+  "sympy": [
+   "B2655"
+  ],
+  "mma": [],
+  "maxima": [
+   "B2670",
+   "B2671"
+  ],
+  "rubi": [],
+  "giac": [],
+  "fricas": [],
+  "maple": [
+   "B3127",
+   "B3185",
+   "B3191",
+   "B3194",
+   "B3198"
+  ]
+ },
+ "six_system_solves_missed_by_maple": 25,
+ "resist_six": [
+  "B0926",
+  "B3088",
+  "B3090",
+  "B3127",
+  "B3185",
+  "B3191",
+  "B3194",
+  "B3198",
+  "B3204"
+ ],
+ "maple_solves_of_resist_six": [
+  "B3127",
+  "B3185",
+  "B3191",
+  "B3194",
+  "B3198"
+ ],
+ "resist_all_seven": [
+  "B0926",
+  "B3088",
+  "B3090",
+  "B3204"
+ ],
+ "resist_all_seven_also_under_stress_rewrites": [
+  "B0926",
+  "B3088",
+  "B3090",
+  "B3204"
+ ],
+ "maple_memlimit_or_timeout_on_unsolved": [],
+ "independent_check_of_maple_solves": {
+  "distinct_solves": 42,
+  "integrands": 32,
+  "all_pass": true,
+  "min_points": 4,
+  "max_relative_difference": 7.606207908335209e-10
+ }
+}

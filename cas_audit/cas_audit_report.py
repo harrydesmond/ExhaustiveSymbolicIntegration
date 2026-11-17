@@ -52,9 +52,12 @@ sB = solved_by(jl('jobB_results.jsonl'), cand)
 after_gfm = {fid for fid in cand if not sB[fid]}
 s2 = solved_by(jl('stage2_results.jsonl') + jl('stage2_fricas.jsonl'), after_gfm)
 after_s2 = {fid for fid in after_gfm if not s2[fid]}
-real3 = js('inputs', 'audit_forms_stage3_real.json')
-s3 = solved_by(jl('stage3_results.jsonl') + jl('stage3_fricas.jsonl'))
-artefacts = {f['item_id'] for f in real3 if s3[f['fid']]}
+# Real-piece checks of Abs-stripping artefacts. Since the strip_F fix (Nov 2026) no survivor is an artefact and
+# these files sit in superseded/; only artefacts still among the survivors count.
+_have = lambda sub, name: os.path.exists(os.path.join(D, sub, name))
+real3 = js('inputs', 'audit_forms_stage3_real.json') if _have('inputs', 'audit_forms_stage3_real.json') else []
+s3 = solved_by(jl('stage3_results.jsonl') + jl('stage3_fricas.jsonl')) if real3 else {}
+artefacts = {f['item_id'] for f in real3 if s3.get(f['fid'])} & after_s2
 final = sorted(after_s2 - artefacts)
 
 table = collections.OrderedDict()
@@ -102,10 +105,10 @@ for fid, f in formsS.items():
 reverify = open(os.path.join(D, 'logs', 'esi_reverify2-954457.out')).read()
 verified_numeric = re.findall(r'^(S\d+) .*VERIFIED', reverify, re.M)
 symbolic = ['S09279', 'S09746', 'S10341', 'S09807']  # Mathematica answer symbolically identical to F
-realS = js('inputs', 'audit_forms_sample_real.json')
-sRS = solved_by(jl('sample_real_results.jsonl') + jl('sample_real_fricas.jsonl'))
-sample_artefacts = sorted({f['item_id'] for f in realS if sRS[f['fid']]})
 final_s = {f['fid']: f['F'] for f in js('intermediate', 'sample_final_survivors.json')}
+realS = js('inputs', 'audit_forms_sample_real.json') if _have('inputs', 'audit_forms_sample_real.json') else []
+sRS = solved_by(jl('sample_real_results.jsonl') + jl('sample_real_fricas.jsonl')) if realS else {}
+sample_artefacts = sorted({f['item_id'] for f in realS if sRS.get(f['fid'])} & set(final_s))
 degenerate = sorted(fid for fid, F in final_s.items() if 'pow(0' in F)
 resolved = set(verified_numeric) | set(symbolic) | set(sample_artefacts) | set(degenerate)
 sample = {

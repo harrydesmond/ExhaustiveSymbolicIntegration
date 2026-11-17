@@ -32,7 +32,7 @@
    "tested": 117674,
    "fail_sympy": 8183,
    "fail_sympy_and_mathematica": 905,
-   "fail_giac_fricas_maxima": 5,
+   "fail_giac_fricas_maxima": 3,
    "fail_all_strategies_tilde_f": 1,
    "abs_artefacts_solved_in_real_form": 0,
    "resist_all_six": 1
@@ -41,9 +41,9 @@
    "tested": 49538,
    "fail_sympy": 2431,
    "fail_sympy_and_mathematica": 502,
-   "fail_giac_fricas_maxima": 24,
-   "fail_all_strategies_tilde_f": 6,
-   "abs_artefacts_solved_in_real_form": 6,
+   "fail_giac_fricas_maxima": 17,
+   "fail_all_strategies_tilde_f": 0,
+   "abs_artefacts_solved_in_real_form": 0,
    "resist_all_six": 0
   },
   "trig_maths": {
@@ -69,45 +69,38 @@
   "tested": 376296,
   "fail_sympy": 57475,
   "fail_sympy_and_mathematica": 3092,
-  "fail_giac_fricas_maxima": 70,
-  "fail_all_strategies_tilde_f": 15,
-  "abs_artefacts_solved_in_real_form": 6,
+  "fail_giac_fricas_maxima": 61,
+  "fail_all_strategies_tilde_f": 9,
+  "abs_artefacts_solved_in_real_form": 0,
   "resist_all_six": 9
  },
  "giac_fricas_maxima": {
   "solved_by_engine": {
-   "maxima": 2409,
-   "giac": 2224,
-   "fricas": 2720
+   "maxima": 2417,
+   "giac": 2233,
+   "fricas": 2739
   },
   "solved_by_only_this_engine": {
-   "fricas": 275,
-   "maxima": 154,
+   "fricas": 276,
+   "maxima": 150,
    "giac": 22
   },
   "candidates": 3092,
-  "solved": 3022
+  "solved": 3031
  },
  "full_protocol_on_survivors": {
-  "input": 70,
-  "solved": 55,
+  "input": 61,
+  "solved": 52,
   "solved_by_engine": {
-   "sympy": 47,
-   "fricas": 14,
-   "mma": 26,
-   "rubi": 24,
+   "mma": 23,
    "giac": 18,
-   "maxima": 26
+   "sympy": 45,
+   "rubi": 24,
+   "fricas": 14,
+   "maxima": 25
   }
  },
- "abs_artefacts": [
-  "B1585",
-  "B1586",
-  "B1937",
-  "B1938",
-  "B1944",
-  "B1947"
- ],
+ "abs_artefacts": [],
  "cas_resistant": [
   {
    "fid": "B0926",
@@ -443,11 +436,11 @@
    "sample_core_log_maths_S": {
     "population": 5525,
     "sampled": 1000,
-    "after_giac": 95,
-    "after_maxima": 18,
-    "after_fricas": 3,
-    "after_full_non_mathematica": 2,
-    "after_full_protocol": 2
+    "after_giac": 94,
+    "after_maxima": 16,
+    "after_fricas": 1,
+    "after_full_non_mathematica": 0,
+    "after_full_protocol": 0
    },
    "sample_ext_maths_M": {
     "population": 8013,
@@ -523,7 +516,7 @@
    }
   },
   "total_sampled": 10648,
-  "final_unsolved_by_harness": 18,
+  "final_unsolved_by_harness": 16,
   "towers_mathematica_verified_arbitrary_precision": [
    "S09080",
    "S09895",
@@ -542,10 +535,7 @@
    "S10341",
    "S09807"
   ],
-  "abs_artefacts_solved_in_real_form": [
-   "S01783",
-   "S02359"
-  ],
+  "abs_artefacts_solved_in_real_form": [],
   "degenerate_constant_where_defined": [
    "S08669",
    "S09408"

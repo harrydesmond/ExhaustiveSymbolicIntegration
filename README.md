@@ -8,12 +8,13 @@ files used by the paper are deposited separately on Zenodo:
 
 - Concept DOI (latest version): `10.5281/zenodo.20027937`
 - Version 1: `10.5281/zenodo.20027938`; version 2 (`10.5281/zenodo.23279393`) adds
-  `cas_audit.tar.gz`, the verified CAS audit
+  `cas_audit.tar.gz`, the verified CAS audit; version 3 updates it with the Maple results and
+  the corrected removal of absolute values
 
 ESI measures the integrability fraction `rho(k)`: the proportion of functions in
 a bounded symbolic space whose derivatives also lie within that space. It also
 identifies integrals that expose gaps in current computer algebra systems; the
-verified test of six systems that does this is in [`cas_audit/`](cas_audit/README.md).
+verified test of seven systems that does this is in [`cas_audit/`](cas_audit/README.md).
 
 ## The ESI Pipeline
 
@@ -87,7 +88,7 @@ version of the record, fetches `Archive.tar.gz` (and, with `--cas-audit`,
 python3 download_data.py              # Lookup database only
 python3 download_data.py --raw        # Lookup database + raw outputs
 python3 download_data.py --functions  # Function catalogues only
-python3 download_data.py --cas-audit  # Verified CAS audit (version 2)
+python3 download_data.py --cas-audit  # Verified CAS audit (latest version)
 python3 download_data.py --all        # Lookup + raw outputs + catalogues + CAS audit
 ```
 
@@ -96,7 +97,7 @@ The Zenodo data package contains:
 - final JSON and PKL result artifacts used for the paper tables and figures, and the
   CAS-comparison outputs of the submitted version, whose CAS-resistance results are
   superseded by the verified audit;
-- `cas_audit.tar.gz` (version 2): inputs, outputs and summary of the verified CAS audit
+- `cas_audit.tar.gz` (versions 2 and 3): inputs, outputs and summaries of the verified CAS audit
   behind Tables 3 and 4 of the revised paper;
 - lookup-equivalence databases for `core_maths`, `core_log_maths`, `ext_maths`,
   `ext_log_maths`, and `trig_maths`, plus `esi_hash_index.json`;
@@ -142,6 +143,9 @@ ESI/
 |   |-- cas_audit_analyse.py
 |   |-- cas_audit_reverify.py
 |   |-- cas_audit_report.py
+|   |-- cas_audit_maple.py
+|   |-- cas_audit_maple_xcheck.py
+|   |-- cas_audit_maple_report.py
 |   |-- cas_audit_summary.py
 |   |-- cas_abs_share.py
 |   |-- cas_const_check.py
