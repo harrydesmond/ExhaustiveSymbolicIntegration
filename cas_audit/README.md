@@ -8,7 +8,7 @@ results of `../cas_comparison/`, whose success checks were defective (see "Relat
 scripts" below).
 
 The inputs and outputs of the runs used for the paper are in `cas_audit.tar.gz` in version 3 of the
-Zenodo deposit (concept DOI 10.5281/zenodo.20027937), and `../results/cas_audit_summary.json` and
+Zenodo deposit (DOI 10.5281/zenodo.24322758; concept DOI 10.5281/zenodo.20027937), and `../results/cas_audit_summary.json` and
 `../results/maple_summary.json` hold the numbers quoted in the paper.
 
 ## Systems

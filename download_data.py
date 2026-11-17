@@ -26,7 +26,7 @@ import shutil
 # The concept record resolves to the latest version; the last known version is the fallback.
 ZENODO_CONCEPT = "20027937"
 ZENODO_CONCEPT_DOI = "10.5281/zenodo.20027937"
-ZENODO_FALLBACK_RECORD = "23279393"  # version 2
+ZENODO_FALLBACK_RECORD = "24322758"  # version 3
 ARCHIVE_NAME = "Archive.tar.gz"
 CAS_AUDIT_NAME = "cas_audit.tar.gz"
 _LATEST = None

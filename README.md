@@ -1,15 +1,16 @@
 # Exhaustive Symbolic Integration
 
 Code for the paper "Exhaustive Symbolic Integration: Integration by
-Differentiation and the Landscape of Symbolic Integrability" (Desmond, 2026).
+Differentiation and the Landscape of Symbolic Integrability" (Desmond, 2026;
+[arXiv:2605.04978](https://arxiv.org/abs/2605.04978)).
 
 This GitHub repository is the maintained code repository. The larger data
 files used by the paper are deposited separately on Zenodo:
 
 - Concept DOI (latest version): `10.5281/zenodo.20027937`
 - Version 1: `10.5281/zenodo.20027938`; version 2 (`10.5281/zenodo.23279393`) adds
-  `cas_audit.tar.gz`, the verified CAS audit; version 3 updates it with the Maple results and
-  the corrected removal of absolute values
+  `cas_audit.tar.gz`, the verified CAS audit; version 3 (`10.5281/zenodo.24322758`) updates it
+  with the Maple results and the corrected removal of absolute values
 
 ESI measures the integrability fraction `rho(k)`: the proportion of functions in
 a bounded symbolic space whose derivatives also lie within that space. It also
