@@ -128,7 +128,10 @@ class ESIDatabase:
         elif 'clusters' in data:
             # cluster results format
             for h, c in data['clusters'].items():
-                prims = [(k, eq) for k, eq, _ in c['primitives']]
+                # Use the canonical string (3rd element): the derivative hash was
+                # computed after relabelling the parameters, and ESR's original
+                # string (2nd element) can carry them in a different order.
+                prims = [(k, eq) for k, _, eq in c['primitives']]
                 if h not in self.deriv_to_primitives:
                     self.deriv_to_primitives[h] = prims
                 else:
